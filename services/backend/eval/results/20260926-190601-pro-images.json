@@ -1,0 +1,707 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "images",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T19:04:25",
+    "lang": "ko",
+    "set": "default"
+  },
+  "summary": {
+    "total": 8,
+    "correct": 8,
+    "accuracy": 1.0,
+    "first_attempt_correct": 8,
+    "verified_high": 8,
+    "confidence": {
+      "high": 8,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 11.82,
+    "avg_seconds_after_warmup": 10.27,
+    "median_seconds": 10.16,
+    "by_category": {
+      "linear": "8/8"
+    },
+    "by_category_detail": {
+      "linear": {
+        "correct": "8/8",
+        "first_attempt": "8/8",
+        "confidence": {
+          "high": 8,
+          "medium": 0,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "L01",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$2x + 3 = 7$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 방정식을 푸시오. 2x + 3 = 7",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "2x + 3 = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "플러스 3를 우변으로 이항하면 마이너스 3가 돼요.",
+          "write": "2x = 7 - 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3 이항"
+        },
+        {
+          "say": "우변을 계산하면 4예요.",
+          "write": "2x = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 x의 계수 2로 나누면 x는 2예요.",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ 2"
+        },
+        {
+          "say": "x에 2를 넣으면 4 더하기 3, 7로 딱 맞아요!",
+          "write": "2 \\times 2 + 3 = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 10.03
+        }
+      ],
+      "seconds": 22.62
+    },
+    {
+      "id": "L02",
+      "category": "linear",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$5x - 4 = 3x + 8$",
+      "ground_truth": "x = 6",
+      "read_text": "다음 일차방정식의 해를 구하시오. 5x - 4 = 3x + 8",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "5x - 4 = 3x + 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 우변의 3x를 좌변으로 옮겨 마이너스 3x가 돼요.",
+          "write": "5x - 3x - 4 = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3x 이항"
+        },
+        {
+          "say": "좌변의 -4를 우변으로 이항하면 우변에 플러스 4가 돼요.",
+          "write": "2x = 8 + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-4 이항"
+        },
+        {
+          "say": "우변을 계산하면 12가 돼요.",
+          "write": "2x = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 x의 계수 2로 나누면 x는 6이 돼요.",
+          "write": "x = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ 2"
+        },
+        {
+          "say": "x에 6을 넣으면 좌변과 우변이 같아요.",
+          "write": "5 \\times 6 - 4 = 3 \\times 6 + 8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5x - 4 = 3x + 8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 9.63
+        }
+      ],
+      "seconds": 11.43
+    },
+    {
+      "id": "L03",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$7 - 2x = x + 1$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 방정식을 푸시오. 7 - 2x = x + 1",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "7 - 2x = x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 우변의 x를 마이너스 x로 옮겨요.",
+          "write": "-2x - x = 1 - 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x 이항"
+        },
+        {
+          "say": "좌변을 계산하면 -3x, 우변은 -6이에요.",
+          "write": "-3x = -6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 -3으로 나누면 x의 값이 2가 되어요.",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ (-3)"
+        },
+        {
+          "say": "x에 2를 넣으면 좌변과 우변이 같아요. 정답이에요!",
+          "write": "7 - 2 \\times 2 = 2 + 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "7 - 2x = x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.26
+        }
+      ],
+      "seconds": 9.95
+    },
+    {
+      "id": "L04",
+      "category": "linear",
+      "problem": "방정식 $4x + 9 = -3$의 해를 구하시오.",
+      "ground_truth": "x = -3",
+      "read_text": "방정식 4x + 9 = -3의 해를 구하시오.",
+      "final_answer": "x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "4x + 9 = -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "플러스 9를 우변으로 이항하면 마이너스 9가 돼요.",
+          "write": "4x = -3 - 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "9 이항"
+        },
+        {
+          "say": "우변을 계산하면 -12예요.",
+          "write": "4x = -12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 x의 계수 4로 나누면 x는 -3이에요.",
+          "write": "x = -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ 4"
+        },
+        {
+          "say": "x에 -3을 넣으면 좌변이 -12 + 9, 우변이 -3으로 같아요. 맞아요!",
+          "write": "4 \\times (-3) + 9 = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 9 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.2
+        }
+      ],
+      "seconds": 9.84
+    },
+    {
+      "id": "L05",
+      "category": "linear",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$-3x + 5 = 2x - 10$",
+      "ground_truth": "x = 3",
+      "read_text": "다음 일차방정식의 해를 구하시오. \n-3x + 5 = 2x - 10",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "-3x + 5 = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질을 이용해 항을 이항하고 정리해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 2x를 좌변으로 옮겨 마이너스 2x가 돼요.",
+          "write": "-3x - 2x + 5 = -10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2x 이항"
+        },
+        {
+          "say": "상수항 5를 우변으로 이항하면 마이너스 5가 돼요.",
+          "write": "-5x = -10 - 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "5 이항"
+        },
+        {
+          "say": "양변을 -5로 나누면 x의 값이 나와요.",
+          "write": "x = \\frac{-15}{-5}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ (-5)"
+        },
+        {
+          "say": "분자와 분모에 마이너스가 있으니 결과는 양수예요.",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve"
+        },
+        {
+          "say": "x에 3을 넣으면 좌변과 우변이 같아요.",
+          "write": "-3 \\times 3 + 5 = 2 \\times 3 - 10",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "이항 → 정리 → 계수로 나누기. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "다음 일차방정식의 해를 구하시오. \n-3x + 5 = 2x - 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.14
+        }
+      ],
+      "seconds": 10.02
+    },
+    {
+      "id": "L06",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$x - 7 = -3$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 방정식을 푸시오. \n x - 7 = -3",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "x - 7 = -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "마이너스 7을 우변으로 이항하면 부호가 바뀌어 플러스 7가 돼요.",
+          "write": "x = -3 + 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "7 이항"
+        },
+        {
+          "say": "우변을 계산하면 4예요.",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "x에 4를 넣으면 좌변이 4 - 7 = -3이 되고, 우변도 -3이에요. 맞아요!",
+          "write": "4 - 7 = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x - 7 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.27
+        }
+      ],
+      "seconds": 8.94
+    },
+    {
+      "id": "L07",
+      "category": "linear",
+      "problem": "방정식 $6x = 2x + 20$을 만족하는 x의 값을 구하시오.",
+      "ground_truth": "x = 5",
+      "read_text": "방정식 6x = 2x + 20을 만족하는 x의 값을 구하시오.",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "6x = 2x + 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 우변의 2x를 좌변으로 옮겨 마이너스 2x가 돼요.",
+          "write": "6x - 2x = 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2x 이항"
+        },
+        {
+          "say": "좌변을 계산하면 4x가 되고, 우변은 20이에요.",
+          "write": "4x = 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 x의 계수 4로 나누면 x는 5가 돼요.",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ 4"
+        },
+        {
+          "say": "x에 5를 넣으면 좌변은 30, 우변도 30이에요. 맞아요!",
+          "write": "6 \\times 5 = 2 \\times 5 + 20",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "6x = 2x + 20",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.58
+        }
+      ],
+      "seconds": 10.31
+    },
+    {
+      "id": "L08",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$3x - 2 = 4x + 5$",
+      "ground_truth": "x = -7",
+      "read_text": "다음 방정식을 푸시오. 3x - 2 = 4x + 5",
+      "final_answer": "x = -7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중1 · 일차방정식",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "3x - 2 = 4x + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질 덕분에 항을 부호를 바꿔 다른 변으로 옮길 수 있어요. 이걸 이항이라고 해요.",
+          "write": "\\text{이항: 부호를 바꿔 다른 변으로}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 우변의 4x를 좌변으로 옮겨 마이너스 4x가 돼요.",
+          "write": "3x - 4x - 2 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "4x 이항"
+        },
+        {
+          "say": "좌변의 -2를 우변으로 이항하면 우변에 플러스 2가 돼요.",
+          "write": "-x - 2 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 이항"
+        },
+        {
+          "say": "좌변의 -2를 우변으로 이항하면 우변에 플러스 2가 돼요.",
+          "write": "-x = 5 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 -1로 나누면 x의 계수 1이 돼요.",
+          "write": "x = -7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ -1"
+        },
+        {
+          "say": "x에 -7을 넣으면 좌변과 우변이 같아요.",
+          "write": "3 \\times (-7) - 2 = 4 \\times (-7) + 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 이항하고, 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{이항 → 정리 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x - 2 = 4x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 9.7
+        }
+      ],
+      "seconds": 11.42
+    }
+  ]
+}

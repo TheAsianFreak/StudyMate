@@ -1,0 +1,586 @@
+{
+  "info": {
+    "set": "csat",
+    "tier": "max",
+    "mode": "text",
+    "lang": "ko",
+    "subject_hint": false,
+    "chat_model": "qwen3-14b",
+    "started": "2026-09-26T18:56:20",
+    "finished": "2026-09-26T18:59:14"
+  },
+  "summary": {
+    "total": 5,
+    "correct": 5,
+    "accuracy": 1.0,
+    "correct_lenient": 5,
+    "first_attempt_correct": 4,
+    "multiple_options": 0,
+    "no_option_named": 0,
+    "predicted_choices": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "None": 0
+    },
+    "confidence": {
+      "high": 0,
+      "medium": 5,
+      "low": 0
+    },
+    "accuracy_by_confidence": {
+      "high": "0/0",
+      "medium": "5/5 (100%)",
+      "low": "0/0"
+    },
+    "errors": 0,
+    "avg_steps": 7.4,
+    "avg_seconds": 34.6,
+    "avg_seconds_after_warmup": 38.08,
+    "median_seconds": 20.67,
+    "by_area": {
+      "과학탐구": "5/5 (100%)"
+    },
+    "by_subject": {
+      "생명과학Ⅰ": "1/1 (100%)",
+      "지구과학Ⅰ": "4/4 (100%)"
+    },
+    "by_subtype": {
+      "생명과학Ⅰ/개념": "1/1 (100%)",
+      "지구과학Ⅰ/계산": "2/2 (100%)",
+      "지구과학Ⅰ/개념": "2/2 (100%)"
+    }
+  },
+  "results": [
+    {
+      "id": "BI04",
+      "area": "과학탐구",
+      "subject": "생명과학Ⅰ",
+      "subtype": "개념",
+      "expected": "①",
+      "rationale": "항체는 형질 세포가 만들고, 2차 면역 반응이 더 빠르다. ㄱ만 옳다.",
+      "problem": "어떤 사람에게 항원 X를 처음 주사하고 일정 시간이 지난 후 같은 항원 X를 다시 주사하였다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?\n\n<보기>\nㄱ. 항원 X를 두 번째 주사했을 때 X에 대한 기억 세포가 형질 세포로 빠르게 분화한다.\nㄴ. X에 대한 항체는 세포독성 T림프구에서 생성된다.\nㄷ. X에 대한 항체 생성 속도는 1차 면역 반응이 2차 면역 반응보다 빠르다.\n\n① ㄱ\n② ㄷ\n③ ㄱ, ㄴ\n④ ㄴ, ㄷ\n⑤ ㄱ, ㄴ, ㄷ",
+      "final_answer": "①",
+      "predicted": 1,
+      "multiple_options": false,
+      "correct": true,
+      "correct_lenient": true,
+      "first_attempt_correct": true,
+      "confidence": "medium",
+      "verified": false,
+      "attempts": 1,
+      "flagged": false,
+      "detected_subject": "과학",
+      "unit": "수능 과학탐구 · 생명과학Ⅰ",
+      "resolve_answers": [
+        "① ㄱ",
+        "① ㄱ"
+      ],
+      "problem_latex": "\\text{항원 X 주사 후 면역 반응의 설명 중 옳은 것}",
+      "steps": [
+        {
+          "say": "면역 반응 문제예요. 항원 X를 두 번 주사했을 때의 반응을 묻고 있어요.",
+          "write": "\\text{항원 X 주사 후 면역 설명 중 옳은 것}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro",
+          "note": "intro note"
+        },
+        {
+          "say": "면역 반응은 1차와 2차로 나뉘어요. 기억 세포가 있는 2차 반응이 더 빠르죠.",
+          "write": "\\text{1차 vs 2차 면역 반응}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "개념"
+        },
+        {
+          "say": "1차 반응은 첫 번째 항원 주사 때, 2차는 두 번째 때 일어나요.",
+          "write": "\\text{1차: 첫 번째 주사, 2차: 두 번째 주사}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "근거"
+        },
+        {
+          "say": "① ㄱ은 기억 세포가 분화한다. 이건 맞아요.",
+          "write": "① \\bigcirc\\ \\text{기억 세포 분화}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① ○"
+        },
+        {
+          "say": "② ㄴ은 항체가 세포독성 T림프구에서 생긴다. 이건 틀려요. 항체는 B세포에서 생기죠.",
+          "write": "② \\times\\ \\text{항체는 B세포에서 생성}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② ×"
+        },
+        {
+          "say": "③ ㄷ은 1차 반응이 2차보다 빠르다. 이건 틀려요. 2차 반응이 더 빨라요.",
+          "write": "③ \\times\\ \\text{2차 반응이 더 빠름}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "③ ×"
+        },
+        {
+          "say": "1차 반응은 느리고, 2차는 기억 세포 덕분에 빠르죠. ㄴ과 ㄷ은 모두 틀려요.",
+          "write": "\\text{2차 반응: 기억 세포 → 빠름}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "확인"
+        },
+        {
+          "say": "면역 반응은 1차, 2차로 나뉘고, 기억 세포가 있으면 더 빠르게 반응해요. 잘했어요!",
+          "write": "\\text{1차 vs 2차: 기억 세포로 빠름}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "요령"
+        }
+      ],
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "①",
+          "resolve": [
+            "① ㄱ",
+            "① ㄱ"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 14.54
+        }
+      ],
+      "seconds": 20.67
+    },
+    {
+      "id": "ES01",
+      "area": "과학탐구",
+      "subject": "지구과학Ⅰ",
+      "subtype": "계산",
+      "expected": "④",
+      "rationale": "X : Y = 1 : 7 → X는 처음의 1/8 = (1/2)³ → 반감기 3번 = 3억 년.",
+      "problem": "어느 화성암에 포함된 방사성 원소 X는 붕괴하여 자원소 Y가 된다. 현재 이 암석에 포함된 Y의 양은 X의 양의 7배이다. X의 반감기가 1억 년일 때, 이 암석의 절대 연령은? (단, 암석이 생성될 때 Y는 없었고, Y는 모두 X가 붕괴하여 생성되었으며, 생성 후 X와 Y의 유출입은 없었다.)\n\n① 1억 년\n② 2억 년\n③ 2.5억 년\n④ 3억 년\n⑤ 7억 년",
+      "final_answer": "④",
+      "predicted": 4,
+      "multiple_options": false,
+      "correct": true,
+      "correct_lenient": true,
+      "first_attempt_correct": true,
+      "confidence": "medium",
+      "verified": false,
+      "attempts": 1,
+      "flagged": false,
+      "detected_subject": "기타",
+      "unit": "수능 과학탐구 · 화학Ⅰ",
+      "resolve_answers": [
+        "④ 3억 년",
+        "④ 3억 년"
+      ],
+      "problem_latex": "\\text{반감기와 X, Y의 양 비율로 암석 연령 계산}",
+      "steps": [
+        {
+          "say": "이 문제는 반감기와 원소의 양 비율을 이용해 암석의 연령을 계산하는 문제예요.",
+          "write": "\\text{반감기와 X, Y의 비율로 연령 계산}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro",
+          "note": "intro note"
+        },
+        {
+          "say": "반감기 문제는 원소의 남은 양을 기반으로 몰수비를 계산해요. 현재 Y는 X의 7배니까, X는 원래의 1/8만 남았다는 뜻이에요.",
+          "write": "\\text{반감기 = 붕괴 후 남은 양 계산}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "concept note"
+        },
+        {
+          "say": "X는 원래의 1/8이 남아 있으니, 3회 반감기 경과했어요. 1억 년 × 3 = 3억 년예요.",
+          "write": "\\text{X: 1/8 남음 → 3회 반감기}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "근거"
+        },
+        {
+          "say": "④ 3억 년이 정답이에요. 3회 반감기 경과하면 X는 1/8, Y는 7배가 되므로 조건에 맞아요.",
+          "write": "④ \\bigcirc\\ \\text{3회 반감기}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "④ ○"
+        },
+        {
+          "say": "② 2억 년은 2회 반감기 경과한 상태예요. X는 1/4, Y는 3배가 되므로 조건과 맞지 않아요.",
+          "write": "② \\times\\ \\text{2회 반감기}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② ×"
+        },
+        {
+          "say": "3억 년 후 X는 1/8이 남고 Y는 7/8이 되므로, Y는 X의 7배가 맞아요. 질량 보존도 성립하므로 ④가 정답이에요.",
+          "write": "\\text{3억 년: X=1/8, Y=7/8}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "확인"
+        },
+        {
+          "say": "반감기 문제는 남은 양을 기반으로 몰 수비를 계산해요. 잘 풀었어요!",
+          "write": "\\text{반감기 문제: 남은 양 → 몰 수비 계산}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "summary note"
+        }
+      ],
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "resolve": [
+            "④ 3억 년",
+            "④ 3억 년"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 14.33
+        }
+      ],
+      "seconds": 17.58
+    },
+    {
+      "id": "ES02",
+      "area": "과학탐구",
+      "subject": "지구과학Ⅰ",
+      "subtype": "개념",
+      "expected": "②",
+      "rationale": "해령에서는 천발 지진만 일어난다. 심발 지진은 섭입대에서 일어난다.",
+      "problem": "해령에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?\n\n<보기>\nㄱ. 해령은 두 판이 서로 멀어지는 발산형 경계에 발달한다.\nㄴ. 해령에서 멀어질수록 해양 지각의 나이가 많아진다.\nㄷ. 해령 부근에서는 천발 지진뿐만 아니라 심발 지진도 활발하게 일어난다.\n\n① ㄱ\n② ㄱ, ㄴ\n③ ㄱ, ㄷ\n④ ㄴ, ㄷ\n⑤ ㄱ, ㄴ, ㄷ",
+      "final_answer": "②",
+      "predicted": 2,
+      "multiple_options": false,
+      "correct": true,
+      "correct_lenient": true,
+      "first_attempt_correct": true,
+      "confidence": "medium",
+      "verified": false,
+      "attempts": 1,
+      "flagged": false,
+      "detected_subject": "수학",
+      "unit": "수능 과학탐구 · 지구과학Ⅰ",
+      "resolve_answers": [
+        "② ㄱ, ㄴ",
+        "② ㄱ, ㄴ"
+      ],
+      "problem_latex": "\\text{해령에 대한 설명으로 옳은 것을 고르기}",
+      "steps": [
+        {
+          "say": "지구과학 문제예요. 해령에 대한 설명 중 옳은 것만 고르는 문제예요.",
+          "write": "\\text{해령에 대한 설명으로 옳은 것으로 고르기}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro",
+          "note": "intro"
+        },
+        {
+          "say": "해령은 발산형 경계에서 생기고, 멀어질수록 나이가 많아지며, 지진 유형도 중요해요.",
+          "write": "\\text{발산형 경계, 나이 변화, 지진 유형}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "개념"
+        },
+        {
+          "say": "해령은 발산형 경계에서 형성돼요. ㄱ은 맞아요.",
+          "write": "\\text{해령 = 발산형 경계}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "근거"
+        },
+        {
+          "say": "해령에서 멀어질수록 지각이 오래된 거예요. ㄴ도 맞아요.",
+          "write": "\\text{멀어질수록 나이 많아짐}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② ○"
+        },
+        {
+          "say": "심발 지진은 해령 부근에서는 잘 일어나지 않아요. ㄷ은 틀려요.",
+          "write": "\\text{심발 지진 = 해령 부근 X}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "③ ×"
+        },
+        {
+          "say": "해령은 발산형 경계이고, 멀어질수록 나이 많아지며, 심발 지진이 활발하지 않아요. ②가 맞아요.",
+          "write": "\\text{발산형, 나이, 심발 지진 X}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "확인"
+        },
+        {
+          "say": "해령 문제는 발산형 경계, 나이 변화, 지진 종류를 기억하면 풀 수 있어요. 잘했어요!",
+          "write": "\\text{발산형, 나이, 지진 유형}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "요령"
+        }
+      ],
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "resolve": [
+            "② ㄱ, ㄴ",
+            "② ㄱ, ㄴ"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 11.41
+        }
+      ],
+      "seconds": 15.18
+    },
+    {
+      "id": "ES03",
+      "area": "과학탐구",
+      "subject": "지구과학Ⅰ",
+      "subtype": "개념",
+      "expected": "③",
+      "rationale": "태풍의 눈에서는 약한 하강 기류가 나타나 날씨가 맑다.",
+      "problem": "북반구에서 발생하는 태풍에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?\n\n<보기>\nㄱ. 수증기가 응결할 때 방출하는 숨은열(잠열)이 주요 에너지원이다.\nㄴ. 태풍 진행 방향의 오른쪽 반원은 위험 반원이다.\nㄷ. 태풍의 눈에서는 강한 상승 기류가 나타난다.\n\n① ㄱ\n② ㄷ\n③ ㄱ, ㄴ\n④ ㄴ, ㄷ\n⑤ ㄱ, ㄴ, ㄷ",
+      "final_answer": "③",
+      "predicted": 3,
+      "multiple_options": false,
+      "correct": true,
+      "correct_lenient": true,
+      "first_attempt_correct": true,
+      "confidence": "medium",
+      "verified": false,
+      "attempts": 2,
+      "flagged": false,
+      "detected_subject": "과학",
+      "unit": "수능 과학탐구 · 지구과학Ⅰ",
+      "resolve_answers": [
+        "③ ㄱ, ㄴ",
+        "③ ㄱ, ㄴ",
+        "③ ㄱ, ㄴ"
+      ],
+      "problem_latex": "\\text{북반구 태풍 설명 중 옳은 것 고르기}",
+      "steps": [
+        {
+          "say": "과학 문제예요. 북반구 태풍에 대한 옳은 설명을 고르는 문제예요.",
+          "write": "\\text{북반구 태풍 설명 옳은 것 고르기}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro",
+          "note": "intro"
+        },
+        {
+          "say": "태풍의 에너지원과 구조, 진행 방향의 위험 반원에 대한 개념을 떠올려야 해요.",
+          "write": "\\text{태풍 에너지원, 구조, 위험 반원 개념 활용}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "concept"
+        },
+        {
+          "say": "ㄱ은 수증기 응결 시 방출하는 숨은열이 주요 에너지원이라서 맞아요.",
+          "write": "\\text{① ㄱ} \\bigcirc\\text{수증기 응결의 숨은열}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① ○"
+        },
+        {
+          "say": "ㄴ은 북반구에서 태풍 오른쪽 반원이 위험 반원이라서 맞아요.",
+          "write": "\\text{② ㄴ} \\bigcirc\\text{북반구 오른쪽 반원 위험}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② ○"
+        },
+        {
+          "say": "ㄷ은 태풍의 눈에 강한 상승 기류가 아니라 하강 기류이기 때문에 틀려요.",
+          "write": "\\text{③ ㄷ} \\times\\text{눈에 하강 기류}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "③ ×"
+        },
+        {
+          "say": "정답은 ㄱ과 ㄴ이에요. ㄷ은 태풍 눈의 기류 방향을 잘못 이해한 점에서 틀려요.",
+          "write": "\\text{③ ㄱ, ㄴ} \\bigcirc\\text{③ 정답}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "확인"
+        },
+        {
+          "say": "태풍 문제는 에너지원과 구조, 위험 반원을 개념과 연결해 판단해요. 잘했어요!",
+          "write": "\\text{태풍 개념과 자료 연결 판단}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "summary"
+        }
+      ],
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "",
+          "error": "llm_bad_output"
+        },
+        {
+          "attempt": 2,
+          "final_answer": "③",
+          "resolve": [
+            "③ ㄱ, ㄴ"
+          ],
+          "support": 3,
+          "against": 0,
+          "issue": null,
+          "seconds": 13.02
+        }
+      ],
+      "seconds": 80.34
+    },
+    {
+      "id": "ES04",
+      "area": "과학탐구",
+      "subject": "지구과학Ⅰ",
+      "subtype": "계산",
+      "expected": "⑤",
+      "rationale": "빈의 법칙 λmax ∝ 1/T → 2배. L ∝ R²T⁴ → 2⁴ = 16배. 표면 온도가 높을수록 파랗다. 모두 옳다.",
+      "problem": "표면 온도가 6000 K인 별 A와 12000 K인 별 B에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 두 별은 흑체로 가정한다.)\n\n<보기>\nㄱ. 최대 에너지를 방출하는 파장은 A가 B의 2배이다.\nㄴ. 두 별의 반지름이 같다면 광도는 B가 A의 16배이다.\nㄷ. B는 A보다 파란색을 띤다.\n\n① ㄱ\n② ㄷ\n③ ㄱ, ㄴ\n④ ㄴ, ㄷ\n⑤ ㄱ, ㄴ, ㄷ",
+      "final_answer": "⑤",
+      "predicted": 5,
+      "multiple_options": false,
+      "correct": true,
+      "correct_lenient": true,
+      "first_attempt_correct": false,
+      "confidence": "medium",
+      "verified": false,
+      "attempts": 2,
+      "flagged": false,
+      "detected_subject": "과학",
+      "unit": "수능 과학탐구 · 지구과학Ⅰ",
+      "resolve_answers": [
+        "⑤ ㄱ, ㄴ, ㄷ",
+        "⑤ ㄱ, ㄴ, ㄷ",
+        "⑤ ㄱ, ㄴ, ㄷ"
+      ],
+      "problem_latex": "\\text{흑체 별의 온도와 성질 비교}",
+      "steps": [
+        {
+          "say": "과학 문제예요. 흑체로 가정된 별 A와 B의 성질을 비교하는 문제예요.",
+          "write": "\\text{흑체 별의 온도 비교}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro",
+          "note": "intro"
+        },
+        {
+          "say": "흑체 복사의 위ien-지르메어 법칙과 스테판-볼츠만법칙을 적용해야 해요.",
+          "write": "\\text{위ien-지르메어 법칙, 스테판-볼츠만법칙}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "concept"
+        },
+        {
+          "say": "ㄱ: 최대 에너지 파장은 온도의 역비례로, A가 B의 2배예요.",
+          "write": "1/\\text{ 온도}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① ×"
+        },
+        {
+          "say": "ㄴ: 광도는 온도의 4제곱에 비례. 12000^4 / 6600^4 = 16이에요.",
+          "write": "\\text{반지름 }^2 × \\text{ 온도 }^4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② ×"
+        },
+        {
+          "say": "ㄷ: 온도가 높은 별은 파란색을 띠고, 낮은 별은 붉은색을 띠어요.",
+          "write": "③ \\bigcirc\\ \\text{온도 ↑ → 파란색}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "③ ○"
+        },
+        {
+          "say": "⑤: ㄱ, ㄴ, ㄷ 모두 옳아요. ④는 ㄱ을 빼먹었어요.",
+          "write": "⑤ \\bigcirc\\ \\text{ㄱ, ㄴ, ㄷ 모두 맞음}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "⑤ ○"
+        },
+        {
+          "say": "⑤가 맞아요. ㄱ은 위ien-지르메어 법칙, ㄴ은 스테판-볼츠만법칙, ㄷ은 온도와 색의 관계에 맞아요. ④는 ㄱ이 빠졌기 때문에 틀려요.",
+          "write": "\\text{⑤: ㄱ, ㄴ, ㄷ 모두 정확}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "확인"
+        },
+        {
+          "say": "흑체 별 문제는 위ien-지르메어와 스테판-볼츠만법칙 두 가지 법칙을 기억하면 풀 수 있어요. 잘했어요!",
+          "write": "\\text{법칙 두 가지 기억하면 풀 수 있어요}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "요약"
+        }
+      ],
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "resolve": [
+            "⑤ ㄱ, ㄴ, ㄷ",
+            "⑤ ㄱ, ㄴ, ㄷ"
+          ],
+          "support": 0,
+          "against": 2,
+          "issue": null,
+          "seconds": 19.6
+        },
+        {
+          "attempt": 2,
+          "final_answer": "⑤",
+          "resolve": [
+            "⑤ ㄱ, ㄴ, ㄷ"
+          ],
+          "support": 3,
+          "against": 0,
+          "issue": null,
+          "seconds": 17.26
+        }
+      ],
+      "seconds": 39.23
+    }
+  ]
+}

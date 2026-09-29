@@ -1,0 +1,120 @@
+[project]
+name = "studymate-backend"
+version = "0.1.0"
+description = "StudyMate local AI backend (FastAPI sidecar)"
+requires-python = ">=3.11,<3.13"
+license = "LicenseRef-Proprietary"
+dependencies = [
+  # server
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "websockets>=13",
+  "pydantic>=2.8",
+  "pydantic-settings>=2.4",
+  "httpx>=0.27",
+  # math / verification
+  "numpy>=1.26",
+  "scipy>=1.13",
+  "sympy>=1.13",
+  "antlr4-python3-runtime==4.11.*",
+  # vision
+  "pillow>=10.4",
+  "rapidocr>=3.0",
+  "onnxruntime>=1.19",
+  "pix2tex>=0.1.4",
+  # speech
+  "torch>=2.4",
+  "faster-whisper>=1.0",
+  "sounddevice>=0.5",
+  "jamo>=0.4.1",
+  "g2pkk>=0.1.2",
+  "pyworld>=0.3.4",
+  # ja/en speech: Kokoro-82M (vendored model code) needs transformers' ALBERT; G2P via
+  # pyopenjtalk-plus (dictionary bundled in the wheel) and misaki's lexicons + spaCy tagger
+  "transformers>=4.40",
+  "pyopenjtalk-plus>=0.4.1",
+  "misaki>=0.9.4",
+  "spacy>=3.8,<3.9",
+  # drowsiness
+  "mediapipe>=0.10.14",
+  # documents / rag / review
+  "pypdfium2>=4.30",
+  "sqlite-vec>=0.1.6",
+  "fsrs>=5.0",
+  # system
+  "psutil>=6.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.6",
+  "mypy>=1.11",
+  "datamodel-code-generator>=0.26",
+  "pip-licenses>=5.0",
+  "nuitka>=2.4",
+]
+
+[tool.uv]
+package = true
+# rapidocr, pix2tex and mediapipe each pull a different OpenCV wheel into the same `cv2`
+# folder; keep only opencv-contrib-python (a superset) so they cannot overwrite each other.
+override-dependencies = [
+  "opencv-python; sys_platform == 'never'",
+  "opencv-python-headless; sys_platform == 'never'",
+  # pyopenjtalk-plus only loads Sudachi's ~200 MB dictionary for its optional homograph
+  # pass, which we switch off (studymate/speech/japanese.py); don't ship it.
+  "sudachidict-core; sys_platform == 'never'",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["studymate"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["studymate/speech/melo", "studymate/speech/kokoro", "studymate/protocol"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Curriculum tables, prompts and safety word lists in three languages, and step fixtures:
+# long string literals by nature.
+"studymate/solve/curriculum.py" = ["E501"]
+"studymate/solve/curriculum_*.py" = ["E501"]
+"studymate/solve/prompts.py" = ["E501"]
+"studymate/solve/ask.py" = ["E501"]
+"studymate/solve/safety.py" = ["E501"]
+"studymate/quiz/generate.py" = ["E501"]
+"studymate/vision/reader.py" = ["E501"]
+"studymate/verify/answer.py" = ["E501"]
+"studymate/verify/problem.py" = ["E501"]
+"studymate/learning/grade.py" = ["E501"]
+"studymate/system/titles.py" = ["E501"]
+"studymate/system/hardware.py" = ["E501"]
+"tests/test_solve_pipeline.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+exclude = ["studymate/speech/melo/", "studymate/speech/kokoro/"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = ["slow: long-running model round trips (run with STUDYMATE_SLOW_TESTS=1)"]

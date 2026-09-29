@@ -1,0 +1,905 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T00:13:47",
+    "lang": "en"
+  },
+  "summary": {
+    "total": 8,
+    "correct": 8,
+    "accuracy": 1.0,
+    "first_attempt_correct": 8,
+    "verified_high": 8,
+    "confidence": {
+      "high": 8,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 10.01,
+    "avg_seconds_after_warmup": 9.54,
+    "median_seconds": 7.96,
+    "by_category": {
+      "system": "8/8"
+    }
+  },
+  "results": [
+    {
+      "id": "S01",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$x + y = 5$\n$x - y = 1$",
+      "ground_truth": "x = 3, y = 2",
+      "final_answer": "x = 3, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at the same time.",
+          "write": "\\begin{cases} x + y = 5 \\\\ x - y = 1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve systems by elimination or substitution. Since the coefficients of y are opposites, elimination is the best choice.",
+          "write": "\\text{Eliminate y by adding the equations}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Add the two equations to eliminate y.",
+          "write": "2x = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now solve for x by dividing both sides by 2.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Substitute x = 3 into one of the original equations to find y.",
+          "write": "3 + y = 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=3"
+        },
+        {
+          "say": "Now solve for y by subtracting 3 from both sides.",
+          "write": "y = 2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Check by substituting x = 3 and y = 2 into both equations.",
+          "write": "3 + 2 = 5,\\text{ }3 - 2 = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Eliminate one variable by adding or subtracting equations. Then solve for the other variable. Great job!",
+          "write": "\\text{Eliminate y, solve for x, then y}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + y = 5, x - y = 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.89,
+          "unsolved": [
+            "y"
+          ]
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 3, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.85
+        }
+      ],
+      "seconds": 13.3
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "final_answer": "x = 3, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at the same time.",
+          "write": "\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use elimination to find the solution. Add the equations to eliminate y.",
+          "write": "\\text{Add equations to eliminate y}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Add the two equations to eliminate y.",
+          "write": "3x = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now solve for x by dividing both sides by 3.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Now substitute x = 3 into one of the original equations to find y.",
+          "write": "3 - y = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x = 3"
+        },
+        {
+          "say": "Now solve for y by subtracting 3 from both sides.",
+          "write": "-y = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Multiply both sides by -1 to get y by itself.",
+          "write": "y = 1",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Check by substituting x = 3 and y = 1 into both original equations.",
+          "write": "2(3) + 1 = 7,\\text{ }3 - 1 = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to eliminate one variable, then solve for the other. Great job!",
+          "write": "\\text{Eliminate y, solve for x, then y}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + y = 7, x - y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.79,
+          "unsolved": [
+            "y"
+          ]
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.12
+        }
+      ],
+      "seconds": 9.36
+    },
+    {
+      "id": "S03",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$x + 2y = 8$\n$3x - y = 3$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} x + 2y = 8 \\\\ 3x - y = 3 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We'll use elimination to solve this system. The goal is to eliminate one variable by making the coefficients opposites.",
+          "write": "\\text{Eliminate one variable by making coefficients opposites}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. Multiply the second equation by 2 to make the coefficients of y opposites.",
+          "write": "6x - 2y = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Now add the two equations to eliminate y.",
+          "write": "7x = 14",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Solve for x by dividing both sides by 7.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷7 both sides"
+        },
+        {
+          "say": "Substitute x = 2 into one of the original equations to find y. Let's use the second equation.",
+          "write": "3(2) - y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=2"
+        },
+        {
+          "say": "Simplify the equation to find y.",
+          "write": "6 - y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "multiply"
+        },
+        {
+          "say": "Subtract 6 from both sides to isolate y.",
+          "write": "-y = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-6 both sides"
+        },
+        {
+          "say": "Multiply both sides by -1 to solve for y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 2 and y = 3 into both original equations.",
+          "write": "2 + 2(3) = 8,\\text{ } 3(2) - 3 = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to eliminate one variable, then solve for the other. Great job!",
+          "write": "\\text{Eliminate one variable, then solve for the other}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + 2y = 8, 3x - y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.99
+        }
+      ],
+      "seconds": 6.56
+    },
+    {
+      "id": "S04",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$3x + 2y = 12$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 3x + 2y = 12 \\\\ x - y = -1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination. If the coefficients line up easily, we can eliminate one variable by adding or subtracting the equations.",
+          "write": "\\text{Eliminate one variable by adding or subtracting equations}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. Multiply the second equation by 2 so the coefficients of y are opposites.",
+          "write": "2x - 2y = -2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Now add the two equations to eliminate y.",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Divide both sides by 5 to solve for x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Substitute x = 2 into the second equation to find y.",
+          "write": "2 - y = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=2"
+        },
+        {
+          "say": "Subtract 2 from both sides to solve for y.",
+          "write": "-y = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Multiply both sides by -1 to solve for y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check our solution in both original equations.",
+          "write": "3(2) + 2(3) = 12, 2 - 3 = -1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to eliminate one variable. Then solve for the other and substitute back. Great job!",
+          "write": "\\text{Eliminate one variable, solve, then substitute back}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x + 2y = 12, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.59
+        }
+      ],
+      "seconds": 6.05
+    },
+    {
+      "id": "S05",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$y = 2x - 1$\n$3x + y = 9$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} y = 2x - 1 \\\\ 3x + y = 9 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can use substitution since one equation is already solved for y.",
+          "write": "\\text{Substitute y from first equation into second}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "Substitute y = 2x - 1 into the second equation to find x.",
+          "write": "3x + (2x - 1) = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute y"
+        },
+        {
+          "say": "Combine like terms: 3x and 2x.",
+          "write": "5x - 1 = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Add 1 to both sides to undo the minus 1.",
+          "write": "5x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+1 both sides"
+        },
+        {
+          "say": "Divide both sides by 5 to solve for x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Substitute x = 2 into the first equation to find y.",
+          "write": "y = 2(2) - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x"
+        },
+        {
+          "say": "Multiply 2 by 2 to find y.",
+          "write": "y = 4 - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2"
+        },
+        {
+          "say": "Subtract 1 from 4 to find y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-1"
+        },
+        {
+          "say": "Check the solution by substituting x = 2 and y = 3 into both original equations.",
+          "write": "y = 2(2) - 1,\\text{ }3(2) + 3 = 9",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Substitute when one equation is solved for a variable. Great job!",
+          "write": "\\text{Substitute when one equation is solved for a variable}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "y = 2x - 1, 3x + y = 9",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.63,
+          "unsolved": [
+            "y"
+          ]
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.98
+        }
+      ],
+      "seconds": 11.2
+    },
+    {
+      "id": "S06",
+      "category": "system",
+      "problem": "The system $2x - 3y = 1$, $x + y = 3$ Find the solution.",
+      "ground_truth": "x = 2, y = 1",
+      "final_answer": "x = 2, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 2x - 3y = 1 \\\\ x + y = 3 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use elimination to find the solution. Make the coefficients of one variable opposites, then add or subtract the equations.",
+          "write": "\\text{Eliminate one variable by making coefficients opposites}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. Multiply the second equation by 3 to make the y-coefficients opposites.",
+          "write": "3x + 3y = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×3 both sides"
+        },
+        {
+          "say": "Now add the two equations to eliminate y.",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Solve for x by dividing both sides by 5.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Substitute x = 2 into the second equation to find y.",
+          "write": "2 + y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=2"
+        },
+        {
+          "say": "Solve for y by subtracting 2 from both sides.",
+          "write": "y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Check the solution in both original equations.",
+          "write": "2(2) - 3(1) = 1,\\text{ } 2 + 1 = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to solve systems. Check your solution in both equations. Great job!",
+          "write": "\\text{Eliminate one variable, solve, check}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x - 3y = 1, x + y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.71
+        }
+      ],
+      "seconds": 5.17
+    },
+    {
+      "id": "S07",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$4x + 3y = 10$\n$2x - y = 0$",
+      "ground_truth": "x = 1, y = 2",
+      "final_answer": "x = 1, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 4x + 3y = 10 \\\\ 2x - y = 0 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination. If the coefficients of one variable line up easily, we can eliminate that variable by adding or subtracting the equations.",
+          "write": "\\text{Eliminate one variable by adding or subtracting equations}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. Multiply the second equation by 3 so that the coefficients of y are opposites.",
+          "write": "6x - 3y = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×3 both sides"
+        },
+        {
+          "say": "Now add the two equations to eliminate y.",
+          "write": "10x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Divide both sides by 10 to solve for x.",
+          "write": "x = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷10 both sides"
+        },
+        {
+          "say": "Substitute x = 1 into the second equation to find y.",
+          "write": "2(1) - y = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=1"
+        },
+        {
+          "say": "Simplify to find y.",
+          "write": "2 - y = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "simplify"
+        },
+        {
+          "say": "Subtract 2 from both sides to solve for y.",
+          "write": "-y = -2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Multiply both sides by -1 to solve for y.",
+          "write": "y = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check our solution in both original equations.",
+          "write": "4(1) + 3(2) = 10, 2(1) - 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to eliminate one variable. Then solve for the other and substitute back. Great job!",
+          "write": "\\text{Eliminate one variable, solve, then substitute back}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 3y = 10, 2x - y = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.94
+        }
+      ],
+      "seconds": 6.38
+    },
+    {
+      "id": "S08",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$\\frac{x}{2} + \\frac{y}{3} = 2$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} \\frac{x}{2} + \\frac{y}{3} = 2 \\\\ x - y = -1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use elimination to find the solution. If the coefficients line up easily, we eliminate one variable by adding or subtracting the equations.",
+          "write": "\\text{Eliminate one variable by adding or subtracting equations}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. To do this, we'll multiply the second equation by 1 to make the coefficients of y opposites.",
+          "write": "x - y = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "original equation"
+        },
+        {
+          "say": "Now we'll multiply the first equation by 6 to eliminate the fractions. This makes the coefficients of x and y easier to work with.",
+          "write": "3x + 2y = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×6 both sides"
+        },
+        {
+          "say": "Now we have the two equations: 3x + 2y = 12 and x - y = -1. Let's eliminate y by multiplying the second equation by 2.",
+          "write": "2x - 2y = -2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Now we add the two equations to eliminate y. The y terms cancel out.",
+          "write": "5x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now we solve for x by dividing both sides by 5.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Now that we have x = 2, we substitute this value into one of the original equations to find y. Let's use the second equation.",
+          "write": "2 - y = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x = 2"
+        },
+        {
+          "say": "Now we solve for y by subtracting 2 from both sides.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Let's substitute x = 2 and y = 3 into both original equations to check our solution.",
+          "write": "\\frac{2}{2} + \\frac{3}{3} = 2,\t2 - 3 = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use elimination to find the solution. Check your answer by substituting back into the original equations. Great job!",
+          "write": "\\text{Eliminate one variable and check the solution}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x/2 + y/3 = 2, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.29,
+          "unsolved": [
+            "y"
+          ]
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.54,
+          "unsolved": [
+            "x"
+          ]
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 9.83
+        }
+      ],
+      "seconds": 22.09
+    }
+  ]
+}

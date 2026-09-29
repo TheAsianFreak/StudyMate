@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": [],
+    "paths": {
+      "@studymate/protocol": ["./../../packages/protocol/ts/generated/index.ts"]
+    },
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.web.tsbuildinfo"
+  },
+  "include": ["src/renderer/**/*", "src/shared/**/*", "../../packages/protocol/ts/generated/**/*"]
+}

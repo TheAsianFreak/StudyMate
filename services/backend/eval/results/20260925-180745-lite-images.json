@@ -1,0 +1,2984 @@
+{
+  "info": {
+    "tier": "lite",
+    "mode": "images",
+    "chat_model": "qwen3-4b",
+    "vision_model": null,
+    "started": "2026-09-25T18:04:55"
+  },
+  "summary": {
+    "total": 50,
+    "correct": 38,
+    "accuracy": 0.76,
+    "first_attempt_correct": 32,
+    "verified_high": 39,
+    "confidence": {
+      "high": 39,
+      "medium": 3,
+      "low": 8
+    },
+    "errors": 0,
+    "avg_seconds": 3.38,
+    "avg_seconds_after_warmup": 3.28,
+    "median_seconds": 2.32,
+    "by_category": {
+      "linear": "9/10",
+      "parentheses": "5/8",
+      "fractions": "6/9",
+      "decimals": "7/7",
+      "system": "3/8",
+      "quadratic": "8/8"
+    }
+  },
+  "results": [
+    {
+      "id": "L01",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$2x + 3 = 7$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 방정식을 푸시오.\n2x + 3 = 7",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 3을 빼요.",
+          "write": "2x + 3 - 3 = 7 - 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변을 2로 나누세요.",
+          "write": "2x = 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 값은 2이에요.",
+          "write": "x = 2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "2x + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.64
+        }
+      ],
+      "seconds": 8.37
+    },
+    {
+      "id": "L02",
+      "category": "linear",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$5x - 4 = 3x + 8$",
+      "ground_truth": "x = 6",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n5x - 4 = 3x + 8",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2를 곱해요.",
+          "write": "5x - 4 = 3x + 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x를 뺀다고 해요.",
+          "write": "2x - 4 = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "4을 더해요.",
+          "write": "2x = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 2를 나누어요.",
+          "write": "x = 6",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "5x - 4 = 3x + 8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.34
+        }
+      ],
+      "seconds": 1.79
+    },
+    {
+      "id": "L03",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$7 - 2x = x + 1$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 방정식을 푸시오.\n7 - 2x = x + 1",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "x항을 좌변으로, 상수항을 우변으로 이동해요.",
+          "write": "7 - 2x - x = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "좌변의 x항을 합쳐요.",
+          "write": "7 - 3x = 1",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "상수항 7을 양변에서 빼요.",
+          "write": "-3x = 1 - 7",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1 - 7은 -6이에요.",
+          "write": "-3x = -6",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변을 -3으로 나누어요.",
+          "write": "x = (-6) / (-3)",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분자와 분모의 부호가 같으니 결과는 양수이에요.",
+          "write": "x = 2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "7 - 2x = x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": false,
+          "detail": "최종 답 'x = 4'이(가) 틀렸어요.",
+          "seconds": 1.91
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.88
+        }
+      ],
+      "seconds": 4.06
+    },
+    {
+      "id": "L04",
+      "category": "linear",
+      "problem": "방정식 $4x + 9 = -3$의 해를 구하시오.",
+      "ground_truth": "x = -3",
+      "read_text": "방정식 4x + -3의 해를 구하시오.",
+      "final_answer": "4x - 3",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "처음부터 원래 식을 써요.",
+          "write": "4x + -3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이항할 때는 부호를 바꾸고, 식을 한 줄씩 확인해요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "4x + -3은 4x - 3이에요.",
+          "write": "4x - 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 식이 정리되었어요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "정답은 4x - 3이에요.",
+          "write": "4x - 3",
+          "gesture": "point",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\text{방정식} 4x + -3\\text{의} \\text{해를} \\text{구하시오}.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "해가 없다",
+          "verified": false,
+          "detail": "최종 답 '해가 없다'이(가) 틀렸어요.",
+          "seconds": 1.09
+        },
+        {
+          "attempt": 2,
+          "final_answer": "4x - 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.5
+        }
+      ],
+      "seconds": 3.25
+    },
+    {
+      "id": "L05",
+      "category": "linear",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$-3x + 5 = 2x - 10$",
+      "ground_truth": "x = 3",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n-3x + 5 = 2x - 10",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2를 곱해요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "-3x + 5 = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2x를 양변에 더해요.",
+          "write": "-5x + 5 = -10",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "5을 양변에 빼요.",
+          "write": "-5x = -15",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "x = 3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "-3x + 5 = 2x - 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.5
+        }
+      ],
+      "seconds": 1.92
+    },
+    {
+      "id": "L06",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$x - 7 = -3$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 방정식을 푸시오.\nx -7 = -3",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 7을 더해요.",
+          "write": "x - 7 + 7 = -3 + 7",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "정리해요.",
+          "write": "x = 4",
+          "gesture": "nod",
+          "emotion": "happy"
+        },
+        {
+          "say": "정답이에요.",
+          "write": "x = 4",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x -7 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.08
+        }
+      ],
+      "seconds": 1.51
+    },
+    {
+      "id": "L07",
+      "category": "linear",
+      "problem": "방정식 $6x = 2x + 20$을 만족하는 x의 값을 구하시오.",
+      "ground_truth": "x = 5",
+      "read_text": "방정식6x=2x+20을 만족하는 x의 값을 구하시오.",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2x를 빼고 싶어요.",
+          "write": "6x - 2x = 2x + 20 - 2x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "좌변과 우변을 간단히 하세요.",
+          "write": "4x = 20",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 4를 나누어 x를 구하세요.",
+          "write": "x = 20 / 4",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "계산해보세요.",
+          "write": "x = 5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\text{방정식}6x=2x+20\\text{을} \\text{만족하는} x\\text{의} \\text{값을} \\text{구하시오}.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.39
+        }
+      ],
+      "seconds": 1.77
+    },
+    {
+      "id": "L08",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$3x - 2 = 4x + 5$",
+      "ground_truth": "x = -7",
+      "read_text": "다음 방정식을 푸시오.\n3x - 2 = 4x + 5",
+      "final_answer": "x = -7",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "먼저 x항을 좌변으로, 상수항을 우변으로 이항해요.",
+          "write": "3x - 2 = 4x + 5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에서 4x를 빼면 3x - 4x가 되요. -x가 나오는데 부호를 바꿔요.",
+          "write": "-x - 2 = 5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 상수항 -2를 우변으로 이동해요. 양변에 2를 더해요.",
+          "write": "-x = 7",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변을 -1로 나누면 x가 나오요.",
+          "write": "x = -7",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "3x - 2 = 4x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -12",
+          "verified": false,
+          "detail": "최종 답 'x = -12'이(가) 틀렸어요. 2번째 줄 '-7 = x + 5': 원래 식과 해가 달라지는 식이에요. 3번째 줄 '-7 - 5 = x + 5 - 5': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.52
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = -7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.58
+        }
+      ],
+      "seconds": 3.37
+    },
+    {
+      "id": "L09",
+      "category": "linear",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$10 - 3x = -5$",
+      "ground_truth": "x = 5",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n1 0 - 3x = -5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 10을 더해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x를 이동해요.",
+          "write": "10 - 3x = -5",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 3을 곱해요.",
+          "write": "10 - 3x = -5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 -3을 더해요.",
+          "write": "10 - 3x = -5",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 1로 만드세요.",
+          "write": "10 - 3x = -5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 값을 구하세요.",
+          "write": "x = 5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "1 0 - 3x = -5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.66
+        }
+      ],
+      "seconds": 1.99
+    },
+    {
+      "id": "L10",
+      "category": "linear",
+      "problem": "다음 방정식을 푸시오.\n$2x + 1 = x - 4$",
+      "ground_truth": "x = -5",
+      "read_text": "다음 방정식을 푸시오.\n2x + 1 = x - 4",
+      "final_answer": "x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 x를 빼고 1을 빼고요.",
+          "write": "2x + 1 - x - 1 = x - 4 - x - 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "단위항을 이동시키고요.",
+          "write": "x = -5",
+          "gesture": "nod",
+          "emotion": "happy"
+        },
+        {
+          "say": "정답이에요.",
+          "write": "x = -5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "2x + 1 = x - 4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.19
+        }
+      ],
+      "seconds": 1.46
+    },
+    {
+      "id": "P01",
+      "category": "parentheses",
+      "problem": "방정식 $3(x - 2) = 2x + 5$의 해를 구하시오.",
+      "ground_truth": "x = 11",
+      "read_text": "방정식3(x - 2) = 2x + 5의 해를 구하시오.",
+      "final_answer": "x = 11",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "먼저 괄호를 풀어보세요.",
+          "write": "3x - 6 = 2x + 5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x항을 왼쪽으로, 상수항을 오른쪽으로 이동해요.",
+          "write": "3x - 2x = 5 + 6",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 구해요.",
+          "write": "x = 11",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\text{방정식}3(x - 2) = 2x + 5\\text{의} \\text{해를} \\text{구하시오}.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 11/2",
+          "verified": false,
+          "detail": "최종 답 'x = 11/2'이(가) 틀렸어요. 3번째 줄 'x - 6 = -x + 5': 원래 식과 해가 달라지는 식이에요. 4번째 줄 'x + x = 5 + 6': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.95
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 11",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.24
+        }
+      ],
+      "seconds": 4.01
+    },
+    {
+      "id": "P02",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$2(x + 3) - 5 = 3x$",
+      "ground_truth": "x = 1",
+      "read_text": "다음 방정식을 푸시오.\n2(x + 3) - 5 - 3x",
+      "final_answer": "-x + 1",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "첫 번째로 괄호 안의 내용을 풀어보세요.",
+          "write": "2x + 6 - 5 - 3x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 같은 변수를 모아요. x 항을 먼저 계산해보세요.",
+          "write": "2x - 3x + 6 - 5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x 항을 계산해보세요. 2x - 3x는 -x에요.",
+          "write": "-x + 6 - 5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "지금은 상수항을 계산해보세요. 6 - 5는 1이에요.",
+          "write": "-x + 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "마지막으로 정리한 심사에요.",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "2(x + 3) - 5 - 3x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "-x + 1",
+          "resolve": "x = 1",
+          "agreed": false,
+          "seconds": 2.09
+        },
+        {
+          "attempt": 2,
+          "final_answer": "-x + 1",
+          "resolve": "x = 1",
+          "agreed": false,
+          "seconds": 2.07
+        },
+        {
+          "attempt": 3,
+          "final_answer": "-x + 1",
+          "resolve": "x = 1",
+          "agreed": false,
+          "seconds": 2.26
+        }
+      ],
+      "seconds": 6.68
+    },
+    {
+      "id": "P03",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$5(x - 1) = 3(x + 1)$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 방정식을 푸시오.\nS(x - 1) = 3(x + 1)",
+      "final_answer": "x = (3 + S) / (S - 3)",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "먼저 식을 펴보세요.",
+          "write": "Sx - S = 3x + 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "Sx - S = 3x + 3",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "Sx - 3x = 3 + S",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x(S - 3) = 3 + S",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x = (3 + S) / (S - 3)",
+          "write": "x = (3 + S) / (S - 3)",
+          "gesture": "point",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "S(x - 1) = 3(x + 1)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = (3 + S) / (S - 3)",
+          "resolve": "x = (3 + S)/(S - 3)",
+          "agreed": true,
+          "seconds": 2.13
+        }
+      ],
+      "seconds": 2.44
+    },
+    {
+      "id": "P04",
+      "category": "parentheses",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$4(2x - 1) = 3(x + 2)$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n4(2x - 1) = 3(x + 2)",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 괄호를 풀어요.",
+          "write": "8x - 4 = 3x + 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x 항을 8x로 이동해요.",
+          "write": "5x - 4 = 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "4를 양변에 더해요.",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "5로 나누어 x를 구해요.",
+          "write": "x = 2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "4(2x - 1) = 3(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.42
+        }
+      ],
+      "seconds": 1.8
+    },
+    {
+      "id": "P05",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$-2(x - 4) = x - 1$",
+      "ground_truth": "x = 3",
+      "read_text": "다음 방정식을 푸시오.\n-2(x - 4) = x - 1",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 -2를 곱해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어주세요.",
+          "write": "-2x + 8 = x - 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "-2x + 8 = x - 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 한쪽으로 이동해요.",
+          "write": "8 + 1 = x + 2x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "계산해요.",
+          "write": "9 = 3x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 구하세요.",
+          "write": "x = 3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "-2(x - 4) = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.62
+        }
+      ],
+      "seconds": 1.9
+    },
+    {
+      "id": "P06",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$3(2x + 1) - 2(x - 3) = 17$",
+      "ground_truth": "x = 2",
+      "read_text": "다음 방정식을 푸시오.\n3(2x + 1) - 2(x - 3) = 17",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "먼저 괄호를 풀어보세요.",
+          "write": "3(2x + 1) - 2(x - 3) = 17",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분배법칙을 사용해 괄호를 풀어보세요.",
+          "write": "6x + 3 - 2x + 6 = 17",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 유사한 항을 합쳐보세요.",
+          "write": "4x + 9 = 17",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "9를 양변에 빼고보세요.",
+          "write": "4x = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "4로 나누어 x를 구하세요.",
+          "write": "x = 2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "3(2x + 1) - 2(x - 3) = 17",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.74
+        }
+      ],
+      "seconds": 2.18
+    },
+    {
+      "id": "P07",
+      "category": "parentheses",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$7 - (x + 2) = 2(x - 5)$",
+      "ground_truth": "x = 5",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n7 , \\left(x + 2\\right) = 2(x - 5)",
+      "final_answer": "x = 12",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2를 곱해요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어주세요.",
+          "write": "x + 2 = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "x + 2 = 2x - 10",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 한쪽으로, 수를 다른쪽으로 이동해요.",
+          "write": "2 = x - 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "수를 더해요.",
+          "write": "12 = x",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "7 , \\left(x + 2\\right) = 2(x - 5)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 12",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.51
+        }
+      ],
+      "seconds": 1.9
+    },
+    {
+      "id": "P08",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$2(3x - 1) = 4(x + 2)$",
+      "ground_truth": "x = 5",
+      "read_text": "다음 방정식을 푸시오.\n2(3x - 1) = 4(x + 2)",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2를 곱해요.",
+          "write": "2(3x - 1) = 4(x + 2)",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "왼쪽과 오른쪽의 괄호를 풀어요.",
+          "write": "6x - 2 = 4x + 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 만들고, 상수항을 한쪽으로 이동해요.",
+          "write": "6x - 2 = 4x + 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "4x를 양변에서 빼고, -2를 오른쪽으로 이동해요.",
+          "write": "2x - 2 = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2를 양변에 더해요.",
+          "write": "2x = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 2를 나누어 x를 구해요.",
+          "write": "x = 5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "2(3x - 1) = 4(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.02
+        }
+      ],
+      "seconds": 2.3
+    },
+    {
+      "id": "F01",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x}{2} + 3 = 7$",
+      "ground_truth": "x = 8",
+      "read_text": "다음 방정식을 푸시오.\n\\frac{{\\mathcal A}}{2} \\underline{{{\\scriptscriptstyle+ }}} \\underline{{{\\mathcal Z }}} \\underline{{{\\mathcal Z }}}",
+      "final_answer": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "먼저 같은 항을 더해요.",
+          "write": "\\frac{\\mathcal{A}}{2} + \\mathcal{Z} + \\mathcal{Z}",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "같은 항은 2개의 \\mathcal{Z}이에요.",
+          "write": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이렇게 간단히 정리했어요.",
+          "write": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+          "gesture": "point",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\frac{{\\mathcal A}}{2} \\underline{{{\\scriptscriptstyle+ }}} \\underline{{{\\mathcal Z }}} \\underline{{{\\mathcal Z }}}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+          "resolve": "\\mathcal Z = -\\frac{{\\mathcal A}}{4}",
+          "agreed": false,
+          "seconds": 2.59
+        },
+        {
+          "attempt": 2,
+          "final_answer": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+          "resolve": "\\mathcal Z = -\\frac{\\mathcal A}{4}",
+          "agreed": false,
+          "seconds": 2.33
+        },
+        {
+          "attempt": 3,
+          "final_answer": "\\frac{\\mathcal{A}}{2} + 2\\mathcal{Z}",
+          "resolve": "\\mathcal Z = -\\frac{{\\mathcal A}}{4}",
+          "agreed": false,
+          "seconds": 2.4
+        }
+      ],
+      "seconds": 7.84
+    },
+    {
+      "id": "F02",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x-1}{2} = \\frac{x+2}{3}$",
+      "ground_truth": "x = 7",
+      "read_text": "다음 방정식을 푸시오.\n\\frac{x-1}{2} = \\frac{x+2}{3}",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2와 3의 공통분모인 6을 곱해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모를 없애고 식을 간단히 해요.",
+          "write": "3(x - 1) = 2(x + 2)",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분배법칙으로 식을 풀어요.",
+          "write": "3x - 3 = 2x + 4",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "3x - 2x - 3 = 4",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "x - 3 = 4",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "정수를 이동시켜요.",
+          "write": "x = 4 + 3",
+          "gesture": "write",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.94
+        }
+      ],
+      "seconds": 2.26
+    },
+    {
+      "id": "F03",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x}{3} - \\frac{x}{4} = 2$",
+      "ground_truth": "x = 24",
+      "read_text": "다음 방정식을 푸시오.\nx x",
+      "final_answer": "x = 4 또는 x = -4",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "문제는 x 제곱이 16인 방정식이에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 제곱근을 취해요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "제곱근을 취하면 두 가지 답이 나오는 거에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 양수와 음수로 나눠서 계산해요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양수의 제곱근은 4에요.",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "음수의 제곱근은 -4에요.",
+          "write": "x = -4",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "x x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4 또는 x = -4",
+          "resolve": "문제가 불분명합니다.",
+          "agreed": false,
+          "seconds": 1.45
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 4 또는 x = -4",
+          "resolve": "x = 0",
+          "agreed": false,
+          "seconds": 1.61
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 4 또는 x = -4",
+          "resolve": "문제가 불분명합니다.",
+          "agreed": false,
+          "seconds": 2.07
+        }
+      ],
+      "seconds": 5.43
+    },
+    {
+      "id": "F04",
+      "category": "fractions",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$\\frac{2x+1}{3} = x - 1$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n\\frac{2x+1}{3} = x - 1",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 3을 곱해 분모를 없애요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모가 사라졌어요. 이제 식을 간단히 해요.",
+          "write": "2x + 1 = 3x - 3",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x - 2x를 계산해요. x의 계수를 같게 해요.",
+          "write": "1 = x - 3",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3을 양변에 더해요. x를 구하세요.",
+          "write": "4 = x",
+          "gesture": "write",
+          "emotion": "happy"
+        },
+        {
+          "say": "정답이에요!",
+          "write": "x = 4",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\frac{2x+1}{3} = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.64
+        }
+      ],
+      "seconds": 2.11
+    },
+    {
+      "id": "F05",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x}{2} + \\frac{x}{3} = 10$",
+      "ground_truth": "x = 12",
+      "read_text": "다음 방정식을 푸시오.\n\\frac{x}{2} + \\frac{x}{3} = 10",
+      "final_answer": "x = 12",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 6을 곱해 공통분모를 없애요.",
+          "write": "\\frac{x}{2} + \\frac{x}{3} = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "공통분모 6을 곱해요.",
+          "write": "6(\\frac{x}{2} + \\frac{x}{3}) = 6 \\cdot 10",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모를 없애요.",
+          "write": "3x + 2x = 60",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이 두 식을 더해요.",
+          "write": "5x = 60",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변을 5로 나누어요.",
+          "write": "x = 12",
+          "gesture": "write",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + \\frac{x}{3} = 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 12",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.72
+        }
+      ],
+      "seconds": 2.05
+    },
+    {
+      "id": "F06",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x+3}{4} = \\frac{2x-1}{3}$",
+      "ground_truth": "x = 13/5",
+      "read_text": "다음 방정식을 푸시오.\n\\frac{x+3}{4} = \\frac{2x-1}{3}",
+      "final_answer": "x = \\frac{13}{5}",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "양변에 12를 곱해요.",
+          "write": "\\frac{x+3}{4} \\cdot 12 = \\frac{2x-1}{3} \\cdot 12",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모가 사라졌어요. 12에 4를 곱하면 3, 12에 3를 곱하면 4.",
+          "write": "3(x + 3) = 4(2x - 1)",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어요. 3을 x와 3에 곱하고, 4를 2x와 -1에 곱해요.",
+          "write": "3x + 9 = 8x - 4",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x항을 좌변으로, 상수항을 우변으로 이항해요. 부호를 바꿔요.",
+          "write": "3x - 8x = -4 - 9",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "계산해요. 3x - 8x는 -5x, -4 - 9는 -13이에요.",
+          "write": "-5x = -13",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 -1/5를 곱해요. x를 구해요.",
+          "write": "x = \\frac{13}{5}",
+          "gesture": "write",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\frac{x+3}{4} = \\frac{2x-1}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": false,
+          "detail": "최종 답 'x = 4'이(가) 틀렸어요. 5번째 줄 '9 + 9 = 8x - 4 - 3x': 원래 식과 해가 달라지는 식이에요. 6번째 줄 '18 = 5x - 4': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 2.06
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = \\frac{13}{5}",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.43
+        }
+      ],
+      "seconds": 4.8
+    },
+    {
+      "id": "F07",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 방정식을 푸시오.\n\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 6을 곱해 공통분모를 없애요.",
+          "write": "6(\\frac{1}{2}x - \\frac{1}{3}) = 6(\\frac{1}{6}x + 1)",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분배법칙으로 계산해요.",
+          "write": "3x - 2 = x + 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 만들고, 상수항을 이동해요.",
+          "write": "3x - x - 2 = 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 계산해요.",
+          "write": "2x - 2 = 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "상수항 -2을 양변에 더해요.",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수 2로 나누어 x를 구해요.",
+          "write": "x = 4",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.07
+        }
+      ],
+      "seconds": 2.46
+    },
+    {
+      "id": "F08",
+      "category": "fractions",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$\\frac{3x-2}{5} = 2$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n{\\frac{3x-2}{5}} = 2",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 5를 곱해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모를 없애요.",
+          "write": "3x - 2 = 10",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2를 양변에 더해요.",
+          "write": "3x = 12",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3으로 나누어요.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "{\\frac{3x-2}{5}} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.24
+        }
+      ],
+      "seconds": 1.58
+    },
+    {
+      "id": "F09",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$x - \\frac{x-1}{3} = 3$",
+      "ground_truth": "x = 4",
+      "read_text": "다음 방정식을 푸시오.\nx - \\frac{x-1}{3} = 2",
+      "final_answer": "x = \\frac{5}{2}",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 3을 곱해 분모를 없애요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모를 없애면 식이 간단해요.",
+          "write": "3x - (x - 1) = 6",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어요. 부호를 조심해요.",
+          "write": "3x - x + 1 = 6",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "같은 항을 합쳐요.",
+          "write": "2x + 1 = 6",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1을 뺄셈해요.",
+          "write": "2x = 5",
+          "gesture": "write",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2로 나누어 x를 구하세요.",
+          "write": "x = \\frac{5}{2}",
+          "gesture": "write",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x - \\frac{x-1}{3} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = \\frac{5}{2}",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.81
+        }
+      ],
+      "seconds": 2.11
+    },
+    {
+      "id": "D01",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.3x - 1.2 = 0.5x + 0.4$",
+      "ground_truth": "x = -8",
+      "read_text": "다음 방정식을 푸시오.\n0.3x - 1.2 = 0.5x + 0.4",
+      "final_answer": "x = -8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 0.3을 빼고 0.5x를 빼고 1.2을 빼면 x를 구할 수 있어요.",
+          "write": "0.3x - 1.2 - 0.3x - 0.5x = 0.5x + 0.4 - 0.3x - 0.5x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "0.3x - 0.5x는 -0.2x이에요. 1.2 - 0.4는 0.8이에요.",
+          "write": "-0.2x - 1.2 = 0.4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 1.2를 더하면 -0.2x가 남아요.",
+          "write": "-0.2x = 0.4 + 1.2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "0.4 + 1.2는 1.6이에요.",
+          "write": "-0.2x = 1.6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 -0.2를 나누면 x가 나오요.",
+          "write": "x = 1.6 / (-0.2)",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1.6 ÷ (-0.2)는 -8이에요.",
+          "write": "x = -8",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "0.3x - 1.2 = 0.5x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.45
+        }
+      ],
+      "seconds": 2.88
+    },
+    {
+      "id": "D02",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.2x + 1.5 = 0.5x$",
+      "ground_truth": "x = 5",
+      "read_text": "다음 방정식을 푸시오.\n0.2x + 1.5 = 0.5x",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "양변에 10을 곱해 소수를 없애요.",
+          "write": "2x + 15 = 5x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x항을 좌변으로, 상수항을 우변으로 이항해요.",
+          "write": "2x + 15 = 5x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "5x - 2x = 15이에요. 3x = 15이에요.",
+          "write": "3x = 15",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x = 15이에요. 양변에 3을 나누면 x = 5이에요.",
+          "write": "x = 5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "0.2x + 1.5 = 0.5x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": false,
+          "detail": "1번째 줄 '0.2x + 1.5 - 1.5 = 0.5x - 1.5 - 0.2x': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.65
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.58
+        }
+      ],
+      "seconds": 3.51
+    },
+    {
+      "id": "D03",
+      "category": "decimals",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$1.2x - 0.4 = 0.8x + 2$",
+      "ground_truth": "x = 6",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n1.2x - 0.4 = 0.8x + 2",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "양변에 5를 곱해 소수를 없애요.",
+          "write": "6x - 2 = 4x + 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x항을 좌변으로, 상수항을 우변으로 이항해요.",
+          "write": "6x - 2 = 4x + 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에서 4x를 빼면 2x - 2 = 10이에요.",
+          "write": "2x - 2 = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 2를 더하면 2x = 12이에요.",
+          "write": "2x = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 2를 나누면 x = 6이에요.",
+          "write": "x = 6",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "1.2x - 0.4 = 0.8x + 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "해가 없습니다",
+          "verified": false,
+          "detail": "최종 답 '해가 없습니다'이(가) 틀렸어요. 2번째 줄 '1.2x - 0.48 = 1.2x + 2.4': 이 식은 해가 없어서 원래 식과 맞지 않아요. 3번째 줄 '-0.48 = 2.4': 계산이 맞지 않아요 (- \\frac{12}{25} \\neq \\frac{12}{5}).",
+          "seconds": 1.85
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.84
+        }
+      ],
+      "seconds": 4.06
+    },
+    {
+      "id": "D04",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.5(x - 2) = 0.3x + 0.4$",
+      "ground_truth": "x = 7",
+      "read_text": "다음 방정식을 푸시오.\n0.5(x - 2) = 0.3x + 0.4",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 10을 곱해 소수를 없애요.",
+          "write": "5(x - 2) = 3x + 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "가장 왼쪽의 괄호를 풀어주세요.",
+          "write": "5x - 10 = 3x + 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3x를 5x에서 빼고 -10을 4에서 빼세요.",
+          "write": "2x - 10 = 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "10을 양변에 더해요.",
+          "write": "2x = 14",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2로 나누어 x를 구하세요.",
+          "write": "x = 7",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "0.5(x - 2) = 0.3x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.77
+        }
+      ],
+      "seconds": 2.17
+    },
+    {
+      "id": "D05",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.05x + 0.1 = 0.02x + 0.4$",
+      "ground_truth": "x = 10",
+      "read_text": "다음 방정식을 푸시오.\n0.05x + 0.1 = 0.02x + 0.4",
+      "final_answer": "x = 10",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 0.02x를 빼고 0.1을 빼면 x를 구할 수 있어요.",
+          "write": "0.05x + 0.1 - 0.02x - 0.1 = 0.02x + 0.4 - 0.02x - 0.1",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "0.03x = 0.3",
+          "write": "0.03x = 0.3",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "0.03x = 0.3",
+          "write": "x = 10",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "0.05x + 0.1 = 0.02x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 10",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.47
+        }
+      ],
+      "seconds": 1.93
+    },
+    {
+      "id": "D06",
+      "category": "decimals",
+      "problem": "다음 일차방정식의 해를 구하시오.\n$2.5x - 3 = x + 1.5$",
+      "ground_truth": "x = 3",
+      "read_text": "다음 일차방정식의 해를 구하시오.\n2.5x - 3 = x + 1.5",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2.5를 곱해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x의 계수를 같게 해요.",
+          "write": "2.5x - 3 = x + 1.5",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 한쪽으로, 상수를 다른쪽으로 이동해요.",
+          "write": "2.5x - x - 3 = 1.5",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2.5x - x는 1.5x에요.",
+          "write": "1.5x - 3 = 1.5",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "상수를 제거해요.",
+          "write": "1.5x = 1.5 + 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1.5 + 3은 4.5에요.",
+          "write": "1.5x = 4.5",
+          "gesture": "nod",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "2.5x - 3 = x + 1.5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.91
+        }
+      ],
+      "seconds": 2.25
+    },
+    {
+      "id": "D07",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.4x + 0.6 = 1.8$",
+      "ground_truth": "x = 3",
+      "read_text": "다음 방정식을 푸시오.\n0.4x + 0.6 = 1.8",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 0.6을 빼요.",
+          "write": "0.4x = 1.8 - 0.6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1.8에서 0.6을 빼면 1.2이에요.",
+          "write": "0.4x = 1.2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 0.4를 나누어요.",
+          "write": "x = 1.2 / 0.4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1.2를 0.4로 나누면 3이에요.",
+          "write": "x = 3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "0.4x + 0.6 = 1.8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.51
+        }
+      ],
+      "seconds": 1.76
+    },
+    {
+      "id": "S01",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$x + y = 5$\n$x - y = 1$",
+      "ground_truth": "x = 3, y = 2",
+      "read_text": "다음 연립방정식을 푸시오.\nx + y = 5\nx \\cdot y = 1",
+      "final_answer": "x = \\frac{5}{2} - \\frac{\\sqrt{21}}{2}, y = \\frac{\\sqrt{21}}{2} + \\frac{5}{2} 또는 x = \\frac{\\sqrt{21}}{2} + \\frac{5}{2}, y",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "우리는 x + y = 5와 x·y = 1이라는 두 식을 동시에 만족시키는 x와 y를 찾고 있어요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 식에서 y를 x로 표현해요.",
+          "write": "y = 5 - x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 식에 y = 5 - x를 대입해요.",
+          "write": "x(5 - x) = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "가장 외부에 있는 수를 내부로 끌어안아요.",
+          "write": "5x - x² = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "0을 만들고 싶어요. 1을 뺏어요.",
+          "write": "-x² + 5x - 1 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이 식을 정리해요. x²를 앞으로 데려오세요.",
+          "write": "x² - 5x + 1 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "x + y = 5, \\quad x \\cdot y = 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = [5 + √21]/2 또는 x = [5 - √21]/2",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = [5 + √21]/2 또는 x = [5 - √21]/2')",
+          "seconds": 2.03
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = \\frac{5}{2} - \\frac{\\sqrt{21}}{2}, y = \\frac{\\sqrt{21}}{2} + \\frac{5}{2} 또는 x = \\frac{\\sqrt{21}}{2} + \\frac{5}{2}, y",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = \\frac{5}{2} - \\frac{\\sqrt{21}}{2}, y = \\frac{\\sqrt{21}}{2} + \\frac{5}{2} 또는 x = \\frac{\\sqrt{21}}{2} + \\frac{5}{2}, y')",
+          "seconds": 2.93
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = \\frac{5}{2} - \\frac{\\sqrt{21}}{2}, y = \\frac{\\sqrt{21}}{2} + \\frac{5}{2} 또는 x = \\frac{\\sqrt{21}}{2} + \\frac{5}{2}, y",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = \\frac{5}{2} - \\frac{\\sqrt{21}}{2}, y = \\frac{\\sqrt{21}}{2} + \\frac{5}{2} 또는 x = \\frac{\\sqrt{21}}{2} + \\frac{5}{2}, y')",
+          "seconds": 2.37
+        }
+      ],
+      "seconds": 7.77
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "read_text": "다음 연립방정식을 푸시오.\n2x + y = 7\nx \\cdot y = 2",
+      "final_answer": "x = \\frac{7}{4} - \\frac{\\sqrt{33}}{4}, y = \\frac{\\sqrt{33}}{2} + \\frac{7}{2} 또는 x = \\frac{\\sqrt{33}}{4} + \\frac{7}{4}, y",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "첫 번째 방정식은 2x + y = 7이에요. 이 식에서 y를 x로 표현해볼게요.",
+          "write": "y = 7 - 2x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식은 x·y = 2이에요. 앞에서 구한 y를 대입해볼게요.",
+          "write": "x(7 - 2x) = 2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이 식을 펴면 x·(7 - 2x) = 2이에요. 7x - 2x² = 2가 되는 거예요.",
+          "write": "7x - 2x² = 2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 -2를 곱해요. 그러면 -2x² + 7x - 2 = 0이 되는 거예요.",
+          "write": "-2x² + 7x - 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 -1을 곱어 부호를 바꾸고 식을 정리해볼게요. 그러면 2x² - 7x + 2 = 0이에요.",
+          "write": "2x² - 7x + 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 이 이차방정식을 풀어볼게요. 공식법을 사용해볼게요.",
+          "gesture": "nod",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "2x + y = 7, \\quad x \\cdot y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1 또는 x = 1/2, y = 4",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2, y = 1 또는 x = 1/2, y = 4')",
+          "seconds": 2.03
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = \\frac{7}{4} - \\frac{\\text{\\sqrt{33}}}{4}, y = \\frac{\\text{\\sqrt{33}}}{2} + \\frac{7}{2} 또는 x = \\frac{\\text{\\sqrt{33}}}{4} +",
+          "verified": false,
+          "detail": "최종 답 'x = \\frac{7}{4} - \\frac{\\text{\\sqrt{33}}}{4}, y = \\frac{\\text{\\sqrt{33}}}{2} + \\frac{7}{2} 또는 x = \\frac{\\text{\\sqrt{33}}}{4} +'이(가) 틀렸어요.",
+          "seconds": 2.41
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = \\frac{7}{4} - \\frac{\\sqrt{33}}{4}, y = \\frac{\\sqrt{33}}{2} + \\frac{7}{2} 또는 x = \\frac{\\sqrt{33}}{4} + \\frac{7}{4}, y",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = \\frac{7}{4} - \\frac{\\sqrt{33}}{4}, y = \\frac{\\sqrt{33}}{2} + \\frac{7}{2} 또는 x = \\frac{\\sqrt{33}}{4} + \\frac{7}{4}, y')",
+          "seconds": 2.81
+        }
+      ],
+      "seconds": 7.59
+    },
+    {
+      "id": "S03",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$x + 2y = 8$\n$3x - y = 3$",
+      "ground_truth": "x = 2, y = 3",
+      "read_text": "다음 연립방정식을 푸시오.\nx + 2y = 8\n3x - y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "첫 번째 방정식을 이용해 x를 y로 표현해요.",
+          "write": "x = 8 - 2y",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 두 번째 방정식에 대입해요.",
+          "write": "3(8 - 2y) - y = 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호 안의 계산을 해요.",
+          "write": "24 - 6y - y = 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이항할 때 부호를 바꿔요.",
+          "write": "24 - 7y = 3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "24를 뺀 뒤 계산해요.",
+          "write": "-7y = 3 - 24",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3 - 24는 -21이에요.",
+          "write": "-7y = -21",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "x + 2y = 8, \\quad 3x - y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "y = 3",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('y = 3')",
+          "seconds": 1.8
+        },
+        {
+          "attempt": 2,
+          "final_answer": "y = 3",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('y = 3')",
+          "seconds": 1.94
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.92
+        }
+      ],
+      "seconds": 5.95
+    },
+    {
+      "id": "S04",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$3x + 2y = 12$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "read_text": "다음 연립방정식을 푸시오.\n3x + 2y = 12\nx \\cdot y = -1",
+      "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "첫 번째 방정식은 3x + 2y = 12입니다. 두 번째 방정식은 x·y = -1입니다. 두 식을 이용해 x와 y를 구해야 해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식 x·y = -1에서 y를 x로 표현해요. 그러면 y = -1/x가 되요.",
+          "write": "y = -\\frac{1}{x}",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 방정식에 y를 대입해요. 3x + 2(-1/x) = 12가 되죠.",
+          "write": "3x + 2(-\\frac{1}{x}) = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "분모를 없애기 위해 양변에 x를 곱해요. 그러면 3x² - 2 = 12x가 되요.",
+          "write": "3x^2 - 2 = 12x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "식을 정리해요. 3x² - 12x - 2 = 0가 되죠.",
+          "write": "3x^2 - 12x - 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 이 식을 풀어요. 이항할 때 부호를 바꾸고, 계산을 한 줄씩 확인해요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "3x + 2y = 12, \\quad x \\cdot y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = -1 또는 x = -1, y = 1",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2, y = -1 또는 x = -1, y = 1')",
+          "seconds": 2.07
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}')",
+          "seconds": 2.81
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}')",
+          "seconds": 2.77
+        }
+      ],
+      "seconds": 7.99
+    },
+    {
+      "id": "S05",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$y = 2x - 1$\n$3x + y = 9$",
+      "ground_truth": "x = 2, y = 3",
+      "read_text": "다음 연립방정식을 푸시오.\n\\begin{array}{c}{{y = 2x 1}}\\ {{3x + y = 9}}\\end{array}",
+      "final_answer": "x = 8/5, y = 2*(8/5) + 1 = 16/5 + 5/5 = 21/5",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "첫 번째 방정식을 이용해 y를 표현해요.",
+          "write": "y = 2x + 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식에 y를 대입해요.",
+          "write": "3x + (2x + 1) = 9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어요.",
+          "write": "3x + 2x + 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이항해요.",
+          "write": "5x + 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "1을 뺏어요.",
+          "write": "5x = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "5로 나누어요.",
+          "write": "x = 8/5",
+          "gesture": "point",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "\\begin{array}{c}{{y = 2x 1}}\\ {{3x + y = 9}}\\end{array}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 8/5, y = 2*(8/5) + 1 = 16/5 + 5/5 = 21/5",
+          "resolve": "x = 8/5, y = 21/5",
+          "agreed": true,
+          "seconds": 2.99
+        }
+      ],
+      "seconds": 3.41
+    },
+    {
+      "id": "S06",
+      "category": "system",
+      "problem": "연립방정식 $2x - 3y = 1$, $x + y = 3$의 해를 구하시오.",
+      "ground_truth": "x = 2, y = 1",
+      "read_text": "연립방정식2x-3y=1, x+y=3의 해를 구하시오.",
+      "final_answer": "x = 2, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "첫 번째 방정식은 2x - 3y = 1이고, 두 번째 방程식은 x + y = 3이에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식에서 y를 x로 표현해요.",
+          "write": "y = 3 - x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 방정식에 y = 3 - x를 대입해요.",
+          "write": "2x - 3(3 - x) = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "괄호를 풀어요. -3에 3을 곱하면 -9이에요.",
+          "write": "2x - 9 + 3x = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2x와 3x를 더해요. 5x가 되요.",
+          "write": "5x - 9 = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "9를 양변에 더해요. 5x = 10이에요.",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "\\text{연립방정식}2x-3y=1, x+y=3\\text{의} \\text{해를} \\text{구하시오}.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.15
+        }
+      ],
+      "seconds": 2.38
+    },
+    {
+      "id": "S07",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$4x + 3y = 10$\n$2x - y = 0$",
+      "ground_truth": "x = 1, y = 2",
+      "read_text": "다음 연립방정식을 푸시오.\n\\begin{array}{c c l}{{4x + 3y = 10}}\\ {{2x - y = 0}}\\end{array}",
+      "final_answer": "x = 1, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "첫 번째 방정식은 4x + 3y = 10이고, 두 번째 방정식은 2x - y = 0이에요.",
+          "write": "4x + 3y = 10, 2x - y = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식에서 y를 구해요.",
+          "write": "2x - y = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "y = 2x이에요.",
+          "write": "y = 2x",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 방정식에 y = 2x를 대입해요.",
+          "write": "4x + 3(2x) = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3(2x)는 6x이에요. 이제 식을 간단히 해요.",
+          "write": "4x + 6x = 10",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "10x = 10이에요. 양변에 10을 나누어요.",
+          "write": "x = 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "\\begin{array}{c c l}{{4x + 3y = 10}}\\ {{2x - y = 0}}\\end{array}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1, y = 2",
+          "resolve": "x = 1, y = 2",
+          "agreed": true,
+          "seconds": 3.11
+        }
+      ],
+      "seconds": 3.51
+    },
+    {
+      "id": "S08",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$\\frac{x}{2} + \\frac{y}{3} = 2$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "read_text": "다음 연립방정식을 푸시오.\n{\\frac{x}{2}} + {\\frac{y}{3}} = 2\nx \\cdot y = -1",
+      "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+      "correct": false,
+      "first_attempt_correct": false,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "첫 번째 방정식을 간단히 만들기 위해 2와 3의 공倍수 6을 곱해요.",
+          "write": "\\frac{x}{2} + \\frac{y}{3} = 2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 6을 곱해요. 이때 분모가 사라지면서 계산이 쉬워져요.",
+          "write": "6 \\cdot \\left(\\frac{x}{2} + \\frac{y}{3}\\right) = 6 \\cdot 2",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "6과 2를 계산해요. 6 ÷ 2 = 3이에요. 6과 3을 계산해요. 6 ÷ 3 = 2이에요.",
+          "write": "3x + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 방정식은 x와 y의 곱이 -1이에요. 이 식을 x = -1/y로 변형해요.",
+          "write": "x \\cdot y = -1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 식에 x = -1/y를 대입해요. 이때 x를 -1/y로 바꿔서 계산해요.",
+          "write": "3 \\cdot \\left(-\\frac{1}{y}\\right) + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3과 -1/y를 계산해요. 3 \\cdot -1/y = -3/y이에요.",
+          "write": "-\\frac{3}{y} + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral"
+        }
+      ],
+      "problem_latex": "{\\frac{x}{2}} + {\\frac{y}{3}} = 2, \\quad x \\cdot y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = -\\frac{1}{2} 또는 x = -\\frac{1}{2}, y = 2",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2, y = -\\frac{1}{2} 또는 x = -\\frac{1}{2}, y = 2')",
+          "seconds": 2.64
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}')",
+          "seconds": 2.68
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}",
+          "verified": false,
+          "detail": "모든 미지수의 값을 써 주세요 (x, y). ('x = 2 - \\frac{\\sqrt{42}}{3}, y = 3 + \\frac{\\sqrt{42}}{2} 또는 x = 2 + \\frac{\\sqrt{42}}{3}, y = 3 - \\frac{\\sqrt{42}}{2}')",
+          "seconds": 3.07
+        }
+      ],
+      "seconds": 8.88
+    },
+    {
+      "id": "Q01",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} - 5x + 6 = 0$",
+      "ground_truth": "x = 2 또는 x = 3",
+      "read_text": "다음 이차방정식을 푸시오.\nx^{2} - 5x + 6 = 0",
+      "final_answer": "x = 2 또는 x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이차방정식을 풀기 위해 인수분해를 해요.",
+          "write": "x^{2} - 5x + 6 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "6을 분해해보면 2와 3이에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "2와 3의 합은 5이에요. 그래서 인수분해가 가능해요.",
+          "write": "(x - 2)(x - 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이제 각 괄호를 0으로 만들면 해가 나오요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x - 2 = 0이면 x = 2이에요. x - 3 = 0이면 x = 3이에요.",
+          "write": "x = 2 또는 x = 3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x^{2} - 5x + 6 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 또는 x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.84
+        }
+      ],
+      "seconds": 2.14
+    },
+    {
+      "id": "Q02",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} - 9 = 0$",
+      "ground_truth": "x = -3 또는 x = 3",
+      "read_text": "다음 이차방정식을 푸시오.\nx2 - 9 = 0",
+      "final_answer": "x = 3 또는 x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "이차방정식을 풀기 위해 x²를 이항해요.",
+          "write": "x² - 9 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "9를 양변에 더해요.",
+          "write": "x² = 9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "양변에 제곱근을 취해요.",
+          "write": "x = ±√9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "제곱근을 계산해요.",
+          "write": "x = ±3",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "정답이에요.",
+          "write": "x = 3 또는 x = -3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x2 - 9 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3 또는 x = -3",
+          "verified": false,
+          "detail": "최종 답 'x = 3 또는 x = -3'이(가) 틀렸어요. 1번째 줄 'x^2 - 9 = 0': 원래 식과 해가 달라지는 식이에요. 2번째 줄 'x^2 = 9': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.24
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 3 또는 x = -3",
+          "verified": false,
+          "detail": "최종 답 'x = 3 또는 x = -3'이(가) 틀렸어요. 1번째 줄 'x² - 9 = 0': 원래 식과 해가 달라지는 식이에요. 2번째 줄 'x² = 9': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.58
+        },
+        {
+          "attempt": 3,
+          "final_answer": "x = 3 또는 x = -3",
+          "verified": false,
+          "detail": "최종 답 'x = 3 또는 x = -3'이(가) 틀렸어요. 1번째 줄 'x² - 9 = 0': 원래 식과 해가 달라지는 식이에요. 2번째 줄 'x² = 9': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 1.55
+        }
+      ],
+      "seconds": 4.66
+    },
+    {
+      "id": "Q03",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} + 4x + 4 = 0$",
+      "ground_truth": "x = -2",
+      "read_text": "다음 이차방정식을 푸시오.\nx^{2} + 4x + 4 = 0",
+      "final_answer": "x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이 방정식은 완전제곱 형태이에요.",
+          "write": "x^2 + 4x + 4 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이 식을 $(x + 2)^2$로 변형해요.",
+          "write": "(x + 2)^2 = 0",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "제곱이 0이 되려면 내부가 0이에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "그래서 x + 2 = 0이에요.",
+          "write": "x + 2 = 0",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x는 -2이에요.",
+          "write": "x = -2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x^{2} + 4x + 4 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.67
+        }
+      ],
+      "seconds": 1.97
+    },
+    {
+      "id": "Q04",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} - 2x - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 4",
+      "read_text": "다음 이차방정식을 푸시오.\nx^{2} - 2x - 8 = 0",
+      "final_answer": "x = 4 또는 x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이 방정식을 풀기 위해 제로를 이차항으로 이동해요.",
+          "write": "x^{2} - 2x - 8 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이차항을 계수로 빼고, 일차항과 상수항을 분리해요.",
+          "write": "x^{2} - 2x = 8",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "완제제곱을 완성해요. 일차항의 계수를 2로 나누고 제곱해요.",
+          "write": "x^{2} - 2x + 1 = 8 + 1",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "완제제곱을 만들었어요. 이제 루트를 씌우고 식을 간단히 해요.",
+          "write": "(x - 1)^{2} = 9",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "루트를 씌우면 두 가지 답이 나오죠.",
+          "write": "x - 1 = \\boxed{3} 또는 x - 1 = \\boxed{-3}",
+          "gesture": "nod",
+          "emotion": "happy"
+        },
+        {
+          "say": "두 식을 풀면 x의 값이 나오죠.",
+          "write": "x = 4 또는 x = -2",
+          "gesture": "point",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x^{2} - 2x - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4 또는 x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.36
+        }
+      ],
+      "seconds": 2.67
+    },
+    {
+      "id": "Q05",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$2x^{2} - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 2",
+      "read_text": "다음 이차방정식을 푸시오.\n2x^{2} - 8 = 0",
+      "final_answer": "x = 2 또는 x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "양변에 2를 곱해요",
+          "gesture": "nod",
+          "emotion": "neutral"
+        },
+        {
+          "say": "8을 양변에 더해요",
+          "write": "x^{2} = 4",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "제곱근을 취해요",
+          "write": "x = \\pm 2",
+          "gesture": "nod",
+          "emotion": "happy"
+        },
+        {
+          "say": "정답이에요",
+          "write": "x = 2 또는 x = -2",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "2x^{2} - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 또는 x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.23
+        }
+      ],
+      "seconds": 1.51
+    },
+    {
+      "id": "Q06",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} + x - 12 = 0$",
+      "ground_truth": "x = -4 또는 x = 3",
+      "read_text": "다음 이차방정식을 푸시오.\nx^{2} + x - 12 = 0",
+      "final_answer": "x = -4, x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이차방정식을 풀기 위해 인수분해를 해요.",
+          "write": "x^{2} + x - 12 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 수의 곱이 -12이고, 합이 +1인 수를 찾고 있어요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "3과 -4는 조건을 만족해요.",
+          "write": "x^{2} + x - 12 = (x + 4)(x - 3)",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "인수분해가 완료되었어요.",
+          "gesture": "nod",
+          "emotion": "happy"
+        },
+        {
+          "say": "제로를 찾으려면 각 인수를 0으로 만드세요.",
+          "write": "x + 4 = 0, x - 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x는 -4이거나 3이에요.",
+          "write": "x = -4, x = 3",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x^{2} + x - 12 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -4, x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 2.05
+        }
+      ],
+      "seconds": 2.34
+    },
+    {
+      "id": "Q07",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} - 6x = 0$",
+      "ground_truth": "x = 0 또는 x = 6",
+      "read_text": "다음 이차방정식을 푸시오.\nx^{2} - 6x = 0",
+      "final_answer": "x = 0 또는 x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "x² - 6x = 0를 풀어볼까요.",
+          "write": "x² - 6x = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x를 공통 요소로 빼요.",
+          "write": "x(x - 6) = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "제1법칙에 따라 x = 0 또는 x - 6 = 0이에요.",
+          "write": "x = 0 또는 x - 6 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "x - 6 = 0을 풀면 x = 6이에요.",
+          "write": "x = 6",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "좋아요! 두 해를 찾았어요.",
+          "write": "x = 0, x = 6",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "x^{2} - 6x = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 0 또는 x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.78
+        }
+      ],
+      "seconds": 2.09
+    },
+    {
+      "id": "Q08",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$(x - 1)(x + 5) = 0$",
+      "ground_truth": "x = -5 또는 x = 1",
+      "read_text": "다음 이차방정식을 푸시오.\n(x - 1)(x + 5) = 0",
+      "final_answer": "x = 1 또는 x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이차방정식은 두 수의 곱이 0이 되면 각 수가 0이 되는 경우이에요.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "이 식은 이미 인수형식이에요. 각 괄호 안의 수가 0이 되면 식이 성립하죠.",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "첫 번째 괄호 (x - 1)가 0이 되면 x는 1이에요.",
+          "write": "x - 1 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "두 번째 괄호 (x + 5)가 0이 되면 x는 -5이에요.",
+          "write": "x + 5 = 0",
+          "gesture": "point",
+          "emotion": "neutral"
+        },
+        {
+          "say": "그래서 이차방정식의 해는 x = 1 또는 x = -5이에요.",
+          "write": "x = 1 또는 x = -5",
+          "gesture": "nod",
+          "emotion": "happy"
+        }
+      ],
+      "problem_latex": "(x - 1)(x + 5) = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1 또는 x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 1.89
+        }
+      ],
+      "seconds": 2.29
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+"DepotBuild"
+{
+	"DepotID" "DEPOTID"
+	"FileMapping"
+	{
+		"LocalPath" "*"
+		"DepotPath" "."
+		"Recursive" "1"
+	}
+	// Uninstall cleanup (asks whether to delete models and data): installscript.vdf
+	"FileMapping"
+	{
+		"LocalPath" "..\..\steam\installscript.vdf"
+		"DepotPath" "."
+	}
+	"InstallScript" "installscript.vdf"
+	"FileExclusion" "*.pdb"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@studymate/shell",
+  "productName": "Your StudyMate",
+  "version": "0.0.1",
+  "private": true,
+  "description": "StudyMate desktop shell (Electron)",
+  "license": "UNLICENSED",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check-licenses": "node ../../scripts/check-licenses.mjs .",
+    "dist": "electron-vite build && electron-builder --win --publish never",
+    "dist:steam": "electron-vite build && electron-builder --win dir --publish never"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.2",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "eslint": "^10.11.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^7.3.6"
+  },
+  "dependencies": {
+    "katex": "^0.18.9",
+    "roughjs": "^4.6.6"
+  },
+  "author": "StudyMate"
+}

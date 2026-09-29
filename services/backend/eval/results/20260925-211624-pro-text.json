@@ -1,0 +1,575 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-25T21:15:26"
+  },
+  "summary": {
+    "total": 6,
+    "correct": 6,
+    "accuracy": 1.0,
+    "first_attempt_correct": 5,
+    "verified_high": 6,
+    "confidence": {
+      "high": 6,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 9.61,
+    "avg_seconds_after_warmup": 9.26,
+    "median_seconds": 9.5,
+    "by_category": {
+      "parentheses": "1/1",
+      "fractions": "1/1",
+      "decimals": "1/1",
+      "system": "2/2",
+      "quadratic": "1/1"
+    }
+  },
+  "results": [
+    {
+      "id": "P03",
+      "category": "parentheses",
+      "problem": "다음 방정식을 푸시오.\n$5(x - 1) = 3(x + 1)$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "5(x - 1) = 3(x + 1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등식의 성질을 이용해 괄호를 풀고, 이항해서 정리해요.",
+          "write": "\\text{분배법칙, 이항, 정리}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "분배법칙으로 괄호를 풀어요.",
+          "write": "5x - 5 = 3x + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분배법칙"
+        },
+        {
+          "say": "x항을 좌변으로, 상수항을 우변으로 이항해요.",
+          "write": "5x - 3x = 3 + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "이항"
+        },
+        {
+          "say": "좌변을 계산하고 우변도 계산해요.",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "양변을 x의 계수 2로 나누어 해를 구해요.",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ 2"
+        },
+        {
+          "say": "x = 4를 원래 식에 대입해 좌변과 우변이 같나 확인해요.",
+          "write": "5(4 - 1) = 3(4 + 1)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "일차방정식은 괄호를 풀고, 이항해서 정리하고, 계수로 나누면 끝이에요. 잘했어요!",
+          "write": "\\text{분배법칙 → 이항 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5(x - 1) = 3(x + 1)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.59
+        }
+      ],
+      "seconds": 11.34
+    },
+    {
+      "id": "F02",
+      "category": "fractions",
+      "problem": "다음 방정식을 푸시오.\n$\\frac{x-1}{2} = \\frac{x+2}{3}$",
+      "ground_truth": "x = 7",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "분수 방정식이네요. x의 값을 구해 볼게요.",
+          "write": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "분모를 없애려면 양변에 분모의 최소공배수를 곱해요. 이걸 분모를 없애는 방법이라고 해요.",
+          "write": "\\text{분모를 없애는 방법}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "분모의 최소공배수 6"
+        },
+        {
+          "say": "양변에 6을 곱하면 분모가 없어져요. 6을 분자에 곱해요.",
+          "write": "3(x-1) = 2(x+2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 × 6"
+        },
+        {
+          "say": "분배법칙으로 괄호를 풀어요. 3을 x와 -1에 곱해요.",
+          "write": "3x - 3 = 2x + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분배법칙"
+        },
+        {
+          "say": "x항을 좌변, 상수항을 우변으로 이항해요. 2x를 좌변으로 이항하면 마이너스 2x가 돼요.",
+          "write": "3x - 2x = 4 + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2x 이항"
+        },
+        {
+          "say": "좌변을 계산하고 우변도 계산해요. 3x - 2x는 x, 4 + 3은 7이에요.",
+          "write": "x = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "x=7을 원래 식에 대입해요. 좌변과 우변이 같아야 해요.",
+          "write": "\\frac{7-1}{2} = \\frac{7+2}{3}",
+          "mark": {
+            "type": "circle",
+            "target": "\\frac{7-1}{2} = \\frac{7+2}{3}"
+          },
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "분모를 없애고, 괄호를 풀고, 이항해서 정리하면 x=7이에요. 잘했어요!",
+          "write": "\\text{분모 없애기 → 괄호 풀기 → 이항 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.56
+        }
+      ],
+      "seconds": 7.08
+    },
+    {
+      "id": "D02",
+      "category": "decimals",
+      "problem": "다음 방정식을 푸시오.\n$0.2x + 1.5 = 0.5x$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "일차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "0.2x + 1.5 = 0.5x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "소수를 정수로 바꾸려면 양변에 10의 거듭제곱을 곱해요. 이항은 부호를 바꿔 다른 변으로 옮기면 돼요.",
+          "write": "\\text{소수 → 정수, 이항: 부호 바꿔 이동}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등식의 성질"
+        },
+        {
+          "say": "양변에 10을 곱하면 소수가 사라져요. 계산을 한 줄씩 확인해요.",
+          "write": "2x + 15 = 5x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 × 10"
+        },
+        {
+          "say": "x항을 좌변으로 이항하면 마이너스 5x가 돼요. 부호를 바꿔 이동했어요.",
+          "write": "2x - 5x + 15 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "5x 이항"
+        },
+        {
+          "say": "계산하면 -3x + 15 = 0이에요. 상수항은 우변으로 이항해요.",
+          "write": "-3x = -15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "15 이항"
+        },
+        {
+          "say": "양변을 -3으로 나누면 x = 5가 돼요. 계수로 나누는 과정이에요.",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "양변 ÷ (-3)"
+        },
+        {
+          "say": "x = 5를 원래 식에 대입해요. 좌변과 우변이 같아요.",
+          "write": "0.2 × 5 + 1.5 = 0.5 × 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "소수를 정수로 바꾸고, 이항하고, 계수로 나누면 해를 구할 수 있어요. 잘했어요!",
+          "write": "\\text{소수 → 정수, 이항 → 계수로 나누기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.2x + 1.5 = 0.5x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = \\frac{15}{4}",
+          "verified": false,
+          "detail": "최종 답 'x = \\frac{15}{4}'이(가) 틀렸어요. 1번째 줄 'x + 15 = 5x': 원래 식과 해가 달라지는 식이에요. 2번째 줄 'x - 5x = -15': 원래 식과 해가 달라지는 식이에요.",
+          "seconds": 6.09
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.93
+        }
+      ],
+      "seconds": 13.52
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "다음 연립방정식을 푸시오.\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "final_answer": "x = 3, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "연립일차방정식이에요. 두 식을 동시에 만족하는 x와 y를 구해 볼게요.",
+          "write": "\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "가감법을 사용해 한 미지수를 없애볼게요. 계수를 같게 만들고 식을 더하거나 빼면 쉽게 풀 수 있어요.",
+          "write": "\\text{가감법: 계수 같게 만들고 식 더하거나 빼기}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "가감법 원리"
+        },
+        {
+          "say": "두 식의 y 계수를 같게 만들기 위해 ②식을 그대로 두고, ①식과 ②식을 더하면 y가 사라져요.",
+          "write": "① + ②: 2x + y + x - y = 7 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②"
+        },
+        {
+          "say": "y가 사라지고, 3x = 9가 되었어요. 이 식을 풀면 x를 구할 수 있어요.",
+          "write": "3x = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "동류항 정리"
+        },
+        {
+          "say": "양변을 3으로 나누면 x = 3이 되었어요.",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ 3"
+        },
+        {
+          "say": "x = 3을 ②식에 대입하면 y를 구할 수 있어요.",
+          "write": "3 - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=3 대입"
+        },
+        {
+          "say": "양변에서 3을 빼면 -y = -1이 되고, 양변에 마이너스를 붙이면 y = 1이에요.",
+          "write": "y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 × (-1)"
+        },
+        {
+          "say": "x = 3, y = 1을 ①식에 대입해보면 2×3 + 1 = 7이에요. 맞아요!",
+          "write": "2×3 + 1 = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "가감법으로 한 미지수를 없애고, 대입법으로 다른 미지수를 구하는 방법이에요. 잘했어요!",
+          "write": "\\text{가감법 → 대입법 → 검산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + y = 7, x - y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.28
+        }
+      ],
+      "seconds": 8.79
+    },
+    {
+      "id": "S06",
+      "category": "system",
+      "problem": "연립방정식 $2x - 3y = 1$, $x + y = 3$의 해를 구하시오.",
+      "ground_truth": "x = 2, y = 1",
+      "final_answer": "x = 2, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "연립일차방정식이에요. 두 식을 동시에 만족하는 x와 y를 구해 볼게요.",
+          "write": "\\begin{cases} 2x - 3y = 1 \\\\ x + y = 3 \\end{cases}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "두 방정식을 동시에 만족하는 x와 y를 구하는 거예요. 한 식이 x= 또는 y= 형태라면 대입법을, 계수를 맞추기 쉬우면 가감법을 쓰면 좋아요.",
+          "write": "\\text{연립방정식: 두 식을 동시에 만족하는 해를 구하는 것}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "가감법, 대입법"
+        },
+        {
+          "say": "두 식 중 하나가 x= 또는 y= 형태이니 대입법을 쓰면 좋아요. ②식에서 x = 3 - y로 변형해볼게요.",
+          "write": "x = 3 - y",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②식에서 x = 3 - y"
+        },
+        {
+          "say": "①식에 x = 3 - y를 대입해볼게요. 2x - 3y = 1에 x = 3 - y를 넣으면 2(3 - y) - 3y = 1이 되어요.",
+          "write": "2(3 - y) - 3y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "대입"
+        },
+        {
+          "say": "2(3 - y)를 계산하면 6 - 2y가 되고, 식은 6 - 2y - 3y = 1이에요. 동류항을 정리하면 6 - 5y = 1이 돼요.",
+          "write": "6 - 5y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "동류항 정리"
+        },
+        {
+          "say": "6을 우변으로 이항하면 마이너스 6이 되고, -5y = 1 - 6, 즉 -5y = -5가 돼요.",
+          "write": "-5y = -5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "6 이항"
+        },
+        {
+          "say": "양변을 -5로 나누면 y = 1이에요. y = 1을 ②식에 대입하면 x = 3 - 1 = 2가 돼요.",
+          "write": "y = 1, x = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ -5"
+        },
+        {
+          "say": "x = 2, y = 1을 ①식에 대입해보면 2×2 - 3×1 = 4 - 3 = 1이에요. ②식에 대입하면 2 + 1 = 3이에요. 모두 맞아요!",
+          "write": "2×2 - 3×1 = 1, 2 + 1 = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "대입법으로 연립방정식을 풀었어요. 한 식을 다른 식에 대입해 한 미지수를 구하고, 다른 식에 다시 대입해 다른 미지수를 구하는 거예요. 잘했어요!",
+          "write": "\\text{대입법: 한 식을 다른 식에 대입해 한 미지수 구하기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\begin{cases} 2x - 3y = 1 \\\\ x + y = 3 \\end{cases}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 9.78
+        }
+      ],
+      "seconds": 10.22
+    },
+    {
+      "id": "Q03",
+      "category": "quadratic",
+      "problem": "다음 이차방정식을 푸시오.\n$x^{2} + 4x + 4 = 0$",
+      "ground_truth": "x = -2",
+      "final_answer": "x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이차방정식이네요. x의 값을 구해 볼게요.",
+          "write": "x^{2} + 4x + 4 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이차방정식은 인수분해가 되면 AB=0을 이용해 풀 수 있어요.",
+          "write": "\\text{인수분해: } (x + 2)^{2} = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "완전제곱식"
+        },
+        {
+          "say": "이차방정식을 인수분해해 보세요. x^2 + 4x + 4는 완전제곱식이에요.",
+          "write": "(x + 2)^{2} = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "인수분해"
+        },
+        {
+          "say": "완전제곱식이므로 x + 2 = 0으로 귀결돼요.",
+          "write": "x + 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "근의 공식"
+        },
+        {
+          "say": "x + 2 = 0에서 x = -2를 구할 수 있어요.",
+          "write": "x = -2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "x = -2를 원래 식에 대입해보세요. 0이 되는지 확인해요.",
+          "write": "(-2)^{2} + 4(-2) + 4 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "이차방정식은 인수분해가 되면 AB=0을 이용해 풀 수 있어요. 잘했어요!",
+          "write": "\\text{인수분해 → 근의 공식 → 해 구하기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} + 4x + 4 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.19
+        }
+      ],
+      "seconds": 6.71
+    }
+  ]
+}

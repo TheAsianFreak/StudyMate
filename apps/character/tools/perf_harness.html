@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StudyMate character perf harness</title>
+<style>
+  html, body { margin: 0; background: #334; color: #eee; font: 12px/1.4 monospace; overflow: hidden; }
+  #canvas { display: block; position: absolute; inset: 0; width: 100vw; height: 100vh; }
+  #log { position: absolute; left: 8px; top: 8px; right: 8px; white-space: pre-wrap; pointer-events: none;
+         text-shadow: 0 0 3px #000; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="log"></div>
+<script>
+// Stand-in Director for the web export: idle, talking, writing, walking and
+// Director-style write-and-follow phases; measures requestAnimationFrame intervals (Godot runs
+// its main loop on rAF, so a slow Godot frame stalls every rAF callback).
+// Served by tools/serve_web.py at /perf.html next to the exported files.
+// Query: ?avatar=default|placeholder  ?phase=8 (seconds per phase)  ?noprofile
+// ?flags=a,b (FrameProfiler.flags)  ?noshim  ?spy (count synchronous WebGL queries)
+const params = new URLSearchParams(location.search);
+const PHASE_MS = 1000 * Number(params.get('phase') || 8);
+const AVATAR = params.get('avatar') || 'default';
+window.studymateProfile = params.get('flags') || !params.has('noprofile');
+window.studymateNoGlShim = params.has('noshim');  // A/B the Bridge WebGL scissor shim
+const logEl = document.getElementById('log');
+const results = [];
+function out(line) { console.log(line); logEl.textContent += line + '\n'; }
+
+let godot = null;
+let readyAt = 0;
+const counts = {};
+window.studymateHost = {
+  attachGodot(cb) { godot = cb; },
+  receive(json) {
+    const m = JSON.parse(json);
+    counts[m.type] = (counts[m.type] || 0) + 1;
+    if (m.type === 'ready') readyAt = performance.now();
+  },
+};
+function send(msg) { if (godot) godot(JSON.stringify(msg)); }
+
+// ?spy: count synchronous WebGL queries (each one stalls on the GPU process).
+if (params.has('spy')) {
+  const spied = {};
+  for (const fn of ['getParameter', 'getError', 'getShaderParameter', 'getProgramParameter', 'getBufferSubData', 'readPixels', 'clientWaitSync', 'getQueryParameter']) {
+    const orig = WebGL2RenderingContext.prototype[fn];
+    WebGL2RenderingContext.prototype[fn] = function (...args) {
+      const key = fn + (fn === 'getParameter' ? ':0x' + Number(args[0]).toString(16) : '');
+      spied[key] = (spied[key] || 0) + 1;
+      if (fn === 'getParameter' && !spied['stack:' + key]) {
+        spied['stack:' + key] = 1;
+        console.log('[spy] first ' + key + '\n' + new Error().stack.split('\n').slice(2, 9).join('\n'));
+      }
+      return orig.apply(this, args);
+    };
+  }
+  setInterval(() => {
+    const line = Object.entries(spied).filter(([k]) => !k.startsWith('stack:')).map(([k, v]) => `${k}=${v}`).join(' ');
+    if (line) out('[spy] per 5 s: ' + line);
+    for (const k of Object.keys(spied)) if (!k.startsWith('stack:')) delete spied[k];
+  }, 5000);
+}
+
+// rAF interval recorder.
+let frames = [];
+let last = 0;
+function tick(now) {
+  if (last) frames.push(now - last);
+  last = now;
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+function summarize(name) {
+  const f = frames.slice().sort((a, b) => a - b);
+  const total = frames.reduce((a, b) => a + b, 0);
+  const r = {
+    phase: name, frames: f.length,
+    fps: +(1000 * f.length / Math.max(total, 1)).toFixed(1),
+    avg_ms: +(total / Math.max(f.length, 1)).toFixed(1),
+    p95_ms: +(f[Math.floor(f.length * 0.95)] || 0).toFixed(1),
+    max_ms: +(f[f.length - 1] || 0).toFixed(1),
+  };
+  results.push(r);
+  out(`[harness] ${name}: ${r.fps} fps, avg ${r.avg_ms} ms, p95 ${r.p95_ms} ms, max ${r.max_ms} ms (${r.frames} frames)`);
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function phase(name, setup, stream) {
+  if (setup) setup();
+  let timer = null;
+  if (stream) {
+    const t0 = performance.now();
+    timer = setInterval(() => stream((performance.now() - t0) / 1000), 1000 / 30);
+  }
+  frames = [];
+  await sleep(PHASE_MS);
+  if (timer) clearInterval(timer);
+  summarize(name);
+}
+
+const pen = (t) => ({ type: 'ik_target', x: innerWidth * 0.62 + 40 * Math.sin(t * 2), y: innerHeight * 0.62 + 10 * Math.sin(t * 7) });
+const mouth = (t) => ({ type: 'viseme', aa: Math.abs(Math.sin(t * 9)), ih: 0, ou: 0.5 * Math.abs(Math.sin(t * 5)), ee: 0, oh: 0 });
+
+async function run() {
+  while (!readyAt) await sleep(100);
+  out(`[harness] ready after ${(readyAt / 1000).toFixed(1)} s, avatar ${AVATAR}, canvas ${innerWidth}x${innerHeight} @${devicePixelRatio}, flags ${window.studymateProfile}`);
+  const gl = document.createElement('canvas').getContext('webgl2');
+  const info = gl && gl.getExtension('WEBGL_debug_renderer_info');
+  out('[harness] gpu ' + (info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : 'unknown'));
+  if (AVATAR !== 'default') send({ type: 'load_avatar', id: AVATAR });
+  send({ type: 'set_pos', x: innerWidth * 0.7, y: innerHeight * 0.9 });
+  await sleep(4000);  // shader compiles, first spring settle
+  await phase('idle (30 fps cap after 2 s)');
+  await phase('talking (viseme 30 Hz)', null, (t) => send(mouth(t)));
+  await phase('writing (write + ik_target 30 Hz)', () => send({ type: 'gesture', name: 'write', duration_ms: PHASE_MS + 500 }), (t) => send(pen(t)));
+  await phase('writing + talking', () => send({ type: 'gesture', name: 'write', duration_ms: PHASE_MS + 500 }), (t) => { send(pen(t)); send(mouth(t)); });
+  // Walking back and forth (300 px at 180 px/s).
+  let leg = 0;
+  await phase('walking', null, (t) => {
+    if (t >= leg * 2.2) { send({ type: 'move_to', x: innerWidth * (leg % 2 ? 0.7 : 0.45), y: innerHeight * 0.9, speed: 180 }); leg++; }
+  });
+  // Director-style writing: pen stream + a short follow hop every ~200 ms.
+  let hop = 0;
+  await phase('writing + following', () => send({ type: 'gesture', name: 'write', duration_ms: PHASE_MS + 500 }), (t) => {
+    const x = innerWidth * 0.45 + 60 * t;
+    send({ type: 'ik_target', x: x + 46, y: innerHeight * 0.62 });
+    send(mouth(t));
+    if (t >= hop * 0.2) { send({ type: 'move_to', x, y: innerHeight * 0.9, speed: 110 }); hop++; }
+  });
+  out('[harness] done ' + JSON.stringify(results));
+  window.harnessResults = results;
+}
+run();
+</script>
+<script src="index.js"></script>
+<script>
+const engine = new Engine({
+  canvas: document.getElementById("canvas"), args: [], canvasResizePolicy: 2, executable: 'index', experimentalVK: false,
+  focusCanvas: false, gdextensionLibs: [], ensureCrossOriginIsolationHeaders: false,
+});
+engine.startGame().catch((e) => out('[harness] engine failed: ' + e));
+</script>
+</body>
+</html>

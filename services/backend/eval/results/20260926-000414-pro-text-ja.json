@@ -1,0 +1,4593 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-25T23:58:41",
+    "lang": "ja"
+  },
+  "summary": {
+    "total": 50,
+    "correct": 50,
+    "accuracy": 1.0,
+    "first_attempt_correct": 49,
+    "verified_high": 50,
+    "confidence": {
+      "high": 50,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 6.65,
+    "avg_seconds_after_warmup": 6.6,
+    "median_seconds": 5.94,
+    "by_category": {
+      "linear": "10/10",
+      "parentheses": "8/8",
+      "fractions": "9/9",
+      "decimals": "7/7",
+      "system": "8/8",
+      "quadratic": "8/8"
+    }
+  },
+  "results": [
+    {
+      "id": "L01",
+      "category": "linear",
+      "problem": "次の方程式を解きなさい。\n$2x + 3 = 7$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "2x + 3 = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "プラス3を右辺に移項すると、マイナス3になります。",
+          "write": "2x = 7 - 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3を移項"
+        },
+        {
+          "say": "右辺を計算すると4です。",
+          "write": "2x = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数2でわると、x は2です。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x に2を入れると、4たす3で7。ぴったりですね！",
+          "write": "2 \\times 2 + 3 = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.24
+        }
+      ],
+      "seconds": 8.85
+    },
+    {
+      "id": "L02",
+      "category": "linear",
+      "problem": "次の一次方程式を解きなさい。\n$5x - 4 = 3x + 8$",
+      "ground_truth": "x = 6",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "5x - 4 = 3x + 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。3x を左辺に移項すると符号が変わってマイナス3xになります。",
+          "write": "5x - 3x - 4 = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3xを移項"
+        },
+        {
+          "say": "左辺の同類項をまとめます。5x - 3x は 2x になります。",
+          "write": "2x - 4 = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "マイナス4 を右辺に移項します。符号が変わってプラス4になります。",
+          "write": "2x = 8 + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "4を移項"
+        },
+        {
+          "say": "右辺を計算します。8 + 4 は 12 になります。",
+          "write": "2x = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数 2 でわると、x は 6 になります。",
+          "write": "x = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x = 6 をもとの式に代入して確認します。左辺は 5×6 - 4 = 30 - 4 = 26、右辺は 3×6 + 8 = 18 + 8 = 26 になります。左辺と右辺が同じなので、答えは正しいです。",
+          "write": "5 \\times 6 - 4 = 3 \\times 6 + 8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5x - 4 = 3x + 8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.7
+        }
+      ],
+      "seconds": 6.16
+    },
+    {
+      "id": "L03",
+      "category": "linear",
+      "problem": "次の方程式を解きなさい。\n$7 - 2x = x + 1$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "7 - 2x = x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。マイナス2x と x を比べて、x を右辺に移項します。",
+          "write": "7 = 3x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x を移項"
+        },
+        {
+          "say": "次に、右辺の1を左辺に移項します。マイナス1を右辺に移項すると、マイナス1になります。",
+          "write": "6 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "1を移項"
+        },
+        {
+          "say": "最後に、両辺を3でわると、x の値が求められます。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x に2を入れて、左辺と右辺が等しいか確かめます。",
+          "write": "7 - 2 \\times 2 = 2 + 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "7 - 2x = x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.05
+        }
+      ],
+      "seconds": 5.41
+    },
+    {
+      "id": "L04",
+      "category": "linear",
+      "problem": "方程式 $4x + 9 = -3$ の解を求めなさい。",
+      "ground_truth": "x = -3",
+      "final_answer": "x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "4x + 9 = -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "プラス9を右辺に移項すると、マイナス9になります。",
+          "write": "4x = -3 - 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "9を移項"
+        },
+        {
+          "say": "右辺を計算すると-12です。",
+          "write": "4x = -12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数4でわると、x は-3です。",
+          "write": "x = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷4"
+        },
+        {
+          "say": "x に-3を入れると、-12たす9で-3。ぴったりですね！",
+          "write": "4 \\times (-3) + 9 = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 9 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.92
+        }
+      ],
+      "seconds": 4.28
+    },
+    {
+      "id": "L05",
+      "category": "linear",
+      "problem": "次の一次方程式を解きなさい。\n$-3x + 5 = 2x - 10$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "-3x + 5 = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "2x の項を右辺に移項すると、符号が変わって -2x になります。",
+          "write": "-3x - 2x + 5 = -10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2xを移項"
+        },
+        {
+          "say": "左辺の同類項をまとめると、-5x になります。",
+          "write": "-5x + 5 = -10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "プラス5を右辺に移項すると、符号が変わって -5 になります。",
+          "write": "-5x = -10 - 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "5を移項"
+        },
+        {
+          "say": "右辺を計算すると、-15 になります。",
+          "write": "-5x = -15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数 -5 でわると、x は 3 になります。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷(-5)"
+        },
+        {
+          "say": "x に 3 を代入すると、左辺は -9 + 5 = -4、右辺は 6 - 10 = -4。左辺と右辺が等しいので、正解です。",
+          "write": "-3 \\times 3 + 5 = -9 + 5 = -4,\n2 \\times 3 - 10 = 6 - 10 = -4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "-3x + 5 = 2x - 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.52
+        }
+      ],
+      "seconds": 5.95
+    },
+    {
+      "id": "L06",
+      "category": "linear",
+      "problem": "次の方程式を解きなさい。\n$x - 7 = -3$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "x - 7 = -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "マイナス7を右辺に移項すると、符号が変わってプラス7になります。",
+          "write": "x = -3 + 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-7を移項"
+        },
+        {
+          "say": "右辺を計算すると、-3たす7は4です。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x に4を入れると、4ひく7は-3。左辺と右辺が等しいですね！",
+          "write": "4 - 7 = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、答えが出ます。よくできました！",
+          "write": "\\text{移項 → 計算 → 答え}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x - 7 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.1
+        }
+      ],
+      "seconds": 4.53
+    },
+    {
+      "id": "L07",
+      "category": "linear",
+      "problem": "方程式 $6x = 2x + 20$ を満たす x の値を求めなさい。",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "6x = 2x + 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "x の項を左辺に集めるために、2x を右辺に移項します。符号を変えてマイナス2x になります。",
+          "write": "6x - 2x = 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2xを移項"
+        },
+        {
+          "say": "左辺を計算すると、4x になります。",
+          "write": "4x = 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数4でわると、x は5になります。",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷4"
+        },
+        {
+          "say": "x に5を入れると、左辺は30、右辺は10+20=30。ぴったりですね！",
+          "write": "6 \\times 5 = 2 \\times 5 + 20",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "6x = 2x + 20",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.27
+        }
+      ],
+      "seconds": 4.65
+    },
+    {
+      "id": "L08",
+      "category": "linear",
+      "problem": "次の方程式を解きなさい。\n$3x - 2 = 4x + 5$",
+      "ground_truth": "x = -7",
+      "final_answer": "x = -7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "3x - 2 = 4x + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。4x を左辺に移項すると符号が変わってマイナス4x になります。",
+          "write": "3x - 4x - 2 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "4xを移項"
+        },
+        {
+          "say": "左辺の同類項をまとめます。3x - 4x はマイナスx になります。",
+          "write": "-x - 2 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "マイナス2 を右辺に移項します。符号が変わってプラス2 になります。",
+          "write": "-x = 5 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2を移項"
+        },
+        {
+          "say": "右辺を計算します。5 + 2 は7 になります。",
+          "write": "-x = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺にマイナス1 をかけると、x はマイナス7 になります。",
+          "write": "x = -7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺×(-1)"
+        },
+        {
+          "say": "x = -7 をもとの方程式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "3 \\times (-7) - 2 = 4 \\times (-7) + 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x - 2 = 4x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.35
+        }
+      ],
+      "seconds": 5.72
+    },
+    {
+      "id": "L09",
+      "category": "linear",
+      "problem": "次の一次方程式を解きなさい。\n$10 - 3x = -5$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "10 - 3x = -5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "マイナス3x を右辺に移項すると、プラス3x になります。",
+          "write": "10 = -5 + 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3x を移項"
+        },
+        {
+          "say": "左辺の10 と右辺の-5 を計算します。",
+          "write": "10 + 5 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "左辺を計算"
+        },
+        {
+          "say": "15 が3x に等しいので、両辺を3 でわればx が求められます。",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x に5 を代入して、左辺と右辺が等しいか確かめます。",
+          "write": "10 - 3 \\times 5 = -5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "確かめ"
+        },
+        {
+          "say": "x に5 を代入すると、左辺は10 - 15 = -5 で右辺と一致します。正解です！",
+          "write": "10 - 3 \\times 5 = -5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "代入"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "10 - 3x = -5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.71
+        }
+      ],
+      "seconds": 5.04
+    },
+    {
+      "id": "L10",
+      "category": "linear",
+      "problem": "次の方程式を解きなさい。\n$2x + 1 = x - 4$",
+      "ground_truth": "x = -5",
+      "final_answer": "x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "2x + 1 = x - 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。マイナスxを左辺に移項すると、マイナスxがプラスxになります。",
+          "write": "2x - x + 1 = -4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xを移項"
+        },
+        {
+          "say": "左辺の同類項をまとめます。2x - x は x になります。",
+          "write": "x + 1 = -4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "プラス1を右辺に移項します。符号を変えてマイナス1になります。",
+          "write": "x = -4 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "1を移項"
+        },
+        {
+          "say": "右辺を計算します。-4 - 1 は -5 になります。",
+          "write": "x = -5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x に -5 を代入して、左辺と右辺が等しいか確かめます。",
+          "write": "2 \\times (-5) + 1 = -5 - 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + 1 = x - 4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.63
+        }
+      ],
+      "seconds": 6.0
+    },
+    {
+      "id": "P01",
+      "category": "parentheses",
+      "problem": "方程式 $3(x - 2) = 2x + 5$ の解を求めなさい。",
+      "ground_truth": "x = 11",
+      "final_answer": "x = 11",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "3(x - 2) = 2x + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこをはずすため、分配法則を使って3をかっこの中の項にかけます。",
+          "write": "3x - 6 = 2x + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。マイナス6を右辺に移項するとプラス6になります。",
+          "write": "3x - 2x = 5 + 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x の項を左辺に"
+        },
+        {
+          "say": "同類項をまとめます。3x - 2x は x になります。",
+          "write": "x = 11",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "x = 11 をもとの方程式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "3(11 - 2) = 2 \\times 11 + 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこをはずして、項を移項して、同類項をまとめれば完成です。よくできました！",
+          "write": "\\text{かっこ → 移項 → 同類項をまとめる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3(x - 2) = 2x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 11",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.74
+        }
+      ],
+      "seconds": 5.16
+    },
+    {
+      "id": "P02",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$2(x + 3) - 5 = 3x$",
+      "ground_truth": "x = 1",
+      "final_answer": "x = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "2(x + 3) - 5 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこを外すために分配法則を使います。2をxと3にかけて計算します。",
+          "write": "2x + 6 - 5 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこを外す"
+        },
+        {
+          "say": "左辺の数の項を計算します。6 - 5 は1になります。",
+          "write": "2x + 1 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。2x を右辺に移項すると、マイナス2x になります。",
+          "write": "1 = 3x - 2x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x の項を左辺に"
+        },
+        {
+          "say": "右辺を整理します。3x - 2x は x になります。",
+          "write": "1 = x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "整理"
+        },
+        {
+          "say": "x に1を代入して、左辺と右辺が等しいか確かめます。",
+          "write": "2(1 + 3) - 5 = 3 \\times 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこを外して、項を移項し、計算して、答えを求めます。よくできました！",
+          "write": "\\text{かっこ → 移項 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2(x + 3) - 5 = 3x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.49
+        }
+      ],
+      "seconds": 5.93
+    },
+    {
+      "id": "P03",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$5(x - 1) = 3(x + 1)$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "5(x - 1) = 3(x + 1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこを外すために分配法則を使います。5をxと-1に、3をxと1にかけるので、左辺は5x - 5、右辺は3x + 3になります。",
+          "write": "5x - 5 = 3x + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこを外す"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。-5を右辺に移項すると符号が変わって+5になります。3xを左辺に移項すると符号が変わって-3xになります。",
+          "write": "5x - 3x = 3 + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "左辺を計算すると2x、右辺を計算すると8になります。",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺をxの係数2でわると、xは4になります。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "xに4を入れて計算してみましょう。左辺は5×(4-1)=5×3=15、右辺は3×(4+1)=3×5=15。左辺と右辺が同じなので、正解です。",
+          "write": "5 \\times (4 - 1) = 3 \\times (4 + 1)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこを外して、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{かっこ→移項→計算→係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5(x - 1) = 3(x + 1)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.67
+        }
+      ],
+      "seconds": 6.09
+    },
+    {
+      "id": "P04",
+      "category": "parentheses",
+      "problem": "次の一次方程式を解きなさい。\n$4(2x - 1) = 3(x + 2)$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "4(2x - 1) = 3(x + 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこを外すため、分配法則を使って左辺と右辺を計算します。",
+          "write": "8x - 4 = 3x + 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこを外す"
+        },
+        {
+          "say": "3x の項を左辺に、-4 の項を右辺に移項します。",
+          "write": "8x - 3x = 6 + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3xを左辺に移項"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を x の係数5でわって、x の値を求めます。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷5"
+        },
+        {
+          "say": "x = 2 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "4(2×2 - 1) = 3(2 + 2)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこを外して、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{かっこ→移項→計算→係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4(2x - 1) = 3(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.03
+        }
+      ],
+      "seconds": 5.52
+    },
+    {
+      "id": "P05",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$-2(x - 4) = x - 1$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "-2(x - 4) = x - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこを外すため、分配法則を使って左辺を計算します。",
+          "write": "-2x + 8 = x - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこを外す"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "-2x - x = -1 - 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x を左辺に移項"
+        },
+        {
+          "say": "左辺を整理します。",
+          "write": "-3x = -9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を x の係数 -3 でわって解を求めます。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷(-3)"
+        },
+        {
+          "say": "x = 3 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "-2(3 - 4) = 3 - 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこを外して、項を移項し、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{かっこ→移項→計算→係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "-2(x - 4) = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.61
+        }
+      ],
+      "seconds": 4.99
+    },
+    {
+      "id": "P06",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$3(2x + 1) - 2(x - 3) = 17$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "3(2x + 1) - 2(x - 3) = 17",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "かっこをはずすときは分配法則を使います。かっこの前がマイナスなら、中のすべての項の符号が変わります。",
+          "write": "\\text{分配法則: かっこの前がマイナスなら、中のすべての項の符号が変わる}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分配法則"
+        },
+        {
+          "say": "かっこをはずすとき、-2 と x と -3 の符号を変えて計算します。",
+          "write": "6x + 3 - 2x + 6 = 17",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2(x-3)をはずす"
+        },
+        {
+          "say": "同類項をまとめて、6x と -2x を計算します。",
+          "write": "4x + 9 = 17",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "9 を右辺に移項して、マイナス9 になります。",
+          "write": "4x = 17 - 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "9を移項"
+        },
+        {
+          "say": "右辺を計算すると、17 - 9 は 8 になります。",
+          "write": "4x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を 4 でわると、x は 2 になります。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷4"
+        },
+        {
+          "say": "x に 2 を代入して、もとの式と結果の式の値が同じか確認します。",
+          "write": "3(2×2 + 1) - 2(2 - 3) = 17",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "かっこをはずして、同類項をまとめ、最後に係数でわれば完成です。よくできました！",
+          "write": "\\text{かっこをはずす → 同類項をまとめる → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3(2x + 1) - 2(x - 3) = 17",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.74
+        }
+      ],
+      "seconds": 6.1
+    },
+    {
+      "id": "P07",
+      "category": "parentheses",
+      "problem": "次の一次方程式を解きなさい。\n$7 - (x + 2) = 2(x - 5)$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "7 - (x + 2) = 2(x - 5)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、かっこをはずして式を整理します。",
+          "write": "\\text{かっこをはずす: 分配法則}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分配法則"
+        },
+        {
+          "say": "かっこをはずします。左辺のマイナスは、かっこ内のすべての項にかかります。",
+          "write": "7 - x - 2 = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "左辺の7と-2を計算します。",
+          "write": "5 - x = 2x - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "左辺計算"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。符号を変えて移します。",
+          "write": "5 + 10 = 2x + x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "15 = 3x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を3でわって、x の値を求めます。",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x = 5 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "7 - (5 + 2) = 2(5 - 5)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "かっこをはずして整理し、移項して計算すれば解けます。よくできました！",
+          "write": "\\text{かっこをはずす → 移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "7 - (x + 2) = 2(x - 5)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.82
+        }
+      ],
+      "seconds": 6.16
+    },
+    {
+      "id": "P08",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$2(3x - 1) = 4(x + 2)$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "2(3x - 1) = 4(x + 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、かっこをはずして式を整理します。",
+          "write": "\\text{分配法則でかっこをはずす}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分配法則"
+        },
+        {
+          "say": "かっこをはずして式を整理します。",
+          "write": "6x - 2 = 4x + 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "6x - 4x = 8 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "4xを左辺に移項"
+        },
+        {
+          "say": "左辺を計算します。",
+          "write": "2x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を x の係数2でわって解を求めます。",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x = 5 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "2(3×5 - 1) = 4(5 + 2)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "かっこをはずして式を整理し、移項して計算すれば解けます。よくできました！",
+          "write": "\\text{かっこをはずす → 移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2(3x - 1) = 4(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.29
+        }
+      ],
+      "seconds": 5.65
+    },
+    {
+      "id": "F01",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{x}{2} + 3 = 7$",
+      "ground_truth": "x = 8",
+      "final_answer": "x = 8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{x}{2} + 3 = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "分数の分母をはらうために、両辺に2をかけます。",
+          "write": "\\frac{x}{2} + 3 = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分母をはらう"
+        },
+        {
+          "say": "3を右辺に移項します。符号を変えてプラス3になります。",
+          "write": "x + 6 = 14",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3を移項"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "x = 14 - 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "x = 8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x に8を入れると、左辺は4たす3で7。右辺も7。ぴったりですね！",
+          "write": "\\frac{8}{2} + 3 = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、分母をはらって、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{分母をはらう → 移項 → 計算 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.75
+        }
+      ],
+      "seconds": 5.2
+    },
+    {
+      "id": "F02",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{x-1}{2} = \\frac{x+2}{3}$",
+      "ground_truth": "x = 7",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。分数の形になっているので、分母をはらうために両辺に同じ数をかけて整理して解いていきましょう。",
+          "write": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "分母をはらうために両辺に同じ数をかけることができます。このとき、すべての項に同じ数をかけるのを忘れないようにしましょう。",
+          "write": "\\text{両辺に同じ数をかける}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分母をはらう"
+        },
+        {
+          "say": "両辺に6をかけると、分母をはらえます。6は2と3の最小公倍数です。",
+          "write": "3(x - 1) = 2(x + 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×6"
+        },
+        {
+          "say": "かっこをはずして、同類項をまとめましょう。",
+          "write": "3x - 3 = 2x + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分配法則"
+        },
+        {
+          "say": "xの項を左辺に、数の項を右辺に移項します。符号を変えて移項します。",
+          "write": "3x - 2x = 4 + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xの項を左辺に"
+        },
+        {
+          "say": "左辺と右辺を整理します。",
+          "write": "x = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x=7をもとの式に代入して、左辺と右辺が等しいか確かめましょう。",
+          "write": "\\frac{7-1}{2} = \\frac{7+2}{3}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分数の形の一次方程式は、分母をはらうために両辺に同じ数をかけるのがポイントです。よくできました！",
+          "write": "\\text{分母をはらう → 同類項をまとめる → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.01
+        }
+      ],
+      "seconds": 6.39
+    },
+    {
+      "id": "F03",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{x}{3} - \\frac{x}{4} = 2$",
+      "ground_truth": "x = 24",
+      "final_answer": "x = 24",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{x}{3} - \\frac{x}{4} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "分母をはらうために両辺に12をかけます。",
+          "write": "12\\times\\left(\\frac{x}{3} - \\frac{x}{4}\\right) = 12\\times2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×12"
+        },
+        {
+          "say": "分配法則を使ってかっこをはずします。",
+          "write": "12\\times\\frac{x}{3} - 12\\times\\frac{x}{4} = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分配法則"
+        },
+        {
+          "say": "分数を計算します。",
+          "write": "4x - 3x = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "x = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "x=24 をもとの式に代入して確認します。",
+          "write": "\\frac{24}{3} - \\frac{24}{4} = 8 - 6 = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分母をはらうために両辺に最小公倍数をかけ、計算して解を求めましょう。",
+          "write": "\\text{両辺×12 → 分配法則 → 同類項をまとめる}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{3} - \\frac{x}{4} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 24",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.74
+        }
+      ],
+      "seconds": 5.11
+    },
+    {
+      "id": "F04",
+      "category": "fractions",
+      "problem": "次の一次方程式を解きなさい。\n$\\frac{2x+1}{3} = x - 1$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{2x+1}{3} = x - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、分母をはらうために両辺に同じ数をかけて計算します。",
+          "write": "\\text{両辺に3をかける}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分母をはらう"
+        },
+        {
+          "say": "両辺に3をかけることで、分母をはらいます。",
+          "write": "2x + 1 = 3x - 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×3"
+        },
+        {
+          "say": "次に、x の項を左辺に、数の項を右辺に移項します。",
+          "write": "2x - 3x = -3 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "左辺と右辺を整理します。",
+          "write": "-x = -4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を-1でわって、x の値を求めます。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷(-1)"
+        },
+        {
+          "say": "x = 4 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "\\frac{2\\times 4 + 1}{3} = 4 - 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分母をはらうために両辺に同じ数をかける、移項して整理、係数でわる。この手順をしっかり覚えましょう。",
+          "write": "\\text{両辺×分母 → 移項 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{2x+1}{3} = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.75
+        }
+      ],
+      "seconds": 5.19
+    },
+    {
+      "id": "F05",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{x}{2} + \\frac{x}{3} = 10$",
+      "ground_truth": "x = 12",
+      "final_answer": "x = 12",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{x}{2} + \\frac{x}{3} = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "分数をはらうために両辺に6をかけます。",
+          "write": "6 \\times \\left( \\frac{x}{2} + \\frac{x}{3} \\right) = 6 \\times 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×6"
+        },
+        {
+          "say": "分配法則を使ってかっこをはずします。",
+          "write": "6 \\times \\frac{x}{2} + 6 \\times \\frac{x}{3} = 60",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分配法則"
+        },
+        {
+          "say": "分数を計算します。",
+          "write": "3x + 2x = 60",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "5x = 60",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を5でわってxを求めます。",
+          "write": "x = 12",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷5"
+        },
+        {
+          "say": "x=12をもとの式に代入して確認します。",
+          "write": "\\frac{12}{2} + \\frac{12}{3} = 6 + 4 = 10",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分数があるときは両辺に分母の最小公倍数をかけて計算しましょう。よくできました！",
+          "write": "\\text{両辺×6 → 分配法則 → 同類項をまとめる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + \\frac{x}{3} = 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 12",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.27
+        }
+      ],
+      "seconds": 5.65
+    },
+    {
+      "id": "F06",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{x+3}{4} = \\frac{2x-1}{3}$",
+      "ground_truth": "x = 13/5",
+      "final_answer": "x = \\frac{13}{5}",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。分数の形になっているので、分母をはらうために両辺に同じ数をかけて整理して解いていきましょう。",
+          "write": "\\frac{x+3}{4} = \\frac{2x-1}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、分母をはらうために両辺に同じ数をかけて整数にします。このとき、すべての項に同じ数をかけるのを忘れないようにしましょう。",
+          "write": "\\text{両辺に同じ数をかける}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "分母をはらう"
+        },
+        {
+          "say": "両辺に12をかけると、分母をはらえます。12は4と3の最小公倍数です。",
+          "write": "12 \\times \\frac{x+3}{4} = 12 \\times \\frac{2x-1}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×12"
+        },
+        {
+          "say": "計算すると、左辺は3倍、右辺は4倍になります。",
+          "write": "3(x + 3) = 4(2x - 1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "かっこをはずすため、分配法則を使って計算します。",
+          "write": "3x + 9 = 8x - 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。符号を変えて移項します。",
+          "write": "3x - 8x = -4 - 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "左辺を整理すると、-5x になります。右辺は -13 になります。",
+          "write": "-5x = -13",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "整理"
+        },
+        {
+          "say": "両辺を -5 でわると、x の値が求められます。",
+          "write": "x = \\frac{-13}{-5}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷(-5)"
+        },
+        {
+          "say": "負の数をわると正の数になります。",
+          "write": "x = \\frac{13}{5}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x = 13/5 をもとの式に代入して、左辺と右辺が等しいか確認します。",
+          "write": "\\frac{\\frac{13}{5} + 3}{4} = \\frac{2 \\times \\frac{13}{5} - 1}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分数の一次方程式は、分母をはらうために両辺に同じ数をかけて整理して解きます。計算の途中で符号を忘れずに！",
+          "write": "\\text{分母をはらう → かっこをはずす → 移項 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x+3}{4} = \\frac{2x-1}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = \\frac{13}{5}",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.72
+        }
+      ],
+      "seconds": 9.17
+    },
+    {
+      "id": "F07",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "両辺に6をかけて、分母をはらいます。すべての項にかけ忘れずに。",
+          "write": "6 \\times \\left( \\frac{1}{2}x - \\frac{1}{3} \\right) = 6 \\times \\left( \\frac{1}{6}x + 1 \\right)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×6"
+        },
+        {
+          "say": "分配法則を使ってかっこをはずします。",
+          "write": "3x - 2 = x + 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分配法則"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。符号を忘れずに変えてください。",
+          "write": "3x - x = 6 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xを左辺に移項"
+        },
+        {
+          "say": "左辺を計算します。",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を2でわって、x の値を求めます。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x = 4 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "\\frac{1}{2} \\times 4 - \\frac{1}{3} = \\frac{1}{6} \\times 4 + 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分母をはらうとき、すべての項にかけることを忘れないようにしましょう。移項のときも符号を忘れずに変えてください。",
+          "write": "\\text{両辺×6 → 分配法則 → 移項 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.2
+        }
+      ],
+      "seconds": 7.73
+    },
+    {
+      "id": "F08",
+      "category": "fractions",
+      "problem": "次の一次方程式を解きなさい。\n$\\frac{3x-2}{5} = 2$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "\\frac{3x-2}{5} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、分母をはらいます。",
+          "write": "\\text{分母をはらう: 両辺に5をかける}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "両辺に5をかけると、分母がはらわれます。",
+          "write": "3x - 2 = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×5"
+        },
+        {
+          "say": "次に、-2 を右辺に移項します。",
+          "write": "3x = 10 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2を移項"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "3x = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "最後に、両辺を3でわってxを求めます。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x = 4 をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "\\frac{3\\times 4 - 2}{5} = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "分母をはらって、移項して計算すれば解けます。よくできました！",
+          "write": "\\text{分母をはらう → 移項 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{3x-2}{5} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.58
+        }
+      ],
+      "seconds": 5.11
+    },
+    {
+      "id": "F09",
+      "category": "fractions",
+      "problem": "次の方程式を解きなさい。\n$x - \\frac{x-1}{3} = 3$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "x - \\frac{x-1}{3} = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質を使って、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "分母をはらうために両辺に3をかけます。",
+          "write": "3x - (x - 1) = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×3"
+        },
+        {
+          "say": "かっこを外して同類項をまとめます。",
+          "write": "3x - x + 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分配法則"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "2x = 9 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "1を移項"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺をxの係数2でわって解を求めます。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x=4をもとの方程式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "4 - \\frac{4-1}{3} = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、分母をはらって、同類項をまとめ、移項して、係数でわれば完成です。よくできました！",
+          "write": "\\text{分母をはらう → 同類項をまとめる → 移項 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x - \\frac{x-1}{3} = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.29
+        }
+      ],
+      "seconds": 6.74
+    },
+    {
+      "id": "D01",
+      "category": "decimals",
+      "problem": "次の方程式を解きなさい。\n$0.3x - 1.2 = 0.5x + 0.4$",
+      "ground_truth": "x = -8",
+      "final_answer": "x = -8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "0.3x - 1.2 = 0.5x + 0.4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数の計算は、両辺に10や100をかけて整数に変えると計算が楽になります。",
+          "write": "\\text{小数を整数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数を整数に変える"
+        },
+        {
+          "say": "小数を整数に変えるため、両辺に10をかけて計算します。",
+          "write": "3x - 12 = 5x + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。マイナス5xを右辺に移項すると、マイナス5xが左辺にきます。",
+          "write": "3x - 5x = 4 + 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xの項を左辺に"
+        },
+        {
+          "say": "左辺を計算すると、-2xになります。右辺は16になります。",
+          "write": "-2x = 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を-2でわると、xの値が求められます。",
+          "write": "x = -8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷(-2)"
+        },
+        {
+          "say": "x = -8をもとの式に代入して、左辺と右辺が等しいか確かめます。",
+          "write": "0.3 \\times (-8) - 1.2 = 0.5 \\times (-8) + 0.4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数の計算は整数に変えると楽です。移項して計算して、係数でわれば完成です。",
+          "write": "\\text{小数→整数→移項→計算→係数でわる}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.3x - 1.2 = 0.5x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.35
+        }
+      ],
+      "seconds": 6.8
+    },
+    {
+      "id": "D02",
+      "category": "decimals",
+      "problem": "次の方程式を解きなさい。\n$0.2x + 1.5 = 0.5x$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "0.2x + 1.5 = 0.5x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数を分数に変えると計算が楽になります。",
+          "write": "\\text{小数を分数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数をはらう"
+        },
+        {
+          "say": "小数をはらうために両辺に10をかけます。",
+          "write": "2x + 15 = 5x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "2x - 5x = -15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "-3x = -15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を-3でわってxを求めます。",
+          "write": "x = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷(-3)"
+        },
+        {
+          "say": "x=5をもとの式に代入して確認します。",
+          "write": "0.2×5 + 1.5 = 0.5×5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数を分数に変えると計算が楽になります。",
+          "write": "\\text{小数→分数、移項→計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.2x + 1.5 = 0.5x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.5
+        }
+      ],
+      "seconds": 4.98
+    },
+    {
+      "id": "D03",
+      "category": "decimals",
+      "problem": "次の一次方程式を解きなさい。\n$1.2x - 0.4 = 0.8x + 2$",
+      "ground_truth": "x = 6",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "1.2x - 0.4 = 0.8x + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数の計算はややこしいですが、両辺に同じ数をかけて小数を整数に変えることができます。",
+          "write": "\\text{小数を整数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数をはらう"
+        },
+        {
+          "say": "小数をはらうために両辺に10をかけます。これで小数が整数になります。",
+          "write": "12x - 4 = 8x + 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。符号を変えて移項します。",
+          "write": "12x - 8x = 20 + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xの項を左辺に"
+        },
+        {
+          "say": "左辺を計算すると4x、右辺を計算すると24になります。",
+          "write": "4x = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を4でわるとxの値が6になります。",
+          "write": "x = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷4"
+        },
+        {
+          "say": "x に6を入れて計算してみましょう。左辺と右辺が同じになるか確認します。",
+          "write": "1.2×6 - 0.4 = 0.8×6 + 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数の計算は両辺に同じ数をかけて整数に変えると楽です。移項して計算すれば答えが出ます。",
+          "write": "\\text{小数を整数に変える → 移項 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "1.2x - 0.4 = 0.8x + 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.19
+        }
+      ],
+      "seconds": 6.66
+    },
+    {
+      "id": "D04",
+      "category": "decimals",
+      "problem": "次の方程式を解きなさい。\n$0.5(x - 2) = 0.3x + 0.4$",
+      "ground_truth": "x = 7",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "0.5(x - 2) = 0.3x + 0.4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数の計算は、両辺に10や100をかけて整数に変えると計算が楽になります。",
+          "write": "\\text{小数を整数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数を整数に変える"
+        },
+        {
+          "say": "小数を整数に変えるために、両辺に10をかけます。",
+          "write": "5(x - 2) = 3x + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "かっこをはずします。分配法則を使って、5をxと-2にかけます。",
+          "write": "5x - 10 = 3x + 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。-10を右辺に移項すると、+10になります。",
+          "write": "5x - 3x = 4 + 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-10を移項"
+        },
+        {
+          "say": "左辺を計算すると2x、右辺を計算すると14になります。",
+          "write": "2x = 14",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を2でわると、x は7になります。",
+          "write": "x = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x = 7 をもとの式に代入して、左辺と右辺が等しいか確認します。",
+          "write": "0.5(7 - 2) = 0.3×7 + 0.4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数の計算は整数に変えると楽です。移項して計算して、係数でわれば完成です。",
+          "write": "\\text{小数→整数→移項→計算→係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.5(x - 2) = 0.3x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.8
+        }
+      ],
+      "seconds": 7.24
+    },
+    {
+      "id": "D05",
+      "category": "decimals",
+      "problem": "次の方程式を解きなさい。\n$0.05x + 0.1 = 0.02x + 0.4$",
+      "ground_truth": "x = 10",
+      "final_answer": "x = 10",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "0.05x + 0.1 = 0.02x + 0.4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数の計算は少し複雑ですが、両辺に同じ数をかけて小数を整数に変えることができます。",
+          "write": "\\text{小数を整数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数をはらう"
+        },
+        {
+          "say": "小数をはらうために、両辺に100をかけます。",
+          "write": "5x + 10 = 2x + 40",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×100"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "5x - 2x = 40 - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xの項を左辺に"
+        },
+        {
+          "say": "左辺を計算すると3x、右辺を計算すると30になります。",
+          "write": "3x = 30",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を3でわると、x は10になります。",
+          "write": "x = 10",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x に10を入れると、左辺は0.5 + 0.1 = 0.6、右辺は0.2 + 0.4 = 0.6。等しくなりました。",
+          "write": "0.05 \\times 10 + 0.1 = 0.02 \\times 10 + 0.4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数の計算は両辺に同じ数をかけて整数に変えると楽です。よくできました！",
+          "write": "\\text{小数を整数に変える → 移項 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.05x + 0.1 = 0.02x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 10",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.51
+        }
+      ],
+      "seconds": 7.02
+    },
+    {
+      "id": "D06",
+      "category": "decimals",
+      "problem": "次の一次方程式を解きなさい。\n$2.5x - 3 = x + 1.5$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "2.5x - 3 = x + 1.5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "小数を分数に変えると計算が楽になります。両辺に10をかけて小数をはらいます。",
+          "write": "25x - 30 = 10x + 15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。符号を変えて一度に書きます。",
+          "write": "25x - 10x = 15 + 30",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "xの項を左辺に"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "15x = 45",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を x の係数15でわると、x の値が求められます。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷15"
+        },
+        {
+          "say": "x に3を代入して、左辺と右辺が等しいか確かめます。",
+          "write": "2.5 × 3 - 3 = 3 + 1.5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、小数をはらってから、移項して計算すれば完成です。よくできました！",
+          "write": "\\text{小数をはらう → 移項 → 係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2.5x - 3 = x + 1.5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.55
+        }
+      ],
+      "seconds": 6.15
+    },
+    {
+      "id": "D07",
+      "category": "decimals",
+      "problem": "次の方程式を解きなさい。\n$0.4x + 0.6 = 1.8$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "0.4x + 0.6 = 1.8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "小数の計算は、両辺に同じ数をかけて整数にします。",
+          "write": "\\text{小数を整数に変える}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "小数を整数に変える"
+        },
+        {
+          "say": "小数を整数に変えるため、両辺に10をかけます。",
+          "write": "4x + 6 = 18",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×10"
+        },
+        {
+          "say": "次に、6を右辺に移項します。",
+          "write": "4x = 18 - 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "6を移項"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "4x = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "最後に、両辺を4でわってxを求めます。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷4"
+        },
+        {
+          "say": "x=3をもとの式に代入して確認します。",
+          "write": "0.4 × 3 + 0.6 = 1.8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "小数の計算は整数に変えるのがポイントです。よくできました！",
+          "write": "\\text{小数→整数→移項→計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.4x + 0.6 = 1.8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.61
+        }
+      ],
+      "seconds": 5.18
+    },
+    {
+      "id": "S01",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$x + y = 5$\n$x - y = 1$",
+      "ground_truth": "x = 3, y = 2",
+      "final_answer": "x = 3, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "連立方程式ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "x + y = 5, x - y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では加減法を使います。2つの式をたすことで、y の項が消えて計算が楽になります。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、式をたす}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法"
+        },
+        {
+          "say": "①と②をたすと、y の項が消えて計算ができます。",
+          "write": "① + ②",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②"
+        },
+        {
+          "say": "x の係数が同じなので、2つの式をたすと y が消えます。",
+          "write": "2x = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y を消す"
+        },
+        {
+          "say": "2x = 6 なので、両辺を2でわると x の値が求められます。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x = 3 を①に代入すると、y の値が求められます。",
+          "write": "3 + y = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=3を代入"
+        },
+        {
+          "say": "3 + y = 5 なので、3を右辺に移項すると y = 2 になります。",
+          "write": "y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3を移項"
+        },
+        {
+          "say": "x = 3, y = 2 をもとの式に代入して、両方の式が成り立つか確認します。",
+          "write": "3 + 2 = 5, 3 - 2 = 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "加減法で解くときは、y の係数をそろえて式をたすのがポイントです。よくできました！",
+          "write": "\\text{加減法: 係数そろえて式をたす}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + y = 5, x - y = 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 2",
+          "verified": false,
+          "detail": "1번째 줄 '① x + y = 5, ② x - y = 1': 원래 식의 해를 넣으면 성립하지 않는 식이에요.",
+          "seconds": 7.1
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 3, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.23
+        }
+      ],
+      "seconds": 13.75
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "final_answer": "x = 3, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "連立方程式の問題ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "2x + y = 7, x - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y を求めます。加減法を使って、一方の文字を消去しましょう。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、2つの式をたす}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "まず、2つの式の y の係数をそろえましょう。①の式の y の係数は +1、②の式の y の係数は -1 です。符号を変えて①と②をたすと、y が消えます。",
+          "write": "2x + y = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①を書く"
+        },
+        {
+          "say": "②の式の y の係数は -1 なので、符号を変えて①と②をたすと、y が消えます。",
+          "write": "x - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②を書く"
+        },
+        {
+          "say": "①と②をたすと、y が消えます。符号を変えて②をたすので、-y は +y になります。",
+          "write": "3x = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②"
+        },
+        {
+          "say": "3x = 9 は、一次方程式です。両辺を 3 でわると、x の値が求められます。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x = 3 が求まりました。この値を②の式に代入して、y の値を求めましょう。",
+          "write": "x = 3 \\text{ を }②\\text{ に代入 }: 3 - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=3を代入"
+        },
+        {
+          "say": "3 - y = 2 は、y の値を求める式です。3 を右辺に移項して、y の値を求めましょう。",
+          "write": "y = 3 - 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "3を移項"
+        },
+        {
+          "say": "3 - 2 は 1 なので、y の値は 1 です。",
+          "write": "y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x = 3、y = 1 をもとの式に代入して、正しく求められているか確かめましょう。",
+          "write": "2×3 + 1 = 7, 3 - 1 = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "連立方程式は、加減法を使って1つの文字を消去し、もう一方の文字の値を求めましょう。その後、もう一方の文字の値も求められます。よくできました！",
+          "write": "\\text{加減法 → 1つの文字を消去 → 代入してもう一方の値を求める}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + y = 7, x - y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 1",
+          "verified": false,
+          "detail": "1번째 줄 '① 2x + y = 7, ② x - y = 2': 원래 식의 해를 넣으면 성립하지 않는 식이에요.",
+          "seconds": 6.8
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 9.2
+        }
+      ],
+      "seconds": 16.43
+    },
+    {
+      "id": "S03",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$x + 2y = 8$\n$3x - y = 3$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。x と y の値を求めてみましょう。",
+          "write": "x + 2y = 8, 3x - y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y を求めます。加減法を使うのがよさそうですね。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、式をたすかひく}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "まず、①の式を変形して y の係数をそろえましょう。",
+          "write": "x + 2y = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①"
+        },
+        {
+          "say": "②の式を変形して y の係数をそろえましょう。",
+          "write": "3x - y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②"
+        },
+        {
+          "say": "②の式を ×2 して、y の係数をそろえます。",
+          "write": "6x - 2y = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②×2"
+        },
+        {
+          "say": "①と②×2 の式をたすと、y の項が消去されます。",
+          "write": "① + ②×2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②×2"
+        },
+        {
+          "say": "x の係数をそろえて、式をたすと、y の項が消去されます。",
+          "write": "7x = 14",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "7x = 14 から、x の値を求めましょう。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷7"
+        },
+        {
+          "say": "x = 2 を①の式に代入して、y の値を求めましょう。",
+          "write": "2 + 2y = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=2を代入"
+        },
+        {
+          "say": "2 + 2y = 8 から、y の値を求めましょう。",
+          "write": "y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "求まった x = 2, y = 3 をもとの式に代入して、正しいか確認しましょう。",
+          "write": "2 + 2×3 = 8, 3×2 - 3 = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "連立方程式は、加減法で文字を消去して解くのがポイントです。よくできました！",
+          "write": "\\text{加減法で文字を消去 → 1次方程式を解く}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + 2y = 8, 3x - y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.37
+        }
+      ],
+      "seconds": 8.84
+    },
+    {
+      "id": "S04",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$3x + 2y = 12$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。x と y の値を求めてみましょう。",
+          "write": "3x + 2y = 12, x - y = -1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "2つの式を同時に満たす x と y を求めます。加減法を使って、1つの文字を消去しましょう。",
+          "write": "\\text{加減法: 1つの文字を消去して解く}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "2つの式の y の係数をそろえます。②を2倍して、y の係数を -2 にします。",
+          "write": "2x - 2y = -2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②×2"
+        },
+        {
+          "say": "①と②をたして y を消去します。3x + 2y と 2x - 2y をたすと、y は消えます。",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②"
+        },
+        {
+          "say": "5x = 10 の両辺を 5 でわって、x の値を求めます。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷5"
+        },
+        {
+          "say": "x = 2 を②に代入して、y の値を求めます。",
+          "write": "2 - y = -1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=2を代入"
+        },
+        {
+          "say": "2 - y = -1 の両辺から 2 を引いて、y の値を求めます。",
+          "write": "y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "2を移項"
+        },
+        {
+          "say": "x = 2, y = 3 をもとの式に代入して、正しいか確認します。",
+          "write": "3×2 + 2×3 = 12, 2 - 3 = -1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "加減法で1つの文字を消去して解きました。しっかり確認して、正解ですね！",
+          "write": "\\text{加減法で1つの文字を消去}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x + 2y = 12, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.95
+        }
+      ],
+      "seconds": 7.36
+    },
+    {
+      "id": "S05",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$y = 2x - 1$\n$3x + y = 9$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "y = 2x - 1, 3x + y = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "代入法を使います。一方の式が y = 〜 の形なので、それをもう一方の式に代入できます。",
+          "write": "\\text{代入法: 一方の式をもう一方に代入}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "代入法"
+        },
+        {
+          "say": "まず、1番目の式 y = 2x - 1 を2番目の式に代入します。",
+          "write": "3x + (2x - 1) = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "同類項をまとめます。3x と 2x を合わせて 5x になります。",
+          "write": "5x - 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "次に、-1 を右辺に移項します。符号を変えてプラス1になります。",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-1を移項"
+        },
+        {
+          "say": "両辺を5で割って、x の値を求めます。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷5"
+        },
+        {
+          "say": "x = 2 を1番目の式に代入して、y の値を求めます。",
+          "write": "y = 2×2 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=2を代入"
+        },
+        {
+          "say": "計算して y の値を求めます。",
+          "write": "y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x = 2, y = 3 をもとの式に代入して確認します。",
+          "write": "y = 2×2 - 1 = 3, 3×2 + 3 = 9",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "代入法は、一方の式が y = 〜 の形なら、それをもう一方の式に代入して解くのがポイントです。よくできました！",
+          "write": "\\text{代入法: 一方の式をもう一方に代入}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "y = 2x - 1, 3x + y = 9",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.24
+        }
+      ],
+      "seconds": 7.7
+    },
+    {
+      "id": "S06",
+      "category": "system",
+      "problem": "連立方程式 $2x - 3y = 1$, $x + y = 3$ の解を求めなさい。",
+      "ground_truth": "x = 2, y = 1",
+      "final_answer": "x = 2, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式の問題ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "\\begin{cases} 2x - 3y = 1 \\\\ x + y = 3 \\end{cases}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y の値を求めるのが目的です。加減法を使うのがよさそうですね。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、2つの式をたすかひく}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "まずは、②の式を変形して y を求めましょう。",
+          "write": "x + y = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②を変形"
+        },
+        {
+          "say": "②の式から y を求めます。x を右辺に移項します。",
+          "write": "y = 3 - x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x を移項"
+        },
+        {
+          "say": "次に、①の式に②で求めた y の式を代入します。",
+          "write": "2x - 3(3 - x) = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "かっこを外して、同類項をまとめます。",
+          "write": "2x - 9 + 3x = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこ外し"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "5x - 9 = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "次に、-9 を右辺に移項します。",
+          "write": "5x = 1 + 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-9 を移項"
+        },
+        {
+          "say": "右辺を計算します。",
+          "write": "5x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を 5 で割って x の値を求めます。",
+          "write": "x = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺 ÷5"
+        },
+        {
+          "say": "求めた x = 2 を②の式に代入して y の値を求めます。",
+          "write": "y = 3 - 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "代入"
+        },
+        {
+          "say": "代入法を使って、連立方程式を解きました。しっかり計算して、答えを確認しましょう。",
+          "write": "\\text{代入法 → 代入 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x - 3y = 1, x + y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.09
+        }
+      ],
+      "seconds": 8.55
+    },
+    {
+      "id": "S07",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$4x + 3y = 10$\n$2x - y = 0$",
+      "ground_truth": "x = 1, y = 2",
+      "final_answer": "x = 1, y = 2",
+      "correct": true,
+      "first_attempt_correct": false,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "連立方程式の問題ですね。x と y の値を求めてみましょう。",
+          "write": "4x + 3y = 10, 2x - y = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "連立方程式は、2つの式を同時に満たす x と y を求めます。この問題では加減法を使います。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、式をたすかひく}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "2x - y = 0 の式を変形して、y を求めます。",
+          "write": "y = 2x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y を求める"
+        },
+        {
+          "say": "y = 2x を 4x + 3y = 10 の式に代入します。",
+          "write": "4x + 3(2x) = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "3(2x) を計算して、式を簡単にしていきます。",
+          "write": "4x + 6x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "4x と 6x を足して、10x になります。",
+          "write": "10x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を 10 でわると、x の値が求められます。",
+          "write": "x = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷10"
+        },
+        {
+          "say": "x = 1 を y = 2x に代入して、y の値を求めます。",
+          "write": "y = 2(1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "2 かける 1 は 2 なので、y = 2 です。",
+          "write": "y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x = 1, y = 2 をもとの式に代入して、正しいか確認します。",
+          "write": "4(1) + 3(2) = 10, 2(1) - 2 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "代入法を使って、x と y の値を求めるのはとてもよくできました！",
+          "write": "\\text{代入法 → 代入 → 計算}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 3y = 10, 2x - y = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5, y = 10",
+          "verified": false,
+          "detail": "최종 답 'x = 5, y = 10'이(가) 틀렸어요. 4번째 줄 '2x + 3y = 10': 원래 식의 해를 넣으면 성립하지 않는 식이에요. 5번째 줄 '2x = 10': 원래 식의 해를 넣으면 성립하지 않는 식이에요.",
+          "seconds": 8.8
+        },
+        {
+          "attempt": 2,
+          "final_answer": "x = 1, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.38
+        }
+      ],
+      "seconds": 16.62
+    },
+    {
+      "id": "S08",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$\\frac{x}{2} + \\frac{y}{3} = 2$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。x と y の値を求めてみましょう。",
+          "write": "\\begin{cases} \\frac{x}{2} + \\frac{y}{3} = 2 \\\\ x - y = -1 \\end{cases}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y を求めます。加減法を使うのがよさそうですね。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、式をたすかひく}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "①の式を整理するために、両辺を6でかけます。これで分母をはらえます。",
+          "write": "\\frac{x}{2} + \\frac{y}{3} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×6"
+        },
+        {
+          "say": "両辺を6でかけると、分母がなくなって計算しやすくなります。",
+          "write": "3x + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "分母をはらう"
+        },
+        {
+          "say": "②の式はすでに整っています。加減法で x の係数をそろえましょう。",
+          "write": "3x + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①"
+        },
+        {
+          "say": "②の式は x - y = -1 です。この式を変形して、y を表します。",
+          "write": "x - y = -1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②"
+        },
+        {
+          "say": "②の式を変形して、y を求めるために、-y を右辺に移項します。",
+          "write": "x + 1 = y",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-y を移項"
+        },
+        {
+          "say": "②の式を変形して、y = x + 1 としました。この式を③とします。",
+          "write": "y = x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "③"
+        },
+        {
+          "say": "③の式を①の式に代入します。代入することで、1つの文字にします。",
+          "write": "3x + 2(x + 1) = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "かっこをはずして、同類項をまとめます。これで計算ができます。",
+          "write": "3x + 2x + 2 = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x = 2, y = 3 をもとの式に代入して、正しいか確認します。",
+          "write": "\\frac{2}{2} + \\frac{3}{3} = 1 + 1 = 2, 2 - 3 = -1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "連立方程式は、代入法で1つの文字にします。計算も丁寧にしましょう。",
+          "write": "\\text{代入法で1つの文字に → 計算 → 代入}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + \\frac{y}{3} = 2, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 8.75
+        }
+      ],
+      "seconds": 9.17
+    },
+    {
+      "id": "Q01",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} - 5x + 6 = 0$",
+      "ground_truth": "x = 2 또는 x = 3",
+      "final_answer": "x = 2 または x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^{2} - 5x + 6 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば因数分解して AB=0 を使う",
+          "write": "\\text{因数分解: AB=0 ならば A=0 または B=0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の考え方"
+        },
+        {
+          "say": "因数分解して、x の値を求めます",
+          "write": "(x - 2)(x - 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解"
+        },
+        {
+          "say": "因数分解ができたので、それぞれの因数が0になる場合を考えます",
+          "write": "x - 2 = 0 \\text{ または }x - 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数が0"
+        },
+        {
+          "say": "それぞれの式を解きます",
+          "write": "x = 2 \\text{ または }x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "解を求める"
+        },
+        {
+          "say": "それぞれの解をもとの式に代入して確認します",
+          "write": "2^{2} - 5 \\times 2 + 6 = 0,\n3^{2} - 5 \\times 3 + 6 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解できれば、それぞれの因数が0になる解を求めましょう。よくできました！",
+          "write": "\\text{因数分解 → それぞれの因数が0}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 5x + 6 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 または x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.91
+        }
+      ],
+      "seconds": 5.53
+    },
+    {
+      "id": "Q02",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} - 9 = 0$",
+      "ground_truth": "x = -3 또는 x = 3",
+      "final_answer": "x = 3 または x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^2 - 9 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば AB=0 ならば A=0 または B=0 です。",
+          "write": "\\text{因数分解: 差の平方}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "差の平方公式"
+        },
+        {
+          "say": "左辺を因数分解します。",
+          "write": "x^2 - 9 = (x - 3)(x + 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解"
+        },
+        {
+          "say": "因数分解した式を等式として考えます。",
+          "write": "(x - 3)(x + 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解結果"
+        },
+        {
+          "say": "AB=0 ならば A=0 または B=0 なので、それぞれの因数を0とします。",
+          "write": "x - 3 = 0 \\text{ または }x + 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解後の解"
+        },
+        {
+          "say": "それぞれの式を解きます。",
+          "write": "x = 3 \\text{ または }x = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "解"
+        },
+        {
+          "say": "それぞれの解をもとの式に代入して確認します。",
+          "write": "3^2 - 9 = 0,\\text{ }(-3)^2 - 9 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解できれば AB=0 で解けます。よくできました！",
+          "write": "\\text{因数分解 → 解を求める}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 9 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3 または x = -3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.53
+        }
+      ],
+      "seconds": 5.06
+    },
+    {
+      "id": "Q03",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} + 4x + 4 = 0$",
+      "ground_truth": "x = -2",
+      "final_answer": "x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^{2} + 4x + 4 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば AB=0 を使うことができます。",
+          "write": "\\text{因数分解: AB=0 ならば A=0 または B=0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の考え方"
+        },
+        {
+          "say": "因数分解してみましょう。",
+          "write": "(x + 2)^{2} = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解"
+        },
+        {
+          "say": "因数分解できました。",
+          "write": "x + 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "平方の形に"
+        },
+        {
+          "say": "解を求めましょう。",
+          "write": "x = -2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "x = -2 をもとの式に代入して確認します。",
+          "write": "(-2)^{2} + 4 \\times (-2) + 4 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解できれば、解は重解になります。",
+          "write": "\\text{因数分解 → 解を求める}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "重解の確認"
+        }
+      ],
+      "problem_latex": "x^{2} + 4x + 4 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.81
+        }
+      ],
+      "seconds": 4.33
+    },
+    {
+      "id": "Q04",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} - 2x - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 4",
+      "final_answer": "x = 4 または x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^{2} - 2x - 8 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば因数分解して AB=0 を使う。",
+          "write": "\\text{因数分解: AB=0 ならば A=0 または B=0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の考え方"
+        },
+        {
+          "say": "因数分解を試してみましょう。",
+          "write": "(x - 4)(x + 2) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解"
+        },
+        {
+          "say": "因数分解できました。",
+          "write": "x - 4 = 0 \\text{ または }x + 2 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解後の式"
+        },
+        {
+          "say": "それぞれの式を解きます。",
+          "write": "x = 4 \\text{ または }x = -2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "解の求め方"
+        },
+        {
+          "say": "解をもとの式に代入して確認します。",
+          "write": "4^{2} - 2 \\times 4 - 8 = 0,\\text{ } (-2)^{2} - 2 \\times (-2) - 8 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解できれば、AB=0 で解を求められます。よくできました！",
+          "write": "\\text{因数分解 → 解の求め方}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 2x - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4 または x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.16
+        }
+      ],
+      "seconds": 4.65
+    },
+    {
+      "id": "Q05",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$2x^{2} - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 2",
+      "final_answer": "x = 2 または x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "2x^2 - 8 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば AB=0 を使う。因数分解が難しそうなら平方の形にするか、解の公式を使う。",
+          "write": "\\text{因数分解または平方の形にする}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解"
+        },
+        {
+          "say": "両辺を2で割って、x^2 の係数を1にします。",
+          "write": "x^2 - 4 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x^2 - 4 は平方の形にできます。",
+          "write": "x^2 = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "x^2 = 4 なので、x の値を求めます。",
+          "write": "x = \\pm 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "平方根"
+        },
+        {
+          "say": "x = 2 を代入すると、2^2 - 8 = 4 - 8 = -4 で、0 にはなりません。",
+          "write": "2^2 - 8 = -4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "二次方程式は、因数分解や平方の形に変形して解きます。よくできました！",
+          "write": "\\text{因数分解または平方の形にする}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x^{2} - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 または x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.21
+        }
+      ],
+      "seconds": 4.72
+    },
+    {
+      "id": "Q06",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} + x - 12 = 0$",
+      "ground_truth": "x = -4 또는 x = 3",
+      "final_answer": "x = -4 または x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^{2} + x - 12 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば因数分解して AB=0 を使う。",
+          "write": "\\text{因数分解: AB=0 ならば A=0 または B=0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の考え方"
+        },
+        {
+          "say": "因数分解できるか確認しましょう。",
+          "write": "x^{2} + x - 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解の準備"
+        },
+        {
+          "say": "2つの数の積が -12 で和が +1 になる組み合わせを探します。",
+          "write": "(x + 4)(x - 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解"
+        },
+        {
+          "say": "因数分解できました。",
+          "write": "x^{2} + x - 12 = (x + 4)(x - 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解完成"
+        },
+        {
+          "say": "因数分解した式を0と等しくします。",
+          "write": "(x + 4)(x - 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "式を0に"
+        },
+        {
+          "say": "AB=0 ならば A=0 または B=0 なので、それぞれの因数を0とします。",
+          "write": "x + 4 = 0 \\text{ または }x - 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数を0にする"
+        },
+        {
+          "say": "それぞれの式を解きます。",
+          "write": "x = -4 \\text{ または }x = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "解を求める"
+        },
+        {
+          "say": "それぞれの解をもとの式に代入して確認します。",
+          "write": "(-4)^{2} + (-4) - 12 = 16 - 4 - 12 = 0,\\text{ }3^{2} + 3 - 12 = 9 + 3 - 12 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解できれば AB=0 で解くのが一番簡単です。",
+          "write": "\\text{因数分解 → 0と等しくする → 解を求める}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "ポイント"
+        }
+      ],
+      "problem_latex": "x^{2} + x - 12 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -4 または x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.88
+        }
+      ],
+      "seconds": 6.33
+    },
+    {
+      "id": "Q07",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$x^{2} - 6x = 0$",
+      "ground_truth": "x = 0 또는 x = 6",
+      "final_answer": "x = 0 または x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。x の値を求めてみましょう。",
+          "write": "x^{2} - 6x = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "因数分解できれば AB=0 で解きます。",
+          "write": "\\text{因数分解: 共通因数をくくる}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の基本"
+        },
+        {
+          "say": "共通因数 x をくくると、x(x - 6) = 0 になります。",
+          "write": "x(x - 6) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "共通因数をくくる"
+        },
+        {
+          "say": "AB=0 ならば A=0 または B=0 なので、x=0 または x-6=0 です。",
+          "write": "x = 0 \\text{ または }x - 6 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解の利用"
+        },
+        {
+          "say": "x - 6 = 0 を解くと、x = 6 になります。",
+          "write": "x = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "x=0 を元の式に代入すると、0^{2} - 6×0 = 0 で成立します。",
+          "write": "0^{2} - 6×0 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解で解くときは、共通因数をくくるのがポイントです。",
+          "write": "\\text{共通因数をくくる → 解を求める}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 6x = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 0 または x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.67
+        }
+      ],
+      "seconds": 5.27
+    },
+    {
+      "id": "Q08",
+      "category": "quadratic",
+      "problem": "次の二次方程式を解きなさい。\n$(x - 1)(x + 5) = 0$",
+      "ground_truth": "x = -5 또는 x = 1",
+      "final_answer": "x = 1 または x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "二次方程式ですね。この式を解いて、x の値を求めましょう。",
+          "write": "(x - 1)(x + 5) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "AB=0 ならば A=0 または B=0 です。この考え方が大事です。",
+          "write": "\\text{AB=0 ならば A=0 または B=0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "因数分解の利用"
+        },
+        {
+          "say": "この式はすでに因数分解された形です。だから、x - 1 = 0 または x + 5 = 0 とできます。",
+          "write": "x - 1 = 0 \\text{ または }x + 5 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "因数分解の利用"
+        },
+        {
+          "say": "x - 1 = 0 のとき、x = 1 になります。",
+          "write": "x = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "x + 5 = 0 のとき、x = -5 になります。",
+          "write": "x = -5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "x = 1 を元の式に代入すると、(1 - 1)(1 + 5) = 0 × 6 = 0 になります。",
+          "write": "(1 - 1)(1 + 5) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "因数分解された二次方程式は、それぞれの因数を0とおいて解けばいいです。よくできました！",
+          "write": "\\text{因数分解 → 各因数を0とおく}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "(x - 1)(x + 5) = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1 または x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.95
+        }
+      ],
+      "seconds": 5.58
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+"AppBuild"
+{
+	"AppID" "APPID"
+	"Desc" "Your StudyMate"
+	"ContentRoot" "..\release\win-unpacked\"
+	"BuildOutput" "..\release\steam-output\"
+	"Depots"
+	{
+		"DEPOTID" "depot_build.vdf"
+	}
+}

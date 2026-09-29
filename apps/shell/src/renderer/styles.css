@@ -1,0 +1,331 @@
+/*
+ * Subculture / anime game UI look: pastel palette, thick soft outlines,
+ * sticker-style offset shadows, rounded shapes and pop-in motion.
+ * Bundled fonts (SIL OFL): Jua (titles/UI), Pretendard (body), Nanum Pen Script (chalk);
+ * Japanese: Zen Maru Gothic (UI/body), Klee One (chalk).
+ */
+@import './ui.css';
+@import './board.css';
+
+@font-face {
+  font-family: 'Jua';
+  src: url('./assets/fonts/Jua-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('./assets/fonts/NanumPenScript-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/*
+ * Japanese (the Korean fonts have no kana or kanji). Zen Maru Gothic (SIL OFL): body text,
+ * and its Bold as the rounded UI/title face next to Jua. Klee One SemiBold (SIL OFL): the
+ * handwriting on the board, scaled down to sit with Nanum Pen Script's small glyphs.
+ */
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('./assets/fonts/ZenMaruGothic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('./assets/fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic UI';
+  src: url('./assets/fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klee One Hand';
+  src: url('./assets/fonts/KleeOne-SemiBold.ttf') format('truetype');
+  font-weight: 100 900;
+  size-adjust: 72%;
+  font-display: swap;
+}
+
+:root {
+  --ink: #3d2a4a;
+  --paper: #fffaf6;
+  --pink: #ff8fb8;
+  --pink-soft: #ffe1ec;
+  --lavender: #b79cf0;
+  --lavender-soft: #efe7ff;
+  --mint: #7fd8c3;
+  --sky: #8cc8ff;
+  --error: #ff6b81;
+  --chalk: #f4f1e8;
+  --chalk-mark: #ffd166;
+  --board: rgba(44, 74, 60, 0.6);
+  --outline: 2.5px solid var(--ink);
+  --sticker-shadow: 4px 4px 0 var(--ink);
+  --radius: 18px;
+  /* Korean fonts first; Japanese text (e.g. the credit lines) falls through to the Japanese
+     faces, so no language ever shows tofu. Latin comes from the first face. */
+  --font-ui:
+    'Jua', 'Pretendard', 'Zen Maru Gothic UI', 'Malgun Gothic', 'Yu Gothic UI', system-ui,
+    sans-serif;
+  --font-hand: 'Nanum Pen Script', 'Klee One Hand', 'Segoe Print', cursive;
+  --font-body:
+    'Pretendard', 'Zen Maru Gothic', 'Malgun Gothic', 'Yu Gothic UI', system-ui, sans-serif;
+  /* Board math: digits and letters stay in the chalk handwriting in every language; KaTeX's
+     own face covers symbols the handwriting lacks, Klee One the Japanese in \text{}. */
+  --font-board: 'Nanum Pen Script', KaTeX_Main, 'Klee One Hand', 'Times New Roman', serif;
+  --font-mono: Consolas, 'D2Coding', monospace;
+  font-family: var(--font-ui);
+}
+
+/* Japanese UI: Japanese faces first, so kana, kanji and their Latin match. */
+:root:lang(ja) {
+  --font-ui:
+    'Zen Maru Gothic UI', 'Jua', 'Pretendard', 'Yu Gothic UI', 'Meiryo', system-ui, sans-serif;
+  --font-body: 'Zen Maru Gothic', 'Pretendard', 'Yu Gothic UI', 'Meiryo', system-ui, sans-serif;
+  /* Handwriting: digits and letters match the Japanese around them ("3を移項", "他の2辺"). */
+  --font-hand: 'Klee One Hand', 'Nanum Pen Script', 'Segoe Print', cursive;
+  --font-board: 'Klee One Hand', 'Nanum Pen Script', KaTeX_Main, 'Times New Roman', serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+}
+
+#godot-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  outline: none;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Only elements marked data-hit take input; everything else is click-through. */
+[data-hit] {
+  pointer-events: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    scale: 0.6;
+  }
+  70% {
+    opacity: 1;
+    scale: 1.06;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* --- Speech bubble --------------------------------------------------------- */
+
+.speech-bubble {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 280px;
+  padding: 10px 16px;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  will-change: transform;
+}
+
+.speech-bubble.pop > span {
+  display: inline-block;
+  animation: pop-in 260ms ease-out;
+  transform-origin: 50% 100%;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 9px);
+  bottom: -11px;
+  width: 16px;
+  height: 16px;
+  border-right: var(--outline);
+  border-bottom: var(--outline);
+  background: var(--paper);
+  transform: rotate(45deg);
+}
+
+/* --- Toasts ------------------------------------------------------------------ */
+
+.toasts {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.toast {
+  width: 320px;
+  padding: 12px 16px 14px;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
+  color: var(--ink);
+  animation: pop-in 280ms ease-out;
+}
+
+.toast h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -12px -16px 10px;
+  padding: 8px 12px 8px 16px;
+  border-bottom: var(--outline);
+  border-radius: calc(var(--radius) - 3px) calc(var(--radius) - 3px) 0 0;
+  background: linear-gradient(90deg, var(--pink-soft), var(--lavender-soft));
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.toast-error h2 {
+  background: #ffe0e5;
+}
+
+.toast p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.toast-close {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* --- Debug hit box ---------------------------------------------------------- */
+
+.hit-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border: 2px dashed var(--pink);
+  border-radius: 8px;
+  will-change: transform;
+}
+
+/* --- Debug HUD ------------------------------------------------------------- */
+
+.hud {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  min-width: 360px;
+  padding: 0 0 12px;
+  overflow: hidden;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: rgba(255, 250, 246, 0.94);
+  box-shadow: var(--sticker-shadow);
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.hud-title {
+  margin: 0 0 8px;
+  padding: 8px 14px;
+  border-bottom: var(--outline);
+  background: linear-gradient(90deg, var(--pink-soft), var(--lavender-soft));
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.hud-stats {
+  margin: 0;
+  padding: 0 14px;
+  font: 12px/1.45 var(--font-mono);
+  white-space: pre;
+}
+
+.hud-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 0 14px;
+}
+
+.hud-buttons button {
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.hud-buttons button:active {
+  translate: 2px 2px;
+  box-shadow: none;
+}
+
+.hud-buttons button[aria-pressed='true'] {
+  background: var(--pink-soft);
+}

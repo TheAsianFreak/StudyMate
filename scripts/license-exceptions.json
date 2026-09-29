@@ -1,0 +1,4 @@
+{
+  "caniuse-lite": "CC-BY-4.0 browser data pulled in by build tooling (browserslist via Vite). Dev-only, not shipped in the app.",
+  "minimatch": "BlueOak-1.0.0 (permissive) glob matcher used by ESLint/build tooling. Dev-only, not shipped in the app."
+}

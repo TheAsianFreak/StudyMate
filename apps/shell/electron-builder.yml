@@ -1,0 +1,51 @@
+# Windows installer (NSIS). Build order: see docs/BUILD.md
+appId: app.studymate.desktop
+productName: Your StudyMate
+# The per-user one-click installer names its folder after package.json "name"
+# (%LOCALAPPDATA%\Programs\<name>); "@studymate/shell" would become "@studymateshell".
+extraMetadata:
+  name: Your StudyMate
+copyright: Copyright © 2026 Your StudyMate
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+asar: true
+extraResources:
+  # Godot web export (character, includes the default Tsukuyomi-chan avatar)
+  - from: ../character/export/web
+    to: character
+  # Backend bundle: embedded CPython + packages (build_backend_embedded.py).
+  # Nuitka (build_backend.py -> dist/run_backend.dist) is used instead once torch survives it.
+  - from: ../../services/backend/dist/embedded
+    to: backend
+    filter: ['**/*', '!requirements.txt']
+  - from: ../../THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  # End user license agreement per language (first-launch consent screen, credits screen)
+  - from: build/eula
+    to: eula
+    filter: ['EULA.*.txt']
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+nsis:
+  # One click: installs per user (no admin prompt), then starts the app, which shows the EULA
+  # and asks for consent on first launch before installing any model (same flow as the
+  # Steam build, which has no installer). No license page here, so there is no double consent.
+  oneClick: true
+  perMachine: false
+  runAfterFinish: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Your StudyMate
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  # The data folder is %APPDATA%/StudyMate, not the product name: build/installer.nsh asks
+  # whether to delete it (models, study records, settings) on uninstall, never on update.
+  deleteAppDataOnUninstall: false
+  include: build/installer.nsh

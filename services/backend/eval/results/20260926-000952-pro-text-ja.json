@@ -1,0 +1,333 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T00:09:26",
+    "lang": "ja"
+  },
+  "summary": {
+    "total": 3,
+    "correct": 3,
+    "accuracy": 1.0,
+    "first_attempt_correct": 3,
+    "verified_high": 3,
+    "confidence": {
+      "high": 3,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 8.54,
+    "avg_seconds_after_warmup": 7.81,
+    "median_seconds": 8.2,
+    "by_category": {
+      "parentheses": "1/1",
+      "system": "2/2"
+    }
+  },
+  "results": [
+    {
+      "id": "P03",
+      "category": "parentheses",
+      "problem": "次の方程式を解きなさい。\n$5(x - 1) = 3(x + 1)$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "一次方程式ですね。x の値を求めてみましょう。",
+          "write": "5(x - 1) = 3(x + 1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "等式の性質のおかげで、項の符号を変えて反対の辺に移せます。これを移項といいます。",
+          "write": "\\text{移項: 符号を変えて反対の辺へ}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "等式の性質"
+        },
+        {
+          "say": "かっこをはずすため、分配法則を使います。",
+          "write": "5x - 5 = 3x + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "かっこをはずす"
+        },
+        {
+          "say": "x の項を左辺に、数の項を右辺に移項します。",
+          "write": "5x - 3x = 3 + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x の項を左辺に"
+        },
+        {
+          "say": "同類項をまとめます。",
+          "write": "2x = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "両辺を x の係数2でわると、x の値が求められます。",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "両辺÷2"
+        },
+        {
+          "say": "x に4を入れて、左辺と右辺が等しいか確かめます。",
+          "write": "5(4 - 1) = 3(4 + 1)",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "一次方程式は、かっこをはずして、移項して、計算して、係数でわれば完成です。よくできました！",
+          "write": "\\text{かっこ→移項→計算→係数でわる}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5(x - 1) = 3(x + 1)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.39
+        }
+      ],
+      "seconds": 10.0
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "final_answer": "x = 3, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "2x + y = 7, x - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y を求めます。加減法を使うのがよさそうですね。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、2つの式をたす}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "まず、②の式を①に加えます。y の係数をそろえるため、②の式をそのまま使います。",
+          "write": "2x + y + x - y = 7 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①+②"
+        },
+        {
+          "say": "y は +y と -y で打ち消され、x は 2x + x で 3x になります。右辺は 7 + 2 で 9 です。",
+          "write": "3x = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "3x = 9 なので、両辺を 3 で割って x の値を求めましょう。",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷3"
+        },
+        {
+          "say": "x = 3 を②の式に代入して、y の値を求めます。",
+          "write": "3 - y = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=3を代入"
+        },
+        {
+          "say": "3 - y = 2 なので、両辺から 3 を引いて y の値を求めましょう。",
+          "write": "y = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺-3"
+        },
+        {
+          "say": "x = 3, y = 1 をもとの式に代入して、正しいか確認しましょう。",
+          "write": "2×3 + 1 = 7, 3 - 1 = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "加減法で解くときは、文字の係数をそろえて式をたすのがポイントです。よくできました！",
+          "write": "\\text{加減法: 係数そろえて式をたす}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + y = 7, x - y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.02
+        }
+      ],
+      "seconds": 7.42
+    },
+    {
+      "id": "S07",
+      "category": "system",
+      "problem": "次の連立方程式を解きなさい。\n$4x + 3y = 10$\n$2x - y = 0$",
+      "ground_truth": "x = 1, y = 2",
+      "final_answer": "x = 1, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "連立方程式ですね。2つの式を同時に満たす x と y の値を求めましょう。",
+          "write": "4x + 3y = 10, 2x - y = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "この問題では、2つの式を同時に満たす x と y を求めます。加減法を使うと効率的です。",
+          "write": "\\text{加減法: 一方の文字の係数をそろえて、式をたすかひく}",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "加減法の考え方"
+        },
+        {
+          "say": "2番目の式を変形して、y を求めましょう。",
+          "write": "2x - y = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y を求める"
+        },
+        {
+          "say": "2番目の式を変形して、y を求めました。",
+          "write": "-y = -2x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "移項"
+        },
+        {
+          "say": "両辺にマイナスをかけると、y の係数が正になります。",
+          "write": "y = 2x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺×-1"
+        },
+        {
+          "say": "1番目の式に y = 2x を代入します。",
+          "write": "4x + 3(2x) = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "3×2x を計算して、式を簡単にしていきましょう。",
+          "write": "4x + 6x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "同類項をまとめる"
+        },
+        {
+          "say": "4x と 6x を足すと、10x になります。",
+          "write": "10x = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "計算"
+        },
+        {
+          "say": "両辺を10でわると、x の値が求められます。",
+          "write": "x = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "両辺÷10"
+        },
+        {
+          "say": "x = 1 を y = 2x に代入して、y の値を求めましょう。",
+          "write": "y = 2×1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "代入"
+        },
+        {
+          "say": "x = 1, y = 2 をもとの式に代入して、正しく求められているか確認しましょう。",
+          "write": "4×1 + 3×2 = 10, 2×1 - 2 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "確かめ"
+        },
+        {
+          "say": "代入法で解くときは、1つの式をもう1つの式に代入して、1つの文字に集約しましょう。",
+          "write": "\\text{代入法: 1つの式をもう1つの式に代入}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 3y = 10, 2x - y = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 7.77
+        }
+      ],
+      "seconds": 8.2
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+﻿Your StudyMate End User License Agreement (EULA)
+
+Effective date: September 25, 2026
+
+This Agreement sets out the terms between the developer of Your StudyMate (the "Developer") and anyone who installs or uses it (the "User"). Your StudyMate is referred to as the "Software". By installing or using the Software, you agree to this Agreement. If you do not agree, do not install or use the Software.
+
+1. License
+The Developer grants the User a non-exclusive, non-transferable right to use the Software on a personal computer for the purposes set out in this Agreement. The copyright and other rights in the Software belong to the Developer or the respective rights holders. This Agreement does not transfer ownership of the Software.
+
+2. Designated Purpose
+2.1 The Software is provided solely to help with studying. The designated purposes are:
+   (a) having problem solutions explained with board writing and voice;
+   (b) asking questions and talking about study content;
+   (c) generating and grading review questions, and managing a mistake notebook and review schedule;
+   (d) asking questions and generating questions based on study materials (PDF);
+   (e) drowsiness alerts while studying (webcam use is optional).
+2.2 Using the Software for any purpose not designated above is prohibited.
+2.3 In particular, use for sexual purposes is prohibited in all cases. This includes asking the character for sexual speech or behavior, and using the Software, its output or its characters to create or publish sexual content.
+
+3. Prohibited Conduct
+The User must not:
+3.1 use the Software in violation of Section 2;
+3.2 circumvent or disable the Software's safety features (blocking of sexual, political, religious and hateful expression, avatar screening, and similar);
+3.3 import or use avatars (3D models) that contain adult elements or infringe the rights of third parties;
+3.4 use the character to support or oppose a political position, religion or ideology, or to attack any person or group;
+3.5 break the law, infringe the rights of others, or use the Software to obtain illegal or dangerous information;
+3.6 sell, rent or redistribute the Software, or extract third-party materials included in it (such as the character model) and distribute them separately;
+3.7 reverse engineer, decompile or disassemble the Software beyond what applicable law permits.
+If a violation is confirmed, the Developer may terminate the license without prior notice.
+
+4. AI-Generated Content
+4.1 The Software uses AI models running on the User's computer to generate explanations, answers, questions and speech in real time. AI-generated content may be wrong or inaccurate.
+4.2 Where possible, math solutions are checked by symbolic computation (SymPy) and the level of verification is shown, but the accuracy of all content is not guaranteed. For important decisions such as exams, assignments or grades, also check your textbook and your teacher's explanations.
+4.3 The Software has safeguards to prevent sexual content, political or religious agitation, hateful expression, and illegal or dangerous information, but it is not guaranteed to prevent every case. Please report any inappropriate output to the Developer.
+
+5. Privacy and Data
+5.1 All AI processing takes place on the User's computer. Problems, questions, voice, screen captures and study records entered by the User are not sent to the Developer or to any third party.
+5.2 The webcam is used only when the User turns it on. Video frames are reduced in memory to numbers such as blink measurements and discarded immediately; no images or video are stored.
+5.3 The microphone is used only when the User starts a voice conversation.
+5.4 The Software connects to the internet only to download AI model files (for example from Hugging Face or GitHub). The terms and privacy policies of those services apply to such downloads.
+
+6. Characters and Avatars
+6.1 The default character "Tsukuyomi-chan" (© Rei Yumesaki) is used under the terms of "つくよみちゃん公式3Dモデル タイプA" (https://tyc.rei-yumesaki.net/material/avatar/3d-a/). The character's words and actions are not official and do not represent any political or religious position.
+6.2 When publishing content made with the Software (screenshots, videos, streams and so on), the User must follow the Tsukuyomi-chan terms and credit the software name "Your StudyMate".
+6.3 Avatars imported by the User are stored only on the User's computer and are never uploaded. The User is responsible for having the right to use imported avatars and for complying with their licenses.
+6.4 The Software screens avatars for adult elements when they are added, and such avatars cannot be added. The screening is not perfect; using an adult avatar is prohibited under Section 3 even if it passes the screening.
+
+7. Third-Party Components
+The Software includes or uses third-party components such as open-source software, AI models and fonts, each under its own license. The list and licenses are in THIRD_PARTY_NOTICES.md in the installation folder and on the credits screen in the app. Where a third-party license differs from this Agreement, that license prevails for that component.
+
+8. Updates
+The Developer may change the Software and this Agreement to improve features, increase safety or comply with the law. Changes to this Agreement will be announced on the store page or in the app, and continued use after a change means the User accepts the changed Agreement.
+
+9. Disclaimer of Warranties
+The Software is provided "as is". To the maximum extent permitted by applicable law, the Developer makes no express or implied warranties of merchantability, fitness for a particular purpose, non-infringement or accuracy of results.
+
+10. Limitation of Liability
+To the maximum extent permitted by applicable law, the Developer is not liable for any indirect, incidental, special or consequential damages (including academic results and data loss) arising from the use of, or inability to use, the Software, except for damages caused by the Developer's intent or gross negligence.
+
+11. Termination
+The User may stop using the Software at any time by deleting it. If the User violates this Agreement, the license ends automatically and the User must delete the Software.
+
+12. Governing Law and Jurisdiction
+This Agreement is governed by the laws of the Republic of Korea, and disputes relating to it will be resolved by the court having jurisdiction under the Civil Procedure Act of the Republic of Korea. This does not limit any more favorable rights granted to the User by the consumer protection laws of the User's country of residence.
+
+13. Contact
+Send questions about this Agreement or reports of inappropriate AI output through the support channel on the Steam store page.
+
+This Agreement is provided in Korean, Japanese and English. If the versions differ, the Korean version prevails.

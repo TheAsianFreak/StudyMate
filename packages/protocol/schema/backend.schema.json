@@ -1,0 +1,1925 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://studymate.local/protocol/backend.schema.json",
+  "title": "Director/UI <-> Backend messages",
+  "description": "Transport: WebSocket ws://127.0.0.1:8765/ws. Every message is {type, id?, ...}; responses reuse the request id.",
+  "$defs": {
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "GestureName": {
+      "enum": [
+        "write",
+        "point",
+        "nod",
+        "tap_desk",
+        "throw",
+        "idle"
+      ]
+    },
+    "EmotionName": {
+      "enum": [
+        "happy",
+        "surprised",
+        "sleepy",
+        "angry",
+        "neutral"
+      ]
+    },
+    "Mark": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "circle",
+            "underline",
+            "arrow"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "description": "LaTeX fragment of the written line to mark"
+        }
+      },
+      "required": [
+        "type",
+        "target"
+      ],
+      "additionalProperties": false
+    },
+    "StepRole": {
+      "enum": [
+        "intro",
+        "concept",
+        "solve",
+        "check",
+        "summary"
+      ],
+      "description": "Teaching role of a step: intro = what the problem asks, concept = the unit's key idea, solve = a line of working, check = substitution check, summary = one-line takeaway"
+    },
+    "ScriptStep": {
+      "type": "object",
+      "properties": {
+        "say": {
+          "type": "string",
+          "description": "Korean narration for TTS"
+        },
+        "write": {
+          "type": "string",
+          "description": "LaTeX to hand-write; plain sentences wrapped in \\text{}"
+        },
+        "mark": {
+          "$ref": "#/$defs/Mark"
+        },
+        "gesture": {
+          "$ref": "#/$defs/GestureName"
+        },
+        "emotion": {
+          "$ref": "#/$defs/EmotionName"
+        },
+        "role": {
+          "$ref": "#/$defs/StepRole"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 24,
+          "description": "Short margin note written beside the line (e.g. \"-5 이항\", \"양변 ÷ 2\")"
+        }
+      },
+      "required": [
+        "say"
+      ],
+      "additionalProperties": false
+    },
+    "SolveScript": {
+      "type": "object",
+      "properties": {
+        "problem_latex": {
+          "type": "string"
+        },
+        "final_answer": {
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptStep"
+          },
+          "minItems": 1
+        },
+        "unit": {
+          "type": "string",
+          "description": "Curriculum unit, e.g. \"중1 · 일차방정식\""
+        },
+        "subject": {
+          "enum": [
+            "math",
+            "korean",
+            "english",
+            "korean_history",
+            "social",
+            "science",
+            "other"
+          ],
+          "description": "Subject of the unit; non-math lessons are evidence-style (the check step is a confirmation, not a calculation)"
+        },
+        "problem_id": {
+          "type": "string",
+          "description": "The backend keeps the full problem text in memory under this id (last 20 problems, never on disk); follow-up questions pass it back as ask_request.problem_id"
+        }
+      },
+      "required": [
+        "problem_latex",
+        "final_answer",
+        "verified",
+        "confidence",
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "QuizSource": {
+      "type": "object",
+      "properties": {
+        "doc_id": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "excerpt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "doc_id",
+        "page"
+      ],
+      "additionalProperties": false
+    },
+    "QuizItem": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/Difficulty"
+        },
+        "question_latex": {
+          "type": "string"
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "answer": {
+          "type": "string"
+        },
+        "solution": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ScriptStep"
+              }
+            }
+          },
+          "required": [
+            "steps"
+          ],
+          "additionalProperties": false
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "source": {
+          "$ref": "#/$defs/QuizSource"
+        }
+      },
+      "required": [
+        "item_id",
+        "subject",
+        "difficulty",
+        "question_latex",
+        "answer",
+        "solution",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "Difficulty": {
+      "enum": [
+        "easy",
+        "normal",
+        "hard"
+      ]
+    },
+    "WrongNote": {
+      "type": "object",
+      "properties": {
+        "note_id": {
+          "type": "string"
+        },
+        "item": {
+          "$ref": "#/$defs/QuizItem"
+        },
+        "user_answer": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "ISO 8601"
+        },
+        "card_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "note_id",
+        "item",
+        "user_answer",
+        "created_at",
+        "card_id"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewCard": {
+      "type": "object",
+      "properties": {
+        "card_id": {
+          "type": "string"
+        },
+        "item": {
+          "$ref": "#/$defs/QuizItem"
+        },
+        "due": {
+          "type": "string",
+          "description": "ISO 8601"
+        },
+        "state": {
+          "enum": [
+            "learning",
+            "review",
+            "relearning"
+          ]
+        },
+        "reps": {
+          "type": "integer"
+        },
+        "lapses": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "card_id",
+        "item",
+        "due",
+        "state",
+        "reps",
+        "lapses"
+      ],
+      "additionalProperties": false
+    },
+    "DocInfo": {
+      "type": "object",
+      "properties": {
+        "doc_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "integer",
+          "description": "Page count; page numbers elsewhere are 1-based"
+        },
+        "chunks": {
+          "type": "integer"
+        },
+        "imported_at": {
+          "type": "string"
+        },
+        "empty_pages": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "description": "1-based pages without a text layer (scanned) that were skipped"
+        }
+      },
+      "required": [
+        "doc_id",
+        "title",
+        "pages",
+        "chunks",
+        "imported_at"
+      ],
+      "additionalProperties": false
+    },
+    "VoicePreset": {
+      "type": "object",
+      "description": "TTS post-processing chain applied after synthesis.",
+      "properties": {
+        "preset_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "gender": {
+          "enum": [
+            "female",
+            "male",
+            "neutral"
+          ]
+        },
+        "builtin": {
+          "type": "boolean"
+        },
+        "pitch_semitones": {
+          "type": "number",
+          "minimum": -12,
+          "maximum": 12
+        },
+        "formant_ratio": {
+          "type": "number",
+          "minimum": 0.7,
+          "maximum": 1.4,
+          "description": "Spectral envelope scale; <1 deeper, >1 brighter/younger"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 2.0
+        },
+        "brightness_db": {
+          "type": "number",
+          "minimum": -12,
+          "maximum": 12,
+          "description": "High-shelf gain above 3 kHz"
+        },
+        "warmth_db": {
+          "type": "number",
+          "minimum": -12,
+          "maximum": 12,
+          "description": "Low-shelf gain below 250 Hz"
+        },
+        "reverb": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "volume_db": {
+          "type": "number",
+          "minimum": -24,
+          "maximum": 12
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang",
+          "description": "Language this voice speaks; ko when omitted"
+        },
+        "speaker": {
+          "type": "string",
+          "description": "Base TTS voice the post-processing applies to; the language's default speaker when omitted"
+        }
+      },
+      "required": [
+        "preset_id",
+        "name",
+        "gender",
+        "builtin",
+        "pitch_semitones",
+        "formant_ratio",
+        "speed",
+        "brightness_db",
+        "warmth_db",
+        "reverb",
+        "volume_db"
+      ],
+      "additionalProperties": false
+    },
+    "PhonemeTiming": {
+      "type": "object",
+      "properties": {
+        "char": {
+          "type": "string",
+          "description": "Spoken unit: Hangul syllable (ko), kana mora (ja) or word/phoneme group (en)"
+        },
+        "start_ms": {
+          "type": "number"
+        },
+        "end_ms": {
+          "type": "number"
+        },
+        "vowel": {
+          "enum": [
+            "a",
+            "i",
+            "u",
+            "e",
+            "o",
+            "n"
+          ],
+          "description": "Mouth shape of the unit's vowel (n = closed: m/b/p or silence); language-independent lip-sync input. Derived from char for ko when omitted"
+        }
+      },
+      "required": [
+        "char",
+        "start_ms",
+        "end_ms"
+      ],
+      "additionalProperties": false
+    },
+    "ModelInfo": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "runtime",
+            "llm",
+            "vision",
+            "embed",
+            "stt",
+            "tts",
+            "face",
+            "ocr"
+          ]
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Tier"
+          }
+        },
+        "size": {
+          "type": "integer"
+        },
+        "installed": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Needed for the app to work; with `langs`, needed only by users of those languages"
+        },
+        "langs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Lang"
+          },
+          "description": "Languages that use this model (e.g. a TTS voice); absent = every language. The shell offers and downloads a model only when the current language is listed"
+        },
+        "license": {
+          "type": "string"
+        },
+        "license_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_id",
+        "title",
+        "category",
+        "tiers",
+        "size",
+        "installed",
+        "required",
+        "license",
+        "license_url"
+      ],
+      "additionalProperties": false
+    },
+    "Tier": {
+      "enum": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ]
+    },
+    "GpuInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "vram_gb": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "vram_gb"
+      ],
+      "additionalProperties": false
+    },
+    "HardwareInfo": {
+      "type": "object",
+      "properties": {
+        "cpu": {
+          "type": "string"
+        },
+        "cores": {
+          "type": "integer"
+        },
+        "ram_gb": {
+          "type": "number"
+        },
+        "gpus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GpuInfo"
+          }
+        },
+        "recommended_tier": {
+          "$ref": "#/$defs/Tier"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cpu",
+        "cores",
+        "ram_gb",
+        "gpus",
+        "recommended_tier",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "Capabilities": {
+      "type": "object",
+      "properties": {
+        "solve": {
+          "type": "boolean"
+        },
+        "vision": {
+          "type": "boolean"
+        },
+        "tts": {
+          "type": "boolean"
+        },
+        "stt": {
+          "type": "boolean"
+        },
+        "drowsy": {
+          "type": "boolean"
+        },
+        "rag": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "solve",
+        "vision",
+        "tts",
+        "stt",
+        "drowsy",
+        "rag"
+      ],
+      "additionalProperties": false
+    },
+    "ChatTurn": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "Hello": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "hello"
+        },
+        "id": {
+          "type": "string"
+        },
+        "client": {
+          "type": "string"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang",
+          "description": "Language the shell is set to; backend switches to it"
+        },
+        "profile": {
+          "$ref": "#/$defs/UserProfile",
+          "description": "User profile the shell has saved; backend applies it"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "Status": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "status"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "tier": {
+          "$ref": "#/$defs/Tier"
+        },
+        "hardware": {
+          "$ref": "#/$defs/HardwareInfo"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ModelInfo"
+          }
+        },
+        "capabilities": {
+          "$ref": "#/$defs/Capabilities"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "profile": {
+          "$ref": "#/$defs/UserProfile",
+          "description": "Profile in effect (address after screening)"
+        },
+        "gpu_use": {
+          "$ref": "#/$defs/GpuUse"
+        }
+      },
+      "required": [
+        "type",
+        "version",
+        "tier",
+        "hardware",
+        "models",
+        "capabilities",
+        "lang"
+      ]
+    },
+    "GpuUse": {
+      "enum": [
+        "high",
+        "balanced",
+        "low"
+      ],
+      "description": "How much of the AI work runs on the GPU: high = all of it (fastest); balanced = part of the language model on the CPU; low = the language model on the CPU (slowest, no reasoning pass). Embeddings always run on the CPU; the vision model stays on the GPU"
+    },
+    "SetGpuUse": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "set_gpu_use"
+        },
+        "id": {
+          "type": "string"
+        },
+        "gpu_use": {
+          "$ref": "#/$defs/GpuUse"
+        }
+      },
+      "required": [
+        "type",
+        "gpu_use"
+      ]
+    },
+    "SetTier": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "set_tier"
+        },
+        "id": {
+          "type": "string"
+        },
+        "tier": {
+          "$ref": "#/$defs/Tier"
+        }
+      },
+      "required": [
+        "type",
+        "tier"
+      ]
+    },
+    "DownloadModel": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "download_model"
+        },
+        "id": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "model_id"
+      ]
+    },
+    "DownloadProgress": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "download_progress"
+        },
+        "id": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "downloaded": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "done": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "model_id",
+        "file",
+        "downloaded",
+        "done"
+      ]
+    },
+    "SolveRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "solve_request"
+        },
+        "id": {
+          "type": "string"
+        },
+        "image_base64": {
+          "type": "string",
+          "description": "PNG, already cropped to the problem region"
+        },
+        "problem_text": {
+          "type": "string",
+          "description": "Alternative to image_base64 (typed input, evaluation)"
+        },
+        "subject_hint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "SolveProgress": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "solve_progress"
+        },
+        "id": {
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "ocr",
+            "solving",
+            "verifying",
+            "retry",
+            "voicing"
+          ]
+        },
+        "attempt": {
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "stage"
+      ]
+    },
+    "SolveScriptMessage": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "solve_script"
+        },
+        "id": {
+          "type": "string"
+        },
+        "script": {
+          "$ref": "#/$defs/SolveScript"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "script"
+      ]
+    },
+    "AskRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "ask_request"
+        },
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string",
+          "description": "The user's question or remark (typed or from stt_final)"
+        },
+        "context": {
+          "type": "string",
+          "description": "Optional current problem or topic"
+        },
+        "problem_id": {
+          "type": "string",
+          "description": "solve_script.script.problem_id of the problem the question is about: the backend answers from the full problem text, and a correction (\"the answer is ③\") is re-solved instead of argued"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ChatTurn"
+          },
+          "maxItems": 20,
+          "description": "Previous turns of this conversation, oldest first (shell keeps the conversation)"
+        },
+        "mode": {
+          "enum": [
+            "question",
+            "chat"
+          ],
+          "description": "question = study question (may write on the board); chat = casual conversation (short spoken reply)"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "text"
+      ]
+    },
+    "AskAnswer": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "ask_answer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptStep"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "steps"
+      ]
+    },
+    "TtsRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "tts_request"
+        },
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "voice": {
+          "type": "string",
+          "description": "preset_id; default preset when omitted"
+        },
+        "preset": {
+          "$ref": "#/$defs/VoicePreset",
+          "description": "Unsaved preset for previewing edits"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "text"
+      ]
+    },
+    "TtsAudio": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "tts_audio"
+        },
+        "id": {
+          "type": "string"
+        },
+        "wav_base64": {
+          "type": "string"
+        },
+        "sample_rate": {
+          "type": "integer"
+        },
+        "duration_ms": {
+          "type": "number"
+        },
+        "phonemes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PhonemeTiming"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "wav_base64",
+        "sample_rate",
+        "duration_ms"
+      ]
+    },
+    "VoicePresetsGet": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "voice_presets_get"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "VoicePresets": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "voice_presets"
+        },
+        "id": {
+          "type": "string"
+        },
+        "presets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VoicePreset"
+          }
+        },
+        "default_preset_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "presets",
+        "default_preset_id"
+      ]
+    },
+    "VoicePresetSave": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "voice_preset_save"
+        },
+        "id": {
+          "type": "string"
+        },
+        "preset": {
+          "$ref": "#/$defs/VoicePreset"
+        },
+        "make_default": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "preset"
+      ]
+    },
+    "VoicePresetDelete": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "voice_preset_delete"
+        },
+        "id": {
+          "type": "string"
+        },
+        "preset_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "preset_id"
+      ]
+    },
+    "SttStart": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "stt_start"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "SttStop": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "stt_stop"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "SttLevel": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "stt_level"
+        },
+        "id": {
+          "type": "string"
+        },
+        "level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "level"
+      ]
+    },
+    "SttPartial": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "stt_partial"
+        },
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "text"
+      ]
+    },
+    "SttFinal": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "stt_final"
+        },
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "text"
+      ]
+    },
+    "GenerateQuiz": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "generate_quiz"
+        },
+        "id": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/Difficulty"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "source_doc_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "subject",
+        "difficulty",
+        "count"
+      ]
+    },
+    "QuizProgress": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "quiz_progress"
+        },
+        "id": {
+          "type": "string"
+        },
+        "done": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "done",
+        "total"
+      ]
+    },
+    "QuizItems": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "quiz_items"
+        },
+        "id": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/QuizItem"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "items"
+      ]
+    },
+    "QuizAnswer": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "quiz_answer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "item_id": {
+          "type": "string"
+        },
+        "answer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "item_id",
+        "answer"
+      ]
+    },
+    "QuizGraded": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "quiz_graded"
+        },
+        "id": {
+          "type": "string"
+        },
+        "item_id": {
+          "type": "string"
+        },
+        "correct": {
+          "type": "boolean"
+        },
+        "correct_answer": {
+          "type": "string",
+          "description": "For multiple choice: the exact choice string"
+        },
+        "note_id": {
+          "type": "string",
+          "description": "Set when a wrong answer was saved to the notebook"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "item_id",
+        "correct",
+        "correct_answer"
+      ]
+    },
+    "WrongNotesGet": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "wrong_notes_get"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "WrongNotes": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "wrong_notes"
+        },
+        "id": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WrongNote"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "notes"
+      ]
+    },
+    "WrongNoteDelete": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "wrong_note_delete"
+        },
+        "id": {
+          "type": "string"
+        },
+        "note_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "note_id"
+      ]
+    },
+    "ReviewDueGet": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "review_due_get"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "ReviewDue": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "review_due"
+        },
+        "id": {
+          "type": "string"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReviewCard"
+          }
+        },
+        "next_due": {
+          "type": "string",
+          "description": "ISO 8601 of the earliest future card, if any"
+        }
+      },
+      "required": [
+        "type",
+        "cards"
+      ]
+    },
+    "ReviewGrade": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "review_grade"
+        },
+        "id": {
+          "type": "string"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "rating": {
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "FSRS: 1 again, 2 hard, 3 good, 4 easy"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "card_id",
+        "rating"
+      ]
+    },
+    "ReviewGraded": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "review_graded"
+        },
+        "id": {
+          "type": "string"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "next_due": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "card_id",
+        "next_due"
+      ]
+    },
+    "DocImport": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "doc_import"
+        },
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string",
+          "description": "Absolute path of a PDF chosen by the user"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "path"
+      ]
+    },
+    "DocProgress": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "doc_progress"
+        },
+        "id": {
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "extract",
+            "embed"
+          ]
+        },
+        "done": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "stage",
+        "done",
+        "total"
+      ]
+    },
+    "DocImported": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "doc_imported"
+        },
+        "id": {
+          "type": "string"
+        },
+        "doc": {
+          "$ref": "#/$defs/DocInfo"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "doc"
+      ]
+    },
+    "DocsGet": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "docs_get"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "Docs": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "docs"
+        },
+        "id": {
+          "type": "string"
+        },
+        "docs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DocInfo"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "docs"
+      ]
+    },
+    "DocDelete": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "doc_delete"
+        },
+        "id": {
+          "type": "string"
+        },
+        "doc_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "doc_id"
+      ]
+    },
+    "DrowsyStart": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "drowsy_start"
+        },
+        "id": {
+          "type": "string"
+        },
+        "sensitivity": {
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ]
+        },
+        "camera_index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "type",
+        "sensitivity"
+      ]
+    },
+    "DrowsyStop": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "drowsy_stop"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "DrowsyCalibration": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "drowsy_calibration"
+        },
+        "progress": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "baseline_ear": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "progress",
+        "done"
+      ]
+    },
+    "DrowsyStateMessage": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "drowsy_state"
+        },
+        "state": {
+          "enum": [
+            "normal",
+            "candidate",
+            "drowsy",
+            "no_face",
+            "paused"
+          ]
+        },
+        "perclos": {
+          "type": "number"
+        },
+        "pitch": {
+          "type": "number",
+          "description": "Head pitch in degrees, positive = looking down"
+        },
+        "ear": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "state",
+        "perclos",
+        "pitch"
+      ]
+    },
+    "CameraState": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "camera_state"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "active"
+      ]
+    },
+    "UserActivity": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "user_activity"
+        },
+        "last_input_ms": {
+          "type": "number",
+          "description": "Milliseconds since the last keyboard/mouse/pen input"
+        }
+      },
+      "required": [
+        "type",
+        "last_input_ms"
+      ]
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "error"
+        },
+        "id": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "description": "User-facing Korean message"
+        }
+      },
+      "required": [
+        "type",
+        "code",
+        "message"
+      ]
+    },
+    "ClientMessage": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Hello"
+        },
+        {
+          "$ref": "#/$defs/SetTier"
+        },
+        {
+          "$ref": "#/$defs/SetLanguage"
+        },
+        {
+          "$ref": "#/$defs/SetProfile"
+        },
+        {
+          "$ref": "#/$defs/SetGpuUse"
+        },
+        {
+          "$ref": "#/$defs/DownloadModel"
+        },
+        {
+          "$ref": "#/$defs/SolveRequest"
+        },
+        {
+          "$ref": "#/$defs/AskRequest"
+        },
+        {
+          "$ref": "#/$defs/TtsRequest"
+        },
+        {
+          "$ref": "#/$defs/VoicePresetsGet"
+        },
+        {
+          "$ref": "#/$defs/VoicePresetSave"
+        },
+        {
+          "$ref": "#/$defs/VoicePresetDelete"
+        },
+        {
+          "$ref": "#/$defs/SttStart"
+        },
+        {
+          "$ref": "#/$defs/SttStop"
+        },
+        {
+          "$ref": "#/$defs/GenerateQuiz"
+        },
+        {
+          "$ref": "#/$defs/QuizAnswer"
+        },
+        {
+          "$ref": "#/$defs/WrongNotesGet"
+        },
+        {
+          "$ref": "#/$defs/WrongNoteDelete"
+        },
+        {
+          "$ref": "#/$defs/ReviewDueGet"
+        },
+        {
+          "$ref": "#/$defs/ReviewGrade"
+        },
+        {
+          "$ref": "#/$defs/DocImport"
+        },
+        {
+          "$ref": "#/$defs/DocsGet"
+        },
+        {
+          "$ref": "#/$defs/DocDelete"
+        },
+        {
+          "$ref": "#/$defs/DrowsyStart"
+        },
+        {
+          "$ref": "#/$defs/DrowsyStop"
+        },
+        {
+          "$ref": "#/$defs/UserActivity"
+        }
+      ]
+    },
+    "ServerMessage": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Status"
+        },
+        {
+          "$ref": "#/$defs/DownloadProgress"
+        },
+        {
+          "$ref": "#/$defs/SolveProgress"
+        },
+        {
+          "$ref": "#/$defs/SolveScriptMessage"
+        },
+        {
+          "$ref": "#/$defs/AskAnswer"
+        },
+        {
+          "$ref": "#/$defs/TtsAudio"
+        },
+        {
+          "$ref": "#/$defs/VoicePresets"
+        },
+        {
+          "$ref": "#/$defs/SttLevel"
+        },
+        {
+          "$ref": "#/$defs/SttPartial"
+        },
+        {
+          "$ref": "#/$defs/SttFinal"
+        },
+        {
+          "$ref": "#/$defs/QuizProgress"
+        },
+        {
+          "$ref": "#/$defs/QuizItems"
+        },
+        {
+          "$ref": "#/$defs/QuizGraded"
+        },
+        {
+          "$ref": "#/$defs/WrongNotes"
+        },
+        {
+          "$ref": "#/$defs/ReviewDue"
+        },
+        {
+          "$ref": "#/$defs/ReviewGraded"
+        },
+        {
+          "$ref": "#/$defs/DocProgress"
+        },
+        {
+          "$ref": "#/$defs/DocImported"
+        },
+        {
+          "$ref": "#/$defs/Docs"
+        },
+        {
+          "$ref": "#/$defs/DrowsyCalibration"
+        },
+        {
+          "$ref": "#/$defs/DrowsyStateMessage"
+        },
+        {
+          "$ref": "#/$defs/CameraState"
+        },
+        {
+          "$ref": "#/$defs/Error"
+        }
+      ]
+    },
+    "Lang": {
+      "enum": [
+        "ko",
+        "ja",
+        "en"
+      ],
+      "description": "App language: UI, the character's speech (LLM output, TTS), speech recognition and curriculum"
+    },
+    "SetLanguage": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "set_language"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        }
+      },
+      "required": [
+        "type",
+        "lang"
+      ]
+    },
+    "UserProfile": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "How the character addresses the user (e.g. a name, 선배, マスター). Empty = the character's default. Screened by the backend (length, characters, safety)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SetProfile": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "set_profile"
+        },
+        "id": {
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/$defs/UserProfile"
+        }
+      },
+      "required": [
+        "type",
+        "profile"
+      ]
+    }
+  }
+}

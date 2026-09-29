@@ -1,0 +1,920 @@
+/* Feature UI: board, panels, dock, region select, effects. Tokens live in styles.css. */
+
+/* --- Speech bubble extras ---------------------------------------------------------- */
+
+.speech-bubble .mic-meter {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.speech-bubble .mic-meter i {
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--pink);
+  transition: transform 90ms linear;
+}
+
+.speech-bubble.thinking span::after {
+  content: '…';
+  display: inline-block;
+  animation: blink-dots 1s ease-in-out infinite;
+}
+
+@keyframes blink-dots {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* --- Board (hand-written solutions) ------------------------------------------------ */
+
+.board {
+  position: absolute;
+  box-sizing: border-box;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #1f3a2e;
+  border-radius: 20px;
+  /* Glass board: the character (drawn on the canvas below this HTML layer) stays visible
+     while it stands in front of the board and writes. */
+  background: linear-gradient(160deg, rgba(40, 72, 58, 0.5), rgba(30, 56, 46, 0.42));
+  box-shadow:
+    0 0 0 3px #d8b58a,
+    6px 8px 0 3px rgba(61, 42, 74, 0.85);
+  color: var(--chalk);
+  animation: pop-in 320ms ease-out;
+}
+
+.board.closing {
+  animation: pop-in 250ms ease-in reverse forwards;
+}
+
+.board header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 6px 16px;
+  border-bottom: 1px dashed rgba(244, 241, 232, 0.3);
+}
+
+.board h2 {
+  flex: 1;
+  margin: 0;
+  font: 400 17px var(--font-ui);
+  color: #ffe9a8;
+}
+
+.board-close,
+.panel-close {
+  width: 26px;
+  height: 26px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: 16px/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.board-body {
+  position: relative;
+  overflow-y: auto;
+  padding: 8px 18px 16px;
+}
+
+.board-line {
+  padding: 6px 0;
+  font-size: 1.45em;
+}
+
+.board-ink {
+  display: inline-block;
+  color: var(--chalk);
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.7),
+    0 1px 3px rgba(20, 30, 25, 0.95),
+    0 0 8px rgba(20, 30, 25, 0.8);
+}
+
+.board-ink .katex .text {
+  font-family: var(--font-hand);
+  font-size: 1.15em;
+}
+
+.board-marks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.confidence {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 700 12px var(--font-body);
+  white-space: nowrap;
+}
+
+.confidence-high {
+  background: #c9f2e3;
+  color: #1d5a45;
+}
+
+.confidence-medium {
+  background: #fff1c2;
+  color: #7a5a00;
+}
+
+.confidence-low {
+  background: #ffd6de;
+  color: #9b1c33;
+}
+
+/* --- Panels ------------------------------------------------------------------------- */
+
+.panel {
+  position: absolute;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
+  color: var(--ink);
+  font-family: var(--font-body);
+  user-select: text;
+}
+
+.panel.pop {
+  animation: pop-in 260ms ease-out;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  border-bottom: var(--outline);
+  border-radius: calc(var(--radius) - 3px) calc(var(--radius) - 3px) 0 0;
+  background: linear-gradient(90deg, var(--pink-soft), var(--lavender-soft));
+  cursor: grab;
+  user-select: none;
+}
+
+.panel-header h2 {
+  flex: 1;
+  margin: 0;
+  font: 400 16px var(--font-ui);
+}
+
+.panel-icon {
+  font-size: 18px;
+}
+
+.panel-body {
+  overflow-y: auto;
+  padding: 12px 16px 16px;
+  font-size: 14px;
+}
+
+.panel-body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.panel-body h3 {
+  margin: 12px 0 6px;
+  font: 400 15px var(--font-ui);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.row > label {
+  flex: 1;
+}
+
+.field,
+.ask-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: 14px var(--font-body);
+}
+
+.row > .field {
+  flex: 1;
+  width: auto;
+}
+
+.ask-input {
+  resize: vertical;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 7px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font: 15px var(--font-ui);
+  cursor: pointer;
+}
+
+.btn:active:not(:disabled) {
+  translate: 2px 2px;
+  box-shadow: none;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btn.primary {
+  background: var(--pink);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(61, 42, 74, 0.4);
+}
+
+.btn.ghost {
+  box-shadow: none;
+}
+
+.btn.small {
+  padding: 3px 10px;
+  font-size: 13px;
+}
+
+.hint {
+  margin: 6px 0;
+  color: #7a6a86;
+  font-size: 12px;
+}
+
+.status {
+  margin: 8px 0;
+}
+
+.status.error {
+  color: var(--error);
+}
+
+.empty {
+  padding: 16px 0;
+  text-align: center;
+  color: #7a6a86;
+}
+
+.progress {
+  height: 12px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--pink),
+    var(--pink) 8px,
+    #ffb3cf 8px,
+    #ffb3cf 16px
+  );
+  transition: width 300ms;
+}
+
+.progress.small {
+  display: inline-block;
+  width: 90px;
+  height: 10px;
+}
+
+kbd {
+  padding: 1px 6px;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: #fff;
+  font: 12px var(--font-mono);
+}
+
+.ask-log {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.turn {
+  margin: 6px 0;
+  padding: 6px 10px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+
+.turn.user {
+  margin-left: 40px;
+  background: var(--lavender-soft);
+}
+
+.turn.assistant {
+  margin-right: 40px;
+  background: var(--pink-soft);
+}
+
+/* quiz / notes / review / docs */
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 6px;
+  font: 13px var(--font-ui);
+  color: #7a6a86;
+}
+
+.quiz-question {
+  padding: 12px;
+  border-radius: 12px;
+  background: #f6f1ff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.choices {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn.choice {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 14px;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.choice-no {
+  font-family: var(--font-ui);
+}
+
+.quiz-result {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  font: 16px var(--font-ui);
+}
+
+.quiz-result.ok {
+  background: #d9f7ea;
+}
+
+.quiz-result.ng {
+  background: #ffe0e6;
+}
+
+.quiz-summary {
+  padding: 20px;
+  text-align: center;
+  font: 28px var(--font-ui);
+}
+
+.note {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 2px dashed #d9cbe8;
+  border-radius: 14px;
+}
+
+.note-meta {
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #7a6a86;
+}
+
+.ng {
+  color: var(--error);
+}
+
+.review-answer {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff5d6;
+}
+
+.btn.rating.r1 {
+  background: #ffd6de;
+}
+
+.btn.rating.r2 {
+  background: #ffe9c7;
+}
+
+.btn.rating.r3 {
+  background: #d9f7ea;
+}
+
+.btn.rating.r4 {
+  background: #d6ecff;
+}
+
+.doc {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  margin: 8px 0;
+  padding: 8px 10px;
+  border: 2px solid #eadff5;
+  border-radius: 12px;
+}
+
+.doc small {
+  grid-column: 1;
+  color: #7a6a86;
+}
+
+.doc .btn {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+}
+
+/* settings */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  font: 13px var(--font-ui);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--lavender);
+  color: #fff;
+}
+
+.panel-body label.toggle {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--pink);
+}
+
+.toggle small {
+  width: 100%;
+  margin-left: 26px;
+  color: #7a6a86;
+}
+
+.panel-body label.slider {
+  display: grid;
+  /* wide enough for "Brightness (highs)" / "声質 (フォルマント)" on one line */
+  grid-template-columns: 128px 1fr 72px;
+  align-items: center;
+}
+
+.slider input {
+  accent-color: var(--pink);
+}
+
+.slider output {
+  text-align: right;
+  font: 12px var(--font-mono);
+}
+
+.privacy {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #eef8ff;
+}
+
+.privacy p {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+.hw p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.model {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-bottom: 1px dashed #e4d8ef;
+}
+
+.model.for-tier strong {
+  color: #b33a72;
+}
+
+.model small {
+  color: #7a6a86;
+}
+
+.installed {
+  color: #1d7a5a;
+  font: 13px var(--font-ui);
+  white-space: nowrap;
+}
+
+.shortcuts p {
+  margin: 4px 0;
+}
+
+.credit p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.notices {
+  max-height: 260px;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f6f1ff;
+  font: 11px/1.5 var(--font-mono);
+  white-space: pre-wrap;
+}
+
+.welcome-list li {
+  margin: 6px 0;
+}
+
+/* The obligation for users who publish content with the character (Tsukuyomi-chan terms). */
+.credit p.duty {
+  padding: 6px 10px;
+  border: 2px dashed var(--lavender);
+  border-radius: 10px;
+  background: var(--lavender-soft);
+}
+
+.credit p,
+.hint,
+.toast p,
+.privacy p {
+  overflow-wrap: anywhere; /* long URLs and English words never push past the panel */
+}
+
+.panel-body label.language-field {
+  margin-top: 0;
+}
+
+.model-others {
+  margin-top: 10px;
+}
+
+/* --- Address field ("what should she call you") ------------------------------------- */
+
+.address-field {
+  margin: 10px 0;
+}
+
+.address-field .row {
+  margin-top: 4px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.chip {
+  padding: 2px 10px;
+  border: 2px solid var(--lavender);
+  border-radius: 999px;
+  background: var(--lavender-soft);
+  color: var(--ink);
+  font: 13px var(--font-ui);
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: var(--pink-soft);
+}
+
+/* --- First-run onboarding (EULA consent → install) ----------------------------------- */
+
+.onboarding {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(600px, calc(100vw - 32px));
+  max-height: min(820px, calc(100vh - 32px));
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: var(--outline);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--ink);
+  color: var(--ink);
+  font-family: var(--font-body);
+  user-select: text;
+}
+
+.onboarding.pop {
+  animation: pop-in 320ms ease-out;
+}
+
+.onboarding-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 22px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.onboarding-body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.onboarding-body h3 {
+  margin: 14px 0 6px;
+  font: 400 16px var(--font-ui);
+}
+
+.onboarding-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 -22px 8px;
+  padding: 14px 22px 10px;
+  border-bottom: var(--outline);
+  border-radius: 21px 21px 0 0;
+  background: linear-gradient(90deg, var(--pink-soft), var(--lavender-soft));
+}
+
+.onboarding-head h2 {
+  margin: 0;
+  font: 400 21px var(--font-ui);
+}
+
+.onboarding-icon {
+  font-size: 24px;
+}
+
+.onboarding-note {
+  padding: 8px 12px;
+  border: 2px dashed var(--pink);
+  border-radius: 12px;
+  background: var(--pink-soft);
+}
+
+.eula-text {
+  max-height: 260px;
+  margin: 0;
+  overflow: auto;
+  padding: 12px 14px;
+  border: 2px solid #e4d8ef;
+  border-radius: 14px;
+  background: #fbf8ff;
+  font: 12px/1.6 var(--font-body);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.onboarding-install {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #eef8ff;
+}
+
+.onboarding-install p {
+  margin: 2px 0;
+}
+
+.onboarding-footer {
+  padding: 10px 22px 16px;
+  border-top: var(--outline);
+  border-radius: 0 0 21px 21px;
+  background: #fff5fa;
+}
+
+.onboarding-footer .row {
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+label.onboarding-agree {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 15px var(--font-ui);
+  cursor: pointer;
+}
+
+.onboarding-agree input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--pink);
+}
+
+.model-others summary {
+  cursor: pointer;
+  font: 13px var(--font-ui);
+  color: #7a6a86;
+}
+
+/* --- Dock ------------------------------------------------------------------------- */
+
+.dock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 44px);
+  gap: 6px;
+  padding: 8px;
+  border: var(--outline);
+  border-radius: 22px;
+  background: rgba(255, 250, 246, 0.95);
+  box-shadow: var(--sticker-shadow);
+}
+
+.dock.pop {
+  animation: pop-in 220ms ease-out;
+}
+
+.dock-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 2px 2px 0 var(--ink);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dock-btn:hover {
+  background: var(--pink-soft);
+  translate: 0 -2px;
+}
+
+/* --- Region select ----------------------------------------------------------------- */
+
+.region-select {
+  position: absolute;
+  inset: 0;
+  background: rgba(61, 42, 74, 0.25);
+  cursor: crosshair;
+}
+
+.region-box {
+  position: absolute;
+  border: 3px dashed var(--pink);
+  border-radius: 6px;
+  background: rgba(255, 143, 184, 0.12);
+}
+
+.region-hint {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 12px 20px;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
+  font: 18px var(--font-ui);
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.region-hint small {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  color: #7a6a86;
+}
+
+.region-cancel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 16px;
+  border: var(--outline);
+  border-radius: 999px;
+  background: var(--paper);
+  font: 15px var(--font-ui);
+  cursor: pointer;
+}
+
+/* --- Chalk impact ------------------------------------------------------------------ */
+
+.chalk-splat {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+.chalk-splat svg {
+  width: 100%;
+  height: 100%;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35));
+}
+
+/* Bubble placed below the board: the tail points up at the character. */
+.speech-bubble.below::after {
+  top: -11px;
+  bottom: auto;
+  transform: rotate(225deg);
+}
+
+/* --- First-run model setup ------------------------------------------------------- */
+
+.setup-card {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 340px;
+  padding: 12px 16px 14px;
+  border: var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
+  color: var(--ink);
+  font-family: var(--font-body);
+  animation: pop-in 280ms ease-out;
+}
+
+.setup-head {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  font: 16px var(--font-ui);
+}
+
+.setup-head strong {
+  font-weight: 400;
+}
+
+.setup-detail {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #7a6a86;
+}

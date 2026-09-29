@@ -1,0 +1,7 @@
+{
+  "certifi": "MPL-2.0 (file-level weak copyleft). Shipped unmodified as a CA bundle for httpx; MPL permits this with the notice kept. Only used for model downloads.",
+  "defusedxml": "PSF-2.0 (permissive, BSD-like). Transitive dependency.",
+  "matplotlib": "Matplotlib License (PSF-based, permissive). Transitive dependency of mediapipe; excluded from the bundled executable (--nofollow-import-to=matplotlib).",
+  "pyworld": "MIT (dist-info/LICENSE; metadata field missing). Wraps the WORLD vocoder (modified BSD).",
+  "typing-extensions": "PSF-2.0 (permissive). Transitive dependency."
+}

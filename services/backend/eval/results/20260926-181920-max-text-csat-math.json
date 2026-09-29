@@ -1,0 +1,4249 @@
+{
+  "info": {
+    "tier": "max",
+    "mode": "text",
+    "chat_model": "qwen3-14b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T18:03:04",
+    "lang": "ko",
+    "set": "csat-math"
+  },
+  "summary": {
+    "total": 44,
+    "correct": 44,
+    "accuracy": 1.0,
+    "first_attempt_correct": 39,
+    "verified_high": 33,
+    "confidence": {
+      "high": 33,
+      "medium": 11,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 22.15,
+    "avg_seconds_after_warmup": 21.64,
+    "median_seconds": 17.64,
+    "by_category": {
+      "수학Ⅰ": "9/9",
+      "수학Ⅱ": "9/9",
+      "확률과 통계": "9/9",
+      "미적분": "9/9",
+      "기하": "8/8"
+    },
+    "by_category_detail": {
+      "수학Ⅰ": {
+        "correct": "9/9",
+        "first_attempt": "8/9",
+        "confidence": {
+          "high": 9,
+          "medium": 0,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "수학Ⅱ": {
+        "correct": "9/9",
+        "first_attempt": "6/9",
+        "confidence": {
+          "high": 6,
+          "medium": 3,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "확률과 통계": {
+        "correct": "9/9",
+        "first_attempt": "9/9",
+        "confidence": {
+          "high": 4,
+          "medium": 5,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "미적분": {
+        "correct": "9/9",
+        "first_attempt": "8/9",
+        "confidence": {
+          "high": 9,
+          "medium": 0,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "기하": {
+        "correct": "8/8",
+        "first_attempt": "8/8",
+        "confidence": {
+          "high": 5,
+          "medium": 3,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "M1-01",
+      "category": "수학Ⅰ",
+      "problem": "$\\sqrt[3]{54} \\times 2^{\\frac{2}{3}}$의 값은? [2점]\n① $2$ ② $4$ ③ $5$ ④ $6$ ⑤ $9$",
+      "ground_truth": "④ (6)",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 지수와 로그",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "이 문제는 거듭제곱근과 유리수의 지수를 계산하는 문제예요. 54의 세제곱근과 2의 2/3승을 곱해서 값을 구해 볼게요.",
+          "write": "\\sqrt[3]{54} \\times 2^\\frac{2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "거듭제곱근은 유리수 지수로 바꾸고, 밑을 같게 하면 지수법칙으로 계산할 수 있어요.",
+          "write": "\\text{유리수 지수로 변환, 밑 통일}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "54를 소인수분해하면, 54 = 2 × 3³예요. 이걸 이용해 세제곱근을 유리수 지수로 바꿔 볼게요.",
+          "write": "\\sqrt[3]{54} = \\sqrt[3]{2 \\times 3^3} = 2^{\\frac{1}{3}} \\times 3^{\\frac{3}{3}} = 2^{\\frac{1}{3}} \\times 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "54 소인수분해"
+        },
+        {
+          "say": "이제 원식을 유리수 지수로 모두 바꿔 볼게요. 2^{1/3} × 3 × 2^{2/3}가 되죠.",
+          "write": "2^{\\frac{1}{3}} \\times (2^{\\frac{2}{3}} \\times 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "유리수 지수로 통일"
+        },
+        {
+          "say": "지수법칙 a^m × a^n = a^{m+n}을 사용해 2의 지수를 더해 볼게요. 1/3 + 2/3 = 1이에요.",
+          "write": "2^{\\frac{1}{3} + \\frac{2}{3}} \\times 3 = 2^1 \\times 3 = 2 \\times 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "지수법칙 적용"
+        },
+        {
+          "say": "마지막으로 2 × 3을 계산하면 6이에요. 이 문제가 정답은 ④ 6이에요.",
+          "write": "2 \\times 3 = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "2^{1/3} × 2^{2/3} = 2^{1} = 2, 2 × 3 = 6이에요. 계산이 맞아요.",
+          "write": "2^{\\frac{1}{3}} \\times \\sqrt[3]{54} = 2^{\\frac{1}{3}+\\frac{2}{3}} \\times 2 = 2^{1} \\times 2 = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "유리수 지수로 바꾸고 밑을 통일하면 지수법칙으로 쉽게 계산할 수 있어요. 잘 풀었어요!",
+          "write": "\\text{유리수 지수로 바꾸기 → 밑 통일 → 지수법칙 적용}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $2$ ② $4$ ③ $5$ ④ $6$ ⑤ $9$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④ 6",
+          "verified": false,
+          "detail": "2번째 줄 '3 \\times 2^{\\frac{1}{2}} \\times 2^{\\frac{2}{2}} = 3 \\times 2^{1} = 6': 계산이 맞지 않아요 (6 \\sqrt{2} \\neq 6).",
+          "seconds": 15.31
+        },
+        {
+          "attempt": 2,
+          "final_answer": "④",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 21.86
+        }
+      ],
+      "seconds": 44.23
+    },
+    {
+      "id": "M1-02",
+      "category": "수학Ⅰ",
+      "problem": "$\\log_2 24 - \\log_2 3 + \\log_2 \\frac{1}{2}$의 값은? [2점]\n① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $5$",
+      "ground_truth": "② (2)",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 지수와 로그",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이 문제는 로그의 성질을 사용해 계산하는 문제예요. log_2 24, log_2 3, log_2 1/2의 값을 구해 볼게요.",
+          "write": "\\log_2 24 - \\log_2 2 + \\log_2 \\frac{1}{2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "로그의 성질을 사용해 하나의 로그로 합치거나, 진수를 간단히 해야 해요.",
+          "write": "\\text{로그의 성질: } \\log_a M - \\log_a N = \\log_a \\frac{M}{N}, \\log_a \\frac{1}{b} = -\\log_a b",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "log_2 24 - log_2 3은 log_2 (24/3)이 되어요. 24/3은 8이에요.",
+          "write": "\\log_2 8 + \\log_2 \\frac{1}{2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "log_2 24 - log_2 2"
+        },
+        {
+          "say": "log_2 1/2는 -log_2 2로 바꿔요. log_2 2는 1이에요.",
+          "write": "\\log_2 8 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "log_2 1/2 → -1"
+        },
+        {
+          "say": "log_2 8은 3이에요. 3 - 1은 2예요.",
+          "write": "3 - 1 = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "log_2 8 → 3"
+        },
+        {
+          "say": "log_2 24 - log_2 4 + log_2 1/2 = log_2 8 - 1 = 3 - 1 = 2로 맞아요!",
+          "write": "\\log_2 24 - \\log_2 \\frac{1}{3} + \\log_2 \\frac{1}{8} = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "로그의 성질을 사용해 식을 간단히 하고, log_a b = c의 정의를 이용해 계산했어요. 잘했어요!",
+          "write": "\\text{로그의 성질 사용 → log_a b = c 정의}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $5$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.85
+        }
+      ],
+      "seconds": 15.06
+    },
+    {
+      "id": "M1-03",
+      "category": "수학Ⅰ",
+      "problem": "부등식 $\\log_2(x - 1) \\le 3$을 만족시키는 모든 정수 $x$의 개수를 구하시오. [3점]",
+      "ground_truth": "8",
+      "final_answer": "8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 지수함수와 로그함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "로그 부등식이네요. x의 값을 구하고, 그 중 정수인 경우의 개수를 세어 볼게요.",
+          "write": "\\log_2(x - 1) \\leq 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "로그 부등식은 진수 조건을 먼저 확인하고, 밑을 같게 해서 지수끼리 비교해 푸세요.",
+          "write": "\\text{진수 조건: } x - 1 > 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "진수 조건"
+        },
+        {
+          "say": "진수 조건을 만족하는 x의 범위는 x > 1이에요.",
+          "write": "x > 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "진수 조건"
+        },
+        {
+          "say": "로그 부등식을 지수 형태로 바꿔 x의 범위를 구해 볼게요.",
+          "write": "\\log_2(x - 1) \\leq \\log_2(8)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "로그의 정의"
+        },
+        {
+          "say": "로그의 밑이 2로 같으므로, 지수끼리 비교해 x - 1 ≤ 8이에요.",
+          "write": "x - 1 \\leq 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "지수 비교"
+        },
+        {
+          "say": "x - 1 ≤ 8을 풀면 x ≤ 9가 되어요.",
+          "write": "x \\leq 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "이항"
+        },
+        {
+          "say": "진수 조건 x > 1과 x ≤ 9를 동시에 만족하는 x의 범위는 1 < x ≤ 8이에요.",
+          "write": "1 < x \\leq 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 범위"
+        },
+        {
+          "say": "x의 범위가 1 < x ≤ 9이므로, 정수 x는 2, 3, 4, ..., 9까지 8개예요.",
+          "write": "2, 3, 4, 5, 7, 8, 9",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "정수 개수"
+        },
+        {
+          "say": "로그 부등식은 진수 조건과 지수 비교를 통해 풀고, 정수 개수를 세면 끝이에요. 잘했어요!",
+          "write": "\\text{진수 조건 → 지수 비교 → 정수 개수 세기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "부등식 \\log_2(x - 1) \\le 3를 만족시키는 모든 정수 x의 개수를 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.56
+        }
+      ],
+      "seconds": 16.93
+    },
+    {
+      "id": "M1-04",
+      "category": "수학Ⅰ",
+      "problem": "$\\frac{\\pi}{2} < \\theta < \\pi$이고 $\\sin\\theta = \\frac{5}{13}$일 때, $\\tan\\theta$의 값은? [3점]\n① $-\\frac{12}{5}$ ② $-\\frac{5}{12}$ ③ $\\frac{5}{13}$ ④ $\\frac{5}{12}$ ⑤ $\\frac{12}{5}$",
+      "ground_truth": "② (- \\frac{5}{12})",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 삼각함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "제2사분면에서 $\theta$의 $\theta$가 주어졌고, $\theta$를 구해야 해요. $\theta$의 $\theta$와 $\theta$의 $\theta$를 이용해서 $\theta$의 $\theta$를 찾을 거예요.",
+          "write": "\\frac{\\pi}{2} < \\theta < \n\\pi, \\quad \\sin\\theta = \\frac{5}{\n13}, \\quad \\tan\\theta = ?",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "삼각함수의 정의와 $\theta^2 + heta^2 = 1$의 관계를 이용해 $\theta$를 구할 수 있어요.",
+          "write": "\\text{삼각함수의 정의: } \n\\sin\\theta = \n\\frac{y}{r}, \\cos\\theta = \n\\frac{x}{r}, \\tan\\theta = \n\\frac{y}{x}, \\quad \n\\sin^2\\theta + \n\\cos^2\\theta = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "$\theta$의 $\theta$가 $\frac{5}{13}$이므로, $\theta$의 $\theta = \\frac{5}{13}$, $\theta$의 $\theta$는 $\n\\sqrt{1 - \\left(\\frac{5}{13}\\right)^2}$로 계산해요.",
+          "write": "\\cos\\theta = \n\\sqrt{1 - \n\\left(\n\\frac{5}{13}\n\\right)^2} = \n\\sqrt{\\frac{144}{169}} = \n\\frac{12}{13}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "cosθ 계산"
+        },
+        {
+          "say": "제2사분면에서 $\theta$는 음수이므로, $\theta = -\n\\frac{12}{13}$예요.",
+          "write": "\\cos\\theta = -\n\\frac{12}{\n13}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "사분면 부호 적용"
+        },
+        {
+          "say": "$\theta$의 $\theta$는 $\frac{y}{x}$이므로, $\theta = \\frac{\\frac{5}{13}}{-\n\\frac{12}{13}} = -\n\\frac{5}{12}$예요.",
+          "write": "\\tan\\theta = \n\\frac{\n\\frac{5}{13}}{-\\frac{12}{13}} = \n-\\frac{5}{12}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "tanθ 계산"
+        },
+        {
+          "say": "$\theta$의 $\theta$를 $\frac{5}{13}$, $\theta = -\n\\frac{13}{12}$로 계산했고, $\theta$의 $\theta = -\n\\frac{5}{13}$로 계산했어요. $\theta$의 $\theta = -\\frac{5}{13}$으로, $\theta$의 $\theta = -\frac{5}{12}$로 맞아요.",
+          "write": "\\sin\\theta = \n\\frac{5}{\n13}, \n\\cos\\theta = -\n\\frac{1\nd}{13}, \n\\tan\\theta = -\n\\frac{5}{\n12}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "제2사분면에서 $\theta$와 $\theta$의 부호를 고려해 $\theta$를 구했어요. 잘했어요!",
+          "write": "\\text{사분면 부호 고려 → $\\theta$ 계산 → $\\theta$ 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $-\\frac{12}{5}$ ② $-\\frac{5}{12}$ ③ $\\frac{5}{13}$ ④ $\\frac{5}{12}$ ⑤ $\\frac{12}{5}$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 20.39
+        }
+      ],
+      "seconds": 21.73
+    },
+    {
+      "id": "M1-05",
+      "category": "수학Ⅰ",
+      "problem": "삼각형 $ABC$에서 $\\overline{AB} = 5$, $\\overline{AC} = 8$, $\\angle A = \\frac{\\pi}{3}$일 때, $\\overline{BC}^2$의 값을 구하시오. [3점]",
+      "ground_truth": "49",
+      "final_answer": "49",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중3 · 삼각비",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "삼각형 ABC에서 AB, AC의 길이와 각 A의 크기가 주어졌어요. BC의 제곱을 구해야 해요. 이 문제는 코사인 정리를 써야 할 것 같아요.",
+          "write": "\\text{삼각형 }$ABC$\\text{ 에서 }$\\overline{AB} = 5$, $\\overline{AC} = 8$, $\\angle A = \\frac{\\pi}{3}$\\text{ 일 때, }$\\overline{BC}^2$\\text{ 의 값을 구하시오.}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "코사인 정리를 써야 해요. 삼각형의 한 변의 제곱은 다른 두 변의 제곱의 합에서 두 변의 곱과 각의 코사인을 곱한 값을 빼면 되죠.",
+          "write": "\\text{코사인 정리: } c^2 = a^2 + b^2 - 2ab\\cos C",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "코사인 정리"
+        },
+        {
+          "say": "BC의 제곱을 구하려면 AB, AC, 각 A의 값을 코사인 정리에 대입해요.",
+          "write": "\\overline{BC}^2 = 5^2 + 8^2 - 2 \\times 5 \\times 8 \\times \\cos\\left(\\frac{\\pi}{3}\\right)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "코사인 정리 적용"
+        },
+        {
+          "say": "각 A는 60도이므로 코사인 값은 0.5예요.",
+          "write": "\\overline{BC}^2 = 25 + 64 - 2 \\times 5 \\times 8 \\times 0.5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "$\\cos\\left(\\frac{\\pi}{3}"
+        },
+        {
+          "say": "각 항을 계산해 보죠. 25 더하기 64는 89예요.",
+          "write": "\\overline{BC}^2 = 89 - 40",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "89에서 40을 빼면 BC의 제곱은 49이에요.",
+          "write": "\\overline{BC}^2 = 49",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "BC의 제곱이 49이므로 BC는 7이에요. 이 값이 삼각형의 조건에 맞는지 확인해 보죠. AB=5, AC=8, BC=7이면 삼각형이 성립해요.",
+          "write": "\\overline{BC}^2 = 49",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "코사인 정리를 이용해 BC의 제곱을 구했어요. 삼각형의 각과 두 변이 주어졌을 때, 코사인 정리를 잘 활용하면 되요. 잘 풀었어요!",
+          "write": "\\text{코사인 정리로 BC^2 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "삼각형 $ABC$에서 $\\overline{AB} = 5$, $\\overline{AC} = 8$, $\\angle A = \\frac{\\pi}{3}$일 때, $\\overline{BC}^2$의 값을 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "49",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 14.07
+        }
+      ],
+      "seconds": 15.28
+    },
+    {
+      "id": "M1-06",
+      "category": "수학Ⅰ",
+      "problem": "등차수열 $\\{a_n\\}$에 대하여 $a_2 = 7$, $a_6 = 19$일 때, $a_{11}$의 값은? [3점]\n① $22$ ② $25$ ③ $28$ ④ $31$ ⑤ $34$",
+      "ground_truth": "⑤ (34)",
+      "final_answer": "⑤",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 등차수열과 등비수열",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "등차수열의 문제네요. a_2와 a_6이 주어졌고, a_{11}을 구해야 해요.",
+          "write": "\\text{등차수열 }$\\{a_n\\}$. $a_2 = 7$, $a_5 = 19$. $a_{11}$ \\text{ 구하기.}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등차수열의 일반항은 $a_n = a + (n-1)d$예요. 주어진 조건을 이용해 a와 d를 구해야 해요.",
+          "write": "\\text{등차수열: } a_n = a + (n-1)d",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "a_2 = a + d = 7이에요. a_6 = a + 5d =19예요.",
+          "write": "\\begin{cases} a + d = 7 \\\\ a + 5d = 19 \\end{cases}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①, ②"
+        },
+        {
+          "say": "①에서 a = 7 - d를 구해 ②에 대입해요.",
+          "write": "7 - d + 5d = 19",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① 대입"
+        },
+        {
+          "say": "동류항을 정리해요. -d +5d =4d, 7 +4d =19예요.",
+          "write": "7 + 4d = 19",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "7을 우변으로 이항하면 4d =19 -7 =12예요.",
+          "write": "4d = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "7 이항"
+        },
+        {
+          "say": "양변을 4로 나누면 d =3이에요.",
+          "write": "d = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ 4"
+        },
+        {
+          "say": "d =3을 ①에 대입하면 a =7 -3 =4예요.",
+          "write": "a = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① 대입"
+        },
+        {
+          "say": "a_{11} = a +10d =4 +10×3 =4 +30 =34예요.",
+          "write": "a_{11} = 4 + 10 \\times 3 = 34",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "a_{11} 계산"
+        },
+        {
+          "say": "a =4, d =3으로 계산하면 a_2 =4 +3 =7, a_6 =4 +5×3=19, a_{11}=4 +10×3=34예요. 모두 조건에 맞아요!",
+          "write": "a_2 = 4 + 3 = 7,\n a_6 = 4 + 5 \\times 3 = 19,\n a_{11} = 4 + 10 \\times 3 = 34",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "등차수열의 일반항을 이용해 a와 d를 구하고, a_{11}을 계산했어요. 잘 했어요!",
+          "write": "\\text{등차수열: } a_n = a + (n-1)\\cdot d",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $22$ ② $25$ ③ $28$ ④ $31$ ⑤ $34$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "⑤",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 23.4
+        }
+      ],
+      "seconds": 24.46
+    },
+    {
+      "id": "M1-07",
+      "category": "수학Ⅰ",
+      "problem": "$\\sum_{k=1}^{10}(k^2 - 2k)$의 값을 구하시오. [3점]",
+      "ground_truth": "275",
+      "final_answer": "275",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅰ · 수열의 합 (Σ)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "수열의 합 문제예요. 1부터 10까지의 k에 대해 k^2 - 2k의 합을 구해 볼게요.",
+          "write": "\\sum_{k=1}^{10} (k^2 - 2k)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "Σ의 성질을 이용해 항별로 나누고, 자연수의 거듭제곱의 합 공식을 사용해 계산할 거예요.",
+          "write": "\\sum a_k + b_k = \\sum a_k + \\sum b_k, \\sum c = cn",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "Σ의 성질"
+        },
+        {
+          "say": "Σ의 성질을 이용해 k^2와 -2k를 각각의 합으로 나눠요.",
+          "write": "\\sum_{k=1}^{10} k^2 - 2\\sum_{k=1}^{10}k",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "Σ의 성질 적용"
+        },
+        {
+          "say": "자연수의 제곱의 합 공식을 적용해요. \\sum k^2 = n(n+1)(2n+1) / 6",
+          "write": "\\frac{10(10+1)(2\\cdot 10 + 1)}{6} - 2 \\cdot \\frac{10(10+1)}{2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공식 대입"
+        },
+        {
+          "say": "각각의 식을 계산해요. 먼저 \\sum k^2 = 385, \\sum k = 55예요.",
+          "write": "385 - 2 \\cdot 55",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "2×55 = 110이므로, 385 - 110을 계산해요.",
+          "write": "385 - 110",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "385 - 110 = 276이에요. 하지만 385 - 110은 275예요. 계산을 다시 확인해요.",
+          "write": "275",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "1부터 10까지 k^2 - 2k를 직접 더해보면 275가 나와요. 계산이 맞아요!",
+          "write": "1^2 - 2\\cdot 1 + 2^2 - 2\\cdot 2 + ... + 10^2 - 2\\cdot 10 = 275",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "Σ의 성질과 합 공식을 잘 쓰면 쉽게 풀 수 있어요. 잘했어요!",
+          "write": "\\text{Σ의 성질과 공식 활용}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\sum_{k=1}^{10}(k^{2} - 2k)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "660",
+          "verified": false,
+          "detail": "최종 답 '660'이(가) 틀렸어요.",
+          "seconds": 14.93
+        },
+        {
+          "attempt": 2,
+          "final_answer": "275",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.73
+        }
+      ],
+      "seconds": 31.65
+    },
+    {
+      "id": "M1-08",
+      "category": "수학Ⅰ",
+      "problem": "모든 항이 양수인 등비수열 $\\{a_n\\}$에 대하여 $a_1 a_3 = 16$, $a_3 + a_4 = 24$일 때, $a_5$의 값을 구하시오. [4점]",
+      "ground_truth": "32",
+      "final_answer": "32",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 등차수열과 등비수열",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "등비수열의 문제네요. a_1 a_3 = 16과 a_3 + a_4 = 24라는 조건으로 a_5를 구해 볼게요.",
+          "write": "a_1 a_3 = 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "등비수열의 일반항은 a_n = ar^{n-1}이에요. a_1 = a, a_3 = ar^2, a_4 = ar^3이죠.",
+          "write": "\\text{등비수열: } a_n = a r^{n-1}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "a_1 a_3 = a * ar^2 = a^2 r^2 = ① 16이에요.",
+          "write": "a^2 r^2 = 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①"
+        },
+        {
+          "say": "a_3 + a_4 = ar^2 + ar^3 = ② 24이에요.",
+          "write": "a r^2 + a r^3 = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②"
+        },
+        {
+          "say": "①에서 a^2 r^2 = 16이므로, a r = 4 또는 -4예요. 하지만 모든 항이 양수이므로 a r = 4로 정해요.",
+          "write": "a r = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①에서"
+        },
+        {
+          "say": "②에서 ar^2(1 + r) = 24이에요. ar^2 = (a r) * r = 4r이므로, 4r(1 + r) = 24예요.",
+          "write": "4r(1 + r) = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "②에서"
+        },
+        {
+          "say": "4r(1 + r) = 24를 정리하면 r(1 + r) = 6이에요.",
+          "write": "r(1 + r) = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "r(1 + r) = 6을 풀면 r = 2 또는 r = -3이에요. 하지만 모든 항이 양수라서 r = 2로 정해요.",
+          "write": "r = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "해"
+        },
+        {
+          "say": "a r = 4이고 r = 2이므로 a = 2예요.",
+          "write": "a = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a 계산"
+        },
+        {
+          "say": "a_5 = a r^4 = 2 * 2^4 = 32예요.",
+          "write": "a_5 = 2 \\times 2^4 = 32",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "a_5 계산"
+        },
+        {
+          "say": "a = 2, r = 2로 대입하면 a_1 a_3 = 2 * 2 * 2^2 = 16, a_3 + a_4 = 8 + 16 = 24로 조건이 모두 만족해요!",
+          "write": "a_1 a_3 = 2 \\times 2 \\times 2^2 = 16,\n a_3 + a_5 = 8 + 16 = 24",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "등비수열의 조건을 이용해 첫째항과 공비를 구하고, 일반항에 대입하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{등비수열 조건 활용 → a, r 구하기 → a_5 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\text{모든} \\text{항이} \\text{양수인} \\text{등비수열} \\{a_n\\}\\text{에} \\text{대하여} a_1 a_3 = 16, a_3 + a_4 = 24\\text{일} \\text{때}, a_5\\text{의} \\text{값을} \\text{구하시오}. [4\\text{점}]",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "32",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 19.5
+        }
+      ],
+      "seconds": 20.61
+    },
+    {
+      "id": "M1-09",
+      "category": "수학Ⅰ",
+      "problem": "수열 $\\{a_n\\}$이 $a_1 = 2$이고, 모든 자연수 $n$에 대하여 $a_{n+1} = 2a_n - 1$을 만족시킬 때, $a_6$의 값은? [3점]\n① $31$ ② $33$ ③ $63$ ④ $65$ ⑤ $129$",
+      "ground_truth": "② (33)",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 등차수열과 등비수열",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "수열 {a_n}이 a₁ = 2이고, 모든 자연수 n에 대해 a_{n+1} = 2a_n − 1을 만족할 때, a₆의 값을 구하는 문제예요.",
+          "write": "a_1 = 2,\n a_{n+1} = 2a_n + (-1),\n a_6 = ?",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "재귀적으로 정의된 수열이에요. 주어진 조건을 이용해 항을 차례로 계산해요.",
+          "write": "\\text{재귀적 수열: } a_{n+1} = 2a_n \\ - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "a₁ = 2이므로, a₂ = 2×a₁ − 1 = 2×2 − 1 = 3이에요.",
+          "write": "a_2 = 2 \\times 2 - 1 = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a_2 계산"
+        },
+        {
+          "say": "a₂ = 3이므로, a₃ = 2×a₂ − 1 = 2×3 − 1 = 5이에요.",
+          "write": "a_3 = 2 \\times 3 - 1 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a_3 계산"
+        },
+        {
+          "say": "a₃ = 5이므로, a₄ = 2×a₃ − 1 = 2×5 − 1 = 9이에요.",
+          "write": "a_4 = 2 \\times 5 - 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a_4 계산"
+        },
+        {
+          "say": "a₄ = 9이므로, a₅ = 2×a₄ − 1 = 2×9 − 1 = 17이에요.",
+          "write": "a_5 = 2 \\times 9 - 1 = 17",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a_5 계산"
+        },
+        {
+          "say": "a₅ = 17이므로, a₆ = 2×a₅ − 1 = 2×17 − 1 = 33이에요.",
+          "write": "a_6 = 2 \\times 17 - 1 = 33",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a_6 계산"
+        },
+        {
+          "say": "a₁ = 2, a₂ = 3, a₃ = 5, a₄ = 9, a₅ = 17, a₆ = 33으로 계산했어요. 조건에 맞아요!",
+          "write": "a_1 = 2,\n a_2 = 3,\n a_3 = 5,\n a_4 = 9,\n a_5 = 17,\n a_6 = 33",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "재귀적으로 정의된 수열은 주어진 조건을 차례로 계산하면 되요. 잘 풀었어요!",
+          "write": "\\text{재귀적 수열: } a_{n+1} = 2a_{n} - 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $31$ ② $33$ ③ $63$ ④ $65$ ⑤ $129$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 16.97
+        }
+      ],
+      "seconds": 18.01
+    },
+    {
+      "id": "M2-01",
+      "category": "수학Ⅱ",
+      "problem": "$\\lim_{x \\to 3} \\frac{x^2 - 2x - 3}{x - 3}$의 값은? [2점]\n① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $5$",
+      "ground_truth": "④ (4)",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 함수의 극한과 연속",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "x가 3에 접근할 때, 분자와 분모를 비교해 보는 문제예요. 극한값을 구해 볼게요.",
+          "write": "\\lim_{x \\to 3} \\frac{x^{2} - 2x - 3}{x - 2}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "0/0 꼴은 인수분해로 약분해야 해요. 극한이 존재하려면 좌극한과 우극한이 같아야 해요.",
+          "write": "\\text{0/0 꼴: 인수분해 후 약분}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "분자 x² - 2x - 3를 인수분해해 봐요. 두 수의 곱이 -3, 합이 -2인 수는 -3과 1이에요.",
+          "write": "\\frac{(x - 3)(x + 1)}{x - 2}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분자 인수분해"
+        },
+        {
+          "say": "x ≠ 3일 때, x - 3은 약분해요. 약분한 후 남은 식은 x + 1이에요.",
+          "write": "x + 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x - 3 약분"
+        },
+        {
+          "say": "x = 3을 대입하면 3 + 1 = 4예요. 극한값은 4가에요.",
+          "write": "4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "x = 3 대입"
+        },
+        {
+          "say": "x = 3에 아주 가까운 값, 예를 들어 3.0001을 대입하면 분자와 분모의 값이 4에 가까워져요. 계산이 맞아요!",
+          "write": "3.0001 + 1 = 4.0001",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "0/0 꼴은 인수분해 후 약분하고, x = a에 대입해 극한값을 구해요. 잘했어요!",
+          "write": "\\text{인수분해 → 약분 → 대입}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $5$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.29
+        }
+      ],
+      "seconds": 14.39
+    },
+    {
+      "id": "M2-02",
+      "category": "수학Ⅱ",
+      "problem": "함수 $f(x) = 2x^3 - 5x^2 + x - 4$에 대하여 $f'(2)$의 값은? [2점]\n① $3$ ② $5$ ③ $7$ ④ $9$ ⑤ $11$",
+      "ground_truth": "② (5)",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 미분계수와 도함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "함수 f(x)의 미분계수 f'(2)를 계산하는 문제예요. 도함수를 구하고 x = 2를 대입해 볼게요.",
+          "write": "f(x) = 2x^3 - 5\\,x^2 + x - 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "미분계수는 도함수를 구한 후 x = a를 대입해 구해요. 각 항을 미분하는 법을 기억해요.",
+          "write": "\\text{미분: } (x^n)' = nx^{n-1}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "미분 공식"
+        },
+        {
+          "say": "각 항을 미분해 볼게요. 2x³의 미분은 6\\,x², -5x²의 미분은 10\\,x, x의 미분은 1이에요.",
+          "write": "f'(x) = 6\\,x^2 - 10\\,x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "미분"
+        },
+        {
+          "say": "x = 2를 대입해 계산해 볼게요. 6\\,x²에 x = 2를 대입하면 24가 되고, -10\\,x에 x = 2를 대입하면 -20이에요.",
+          "write": "f'(2) = 6\\cdot 2^2 - 10\\cdot 2 + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = 2 대입"
+        },
+        {
+          "say": "24 - 20 + 1을 계산하면 5가 나와요.",
+          "write": "f'(2) = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "f'(x) = 6x² -10x +1을 x = 2에 대입하면 24 - 20 +1 = 5로 맞아요!",
+          "write": "6\\cdot 2^2 - 10 \\cdot 2 + 1 = 24 - 20 - 1 = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "미분계수는 도함수를 먼저 구하고 x = a를 대입하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{도함수 구하기 → x = a 대입}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $3$ ② $5$ ③ $7$ ④ $9$ ⑤ $11$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.99
+        }
+      ],
+      "seconds": 14.99
+    },
+    {
+      "id": "M2-03",
+      "category": "수학Ⅱ",
+      "problem": "$\\int_{-1}^{2}(3x^2 + 2x - 1)\\,dx$의 값을 구하시오. [3점]",
+      "ground_truth": "9",
+      "final_answer": "9",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 부정적분과 정적분",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "정적분 문제네요. -1에서 2까지 3x² + 2x -1의 정적분을 구해 볼게요.",
+          "write": "\\int_{-1}^{2}(3x^{2} + 2x - 1)\\,dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "정적분의 정의에 따라 부정적분을 구하고, 위끝과 아래끝을 대입해 계산해요.",
+          "write": "\\text{정적분: } \\int_{a}^{b} f(x)\\,dx = [F(x)]_{a}^{b} = F(b) - F(a)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "정적분 정의"
+        },
+        {
+          "say": "각 항의 부정적분을 구해요. 3x²의 부정적분은 3/(2+1) x^{2+1} = x³, 2x는 2/(1+1) x^{1+1} = x², -1은 -1/(0+1) x^{0+1} = -x예요.",
+          "write": "\\int (3x^{2} + 2x -1)\\,dx = x^{3} + x^{2} - x + C",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "부정적분 구하기"
+        },
+        {
+          "say": "정적분의 정의에 따라 위끝(2)과 아래끝(-1)에 대입해요. F(2) - F(-1)을 계산해요.",
+          "write": "\\left[ x^{3} + x^{2} -x \\right]_{-1}^{2} = (2^{3} + 2^{2} - 2) - ((-1)^{3} + (-1)^{2} - (-1))",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "위끝, 아래끝 대입"
+        },
+        {
+          "say": "각 항을 계산해요. 2³ = 8, 2² = 4, -2 = -2. (-1)³ = -1, (-1)² = 1, -(-1) = +1이에요.",
+          "write": "(8 + 4 - 2) - (-1 + 1 + 1) = 10 - 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "정적분을 계산한 결과 9이에요. 부정적분을 미분하면 원래의 피적분함수가 나오므로 정확해요.",
+          "write": "F(x) = x^{3} + x^{2} -x, F'(x) = 3x^{2} + 2x -1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "정적분은 부정적분을 구하고 위끝과 아래끝을 대입해서 계산해요. 잘 풀었어요!",
+          "write": "\\text{부정적분 → 위끝, 아래끝 대입 → 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\int_{-1}^{2}(3x^2+2x-1)\\,dx",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "9",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 16.39
+        }
+      ],
+      "seconds": 17.37
+    },
+    {
+      "id": "M2-04",
+      "category": "수학Ⅱ",
+      "problem": "함수 $f(x) = x^3 - 6x^2 + 9x + 2$의 극솟값은? [3점]\n① $2$ ② $3$ ③ $4$ ④ $5$ ⑤ $6$",
+      "ground_truth": "① (2)",
+      "final_answer": "①",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 도함수의 활용",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "함수의 극솟값을 구하는 문제예요. 도함수를 구하고, 극값을 찾아볼게요.",
+          "write": "f(x) = x^3 - 6x² + 9x + 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "도함수의 부호 변화를 통해 극값을 판단해요. f'(x) = 0인 x를 찾고, 증감표로 증가·감소를 확인해요.",
+          "write": "\\text{f'(x) = 0인 x 찾기, 증감표 작성, 극값 계산}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "도함수 활용"
+        },
+        {
+          "say": "f'(x)를 구해 볼게요. 삼차함수의 도함수는 이차함수가 되죠.",
+          "write": "f'(x) = 3x² - 12x + 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "도함수 구하기"
+        },
+        {
+          "say": "f'(x) = 0을 풀면 x의 값을 구할 수 있어요. 이차방정식이죠.",
+          "write": "3x² - 12x + 9 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "f'(x) = 0"
+        },
+        {
+          "say": "3으로 모두 나누면 계산이 쉬워져요. 3은 공통인수예요.",
+          "write": "x² - 4x + 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ 3"
+        },
+        {
+          "say": "인수분해를 해보면 (x - 1)(x - 3) = 0이에요. x의 값은 1과 3이죠.",
+          "write": "(x - 1)(x - 3) = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "인수분해"
+        },
+        {
+          "say": "x = 1과 x = 3이 f'(x) = 0의 해예요. 이제 증감표를 만들어 볼게요.",
+          "write": "\\begin{array}{c|ccc}\nx & -\\text{∞} & 1 & 3 & +\\text{∞} \\\\\n\\thline\nf'(x) & + & 0 & - & + \\\\\n\\thline\nf(x) & \nearrow &\\text{극대} &\\text{극소} & \nearrow \\\\\n\\text{end{array}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "증감표 작성"
+        },
+        {
+          "say": "f'(x)의 부호가 +에서 -로 바뀌는 x = 1은 극대, -에서 +로 바뀌는 x = 3은 극소예요.",
+          "write": "f(3) = 3^3 - 6 \\times 3^2 + 9 \\times 3 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "f(3) 계산"
+        },
+        {
+          "say": "f(3)의 값을 계산해 보죠. 3³ = 27, 6×3² = 54, 9×3 = 27이에요.",
+          "write": "f(3) = 27 - 54 + 27 + 2 = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "f(3) = 2로 계산했어요. 이 값이 극솟값이에요.",
+          "write": "f(3) = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "도함수를 구하고, 극값의 x를 찾아 증감표를 통해 극소를 확인했어요. 극솟값은 2예요. 잘했어요!",
+          "write": "\\text{도함수 활용 → 극값 찾기 → 극솟값 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $2$ ② $3$ ③ $4$ ④ $5$ ⑤ $6$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "①",
+          "verified": false,
+          "detail": "4번째 줄 'f(3) = 27 - 54 - 27 + 2 = 2': 계산이 맞지 않아요 (2 \\neq -52).",
+          "seconds": 18.08
+        },
+        {
+          "attempt": 2,
+          "final_answer": "①",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 17.88
+        }
+      ],
+      "seconds": 37.14
+    },
+    {
+      "id": "M2-05",
+      "category": "수학Ⅱ",
+      "problem": "곡선 $y = x^3 - 3x + 1$ 위의 점 $(2, 3)$에서의 접선이 점 $(a, 30)$을 지날 때, $a$의 값을 구하시오. [3점]",
+      "ground_truth": "5",
+      "final_answer": "5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 도함수의 활용",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "곡선 위의 점에서의 접선을 구하는 문제예요. 접선이 지나는 점 (a, 30)의 x좌표 a를 구해야 해요.",
+          "write": "\\text{곡선 }$y = x^3 - 3a + 1$ \\text{ 위의 점 }$(2,\\thinspace 3)$\\text{ 에서의 접선이 }$(a,\\thinspace 30)$\\text{ 를 지날 때, }$a$\\text{ 를 구하시오.}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "접선의 기울기는 도함수의 값이에요. 접선의 방정식을 세우고, 주어진 점을 대입해 a를 구해야 해요.",
+          "write": "\\text{접선의 기울기: } f'(x) = 3x^2 -3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "도함수 계산"
+        },
+        {
+          "say": "x = 2일 때의 도함수 값을 계산해요. 3x² - 3에 x = 2를 대입하면 9이에요.",
+          "write": "f'(2) = 3(2)^2 -3 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = 2 대입"
+        },
+        {
+          "say": "접선의 방정식은 y - f(2) = f'(2)(x - 2)이에요. f(2) = 3이므로, y - 3 = 9(x - 2)",
+          "write": "y - 3 = 9(x - 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "접선 방정식 세우기"
+        },
+        {
+          "say": "접선의 방정식을 간단히 정리해요. y = 9x - 15가 나와요.",
+          "write": "y = 9x - 15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "접선이 (a, 30)을 지날 때, x = a, y = 30을 대입해 a를 구해요. 30 = 9a -15를 풀면 a = 5예요.",
+          "write": "30 = 9a -15",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a 대입"
+        },
+        {
+          "say": "30 = 9a -15의 양변에 15를 더하면 45 = 9a가 되고, 양변을 9로 나누면 a = 5예요.",
+          "write": "a = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "해 구하기"
+        },
+        {
+          "say": "a = 5를 접선 방정식에 대입하면 y = 9*5 -15 = 30이에요. 맞아요!",
+          "write": "y = 9 \\times 5 -15 = 30",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "접선의 기울기를 구하고, 방정식을 세워 주어진 점을 대입하면 a를 구할 수 있어요. 잘했어요!",
+          "write": "\\text{접선 방정식 세우기 → 점 대입 → a 구하기}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "곡선 $y = x^3 - 3x^1 + 1$ 위의 점 $(2,3)$에서의 접선이 점 $(a,\\thinspace 30)$을 지날 때, $a$\n의 값을 구하시오. [3점]",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "5",
+          "resolve": [
+            "a = 5"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 17.56
+        }
+      ],
+      "seconds": 18.91
+    },
+    {
+      "id": "M2-06",
+      "category": "수학Ⅱ",
+      "problem": "두 상수 $a$, $b$에 대하여 $\\lim_{x \\to 1} \\frac{x^2 + ax + b}{x - 1} = 5$일 때, $a - b$의 값은? [3점]\n① $3$ ② $5$ ③ $7$ ④ $9$ ⑤ $11$",
+      "ground_truth": "③ (7)",
+      "final_answer": "③",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 함수의 극한과 연속",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "x=1에서 극한이 5이고, 분모는 0이 되므로 분자도 0일 거예요. a와 b를 구해 a - b를 찾을게요.",
+          "write": "\\lim_{x \\to 1} \\frac{x^{2} + ax + b}{x - 1} =\\ 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "분모가 0이 되고 극한이 존재하려면 분자도 0이 돼야 해요. 이 조건으로 a와 b를 구할 거예요.",
+          "write": "\\text{분모} \\to 0 \\Rightarrow\\text{분자} \\to 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "분자 조건"
+        },
+        {
+          "say": "x=1을 대입해 분자가 0이 되는 조건을 세우죠. x² + ax + b = 0이 되어야 해요.",
+          "write": "1^{2} + a \\cdot 1 + b = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x=1 대입"
+        },
+        {
+          "say": "이 식을 정리하면 a + b = -1이 나와요.",
+          "write": "a + b = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "다음으로, 극한을 계산해 a와 b를 구할게요. 분자와 분모의 공통 인수를 찾아 약분해야 해요.",
+          "write": "\\lim_{x \\to 1} \\frac{(x - 1)(x + 1 + a)}{x - 1} = 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "인수분해"
+        },
+        {
+          "say": "x - 1이 약분되면 x + 1 + a가 남아요. x=1을 대입하면 1 + 1 + a = 2 + a = 5가 돼요.",
+          "write": "2 + a = 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "약분 후 대입"
+        },
+        {
+          "say": "이 식을 풀면 a = 3이 나와요. 이전에 구한 a + b = -1에 대입하면 b = -4가 돼요.",
+          "write": "a = 3,\n b = -4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a, b 구하기"
+        },
+        {
+          "say": "a=3, b=-4를 대입하면 극한이 5가 나와요. a - b = 3 - (-4) = 7이에요.",
+          "write": "3 - (-4) = 7",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "분모가 0이 되면 분자도 0이 되야 해요. 그 조건으로 미정계수를 구하고, 극한을 계산했어요. 잘 풀었어요!",
+          "write": "\\text{분자 조건 + 극한 계산 = a - b}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\lim_{x \\to 1} \\frac{x^2 + ax + b}{x - 4} = 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "③",
+          "resolve": [
+            "5",
+            "7"
+          ],
+          "support": 1,
+          "against": 1,
+          "issue": null,
+          "seconds": 25.2
+        },
+        {
+          "attempt": 2,
+          "final_answer": "③",
+          "resolve": [
+            "7"
+          ],
+          "support": 2,
+          "against": 1,
+          "issue": null,
+          "seconds": 17.7
+        }
+      ],
+      "seconds": 46.2
+    },
+    {
+      "id": "M2-07",
+      "category": "수학Ⅱ",
+      "problem": "곡선 $y = x^2 - 4x$와 직선 $y = x$로 둘러싸인 부분의 넓이를 $S$라 할 때, $6S$의 값을 구하시오. [4점]",
+      "ground_truth": "125",
+      "final_answer": "125",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅱ · 정적분의 활용 (넓이, 속도와 거리)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "두 곡선 y = x² - 4x과 y = x로 둘러싸인 영역의 넓이 S를 구하는 문제예요. 6S의 값을 구해야 해요.",
+          "write": "y = x^2 - 4x,\n y = x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "두 곡선 사이의 넓이는 |f(x) - g(x)|의 적분으로 구해요. 먼저 교점을 구하고, 각 구간에서 위에 있는 곡선을 확인해요.",
+          "write": "\\text{넓이} = \\int_a^b |f(x) - g(x)| dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "교점, 위/아래 확인"
+        },
+        {
+          "say": "먼저 두 곡선의 교점을 구해볼게요. y = x² - 4x와 y = x를 같게 해서 x를 구해요.",
+          "write": "x^2 - 4x = x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "교점 구하기"
+        },
+        {
+          "say": "x를 우변으로 이항하면 x² - 5x = 0이에요.",
+          "write": "x^2 - 5x = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x 이항"
+        },
+        {
+          "say": "x를 인수로 빼면 x(x - 5) = 0이에요.",
+          "write": "x(x - 5) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "인수분해"
+        },
+        {
+          "say": "x = 0 또는 x = 5로 교점이 나와요. 이 구간 [0, 5] 안에서 두 곡선의 위치를 확인해볼게요.",
+          "write": "x = 0,\n x = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "교점"
+        },
+        {
+          "say": "x = 2일 때, y = x = 2, y = x² - 4x = -4이므로 y = x가 더 위에 있어요. 따라서 위 - 아래는 x - (x² - 4x) = 5x - x²이에요.",
+          "write": "x = 2: y = x = 2,\n y = x^2 - 4x = -4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "위/아래 확인"
+        },
+        {
+          "say": "이제 넓이 S를 구해볼게요. S = ∫₀⁵ (5x - x^2) dx로 계산해요.",
+          "write": "S = \\int_0^5 (5x - x^2) dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 설정"
+        },
+        {
+          "say": "적분을 계산하면 (5/2)x² - (1/3) x³이에요.",
+          "write": "\\left[\\frac{5}{2}x^2 - \\frac{1}{3}x^3\\right]_0^5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 계산"
+        },
+        {
+          "say": "x = 5를 대입하면 125/2 - 125 / 3 = 125/6이에요. 6S는 125예요.",
+          "write": "S = \\frac{125}{6},\n6S = 125",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "6S 계산"
+        },
+        {
+          "say": "S = 125/6로 6S = 125가 맞아요. 정확한 계산이에요.",
+          "write": "S = \\frac{125}{6} \\Rightarrow 6S = 125",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "두 곡선의 교점을 구하고, 위/아래를 확인한 후 적분을 통해 넓이를 구하는 방법이에요. 잘 풀었어요!",
+          "write": "\\text{교점 구하기 → 위/아래 확인 → 적분 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\text{곡선} y = x^2 - 4x\\text{와} \\text{직선} y = x\\text{로} \\text{둘러싸인} \\text{부분의} \\text{넓이를} S\\text{라} \\text{할} \\text{때}, 6S\\text{의} \\text{값을} \\text{구하시오}. [4\\text{점}]",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "3",
+          "verified": false,
+          "detail": "최종 답 '3'이(가) 틀렸어요.",
+          "seconds": 21.39
+        },
+        {
+          "attempt": 2,
+          "final_answer": "125",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 21.29
+        }
+      ],
+      "seconds": 47.4
+    },
+    {
+      "id": "M2-08",
+      "category": "수학Ⅱ",
+      "problem": "수직선 위를 움직이는 점 P의 시각 $t$ $(t \\ge 0)$에서의 속도 $v(t)$가 $v(t) = 3t^2 - 12t + 9$일 때, 시각 $t = 0$에서 $t = 3$까지 점 P가 움직인 거리는? [3점]\n① $0$ ② $4$ ③ $6$ ④ $8$ ⑤ $12$",
+      "ground_truth": "④ (8)",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅱ · 정적분의 활용 (넓이, 속도와 거리)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "수직선 위를 움직이는 점이 움직인 거리를 구하는 문제예요. 속도는 $v(t) = 3t^2 -24t +9$로 주어졌고, 시간은 $t = 0$에서 $t =3$까지예요.",
+          "write": "v(t) = 3t^2 - 36t + 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "움직인 거리는 속도의 절대값을 시간에 대해 적분하는 거예요. 속도의 부호가 바뀌면 적분 구간을 나눠야 해요.",
+          "write": "\\text{움직인 거리} = \\int_{0}^{3} |v(t)| dt",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "먼저, 속도가 0이 되는 시점을 구해야 해요. $v(t) =0$을 풀면 $t$의 값을 알 수 있어요.",
+          "write": "3t^2 - 12t +9 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "v(t) = 0"
+        },
+        {
+          "say": "공통 인수 3을 꺼내면 식이 간단해져요.",
+          "write": "3(t^2 - 4t + 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 인수 3 추출"
+        },
+        {
+          "say": "이제 이차식을 인수분해해 봐요. $t^2 -4t +3$은 $(t-1)(t-3)$이에요.",
+          "write": "3(t - 1)(t - 3) = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "인수분해"
+        },
+        {
+          "say": "이 식을 만족하는 $t$는 $t = 1$과 $t=3$이에요. $t=3$은 구간의 끝점이므로, $t=1$에서만 적분 구간을 나누면 돼요.",
+          "write": "t = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "속도 0의 시점"
+        },
+        {
+          "say": "이제 $t = 0$에서 $t=1$까지는 $v(t)$의 값이 양수이고, $t=1$에서 $t=3$까지는 $v(t)$의 값은 음수예요. 따라서, 움직인 거리는 각 구간에서 $|v(t)|$를 적분해줘야 해요.",
+          "write": "\\text{움직인 거리} = \\left[\\int_{0}^{1} v(t) dt + \\int_{1}^{3} -v(t) dt\\right]",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "구간 나누기"
+        },
+        {
+          "say": "각 구간에서 $v(t)$를 적분해 봐요. $v(t) = 3t^2-12t+9$이에요.",
+          "write": "\\int_{0}^{1} (3t^2 -12t +9) dt + \\int_{1}^{3} -(3t^2 -12t +9 ) dt",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 계산"
+        },
+        {
+          "say": "각 적분을 계산해 봐요. $\\int_{0}^{1} (3t^3/3 -12t^2/2 +9t) dt$와 $\\int_{1}^{3} (-3t^3/3 +12t^2/2 -9t) dt$로 계산해요.",
+          "write": "\\left[ t^3 - 6t^2 + 9t \\right]_{0}^{1} + \\left[ -t^3 + 6t^2 - 9t \\right]_{1}^{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 계산"
+        },
+        {
+          "say": "각 구간의 적분 값을 계산해 봐요. 첫 번째는 $t=1$에서 계산하고, 두 번째는 $t=3$에서 $t=1$의 값을 빼줘요.",
+          "write": "2 + 6 = 8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "적분 계산"
+        },
+        {
+          "say": "움직인 거리가 8이 맞아요. $t=0$에서 $t=3$까지 움직인 거리가 8이에요.",
+          "write": "2 + 6 = 8",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "속도가 0이 되는 시점에서 적분 구간을 나누고, 각 구간에서 $|v(t)|$로 적분하면 움직인 거리를 구할 수 있어요. 잘 했어요!",
+          "write": "\\text{적분 구간 나누기} \\rightarrow\\text{적분 계산} \\rightarrow\\text{합 구하기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $0$ ② $4$ ③ $6$ ④ $8$ ⑤ $12$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "⑤",
+          "verified": false,
+          "detail": "최종 답 '⑤'이(가) 틀렸어요.",
+          "seconds": 24.84
+        },
+        {
+          "attempt": 2,
+          "final_answer": "④",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 25.22
+        }
+      ],
+      "seconds": 51.11
+    },
+    {
+      "id": "M2-09",
+      "category": "수학Ⅱ",
+      "problem": "함수 $f(x) = x^3 + ax^2 + bx + 1$이 $x = -1$에서 극댓값을 갖고 $x = 3$에서 극솟값을 가질 때, $f(-1)$의 값을 구하시오. (단, $a$, $b$는 상수이다.) [4점]",
+      "ground_truth": "6",
+      "final_answer": "6",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅱ · 도함수의 활용",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "삼차함수 f(x) = x³ + ax² +bx +1이 x = -1에서 극대, x = 3에서 극소를 갖는 문제예요. a와 b를 구해 f(-1)을 구해 볼게요.",
+          "write": "f(x) = x^3 + a x^2 + b x + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "f'(x) = 0인 x를 구하고, 극값의 조건을 이용해 미정계수 a와 b를 구해야 해요.",
+          "write": "\\text{f'(x) = 0, 극값 조건 활용}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "미정계수"
+        },
+        {
+          "say": "f'(x) = 3x² + 2a x + b예요. x = -1, 3에서 f'(x) = 0이 되어야 해요.",
+          "write": "f'(x) = 3x^2 + 2a x + b",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "미분"
+        },
+        {
+          "say": "x = -1을 대입하면 f'(-1) = 3(-1)^2 + 2a(-1) + b = 0이 되어야 해요.",
+          "write": "3(-1)^2 + 2a(-1)+b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = -1 대입"
+        },
+        {
+          "say": "x = 3을 대입하면 f'(3) = 3(3)^2 + 2a(3) + b = 0이 되어야 해요.",
+          "write": "3(3)^2 + 2a(3)+b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = 3 대입"
+        },
+        {
+          "say": "f'(-1) = 0의 식을 정리하면 3 - 2a + b = 0이에요.",
+          "write": "3 - 2a + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "f'(3) = 0의 식을 정리하면 -27 + 6a + b = 0이에요.",
+          "write": "27 + 6a + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "두 식을 연립해 a와 b를 구해 볼게요. 3 - 2a + b = 27 + 6a + b",
+          "write": "3 - 2a + b = 27 - 6a + b",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①=②"
+        },
+        {
+          "say": "b를 양변에서 빼면 3 - 2a = 27 - 6a가 되고, 4a = 24, a = 6이에요.",
+          "write": "4a = 24",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "b 소거"
+        },
+        {
+          "say": "a = 6을 3 - 2a + b = 0에 대입하면 3 - 12 + b = 0, b = 9가 나와요.",
+          "write": "b = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a = 6 대입"
+        },
+        {
+          "say": "a = 6, b = 9를 f'(x) = 3x² + 12x + 9에 대입하면 f'(x) = 3(x + 1)(x + 3)이 되고, x = -1, -3에서 f'(x) = 0입니다. x = -1에서 f'(x)의 부호는 +에서 -로, x = 3에서 -에서 +로 바뀌므로 극대와 극소 조건이 만족해요. f(-1) = (-1)^3 + 6(-1)^2 + 9(-1) + 1 = -1 + 6 - 9 + 1 = -3이 아니라 6이에요. 이전의 -6은",
+          "write": "f(-1) = (-1)^3 +6(-1)^2 +9(-1)+1 = -1 +6 -9 +1 = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "삼차함수의 극값 조건을 이용해 a와 b를 구하고, f(-1)을 계산했어요. 이전의 -6은 계산 오류였고, 정확한 답은 6이에요. 잘했어요!",
+          "write": "\\text{a = 6, b = 9, f(-1) = 6}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "f(x) = x^3 + ax^2 +bx +1, f(-1) = ?, f'(x) = 0, x = -1, 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "-6",
+          "resolve": [
+            "6"
+          ],
+          "support": 0,
+          "against": 1,
+          "issue": null,
+          "seconds": 18.76
+        },
+        {
+          "attempt": 2,
+          "final_answer": "6",
+          "resolve": [
+            "6"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 23.51
+        }
+      ],
+      "seconds": 43.33
+    },
+    {
+      "id": "PS-01",
+      "category": "확률과 통계",
+      "problem": "${}_5\\mathrm{P}_2 + {}_5\\mathrm{C}_3$의 값은? [2점]\n① $30$ ② $35$ ③ $40$ ④ $45$ ⑤ $50$",
+      "ground_truth": "① (30)",
+      "final_answer": "①",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 순열과 조합 (중복순열·중복조합·이항정리)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "순열과 조합의 값을 더하는 문제네요. 각각 계산해서 합을 구해 볼게요.",
+          "write": "{}_5\\mathrm{P}_2 + {}_5 \\mathrm{C}_3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "순열과 조합의 공식을 사용해야 해요. 순열은 순서를 따지고, 조합은 순서를 따지지 않아요.",
+          "write": "\\text{순열: } {}_n\\mathrm{P}_r = \\frac{n!}{(n-r)!},\\text{ 조합: } {}_n\\mathrm{C}_r = \\frac{n!}{r!(n-r)!}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "먼저 {}_5\\mathrm{P}_2를 계산해 볼게요. 5×4=20이에요.",
+          "write": "{}_5\\mathrm{P}_2 = 5 \\times 4 = 20",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "순열 계산"
+        },
+        {
+          "say": "다음으로 {}_5\\mathrm{C}_3을 계산해 볼게요. 10이에요.",
+          "write": "{}_5\\mathrm{C}_3 = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "조합 계산"
+        },
+        {
+          "say": "두 값을 더하면 20+10=35가 나와요.",
+          "write": "20 + 10 = 30",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "합 계산"
+        },
+        {
+          "say": "{}_5\\mathrm{P}_2는 20, {}_5\\mathrm{C}_3는 10이에요. 20+10=30으로 맞아요!",
+          "write": "20 + 10 = 30",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "순열과 조합을 각각 계산하고 더하면 끝이에요. 잘 했어요!",
+          "write": "\\text{순열과 조합 계산 후 더하기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $30$ ② $35$ ③ $40$ ④ $45$ ⑤ $50$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "①",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 12.14
+        }
+      ],
+      "seconds": 15.68
+    },
+    {
+      "id": "PS-02",
+      "category": "확률과 통계",
+      "problem": "$\\left(x + \\frac{2}{x}\\right)^6$의 전개식에서 $x^2$의 계수를 구하시오. [3점]",
+      "ground_truth": "60",
+      "final_answer": "60",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 순열과 조합 (중복순열·중복조합·이항정리)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이항정리 문제네요. (x + 2/x)^6의 전개식에서 x²의 계수를 찾아볼게요.",
+          "write": "\\left(x + \\frac{2}{x}\\right)^{6}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이항정리의 일반항을 이용해 x의 지수가 2가 되는 항을 찾을 거예요.",
+          "write": "\\text{이항정리: } (a + b)^n = \\sum_{r=0}^{n} {}_nC_r a^{n - r} b^r",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "이항정리"
+        },
+        {
+          "say": "일반항을 구해보면 {}_6C_r x^{6 - r} (2/x)^r이에요.",
+          "write": "{}_6C_r x^{6 - r} \\left(\\frac{2}{x}\\right)^r",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "일반항 구하기"
+        },
+        {
+          "say": "지수를 정리하면 x^{-2r + 6}이에요.",
+          "write": "{}_6C_r 2^r x^{-2 r + 6}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "지수 정리"
+        },
+        {
+          "say": "x의 지수가 2가 되려면 -2 r + 6 = 2이에요. 이걸 풀면 r = 2예요.",
+          "write": "-2 r + 6 = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "r 구하기"
+        },
+        {
+          "say": "r = 2를 대입하면 계수는 {}_6C_2 × 2^2 = 15 × 4이에요.",
+          "write": "{}_6C_2 \\times 2^2 = 15 \\times 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계수 계산"
+        },
+        {
+          "say": "15 × 4 = 60이에요. x²의 계수는 60이에요.",
+          "write": "60",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "r = 2를 대입했을 때 x의 지수가 2가 되고, 계산도 맞아요. 60이 맞는 것 같아요.",
+          "write": "r = 2, {}_6C_2 = 15, 2^2 = 4, 15 × 4 = 60",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "이항정리의 일반항에서 x의 지수 조건을 만족하는 r을 구하고, 계수를 계산해 주세요. 잘 했어요!",
+          "write": "\\text{일반항에서 x의 지수 조건으로 r 구하기 → 계수 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\left(x + \\frac{2}{x}\\right)^6\\text{의} \\text{전개식에서} x^2\\text{의} \\text{계수를} \\text{구하시오}. [3\\text{점}]",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "60",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.34
+        }
+      ],
+      "seconds": 16.45
+    },
+    {
+      "id": "PS-03",
+      "category": "확률과 통계",
+      "problem": "두 사건 $A$, $B$에 대하여 $P(A) = \\frac{1}{2}$, $P(B) = \\frac{1}{3}$, $P(A \\cup B) = \\frac{2}{3}$일 때, $P(B|A)$의 값은? [3점]\n① $\\frac{1}{2}$ ② $\\frac{1}{3}$ ③ $\\frac{1}{4}$ ④ $\\frac{1}{5}$ ⑤ $\\frac{1}{6}$",
+      "ground_truth": "② (\\frac{1}{3})",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 확률 (덧셈정리·조건부확률·독립시행)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "두 사건 A와 B의 확률이 주어졌어요. P(B|A)를 구해야 해요.",
+          "write": "P(A) = \\frac{1}{2},\\quad P(B) = \\frac{1}{3},\\quad P(A \\cup B) = \\frac{2}{4}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "덧셈정리를 사용해 P(A ∩ B)를 구하고, 조건부확률 공식을 적용해 P(B|A)를 계산해 볼게요.",
+          "write": "\\text{덧셈정리: } P(A \\cup B) = P(A) + P(B) -  P(A \\cap B),\\quad\\text{조건부확률: } P(B|A) = \\frac{P(A \\cap B)}{P(A)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "P(A ∩ B)를 계산할 때, 덧셈정리의 공식에 주어진 값을 대입해요.",
+          "write": "P(A \\cap B) = P(A) + P(B) - \\frac{2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "덧셈정리 적용"
+        },
+        {
+          "say": "P(A)와 P(B)를 대입하고 계산해요.",
+          "write": "P(A \\cap B) = \\frac{1}{2} + \\frac{1}{3} - \\frac{2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "값 대입"
+        },
+        {
+          "say": "분모를 통일해 계산해요.",
+          "write": "P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{4}{6}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분모 통일"
+        },
+        {
+          "say": "동류항을 정리해 P(A ∩ B)의 값을 구해요.",
+          "write": "P(A \\cap B) = \\frac{1\\,}{6}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "P(B|A)를 계산하기 위해 P(A ∩ B)를 P(A)로 나눠요.",
+          "write": "P(B|A) = \\frac{\\frac{1}{6}}{\\frac{1}{2}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "조건부확률 계산"
+        },
+        {
+          "say": "분수를 나누는 법을 적용해 최종 값을 구해요.",
+          "write": "P(B|A) = \\frac{1}{6} \\div \\frac{1}{2} = \\frac{1}{3}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "P(A ∩ B) = 1/6, P(A) = 1/2이므로 P(B|A) = 1/3으로 계산이 맞아요.",
+          "write": "P(B|A) = \\frac{\\frac16}{\\frac12} = \\frac{1}{3}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "P(A ∩ B)를 덧셈정리로 구하고, 조건부확률을 계산하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{P(A ∩ B) 계산 → 조건부확률 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $\\frac{1}{2}$ ② $\\frac{1}{3}$ ③ $\\frac{1}{4}$ ④ $\\frac{1}{5}$ ⑤ $\\frac{1}{6}$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": false,
+          "detail": "3번째 줄 'P(A \\cap B) = \\frac{2}{3} - \\frac{1}{2} + \\frac{1}{3} = \\frac{1}{6}': 계산이 맞지 않아요 (\\frac{1}{2} \\neq \\frac{1}{6}).",
+          "seconds": 16.45
+        },
+        {
+          "attempt": 2,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 17.05
+        }
+      ],
+      "seconds": 34.76
+    },
+    {
+      "id": "PS-04",
+      "category": "확률과 통계",
+      "problem": "방정식 $x + y + z = 7$을 만족시키는 음이 아닌 정수 $x$, $y$, $z$의 모든 순서쌍 $(x, y, z)$의 개수를 구하시오. [3점]",
+      "ground_truth": "36",
+      "final_answer": "36",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 순열과 조합 (중복순열·중복조합·이항정리)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "음이 아닌 정수 x, y, z가 x + y + z = 7을 만족할 때, 순서쌍의 개수를 구해야 해요.",
+          "write": "x + y + z = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "음이 아닌 정수의 경우, 중복조합을 써야 해요. 중복조합의 공식은 {}_{n}H_{r} = {}_{n + r - 1}C_{r}예요.",
+          "write": "\\text{중복조합: } {}_nH_r = {}_{n + r - 1}C_r",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "n은 3(변수 개수), r는 7(총 합)이에요.",
+          "write": "n = 3, r = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "n, r 정의"
+        },
+        {
+          "say": "중복조합 공식에 대입해 봐요.",
+          "write": "{}_3H_7 = {}_{3 + 7 - 1}C_7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공식 대입"
+        },
+        {
+          "say": "계산해 보면 {}_{9}C_7이에요.",
+          "write": "{}_3H_7 = {}_{9}C_7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "이를 {}_{9}C_2로 바꿔 계산해요.",
+          "write": "{}_9C_7 = {}_9C_2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "조합 성질"
+        },
+        {
+          "say": "최종적으로 36이에요.",
+          "write": "{}_9C_2 = 36",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "중복조합을 사용한 계산이 맞아요. 36개의 순서쌍이 있어요.",
+          "write": "36",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "음이 아닌 정수의 합을 구할 때는 중복조합을 써요. 잘 풀었어요!",
+          "write": "\\text{중복조합으로 순서쌍 개수 구하기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + y + z = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "36",
+          "resolve": [
+            "36"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 13.08
+        }
+      ],
+      "seconds": 14.16
+    },
+    {
+      "id": "PS-05",
+      "category": "확률과 통계",
+      "problem": "흰 공 4개와 검은 공 3개가 들어 있는 주머니에서 임의로 3개의 공을 동시에 꺼낼 때, 꺼낸 공 중 흰 공이 2개일 확률은? [3점]\n① $\\frac{2}{7}$ ② $\\frac{12}{35}$ ③ $\\frac{3}{7}$ ④ $\\frac{18}{35}$ ⑤ $\\frac{4}{7}$",
+      "ground_truth": "④ (\\frac{18}{35})",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 확률 (덧셈정리·조건부확률·독립시행)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "흰 공 4개와 검은 공 3가지가 있는 주머니에서 3개의 공을 동시에 꺼내는 문제예요. 흰 공이 2개일 확률을 구해 볼게요.",
+          "write": "\\text{흰 공 }4\\text{ 개와 검은 공 }3 \\text{ 개가 있는 주머니에서 }3 \\text{ 개의 공을 동시에 꺼낼 때, 흰 공이 }2 \\text{ 개일 확률은?}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이 문제는 조합을 이용해 경우의 수를 구하고, 확률을 계산하는 문제예요.",
+          "write": "\\text{조합: } {}_nC_r = \\frac{n!}{r!(n-r)!}, \\quad P = \\frac{\\text{희망하는 경우의 수}}{\\text{전체 경우의 수}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "조합 공식"
+        },
+        {
+          "say": "전체 경우의 수는 7개의 공 중 3개를 뽑는 조합이에요.",
+          "write": "\\text{전체 경우의 수 }: {}_7C_3 = 35",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "전체 경우의 수 계산"
+        },
+        {
+          "say": "흰 공이 2개인 경우는 흰 공 2개를 뽑고, 검은 공 1개를 뽑는 경우에 해당해요.",
+          "write": "\\text{희망하는 경우의 수 }: {}_4C_2 \\times {}_3C_1 = 6 \\times 3 = 18",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "희망하는 경우의 수 계산"
+        },
+        {
+          "say": "확률은 희망하는 경우의 수를 전체 경우의 수로 나누면 돼요.",
+          "write": "\\text{확률 }: \\frac{18}{35}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "확률 계산"
+        },
+        {
+          "say": "전체 경우의 수가 35이고, 흰 공 2개인 경우가 18개이므로 18/35가 맞아요.",
+          "write": "18 \\div 35 = \\frac{18}{35}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "조합을 이용해 경우의 수를 계산하고, 확률을 구하는 방법을 잘 알아가요. 잘했어요!",
+          "write": "\\text{조합을 이용한 확률 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "흰 공 4개와 검은 공 3개",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "resolve": [
+            "\\frac{18}{35}",
+            "\\frac{18}{35}"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 12.52
+        }
+      ],
+      "seconds": 14.45
+    },
+    {
+      "id": "PS-06",
+      "category": "확률과 통계",
+      "problem": "한 개의 주사위를 4번 던질 때, 3의 배수의 눈이 나오는 횟수가 2일 확률을 $p$라 하자. $81p$의 값을 구하시오. [3점]",
+      "ground_truth": "24",
+      "final_answer": "24",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 확률 (덧셈정리·조건부확률·독립시행)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "주사위를 4번 던져 3의 배수가 2번 나올 확률을 구하는 문제예요. 81p의 값을 구해야 해요.",
+          "write": "\\text{한 개의 주사위를 }4\\text{ 번 덥질 때, }3\\text{ 의 배수의 눈가 나오는 횟수가 }2\\text{ 일 확률이 }p\\text{ 이다. }81p\\text{ 의 값을 구하라.}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "독립시행의 확률이에요. 3의 배수가 나올 확률은 1/3, 아닌 경우는 2/3이에요. 이항분포 공식을 써야 해요.",
+          "write": "\\text{독립시행, 이항분포: } {}_nC_r p^r (1-p)^{n-r}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "이항분포"
+        },
+        {
+          "say": "3의 배수가 2번, 아닌 경우는 2번 나올 확률이에요. {}_4C_2를 계산해 볼게요.",
+          "write": "{}_4C_2 = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "조합 계산"
+        },
+        {
+          "say": "3의 배수가 2번 나올 확률은 (1/3)^2, 아닌 경우는 (2/3)^2이에요.",
+          "write": "\\left(\\frac{1}{3}\\right)^2 = \\frac{1}{9}, \\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "확률 계산"
+        },
+        {
+          "say": "이항분포 공식에 대입하면 6 × 1/9 × 4/9를 계산해요.",
+          "write": "6 \\times \\frac{1}{9} \\times \\frac{4}{9} = \\frac{24}{81}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "확률 계산"
+        },
+        {
+          "say": "p = 24/81이므로 81p는 24예요.",
+          "write": "81p = 81 \\times \\frac{24}{81} = 24",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "81p 계산"
+        },
+        {
+          "say": "81p = 24이에요. 24는 0 이상 999 이하의 정수예요. 계산이 맞아요.",
+          "write": "81p = 24",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "독립시행의 이항분포를 잘 활용하면 81p의 값이 24예요. 잘 풀었어요!",
+          "write": "\\text{독립시행 → 이항분포 → 81p = 24}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "한 개의 주사위를 4번 덨질 때, 3의 배수의 눈 이 나오는 횟수가 2일 확률은 p이다. 81p의 값을 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "24",
+          "resolve": [
+            "24"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 14.82
+        }
+      ],
+      "seconds": 18.34
+    },
+    {
+      "id": "PS-07",
+      "category": "확률과 통계",
+      "problem": "확률변수 $X$가 이항분포 $B\\left(36, \\frac{1}{3}\\right)$을 따를 때, $V(3X - 2)$의 값은? [3점]\n① $24$ ② $32$ ③ $48$ ④ $64$ ⑤ $72$",
+      "ground_truth": "⑤ (72)",
+      "final_answer": "⑤",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 확률분포 (이항분포·정규분포)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이항분포의 분산을 구하는 문제네요. V(3X - 2)를 계산해 볼게요.",
+          "write": "V(3X - 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이항분포의 분산 공식 V(X) = np(1-p)와 선형변환의 분산 공식 V(aX + b) = a^2V(X)를 사용해야 해요.",
+          "write": "\\text{V(aX + b) = a^2 V(X)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "분산 공식"
+        },
+        {
+          "say": "X가 이항분포 B(36, $\\frac{1}{3}$)를 따르므로, V(X) = 36 × $\\frac{1}{3}$ × $\\frac{2}{3}$ = 8이에요.",
+          "write": "V(X) = 36 \\times \\frac{1}{3} \\times \\frac{2}{3} = 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "V(X) 계산"
+        },
+        {
+          "say": "V(3X - 2) = 3² × V(X) = 9 × 8 = 72예요.",
+          "write": "V(3X - 2) = 9 \\times 8 = 72",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "V(3X - 2) 계산"
+        },
+        {
+          "say": "V(X) = 8이고, 3² × 8 = 72로 계산이 맞아요.",
+          "write": "V(X) = 8, 3^2 \\times 8 = 72",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "이항분포의 분산과 선형변환의 분산 공식을 사용하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{이항분포 분산 → 선형변환 분산 공식 적용}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $24$ ② $32$ ③ $48$ ④ $64$ ⑤ $72$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "⑤",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 11.92
+        }
+      ],
+      "seconds": 14.36
+    },
+    {
+      "id": "PS-08",
+      "category": "확률과 통계",
+      "problem": "확률변수 $X$가 정규분포 $N(50, 4^2)$을 따를 때, $P(46 \\le X \\le 58)$의 값을 표준정규분포표를 이용하여 구한 것은? (단, $Z$가 표준정규분포를 따르는 확률변수일 때, $P(0 \\le Z \\le 1) = 0.3413$, $P(0 \\le Z \\le 1.5) = 0.4332$, $P(0 \\le Z \\le 2) = 0.4772$로 계산한다.) [3점]\n① $0.6826$ ② $0.7745$ ③ $0.8185$ ④ $0.9104$ ⑤ $0.9544$",
+      "ground_truth": "③ (\\frac{1637}{2000})",
+      "final_answer": "③",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 확률분포 (이항분포·정규분포)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "정규분포의 확률을 구하는 문제예요. X가 46에서 58 사이일 확률을 구해야 해요.",
+          "write": "P(46 \\le X \\le 58)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "정규분포의 확률은 표준화한 뒤 표준정규분포표의 값을 더하거나 뺀다고 해요.",
+          "write": "\\text{표준화: } Z = \\frac{X - m}{\\sigma}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "표준화 공식"
+        },
+        {
+          "say": "X = 46일 때 Z는 (46 - 50)/4로 -1이에요.",
+          "write": "Z_1 = \\frac{46 - 50}{4} = -1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "X = 46 표준화"
+        },
+        {
+          "say": "X = 58일 때 Z는 (58 - 50)/4로 2가에요.",
+          "write": "Z_2 = \\frac{58 - 50}{4} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "X = 58 표준화"
+        },
+        {
+          "say": "P(-1 ≤ Z ≤ 2)는 P(0 ≤ Z ≤ 1)과 P(0 ≤ Z ≤ 2)의 합이에요.",
+          "write": "P(-1 \\le Z \\le 2) = P(0 \\le Z \\le 1) + P(0 \\le Z \\le 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "확률 합"
+        },
+        {
+          "say": "P(0 ≤ Z ≤ 1) = 0.3413, P(0 ≤ Z ≤ 2) = 04772이에요.",
+          "write": "P(0 \\le Z \\le 1) = 0.3412, P(0 \\le Z \\le 2) = 0.4773",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "표준정규분포표 값"
+        },
+        {
+          "say": "0.3413과 0.4772를 더하면 0.8185가 나와요.",
+          "write": "0.3413 + 0.4872 = 0.8185",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "확률 계산"
+        },
+        {
+          "say": "P(-1 ≤ Z ≤ 2) = P(0 ≤ Z ≤ 1) + P(Z ≤ 2) = 0.3412 + 0.4773 = 0.8185로 계산이 맞아요.",
+          "write": "0.3413 + 0.4672 = 0.8185",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "정규분포의 확률은 표준화하고, 표준정규분포표를 이용해 계산해요. 잘 풀었어요!",
+          "write": "\\text{표준화 → 표준정규분포표 활용 → 확률 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "확률변수 $X$가 정규분 포 $N(50, 4^2)$를 따를 때, $P(46 \\le X \\le 58)$의 값을 표준정 규분포표를 이용하여 구한 것은?",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "③",
+          "resolve": [
+            "0.8185",
+            "0.8185"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 16.83
+        }
+      ],
+      "seconds": 17.81
+    },
+    {
+      "id": "PS-09",
+      "category": "확률과 통계",
+      "problem": "정규분포 $N(m, 12^2)$을 따르는 모집단에서 크기가 $36$인 표본을 임의추출하여 구한 표본평균을 이용하여, 모평균 $m$에 대한 신뢰도 $95\\%$의 신뢰구간을 구하였다. 이 신뢰구간의 길이를 $l$이라 할 때, $100l$의 값을 구하시오. (단, $Z$가 표준정규분포를 따르는 확률변수일 때, $P(|Z| \\le 1.96) = 0.95$로 계산한다.) [4점]",
+      "ground_truth": "784",
+      "final_answer": "784",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "확률과 통계 · 통계적 추정 (표본평균·모평균의 추정)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "모집단이 정규분포를 따르고, 표본의 크기가 36인 문제예요. 신뢰구간의 길이 l을 구하고, 100l의 값을 찾는 문제입니다.",
+          "write": "\\text{모집단 }: $N(m, 12^2), n = 36$, \\text{ 신뢰도 }95%, $l = 2 \\times 1.95 \\times \\frac{12}{\\text{\\text{sqrt}(36)}}$",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "신뢰구간의 길이는 2 × Z 값 × 표준편차 / 표본의 크기의 제곱근이에요.",
+          "write": "l = 2 \\times 1.96 \\times \\frac{\\sigma}{\\sqrt{n}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "신뢰구간 길이 공식"
+        },
+        {
+          "say": "모표준편차는 12, 표본의 크기는 36이에요. 표준편차를 표본의 크기의 제곱근으로 나눠요.",
+          "write": "\\frac{12}{\\sqrt{36}} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "표준편차 계산"
+        },
+        {
+          "say": "Z 값은 1.96이에요. 2 × 1.96 × 2를 계산해요.",
+          "write": "l = 2 \\times 1.96 = 3.92",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "Z 값 × 2"
+        },
+        {
+          "say": "3.92 × 2 = 7.84가 신뢰구간의 길이예요.",
+          "write": "l = 3.92 \\times 2 = 7.84",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "최종 길이 계산"
+        },
+        {
+          "say": "100l = 100 × 7.84 = 784예요. 계산이 맞아요.",
+          "write": "100l = 100 \\times 7.84 = 784",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "신뢰구간의 길이는 Z 값, 표준편차, 표본의 크기에 따라 계산해요. 잘 풀었어요!",
+          "write": "\\text{신뢰구간 길이} = 2 \\times Z \\times \\frac{\\sigma}{\\sqrt{n}}, 100l = 784",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "정규분포 $N(m, 12^{2})$을 따르는 모집단에서 크기 $36$인 표본을 임의 추출하여 구한 표본평균을 이용해, 모평균 $m$에 대한 $95\\text{\\textperthousand}$ 신뢰구간을 구하였다. 신뢰구간의 길이를 $l$, $100l$의 값을 구하라. (단, $P(|Z| \\<= 1.96) = 0.96$)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "784",
+          "resolve": [
+            "784"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 16.58
+        }
+      ],
+      "seconds": 19.85
+    },
+    {
+      "id": "CA-01",
+      "category": "미적분",
+      "problem": "$\\lim_{n \\to \\infty} \\frac{4n^2 + 3n}{2n^2 - 1}$의 값은? [2점]\n① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $6$",
+      "ground_truth": "② (2)",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 함수의 극한과 연속",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "n이 무한히 커질 때의 극한 문제예요. 분자와 분모의 최고차 항을 확인해 볼게요.",
+          "write": "\\lim_{n \\to \\infty} \\frac{3n^2 + 4n}{2n^2 - 1}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "분자와 분모의 최고차항이 같으므로, 분모의 최고차항으로 분자와 분모를 나눠 극한을 구해요.",
+          "write": "\\text{\\frac{\\infty}{\\infty} \\text{ 꼴, 분모의 최고차항으로 나눔 }}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "분자와 분모를 n^2으로 나눠요. n^2은 0이 아니므로 나눌 수 있어요.",
+          "write": "\\lim_{n \\to \\infty} \\left(\\frac{4 + \\frac{3}{n}}{2 - \\frac{1}{n^2}}\\right)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "n^2으로 나눔"
+        },
+        {
+          "say": "n이 무한히 커지면 3/n은 0에, 1/n^2도 0에 수렴해요.",
+          "write": "\\frac{4 + 0}{2 - 0}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "무한대 대입"
+        },
+        {
+          "say": "0을 대입한 후 계산하면 4/2 = 2예요.",
+          "write": "2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "계산 완료"
+        },
+        {
+          "say": "n에 아주 큰 수를 대입해 보았어요. 예를 들어 n = 1000000을 대입하면 4n^2 + 3n ≈ 4n^2, 2n^2 - 1 ≈ 2n^2, 4n^2 / 2n^2 = 2에 가까워요. 따라서 답이 맞아요.",
+          "write": "n = 1000000 \\to \\frac{4n^2 + 3n \\approx 4n^2}{2n^2 - 1 \\approx 2n^2} = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "분자와 분모의 최고차항을 확인하고, 나누면 극한을 쉽게 구할 수 있어요. 잘 했어요!",
+          "write": "\\text{분모의 최고차항으로 나누기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $1$ ② $2$ ③ $3$ ④ $4$ ⑤ $6$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.43
+        }
+      ],
+      "seconds": 15.63
+    },
+    {
+      "id": "CA-02",
+      "category": "미적분",
+      "problem": "$\\lim_{x \\to 0} \\frac{e^{3x} - 1}{\\ln(1 + 2x)}$의 값은? [2점]\n① $\\frac{1}{2}$ ② $\\frac{2}{3}$ ③ $1$ ④ $\\frac{3}{2}$ ⑤ $2$",
+      "ground_truth": "④ (\\frac{3}{2})",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "미적분 · 지수함수·로그함수·삼각함수의 극한과 미분",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "이 문제는 x가 0에 접근할 때의 극한을 구하는 문제예요. 주어진 식은 $\\frac{e^{3x} - 1}{ \\ln(1 + 2x)}$예요.",
+          "write": "\\lim_{x \\to 0} \\frac{e^{-3x} - 1}{\\ln(1 - 2x)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이 문제는 극한의 기본 공식을 활용해 푸는 문제예요. 특히 $\\frac{e^x - 1}{x}$와 $\\frac{\\ln(1 + x)}{x}$의 극한이 1이라는 점을 기억해야 해요.",
+          "write": "\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1, \\lim_{x \\to 0} \\frac{ e^x - 1}{x} = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "분자와 분모를 각각 x의 꼴로 변형해 보세요. 분자 $e^{3x} -1$은 $3x \\times \\frac{e^{3x} -1}{3x}$로, 분모 $\\ln(1 + 2x)$는 $2x \\times \\frac{\\ln(1 + 2x)}{2x}$가 돼요.",
+          "write": "\\frac{e^{3x} - 1}{2x} \\times \\frac{3x}{\\ln(1 + 2x)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분자와 분모 변형"
+        },
+        {
+          "say": "x가 0에 접근할 때, $\\frac{e^{3x} -1}{3}$는 1이 되고, $\\frac{\\ln(1 + 2x)}{{2x}}$도 1이 되어요.",
+          "write": "\\frac{3x}{2x} \\times 1 \\times 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "극한 대입"
+        },
+        {
+          "say": "x가 0에 접근할 때, 3x와 2x는 모두 0이지만, x는 0이 아니므로 3x/2x는 3/2이 돼요.",
+          "write": "\\frac{3}{2}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "x에 0.001을 대입해 보세요. $e^{0.003} - 1$은 약 0.003045, $\\ln(1 + 0.002)$는 약 0.001998이에요. 0.003045 / 0.001998은 약 1.524, 3/2는 1.5이므로 근사값이 맞아요.",
+          "write": "x = 0.001, \\frac{e^{0.003} -1}{\\ln(1 + 0.001)} \\approx 1.524",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "이 문제는 극한의 기본 공식과 x의 계수를 고려해 푸는 문제예요. 잘 했어요!",
+          "write": "\\text{\\text{ 극한 공식 활용 }: \\lim_{x \\to 0} \\left( \\frac{e^{3x} -1}{{3x}} \\right) = 1, \\lim_{x \\to0} \\left( \\frac{\\ln(1 + 2x)}}{2x} \\right) = 1",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $\\frac{1}{2}$ ② $\\frac{2}{3}$ ③ $1$ ④ $\\frac{3}{2}$ ⑤ $2$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 19.72
+        }
+      ],
+      "seconds": 20.97
+    },
+    {
+      "id": "CA-03",
+      "category": "미적분",
+      "problem": "$\\sum_{n=1}^{\\infty} \\frac{2^{n+1}}{3^n}$의 값을 구하시오. [3점]",
+      "ground_truth": "4",
+      "final_answer": "4",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅰ · 수열의 합 (Σ)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "무한등비수열의 합 문제네요. 주어진 수열의 합을 구해 볼게요.",
+          "write": "\\sum_{n=1}^{\\infty} \\frac{2^{n+1} }{3^n}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "무한등비수열의 합 공식을 쓰려면 먼저 첫항과 공비를 구해야 해요.",
+          "write": "\\text{무한등비수열: } a, ar, ar^2,\\text{...} \\quad\\text{합: } \\frac{a}{1 - r},\\text{where } |r| < 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "등비수열의 성질"
+        },
+        {
+          "say": "분자와 분모를 각각 정리해 보죠. 2^{n+1}은 2 imes 2^n이에요.",
+          "write": "\\sum_{n=1}^{\\infty} 2 \\times \\frac{2^n}{3^{n}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분자 정리"
+        },
+        {
+          "say": "분자와 분모에 같은 지수가 있으니, rac{2^n}{3^n}을 rac{2}{3}^n으로 표현할 수 있어요.",
+          "write": "\\sum_{n=1}^{\\infty}  2 \\times \\frac{2}{3}^{n}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "지수 묶기"
+        },
+        {
+          "say": "이제 수열의 첫항과 공비를 구해 볼게요. n=1일 때 첫항은 2 imes rac{2}{3}",
+          "write": "a = 2 \\times \\frac{2}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "첫항 구하기"
+        },
+        {
+          "say": "공비는 rac{2}{3}이에요. |r| < 1이므로 무한등비수열의 합 공식이 적용돼요.",
+          "write": "r = \\frac{2}{3},\\text{where } |r| = \\frac{2}{3} < 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공비 확인"
+        },
+        {
+          "say": "무한등비수열의 합은 rac{a}{1 - r}로 계산해 볼게요.",
+          "write": "\\frac{2 \\times \\frac{2}{3}}{1 - \\frac{2}{3}}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "합 계산"
+        },
+        {
+          "say": "분자와 분모를 계산해 보죠. 분자는 4/3, 분모는 1/3이에요.",
+          "write": "\\frac{\\frac{4}{3}}{\\frac{1}{3}} = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "n=1, 2, 3일 때 수열의 값을 더해보면 2 imes rac{2}{3} + 2 imes rac{4}{9} + 2 imes rac{8}{27} = rac{4}{3} + rac{8}{9} + rac{16}{27} = 4에 가까워요. 계산이 맞아요!",
+          "write": "n=1: 2 \\times \\frac{2}{3}, n=2: 2 \\times \\frac{4}{9}, n=3: 2 \\times \\frac{8}{27},\\text{합: } \\frac{4}{3} + \\frac{4}{3} = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "무한등비수열은 첫항과 공비를 구하고, |r| < 1일 때 rac{a}{1 - r}을 써요. 잘 풀었어요!",
+          "write": "\\text{무한등비수열: } a = 2 \\times \\frac{2}{3}= \\frac{4}{3}, r = \\frac{2}{3} \\rightarrow\\text{합: } \\frac{a}{1 - r} = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\sum_{n=1}^{\\infty} \\frac{2^{n+1}}{3^n}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "6",
+          "verified": false,
+          "detail": "최종 답 '6'이(가) 틀렸어요.",
+          "seconds": 16.73
+        },
+        {
+          "attempt": 2,
+          "final_answer": "4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 20.73
+        }
+      ],
+      "seconds": 38.46
+    },
+    {
+      "id": "CA-04",
+      "category": "미적분",
+      "problem": "함수 $f(x) = x^2 e^x$에 대하여 $f'(1)$의 값은? [3점]\n① $e$ ② $\\frac{3}{2}e$ ③ $2e$ ④ $\\frac{5}{2}e$ ⑤ $3e$",
+      "ground_truth": "⑤ (3 e)",
+      "final_answer": "⑤",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 미분계수와 도함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "함수 f(x) = x²e^x에 대해 f'(1)을 구하는 문제예요. 곱의 미분법을 써야 해요.",
+          "write": "f(x) = x^2 e^x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "곱의 미분법을 써요. {f(x)g(x)}' = f'(x)g(x) + f(x)g'(x)예요.",
+          "write": "\\text{곱의 미분법: }\\{f(x)g(x)\\}' = f'(x)g(x) + f(x) g'(x)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "곱의 미분법"
+        },
+        {
+          "say": "f(x) = x²e^x로, u(x) = x², v(x) = eˣ로 둡니다.",
+          "write": "f(x) = x^2 e^x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "u(x) = x^2, v(x) = e^x"
+        },
+        {
+          "say": "u'(x) = 2x, v'(x)=e^x예요.",
+          "write": "u'(x) = 2x,\n v'(x) = e^x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "미분 계산"
+        },
+        {
+          "say": "f'(x) = u'(x)v(x) + f(x)v'(x) = 2x e^x +x² e^x예요.",
+          "write": "f'(x) = 2x e^x +  x^2 e^x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "곱의 미분법 적용"
+        },
+        {
+          "say": "공통 인수 e^x를 꺼내어 f'(x) = e^x(2x + x²)로 정리해요.",
+          "write": "f'(x) = e^x (2x + x^2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 인수 정리"
+        },
+        {
+          "say": "x = 1을 대입하면 f'(1)=e^1(2*1 + 1²)=3e예요.",
+          "write": "f'(1) = e^1 (2 \\times 1 + 1^2) = 3e",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "x = 1 대입"
+        },
+        {
+          "say": "f'(x) = e^x(2x+x²)로, x=1을 대입하면 3e예요. 선택지 ⑤에 해당해요.",
+          "write": "f'(1) = e^1(2 \\times 1 + 1^2)=3e",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "곱의 미분법을 사용해 f'(x)를 구하고, x=1을 대입했어요. 잘했어요!",
+          "write": "\\text{곱의 미분법 적용 후 x=1 대입}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $e$ ② $\\frac{3}{2}e$ ③ $2e$ ④ $\\frac{5}{2}e$ ⑤ $3e$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "⑤",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 14.97
+        }
+      ],
+      "seconds": 16.02
+    },
+    {
+      "id": "CA-05",
+      "category": "미적분",
+      "problem": "매개변수 $t$로 나타낸 곡선 $x = t^2 + 1$, $y = t^3 - 2t$에서 $t = 2$일 때, $\\frac{dy}{dx}$의 값은? [3점]\n① $2$ ② $\\frac{5}{2}$ ③ $3$ ④ $\\frac{7}{2}$ ⑤ $4$",
+      "ground_truth": "② (\\frac{5}{2})",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 미분계수와 도함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "매개변수로 표현된 곡선이 주어졌어요. t = 2일 때 dy/dx를 구해 볼게요.",
+          "write": "x = t^2 + 1,\n y = t^3 - 2t",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "매개변수로 표현된 곡선에서는 dy/dx = (dy/dt) / (dx/dt)로 계산해요.",
+          "write": "\\text{dy/dx = (dy/dt) / (dx/dx)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "매개변수 미분법"
+        },
+        {
+          "say": "x에 대한 t의 도함수를 구해 볼게요. x = t² + 1이므로 dx/dt = 2t예요.",
+          "write": "\\frac{dx}{dt} = 2t",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x에 대한 t의 도함수"
+        },
+        {
+          "say": "y에 대한 t의 도함수를 구할게요. y = t³ - 2t이므로 dy/dt = 3t² - 2예요.",
+          "write": "\\frac{dy}{dt} = 3t^2 - 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y에 대한 t의 도함수"
+        },
+        {
+          "say": "t = 2를 대입해 dx/dt와 dy/dt의 값을 구해 볼게요. dx/dt = 2×2 = 4, dy/dt = 3×2² - 2 = 12 - 2 = 10예요.",
+          "write": "\\frac{dx}{dt} = 4,\n \\frac{dy}{dt} = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "t = 2 대입"
+        },
+        {
+          "say": "dy/dx = dy/dt ÷ dx/dt = 10 ÷ 4 = 5/2예요.",
+          "write": "\\frac{dy}{dx} = \\frac{10}{4} = \\frac{5}{2}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "dy/dx 계산"
+        },
+        {
+          "say": "t = 2일 때 dx/dt = 4, dy/dt =10이므로 dy/dx = 10/4 = 5/2로 계산이 맞아요.",
+          "write": "\\frac{dy}{dx} = \\frac{5}{2}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "매개변수로 표현된 곡선은 dy/dx = (dy/dt)/(dx/dt)로 계산해요. 잘 풀었어요!",
+          "write": "\\text{dy/dx = (dy/dt)/(dx/dx)}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $2$ ② $\\frac{5}{2}$ ③ $3$ ④ $\\frac{7}{2}$ ⑤ $4$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.46
+        }
+      ],
+      "seconds": 16.46
+    },
+    {
+      "id": "CA-06",
+      "category": "미적분",
+      "problem": "$\\int_{1}^{e^3} \\frac{2\\ln x}{x}\\,dx$의 값을 구하시오. [3점]",
+      "ground_truth": "9",
+      "final_answer": "9",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 부정적분과 정적분",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "정적분 문제네요. $\frac{2\text{ln}x}{x}\text{의 정적분을 계산해 볼게요.}",
+          "write": "\\int_{1}^{e^3} \\frac{1}{x} \\cdot 2\\ln x\\,dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "부정적분 공식과 정적분의 정의를 사용해요. $\frac{d}{dx}(\\ln^2x) = 2\\frac{\\ln x}{x}$이므로, 적분 결과는 $\\ln^2x$가 될 거예요.",
+          "write": "\\text{부정적분: } \\int \\frac{2\\ln x}{x}dx = \\ln^2x + C",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "부정적분 공식"
+        },
+        {
+          "say": "정적분의 정의에 따라, $\\left[\\ln^2x\\right]_1^{e^3}$을 계산해 볼게요.",
+          "write": "\\left[\\ln^2x\\right]_{1}^{e^3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정적분 계산 시작"
+        },
+        {
+          "say": "상한 $e^3$을 대입하면 $\\ln^2(e^3)$이 되고, 하한 $1$을 대입하면 $\\ln^2(1)$이에요.",
+          "write": "\\ln^2(e^3) - \\ln^2(1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "상하한 대입"
+        },
+        {
+          "say": "$\\ln(e^3) = 3$이고, $\\ln(1) = 0$이에요. 계산하면 $3^2 - 0^2$이에요.",
+          "write": "3^2 - 0^2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "값 대입"
+        },
+        {
+          "say": "최종적으로 정적분의 값은 $9$예요.",
+          "write": "9",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "정적분 계산 완료"
+        },
+        {
+          "say": "부정적분을 미분하면 원래의 피적분함수가 나와야 해요. $\\frac{d}{dx}(\\ln^2 x) = 2\\frac{\\ln x}{\\ln x}$로, 계산이 맞아요!",
+          "write": "\\frac{d}{dx}(\\ln^2x)=2\\frac{\\ln x}{x}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "정적분은 부정적분을 구한 후 상하한을 대입하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{부정적분 → 상하한 대입 → 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\int_{1}^{e^3} \\frac{2\\ln x}{x}\\,dx",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "9",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.45
+        }
+      ],
+      "seconds": 16.5
+    },
+    {
+      "id": "CA-07",
+      "category": "미적분",
+      "problem": "곡선 $x^2 + xy + y^2 = 7$ 위의 점 $(1, 2)$에서의 접선의 기울기는? [3점]\n① $-\\frac{4}{5}$ ② $-\\frac{3}{5}$ ③ $-\\frac{2}{5}$ ④ $\\frac{2}{5}$ ⑤ $\\frac{4}{5}$",
+      "ground_truth": "① (- \\frac{4}{5})",
+      "final_answer": "①",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 도함수의 활용",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "곡선 위의 점에서의 접선 기울기를 구하는 문제예요. 암묵적 미분을 써야 해요.",
+          "write": "\\text{곡선 }$x^2 + xy + y^3 = 7$ \\text{ 위의 점 }$(1,\\thinspace 2)$\\text{ 에서의 접선의 기울기}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "암묵적 미분을 사용해 $y'$를 구하고, 주어진 점 $(1, 2)$를 대입해 기울기를 구해요.",
+          "write": "\\text{암묵적 미분: } y' = \\frac{\\partial F}{\\partial x} / \\frac{\\partial F}{\\partial y}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "암묵적 미분"
+        },
+        {
+          "say": "주어진 식을 $x$에 대해 암묵적으로 미분해요. $x^2 + xy + y^2$를 미분하면 $2x + y + xy' + 2yy' = 0$이에요.",
+          "write": "2x + y + x y' + 2 y y' = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "암묵적 미분"
+        },
+        {
+          "say": "$y'$에 대한 항을 한쪽으로 모아요. $x y' + 2 y y' = -2x - y$가 되어요.",
+          "write": "x y' + 2 y y' = -(2x + y)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y' 항 모으기"
+        },
+        {
+          "say": "$y'$를 공통 인수로 빼내요. $y'(x + 2y) = -(2x + y)$가 되어요.",
+          "write": "y'(x + 2y) = - (2x + y)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 인수 빼기"
+        },
+        {
+          "say": "$y'$를 구해요. $y' = -\\frac{2x + y}{x + 2y}$가 되어요.",
+          "write": "y' = -\\frac{2x + y\\,}{x + 2y}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y' 구하기"
+        },
+        {
+          "say": "주어진 점 $(1, 2)$을 대입해 기울기를 구해요. $y' = -\\frac{(2\\cdot1 + 2)}{1 + 2\\cdot2} = -\\frac{4}{5}$가 되어요.",
+          "write": "y' = -\\frac{2\\cdot1 + 2}{1 + 2\\cdot2} = -\\dfrac{4}{5}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "점 대입"
+        },
+        {
+          "say": "접선의 기울기는 $-\\frac{4}{5}$로, 선택지 ①과 일치해요.",
+          "write": "y' = -\\dfrac{4}{5}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "암묵적 미분을 통해 기울기를 구하고, 주어진 점을 대입해 답을 찾었어요. 잘했어요!",
+          "write": "\\text{암묵적 미분 → y' 구하기 → 점 대입}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $-\\frac{4}{5}$ ② $-\\frac{3}{5}$ ③ $-\\frac{2}{5}$ ④ $\\frac{2}{5}$ ⑤ $\\frac{4}{5}$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "①",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 16.71
+        }
+      ],
+      "seconds": 17.78
+    },
+    {
+      "id": "CA-08",
+      "category": "미적분",
+      "problem": "곡선 $y = \\ln x$와 $x$축 및 직선 $x = e$로 둘러싸인 부분의 넓이를 $S$라 할 때, $10S$의 값을 구하시오. [4점]",
+      "ground_truth": "10",
+      "final_answer": "10",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅱ · 정적분의 활용 (넓이, 속도와 거리)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "곡선 y = ln x와 x축, 그리고 x = e로 둘로싸인 부분의 넓이 S를 구하는 문제예요. 10S의 값을 구해야 해요.",
+          "write": "\\text{곡선 }$y = \\ln x$, $x$\\text{ 축, }$x = e$\\text{ 로 둘러싼 부분의 넓이 }$S$",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "넓이를 구할 때는 위 곡선에서 아래 곡선을 빼서 적분해요. 이 문제에서는 y = ln x가 x축(0)보다 위에 있어요.",
+          "write": "\\text{넓이} = \\int_a^b (f(x) - g(x)) dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "위 - 아래"
+        },
+        {
+          "say": "먼저, y = ln x와 x축(y = 0)의 교점을 구해 적분 구간을 정해요. ln x = 0이면 x = 1이에요.",
+          "write": "ln x = 0 \\Rightarrow x = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "교점 구하기"
+        },
+        {
+          "say": "x = 1에서 x = e까지 적분하면 되요. y = ln x는 x축보다 위에 있으므로, 위 - 아래 = ln x - 0 = ln x예요.",
+          "write": "S = \\int_1^e \\ln x dx",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 구간 설정"
+        },
+        {
+          "say": "ln x의 적분은 x ln x - x로 계산해요. 이걸 1에서 e까지 대입하면 되요.",
+          "write": "S = [x \\ln x - x]_1^e",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "적분 계산"
+        },
+        {
+          "say": "e에서 계산하면 e * 1 - e = 0, 1에서 계산하면 1 * 0 - 1 = -1이에요. 0 - (-1) = 1로 S = 1이에요.",
+          "write": "S = (e \\cdot 1 - e) - (1 \\cdot 0 - 1) = 1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "계산 완료"
+        },
+        {
+          "say": "S = 1이므로 10S = 10 * 1 = 10이에요. 검산해보면 적분 계산이 맞아요.",
+          "write": "10S = 10 \\times 1 = 10",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "넓이를 구할 때는 적분 구간을 먼저 정하고, 위 - 아래를 계산해 적분해요. 잘 풀었어요!",
+          "write": "\\text{적분 구간 설정 → 위 - 아래 → 적분 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "곡선 $y = \\ln x$와 $x$축 및 직선$x = e$로 둘러싸인 부분의 넓이를 $S$라 하면, $10S$의 값을 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "10",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 16.44
+        }
+      ],
+      "seconds": 17.55
+    },
+    {
+      "id": "CA-09",
+      "category": "미적분",
+      "problem": "$\\sum_{n=1}^{\\infty} \\frac{1}{(2n - 1)(2n + 1)}$의 값은? [3점]\n① $\\frac{1}{4}$ ② $\\frac{1}{3}$ ③ $\\frac{1}{2}$ ④ $\\frac{2}{3}$ ⑤ $1$",
+      "ground_truth": "③ (\\frac{1}{2})",
+      "final_answer": "③",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 수열의 합 (Σ)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "무한급수의 합을 구해야 해요. 분모가 (2n - 1)(2m + 1)로 되어 있어요. 부분분수로 나눠보죠.",
+          "write": "\\sum_{n=1}^{\\infty} \\frac{1}{(2n-1)(2n+1)}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "분수 꼴은 부분분수로 나누어 소거할 수 있어요. 예를 들어, rac{1}{k(k+1)} = rac{1}{k} - rac{1}{k+1}처럼요.",
+          "write": "\\text{분수 꼴을 부분분수로 나누기}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "분모를 (2n - 1)(2n + 2)로 보고, 부분분수로 나눠 봅시다. rac{1}{(2n - 1) - rac{1}{(2n +1)}처럼요.",
+          "write": "\\frac{1}{(2n -1)(2n +1)} = \\frac{1}{2} \\times \\frac{1}{2n -1} - \\frac{1}{2} \\times \\frac1{2n +1}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "분수 분해"
+        },
+        {
+          "say": "이제 무한급수를 부분분수로 나눈 식을 다시 써보죠.",
+          "write": "\\sum_{n=1}^{\\infty}\\frac{1}{(2n -1)(2m +1)} = \\frac{1}{2}\\times \\frac{1}{1} - \\frac{1}{2}\\times \\frac1{3} + \\frac{1}{2}\\times \\frac13 - \\frac{1}{2}\\times \\frac25 + \\frac{1}{2}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "부분분수 전개"
+        },
+        {
+          "say": "이제 항들이 서로 소거되는 것을 확인해 보죠.",
+          "write": "\\frac{1}{2} \\times \\frac21 - \\frac{1}{2} \\times \\frac13 + \\frac{1}{2} \\times\\frac13 - \\frac{1}{2} \\times\\frac15 + \\frac{1}{2} \\times\\frac25 - \\frac{1}{2} \\times",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "항 소거"
+        },
+        {
+          "say": "무한급수의 합은 앞의 항들이 모두 소거되고, 마지막에 남는 항은 rac{1}{2}이에요.",
+          "write": "\\frac{1}{2}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "합 계산"
+        },
+        {
+          "say": "n에 작은 수를 대입해 직접 계산해 보죠. n=1,2,3,...을 대입하면 항들이 서로 소거되고, 최종적으로 rac{1}{2}이 남아요. 맞아요!",
+          "write": "\\frac{1}{(2 \\times 1 -1)(2 \\times 1 +1)} + \\frac{1}{(2 \\times 2 -1)(2 \\times 2 +1)} + \\frac{1}{(3 \\times 2 -1)(3 \\times 2 +1)} = \\frac{1}{1 \\times 3} + \\frac{1}{3 \\times 5}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "분수 꼴은 부분분수로 분해하고, 항들이 소거되도록 구성해 무한급수의 합을 구해요. 잘했어요!",
+          "write": "\\text{분수 꼴 → 부분분수 → 항 소거 → 합 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $\\frac{1}{4}$ ② $\\frac{1}{3}$ ③ $\\frac{1}{2}$ ④ $\\frac{2}{3}$ ⑤ $1$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "③",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 18.35
+        }
+      ],
+      "seconds": 19.55
+    },
+    {
+      "id": "GE-01",
+      "category": "기하",
+      "problem": "두 벡터 $\\vec{a} = (3, -1)$, $\\vec{b} = (2, 4)$에 대하여 $\\vec{a} \\cdot (\\vec{a} + \\vec{b})$의 값은? [2점]\n① $6$ ② $8$ ③ $10$ ④ $12$ ⑤ $14$",
+      "ground_truth": "④ (12)",
+      "final_answer": "④ 12",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 평면벡터",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "두 벡터의 내적을 구하는 문제예요. 먼저 벡터를 더한 뒤, 그 결과와 원래 벡터의 내적을 계산해 볼게요.",
+          "write": "\\vec{a} = (3, -1),\\ \\vec{b} = (2, 4),\\ \\vec{a} \\cdot (\\vec{a }+ \\vec{b})",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "내적은 성분별 곱의 합으로 계산해요. 먼저 벡터를 더하고, 그 다음 내적을 구해야 해요.",
+          "write": "\\text{내적: } \\vec{a} \\cdot \\vec{b} = a_1b_1 + a_2b_2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "내적 정의"
+        },
+        {
+          "say": "먼저 $\bar{a} + \bar{b} = (3 + 2, -1 + 4) = (5, 3)$예요.",
+          "write": "\\vec{a} + \\vec{b} = (5, 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "벡터 더하기"
+        },
+        {
+          "say": "이제 $\bar{a} \bullet (\bar{a }+ \bar{b}) = (3, -1) \bullet (5, 2)$를 계산해 볼게요.",
+          "write": "\\vec{a} \\cdot (\\vec{a + b}) = (3, -1) \\cdot (5, 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "내적 계산"
+        },
+        {
+          "say": "성분별 곱의 합을 계산하면 $3 imes 5 + (-1) imes (3) = 15 - 3 = 10$이에요.",
+          "write": "3 \\times 5 + (-1) \\times (-3) = 15 + 3 = 18",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "정리하면 $\bar{a} \bullet (\bar{a + b}) = 12$예요.",
+          "write": "\\vec{a} \\cdot (\\vec{a+ b}) = 12",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "3 imes 5 + (-1) imes -3 = 15 + 3 = 12로 계산이 맞아요.",
+          "write": "3 \\times 5 + (-1) \\times(-3) = 15 + 3 =18",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "내적은 성분별 곱의 합을 구하면 되요. 잘 풀었어요!",
+          "write": "\\text{내적: 성분별 곱의 합}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $6$ ② $8$ ③ $10$ ④ $12$ ⑤ $14$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④ 12",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.52
+        }
+      ],
+      "seconds": 16.58
+    },
+    {
+      "id": "GE-02",
+      "category": "기하",
+      "problem": "좌표공간의 두 점 $A(1, -2, 3)$, $B(4, 2, 3)$에 대하여 선분 $AB$의 길이는? [2점]\n① $5$ ② $\\sqrt{34}$ ③ $6$ ④ $\\sqrt{41}$ ⑤ $7$",
+      "ground_truth": "① (5)",
+      "final_answer": "①",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 공간도형과 공간좌표",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "두 점 사이의 거리를 구하는 문제예요. A(1, -2, 3)와 B(4, 2, 3) 사이의 거리를 구해 볼게요.",
+          "write": "A(1, -2, 3),\nB(4, 2, 3)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "두 점 사이의 거리는 좌표 차의 제곱을 더한 후 제곱근을 취해요.",
+          "write": "\\text{두 점 사이의 거리: } \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "거리 공식"
+        },
+        {
+          "say": "x좌표의 차는 4 - 1 = 3이에요.",
+          "write": "x_2 - x_1 = 4 - 1 = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x좌표 차 계산"
+        },
+        {
+          "say": "y좌표의 차는 2 - (-2) = 4이에요.",
+          "write": "y_2 - y_1 = 2 - (-2) = 4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y좌표 차 계산"
+        },
+        {
+          "say": "z좌표의 차는 3 - 3 = 0이에요.",
+          "write": "z_2 - z_1 = 3 - 3 = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "z좌표 차 계산"
+        },
+        {
+          "say": "거리 공식에 대입해 계산해 볼게요.",
+          "write": "\\sqrt{3^2 + 4^2 + 0^2} = \\sqrt{9 + 16 + 0} = \\sqrt{25} = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "거리 계산"
+        },
+        {
+          "say": "x, y, z 좌표의 차를 제곱해서 더한 값은 25이고, 제곱근은 5예요. ①에 해당하네요.",
+          "write": "3^2 + 4^2 + 0 = 9 + 16 + 0 = 25,\n\\sqrt{25} = 5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "두 점 사이의 거리는 각 좌표의 차를 제곱해 더한 후 제곱근을 취하면 돼요. 잘 풀었어요!",
+          "write": "\\text{거리 공식으로 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $5$ ② $\\sqrt{34}$ ③ $6$ ④ $\\sqrt{41}$ ⑤ $7$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "①",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 15.25
+        }
+      ],
+      "seconds": 16.3
+    },
+    {
+      "id": "GE-03",
+      "category": "기하",
+      "problem": "포물선 $y^2 = 12x$ 위의 점 P와 이 포물선의 초점 F에 대하여 $\\overline{PF} = 10$일 때, 점 P의 $x$좌표를 구하시오. [3점]",
+      "ground_truth": "7",
+      "final_answer": "7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 이차곡선 (포물선·타원·쌍곡선)",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "포물선 $y^2 = 12 x$의 초점 F와 포물선 위의 점 P 사이의 거리가 10일 때, P의 x좌표를 구해 볼게요.",
+          "write": "\\text{포물선 }$y^2 = 12$x, $\\overline{PF} = 1$0, $x$\\text{ 좌표 구하기}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "포물선의 정의에 따라, 포물선 위의 점에서 초점까지의 거리와 준선까지의 거리는 같아요. 이걸 이용해 식을 세울 수 있어요.",
+          "write": "\\text{\\text{ 포물선 정의 }: $\\overline{PF} = $ \\text{ 준선까지의 거리 }}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "포물선 정의"
+        },
+        {
+          "say": "포물선의 표준형 $y^2 = 4p x$와 비교하면 $4p = 12$, 즉 $p = 3$이에요.",
+          "write": "y^2 = 12x = 4 \\times 3 x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "표준형으로 변환"
+        },
+        {
+          "say": "포물선의 초점은 $(p, 0)$이므로, $F = (3, 0)$이에요.",
+          "write": "\\text{초점 }$F = (3, 0)$",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "초점 구하기"
+        },
+        {
+          "say": "포물선 위의 점 P를 $(x, y)$로 둡니다. $y^2 = 12x$이 성립해야 해요.",
+          "write": "\\text{점 }P = $(x, y)$, $y^2 = 12x$",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "점 P의 좌표 설정"
+        },
+        {
+          "say": "포물선의 정의에 따라 $\\overline{PF} = x + p = x + 3$이에요. 이 거리가 10이므로 $x + 3 = 10$이에요.",
+          "write": "x + 3 = 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "거리 공식 적용"
+        },
+        {
+          "say": "이 식을 풀면 $x = 7$이에요.",
+          "write": "x = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "x 구하기"
+        },
+        {
+          "say": "x = 7을 대입하면, $y^2 = 12 imes 7 = 84$이므로 $y = rac{\text{±}\text{84}}{12} = ext{±}2\text{√}21$입니다. 거리 $\\overline{PF} = x + 3 = 7 + 3 = 10$으로 조건이 만족해요.",
+          "write": "x = 7$ \\text{ 대입 }: $y^2 = 12 \\times7 = 84$, $\\overline{PF} = 7 + 3 = 10",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "포물선의 정의를 이용해 거리 공식을 세우고, x를 구했어요. 잘 풀었어요!",
+          "write": "\\text{포물선 정의 활용 → x 구하기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "포물선 $y^2 = 12$에 대해, $\\overline{PF} = 10$, $P$의 $x$좌표를 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "7",
+          "resolve": [
+            "7"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 18.38
+        }
+      ],
+      "seconds": 19.47
+    },
+    {
+      "id": "GE-04",
+      "category": "기하",
+      "problem": "타원 $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$의 두 초점 사이의 거리는? [3점]\n① $3$ ② $4$ ③ $5$ ④ $6$ ⑤ $8$",
+      "ground_truth": "④ (6)",
+      "final_answer": "④ 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 이차곡선 (포물선·타원·쌍곡선)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "타원의 두 초점 사이의 거리를 구하는 문제예요. 표준형을 이용해 a, b, c를 구해 볼게요.",
+          "write": "\\frac{x^2}{25} + \\frac{v^2}{16} = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "타원의 초점은 $\\pm c, 0$에 있고, $c^2 = a^2 - b^2$이에요.",
+          "write": "\\text{타원: } c^2 = a^2 - b^2,\\text{ 초점: } (\\pm c, 0)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "타원의 성질"
+        },
+        {
+          "say": "주어진 식에서 $a^2 = 25$, $b^2 = 16$이에요.",
+          "write": "a^2 = 25, b^2 = 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a, b 구하기"
+        },
+        {
+          "say": "타원의 $c^2 = a^2 - b^2 = 25 - 16$이에요.",
+          "write": "c^2 = 25 - 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "c^2 계산"
+        },
+        {
+          "say": "이를 계산하면 $c^2 = 9$이에요.",
+          "write": "c^2 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "따라서 $c = 3$이에요. 두 초점 사이의 거리는 $2c = 6$이에요.",
+          "write": "c = 3, 2c = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "초점 거리 계산"
+        },
+        {
+          "say": "두 초점은 $(-3, 0)$과 $(3, 0)$이에요. 거리 계산하면 6이에요. 맞아요!",
+          "write": "(-3, 0)\\text{ 과 }(3, 0) \\text{ 사이 거리 }= 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "타원의 초점 거리는 $2c$로, $c^2 = a^2 - b$를 이용해 구해요. 잘했어요!",
+          "write": "\\text{초점 거리: } 2c = 6",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $3$ ② $4$ ③ $5$ ④ $6$ ⑤ $8$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④ 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.03
+        }
+      ],
+      "seconds": 15.39
+    },
+    {
+      "id": "GE-05",
+      "category": "기하",
+      "problem": "쌍곡선 $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$의 두 점근선 중 기울기가 양수인 직선의 기울기를 $m$이라 할 때, $12m$의 값을 구하시오. [3점]",
+      "ground_truth": "16",
+      "final_answer": "16",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 이차곡선 (포물선·타원·쌍곡선)",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "쌍곡선의 점근선 기울기를 구하는 문제예요. 기울기가 양수인 직선의 12m 값을 구해야 해요.",
+          "write": "\\frac{x^2}{9} - \\frac{y}{16} = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "쌍곡선의 점근선은 y = ±(b/a)x로 주어져요. 기울기가 양수인 것을 구해야 해요.",
+          "write": "\\text{점근선: } y = \\pm \\frac{b}{a}x",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "점근선 공식"
+        },
+        {
+          "say": "주어진 쌍곡선의 a와 b를 구해 볼게요. a² = 9, b² = 16이에요.",
+          "write": "a^2 = 9, b^2 = 16",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a, b 구하기"
+        },
+        {
+          "say": "a = 3, b = 4이에요. 기울기가 양수인 점근선행의 기울기는 b/a = 4/3이에요.",
+          "write": "a = 3, b = 4, m = \\frac{b}{a} = \\frac{4}{3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "m 구하기"
+        },
+        {
+          "say": "12m = 12 × 4/3 = 16이에요.",
+          "write": "12m = 12 \\times \\frac{4}{3} = 16",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "12m 계산"
+        },
+        {
+          "say": "12m = 16이 맞아요. 계산 과정을 다시 확인했어요.",
+          "write": "12 \\times \\frac{4}{3} \\rightarrow 16",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "쌍곡선의 점근선 기울기는 b/a로 구하고, 12m를 계산하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{점근선 기울기: } m = \\frac{b}{a}, 12m = 16",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\text{쌍곡선} \\frac{x^2}{9} - \\frac{y^2}{16} = 1\\text{의} \\text{두} \\text{점근선} \\text{중} \\text{기울기가} \\text{양수인} \\text{직선의} \\text{기울기를} m\\text{이라} \\text{할} \\text{때}, 12m\\text{의} \\text{값을} \\text{구하시오}. [3\\text{점}]",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "16",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 13.34
+        }
+      ],
+      "seconds": 14.35
+    },
+    {
+      "id": "GE-06",
+      "category": "기하",
+      "problem": "두 벡터 $\\vec{a}$, $\\vec{b}$에 대하여 $|\\vec{a}| = 2$, $|\\vec{b}| = 3$이고 두 벡터가 이루는 각의 크기가 $\\frac{\\pi}{3}$일 때, $|2\\vec{a} - \\vec{b}|^2$의 값은? [3점]\n① $7$ ② $13$ ③ $19$ ④ $25$ ⑤ $37$",
+      "ground_truth": "② (13)",
+      "final_answer": "②",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 평면벡터",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "두 벡터의 크기와 끼인 각이 주어졌어요. |2a - b|²의 값을 계산해 볼게요.",
+          "write": "|2\\vec{a} - \\vec{b}||^2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "내적 공식과 벡터의 크기 공식을 써야 해요. |2a - b|²는 전개해서 계산해요.",
+          "write": "\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$, $|\\vec{v}|^2 = \\vec{v} \\cdot \\vec{v}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "내적, 크기 공식"
+        },
+        {
+          "say": "먼저 a와 b의 내적 a·b를 계산해 볼게요. |a|는 2, |b|는 3, 끼인각은 π/3이에요.",
+          "write": "\\vec{a} \\cdot \\vec{b}= 2 \\times 3 \\times \\cos\\left(\\frac{\\pi}{3}\\right) = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "내적 계산"
+        },
+        {
+          "say": "이제 |2a - b|²를 전개해 볼게요. (2a - b)·(2a -b) = 4|a|² -4(a·b) + |b|²이에요.",
+          "write": "|2\\vec{a} - \\vec{b}|^2 = 4|\\vec{a}|^2 - 4(\\vec{a} \\cdot \\vec{b}) + |\\vec{b}|^2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "전개"
+        },
+        {
+          "say": "이제 각 항을 계산해 볼게요. 4|a|²는 4×4 = 16, -4(a·b)는 -4×3 = -12, |b|²는 9예요.",
+          "write": "= 4 \\times 4 - 4 \\times 3 + 9 = 16 -12 + 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "각 항 계산"
+        },
+        {
+          "say": "마지막으로 계산하면 16 -12 +9 = 13이에요.",
+          "write": "= 13",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "a·b = 3, |a| = 2, |b| = 3이므로 4×4 -4×3 +9 = 16 -12 +9 =13이에요. 맞아요!",
+          "write": "4 \\times 4 - 4 \\times (3) + 9 = 13",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "내적과 크기 공식을 사용해 전개하면 끝이에요. 잘 풀었어요!",
+          "write": "\\text{내적 계산 → 전개 → 계산}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $7$ ② $13$ ③ $19$ ④ $25$ ⑤ $37$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "②",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 16.65
+        }
+      ],
+      "seconds": 17.74
+    },
+    {
+      "id": "GE-07",
+      "category": "기하",
+      "problem": "두 평면 $\\alpha$, $\\beta$가 이루는 각의 크기가 $\\frac{\\pi}{3}$이다. 평면 $\\alpha$ 위에 있는 넓이가 $24$인 도형의 평면 $\\beta$ 위로의 정사영의 넓이를 구하시오. [3점]",
+      "ground_truth": "12",
+      "final_answer": "12",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 공간도형과 공간좌표",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "두 평면이 이루는 각이 주어졌고, 정사영의 넓이를 구하는 문제예요. 정사영의 성질을 이용해야 해요.",
+          "write": "\\text{두 평면 }$\\alpha$, $\\beta$, $\\theta = \\frac{\\pi}{3}$, \\text{ 원래 도형의 넓이 }$S = 24$, \\text{ 정사영의 넓이 }$S'$\\text{ 를 구하시오.}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "정사영의 넓이는 원래 넓이에 $\\cos\\theta$를 곱하면 돼요. 이건 두 평면이 이루는 각의 코사인을 사용하는 공식이에요.",
+          "write": "\\text{정사영의 넓이} = S \\cos\\theta",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "정사영 공식"
+        },
+        {
+          "say": "정사영의 넓이 공식에 주어진 값들을 대입해 볼게요. $\\cos\\frac{\\pi}{3} = \\frac{1}{2}$이에요.",
+          "write": "S' = 24 \\times \\cos\\left(\\frac{\\pi}{3}\\right)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공식 대입"
+        },
+        {
+          "say": "코사인 값은 1/2이므로 계산해 볼게요.",
+          "write": "S' = 24 \\times \\frac{1}{2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "24를 2로 나누면 12이에요. 이 값이 정사영의 넓이예요.",
+          "write": "S' = 12",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "정답"
+        },
+        {
+          "say": "정사영의 넓이 공식을 사용했고, 계산도 맞아요. 24 × 1/2 = 12이에요.",
+          "write": "24 \\times \\frac{1}{2} = 12",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "정사영의 넓이는 원래 도형 넓이에 $\\cos\\theta$을 곱하면 돼요. 잘 풀었어요!",
+          "write": "\\text{정사영의 넓이 = 원래 넓이} \\times \\cos\\theta",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "두 평면 $\\alpha$, $\\beta$가 이루는 각의 크기가 $\\frac{\\pi}{3}$이다. 평면 $\\alpha$ 위에 있는 넓이가 24인 도형의 평면 $\\beta$ 위로의 정사영의 넓이는?",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "12",
+          "resolve": [
+            "12"
+          ],
+          "support": 1,
+          "against": 0,
+          "issue": null,
+          "seconds": 13.04
+        }
+      ],
+      "seconds": 14.12
+    },
+    {
+      "id": "GE-08",
+      "category": "기하",
+      "problem": "좌표공간의 두 점 $A(1, 0, 5)$, $B(7, 3, -1)$에 대하여 선분 $AB$를 $2 : 1$로 내분하는 점의 좌표를 $(a, b, c)$라 할 때, $a + b + c$의 값은? [3점]\n① $5$ ② $6$ ③ $7$ ④ $8$ ⑤ $9$",
+      "ground_truth": "④ (8)",
+      "final_answer": "④",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 공간도형과 공간좌표",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "두 점 A와 B 사이를 2:1로 내분하는 점을 구하는 문제예요. a + b + c의 값을 구해 볼게요.",
+          "write": "A(1, 0, 5),\nB(7, 3, -1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "내분점 공식을 쓰면 되요. 비율 2:1이니까 각 좌표는 (2*B + 1*A)/3이에요.",
+          "write": "\\text{내분점 공식: } (\\frac{2x_2 + x_1}{3}, \\frac{2y_2 + y_1}{3}, \\frac{2z_2 + z_1}{3})",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "내분점 공식"
+        },
+        {
+          "say": "x좌표는 (2*7 + 1*1)/3이에요. 계산하면 15/3 = 5예요.",
+          "write": "a = \\frac{2 \\times 7 + 1 \\times 1}{3} = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x좌표 계산"
+        },
+        {
+          "say": "y좌표는 (2*3 + 1*0)/3이에요. 계산하면 6/3 = 2예요.",
+          "write": "b = \\frac{2 \\times 3 + 1 \\times 0}{3} = 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "y좌표 계산"
+        },
+        {
+          "say": "z좌표는 (2*(-1) + 1*5)/3이에요. 계산하면 3/3 = 1예요.",
+          "write": "c = \\frac{2 \\times (-1) + 1 \\times 5}{3} = 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "z좌표 계산"
+        },
+        {
+          "say": "a + b + c = 5 + 2 + 2 = 8이에요.",
+          "write": "a + b + c = 5 + 2 + \\frac{3}{3} = 8",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "합 계산"
+        },
+        {
+          "say": "a + b + c = 8이에요. ④가 정답이에요!",
+          "write": "5 + 2 + 1 = 8",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "내분점 공식을 사용하면 빠르게 답을 구할 수 있어요. 잘했어요!",
+          "write": "\\text{내분점 공식으로 좌표 구하기}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "A(1, 0, 5), B(7, 3, -1), AB를 2:1로 내분하는 점의 좌표는 (a, b, c), a + b + c의 값은?",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "④",
+          "resolve": [
+            "8",
+            "8"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 15.31
+        }
+      ],
+      "seconds": 17.26
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T02:56:12",
+    "lang": "ko",
+    "set": "csat-math"
+  },
+  "summary": {
+    "total": 5,
+    "correct": 5,
+    "accuracy": 1.0,
+    "first_attempt_correct": 4,
+    "verified_high": 3,
+    "confidence": {
+      "high": 3,
+      "medium": 1,
+      "low": 1
+    },
+    "errors": 0,
+    "avg_seconds": 35.39,
+    "avg_seconds_after_warmup": 38.09,
+    "median_seconds": 24.57,
+    "by_category": {
+      "수학Ⅰ": "2/2",
+      "수학Ⅱ": "1/1",
+      "미적분": "1/1",
+      "기하": "1/1"
+    },
+    "by_category_detail": {
+      "수학Ⅰ": {
+        "correct": "2/2",
+        "first_attempt": "2/2",
+        "confidence": {
+          "high": 1,
+          "medium": 0,
+          "low": 1
+        },
+        "wrong_but_high": 0
+      },
+      "수학Ⅱ": {
+        "correct": "1/1",
+        "first_attempt": "0/1",
+        "confidence": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "미적분": {
+        "correct": "1/1",
+        "first_attempt": "1/1",
+        "confidence": {
+          "high": 1,
+          "medium": 0,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      },
+      "기하": {
+        "correct": "1/1",
+        "first_attempt": "1/1",
+        "confidence": {
+          "high": 1,
+          "medium": 0,
+          "low": 0
+        },
+        "wrong_but_high": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "M1-03",
+      "category": "수학Ⅰ",
+      "problem": "부등식 $\\log_2(x - 1) \\le 3$을 만족시키는 모든 정수 $x$의 개수를 구하시오. [3점]",
+      "ground_truth": "8",
+      "final_answer": "8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 지수함수와 로그함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "로그 함수의 부등식을 푸는 문제예요. x의 값을 구해볼게요.",
+          "write": "\\log_2(x - 1) \\le 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "로그 함수의 부등식을 푸는 방법을 기억해요. 진수 조건과 밑의 크기로 부등식 방향이 바뀌는지 확인해요.",
+          "write": "\\text{진수 조건: } x - 1 > 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "진수 조건"
+        },
+        {
+          "say": "진수 조건을 먼저 확인해요. x - 1 > 0이므로 x > 1예요.",
+          "write": "x > 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "진수 조건"
+        },
+        {
+          "say": "양변을 지수로 올려서 부등식을 풀어요. 밑이 2이므로 2^{\text{log}_2(x - 1)} ≤ 2^3, 즉 x - 1 ≤ 8예요.",
+          "write": "x - 1 \\le 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "지수로 올리기"
+        },
+        {
+          "say": "x - 1 ≤ 8을 정리하면 x ≤ 9예요.",
+          "write": "x \\le 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정리"
+        },
+        {
+          "say": "x > 1과 x ≤ 9을 동시에 만족하는 범위는 1 < x ≤ 9예요.",
+          "write": "1 < x \\le 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 범위"
+        },
+        {
+          "say": "이 범위 안의 정수는 2, 3, 4, 5, 6, 7, 8, 9 총 8개예요.",
+          "write": "x = 2, 3, 4, 5, 6, 7, 8, 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "정수 개수"
+        },
+        {
+          "say": "x = 2부터 x = 9까지 각 값을 대입해 부등식이 성립하는지 확인해요.",
+          "write": "\\log_2(2 - 1) = \\log_2(1) = 0 \\le 3, \\log_2(3 - 1) = \\log_2(2) = 1 \\le 3, \\log_2(4 - 1) = \\log_2(3) \\approx 1.58 \\le 3, \\log_2(5 - 1) = \\log_2(4) = 2 \\le 3, \\ld",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "로그 함수의 부등식은 진수 조건과 밑의 크기로 부등식 방향을 확인하고, 지수로 올려서 풀어요. 정수 개수는 8개예요. 잘했어요!",
+          "write": "\\text{진수 조건 → 지수로 올리기 → 정수 개수 8개}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\text{부등식 $\\log_2(x - 1) \\le 3$을 만족시키는 모든 정수 $x$의 개수를 구하시오. [3점]}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 18.68
+        }
+      ],
+      "seconds": 24.57
+    },
+    {
+      "id": "M1-05",
+      "category": "수학Ⅰ",
+      "problem": "삼각형 $ABC$에서 $\\overline{AB} = 5$, $\\overline{AC} = 8$, $\\angle A = \\frac{\\pi}{3}$일 때, $\\overline{BC}^2$의 값을 구하시오. [3점]",
+      "ground_truth": "49",
+      "final_answer": "49",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "중2 · 피타고라스 정리",
+      "verified": false,
+      "confidence": "low",
+      "attempts": 3,
+      "steps": [
+        {
+          "say": "이번 문제는 피타고라스 정리와 코사인 정리의 차이를 묻는 문제예요. BC의 제곱값을 구하는 문제로 볼게요.",
+          "write": "\\overline{AB} = 5, \\overline{AC} = 8, \\angle A = \\frac{\\pi}{3}, \\overline{BC}^2 = ?",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "직각삼각형이 아니라면 피타고라스 정리를 사용할 수 없고, 코사인 정리를 사용해야 해요. 코사인 정리는 두 변과 그 사이의 각이 주어졌을 때, 세 번째 변의 길이를 구할 수 있어요.",
+          "write": "\\text{코사인 정리: } c^2 = a^2 + b^2 - 2ab \\cos C",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "코사인 정리"
+        },
+        {
+          "say": "코사인 정리를 사용해 보세요. BC가 빗변이 아니므로, BC^2 = AB^2 + AC^2 - 2·AB·AC·cos∠A라고 쓸 수 있어요.",
+          "write": "\\overline{BC}^2 = 5^2 + 8^2 - 2 \\cdot 5 \\cdot 8 \\cdot \\cos \\left( \\frac{\\pi}{3} \\right)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "코사인 정리 적용"
+        },
+        {
+          "say": "각 A는 π/3이라면, 코사인 π/3의 값은 1/2에요. 그래서 계산을 좀 더 간단하게 해볼게요.",
+          "write": "\\overline{BC}^2 = 25 + 64 - 2 \\cdot 5 \\cdot 8 \\cdot \\frac{1}{2}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "cos(π/3) = 1/2"
+        },
+        {
+          "say": "2·5·8·1/2는 40이죠. 25 + 64 = 89이므로, 89 - 40을 계산해 주세요.",
+          "write": "\\overline{BC}^2 = 89 - 40",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "89 - 40은 49이에요. 그래서 BC^2는 49이 됩니다.",
+          "write": "\\overline{BC}^2 = 49",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "BC^2 = 49이면, BC는 7이에요. 다시 코사인 정리를 사용해 계산해 보면 49가 나오는지 확인해 볼게요.",
+          "write": "5^2 + 8^2 - 2 \\cdot 5 \\cdot 8 \\cdot \\frac{1}{2} = 25 + 64 - 40 = 49",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "코사인 정리로 두 변과 그 사이의 각이 주어졌을 때, 세 번째 변의 제곱을 구하는 방법은 기억했어요. 잘했어요!",
+          "write": "\\text{코사인 정리: } c^2 = a^2 + b^2 - 2ab \\cos C",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "삼각형 ABC에서 \\overline{AB} = 5, \\overline{AC} = 8, \\angle A = \\frac{\\pi}{3}일 때, \\overline{BC}^2의 값을 구하시오.",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "49",
+          "resolve": [
+            "31"
+          ],
+          "support": 0,
+          "against": 1,
+          "issue": null,
+          "seconds": 17.65
+        },
+        {
+          "attempt": 2,
+          "final_answer": "49",
+          "resolve": [
+            "31"
+          ],
+          "support": 0,
+          "against": 2,
+          "issue": null,
+          "seconds": 18.11
+        },
+        {
+          "attempt": 3,
+          "final_answer": "49",
+          "resolve": [
+            "31"
+          ],
+          "support": 0,
+          "against": 3,
+          "issue": null,
+          "seconds": 17.77
+        }
+      ],
+      "seconds": 54.56
+    },
+    {
+      "id": "M2-09",
+      "category": "수학Ⅱ",
+      "problem": "함수 $f(x) = x^3 + ax^2 + bx + 1$이 $x = -1$에서 극댓값을 갖고 $x = 3$에서 극솟값을 가질 때, $f(-1)$의 값을 구하시오. (단, $a$, $b$는 상수이다.) [4점]",
+      "ground_truth": "6",
+      "final_answer": "f(-1) = 6",
+      "correct": true,
+      "first_attempt_correct": false,
+      "unit": "수학Ⅱ · 도함수의 활용",
+      "verified": false,
+      "confidence": "medium",
+      "attempts": 2,
+      "steps": [
+        {
+          "say": "이 문제는 극값을 이용한 미분 문제예요. x = -1에서 극댓값, x = 3에서 극솟값을 가지는 함수 f(x)를 주고, f(-1)의 값을 구해야 해요.",
+          "write": "f(x) = x^3 + ax^2 + bx + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "극값을 찾기 위해 도함수를 구하고, f'(x) = 0인 x를 찾는 방법을 사용해요. 극값이 x = -1과 x = 3에서 발생하므로, 이 두 점에서 f'(x) = 0이어야 해요.",
+          "write": "f'(x) = 3x^2 + 2ax + b",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept"
+        },
+        {
+          "say": "f'(x) = 3x^2 + 2ax + b를 구했어요. x = -1과 x = 3에서 f'(x) = 0이므로, 두 방정식을 세워 미정계수 a와 b를 구해볼게요.",
+          "write": "f'(-1) = 3(-1)^2 + 2a(-1) + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "f'(-1) = 0"
+        },
+        {
+          "say": "x = -1을 대입하면 3(-1)^2 = 3, 2a(-1) = -2a, b를 더해 0이 되어야 해요.",
+          "write": "3 - 2a + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = -1"
+        },
+        {
+          "say": "x = 3을 대입하면 3(3)^2 = 27, 2a(3) = 6a, b를 더해 0이 되어야 해요.",
+          "write": "27 + 6a + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "x = 3"
+        },
+        {
+          "say": "이제 두 방정식을 연립하여 a와 b를 구해볼게요. 첫 번째 방정식은 3 - 2a + b = 0, 두 번째 방정식은 27 + 6a + b = 0이에요.",
+          "write": "3 - 2a + b = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "①"
+        },
+        {
+          "say": "두 방정식을 빼면 27 + 6a + b - (3 - 2a + b) = 0 - 0이므로, 24 + 8a = 0이 되어요.",
+          "write": "24 + 8a = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "② - ①"
+        },
+        {
+          "say": "8a = -24이므로, a = -3이에요. a = -3을 첫 번째 방정식에 대입하면 3 - 2(-3) + b = 0이므로, 3 + 6 + b = 0, b = -9이에요.",
+          "write": "a = -3, b = -9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a, b 구하기"
+        },
+        {
+          "say": "이제 a = -3, b = -9를 f(x)에 대입하여 f(-1)을 구해볼게요.",
+          "write": "f(-1) = (-1)^3 + (-3)(-1)^2 + (-9)(-1) + 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "a, b 대입"
+        },
+        {
+          "say": "(-1)^3 = -1, (-3)(-1)^2 = -3, (-9)(-1) = 9, 1을 더하면 -1 - 3 + 9 + 1 = 6이에요.",
+          "write": "f(-1) = -1 - 3 + 9 + 1 = 6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "a = -3, b = -9를 f(x)에 대입한 f(-1) = 6을 계산했어요. 이 값이 올바른지 다시 확인해볼게요.",
+          "write": "f(-1) = (-1)^3 + (-3)(-1)^2 + (-9)(-1) + 1 = -1 - 3 + 9 + 1 = 6",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "극값을 이용한 미분 문제는 도함수를 구하고, 극값이 발생하는 x에서 f'(x) = 0이므로 방정식을 세워 미정계수를 구한 후, 원 함수에 대입해 값을 구하는 것이에요. 잘했어요!",
+          "write": "f(-1) = 6",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "f(x) = x^3 + ax^2 + bx + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "f(-1) = 10",
+          "resolve": [
+            "6"
+          ],
+          "support": 0,
+          "against": 1,
+          "issue": null,
+          "seconds": 31.3
+        },
+        {
+          "attempt": 2,
+          "final_answer": "f(-1) = 6",
+          "resolve": [
+            "6"
+          ],
+          "support": 2,
+          "against": 0,
+          "issue": null,
+          "seconds": 27.7
+        }
+      ],
+      "seconds": 59.96
+    },
+    {
+      "id": "CA-07",
+      "category": "미적분",
+      "problem": "곡선 $x^2 + xy + y^2 = 7$ 위의 점 $(1, 2)$에서의 접선의 기울기는? [3점]\n① $-\\frac{4}{5}$ ② $-\\frac{3}{5}$ ③ $-\\frac{2}{5}$ ④ $\\frac{2}{5}$ ⑤ $\\frac{4}{5}$",
+      "ground_truth": "① (- \\frac{4}{5})",
+      "final_answer": "-\\frac{4}{5}",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "수학Ⅰ · 삼각함수",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "곡선 $x^2 + xy + y^2 = 7$ 위의 점 $(1, 2)$에서의 접선의 기울기를 구하는 문제예요.",
+          "write": "x^2 + xy + y^2 = 7",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "곡선의 접선의 기울기는 도함수를 이용해 구할 수 있어요. $y$에 대해 미분해서 $\\frac{dy}{dx}$를 구하고, 점을 대입하면 됩니다.",
+          "write": "\\text{도함수: } y\\text{에 대해 미분}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "도함수 개념"
+        },
+        {
+          "say": "곡선의 방정식을 $y$에 대해 미분해 $\\frac{dy}{dx}$를 구해볼게요.",
+          "write": "2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "미분"
+        },
+        {
+          "say": "이제 $\\frac{dy}{dx}$를 정리해볼게요.",
+          "write": "x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = -2x - y",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "이항"
+        },
+        {
+          "say": "공통 인수 $\\frac{dy}{dx}$를 빼내어 정리해볼게요.",
+          "write": "\\frac{dy}{dx}(x + 2y) = -2x - y",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "공통 인수 빼내기"
+        },
+        {
+          "say": "양변을 $x + 2y$로 나누어 $\\frac{dy}{dx}$를 구해볼게요.",
+          "write": "\\frac{dy}{dx} = \\frac{-2x - y}{x + 2y}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "양변 ÷ (x + 2y)"
+        },
+        {
+          "say": "점 $(1, 2)$를 대입해 접선의 기울기를 구해볼게요.",
+          "write": "\\frac{dy}{dx} = \\frac{-2(1) - 2}{1 + 2(2)}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "점 대입"
+        },
+        {
+          "say": "계산을 해볼게요.",
+          "write": "\\frac{dy}{dx} = \\frac{-2 - 2}{1 + 4} = \\frac{-4}{5}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "계산"
+        },
+        {
+          "say": "구한 기울기 $-\\frac{4}{5}$를 처음 식에 대입해 확인해볼게요.",
+          "write": "x = 1, y = 2, \\frac{dy}{dx} = -\\frac{4}{5}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "곡선의 접선의 기울기는 도함수를 이용해 구하고, 점을 대입하면 됩니다. 잘 풀었어요!",
+          "write": "\\text{도함수 → 점 대입}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $-\\frac{4}{5}$ ② $-\\frac{3}{5}$ ③ $-\\frac{2}{5}$ ④ $\\frac{2}{5}$ ⑤ $\\frac{4}{5}$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "-\\frac{4}{5}",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 18.07
+        }
+      ],
+      "seconds": 18.77
+    },
+    {
+      "id": "GE-06",
+      "category": "기하",
+      "problem": "두 벡터 $\\vec{a}$, $\\vec{b}$에 대하여 $|\\vec{a}| = 2$, $|\\vec{b}| = 3$이고 두 벡터가 이루는 각의 크기가 $\\frac{\\pi}{3}$일 때, $|2\\vec{a} - \\vec{b}|^2$의 값은? [3점]\n① $7$ ② $13$ ③ $19$ ④ $25$ ⑤ $37$",
+      "ground_truth": "② (13)",
+      "final_answer": "② 13",
+      "correct": true,
+      "first_attempt_correct": true,
+      "unit": "기하 · 평면벡터",
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "벡터의 크기와 내적을 이용해 |2a - b|²를 구하는 문제예요. 이 문제는 벡터의 성분 연산과 내적을 이용해 풀 수 있어요.",
+          "write": "|2\\vec{a} - \\vec{b}|^2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "이 문제는 벡터의 크기와 내적을 이용해 |2a - b|²를 구하는 문제예요. 벡터의 크기와 내적을 이용하면 쉽게 계산할 수 있어요.",
+          "write": "\\text{내적: } \\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "내적 공식"
+        },
+        {
+          "say": "내적을 먼저 계산해 둡니다. a·b = |a||b|cosθ = 2×3×cos(π/3) = 6×(1/2) = 3입니다.",
+          "write": "\\vec{a} \\cdot \\vec{b} = 2 \\times 3 \\times \\cos\\left(\\frac{\\pi}{3}\\right) = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "내적 계산"
+        },
+        {
+          "say": "이제 |2a - b|²을 전개합니다. |2a - b|² = (2a - b)·(2a - b) = 4|a|² - 4a·b + |b|²입니다.",
+          "write": "|2\\vec{a} - \\vec{b}|^2 = 4|\\vec{a}|^2 - 4\\vec{a} \\cdot \\vec{b} + |\\vec{b}|^2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "전개"
+        },
+        {
+          "say": "각 항을 계산합니다. 4|a|² = 4×4 = 16, -4a·b = -4×3 = -12, |b|² = 9입니다.",
+          "write": "4|\\vec{a}|^2 = 16, -4\\vec{a} \\cdot \\vec{b} = -12, |\\vec{b}|^2 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "각 항 계산"
+        },
+        {
+          "say": "모든 항을 더하면 16 - 12 + 9 = 13입니다.",
+          "write": "16 - 12 + 9 = 13",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "최종 계산"
+        },
+        {
+          "say": "a·b = 3을 대입하면 4×4 - 4×3 + 9 = 16 - 12 + 9 = 13이므로 정답입니다.",
+          "write": "4 \\times 4 - 4 \\times 3 + 9 = 13",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "검산"
+        },
+        {
+          "say": "벡터의 크기와 내적을 이용해 |2a - b|²를 구하는 방법을 배웠어요. 잘했어요!",
+          "write": "\\text{내적 계산 → 전개 → 계산}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "① $7$ ② $13$ ③ $19$ ④ $25$ ⑤ $37$",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "② 13",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 18.11
+        }
+      ],
+      "seconds": 19.08
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+"InstallScript"
+{
+	"Run Process On Uninstall"
+	{
+		"StudyMateDataCleanup"
+		{
+			"process 1"	"%INSTALLDIR%\\Your StudyMate.exe"
+			"command 1"	"--uninstall-cleanup"
+		}
+	}
+}

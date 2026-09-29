@@ -1,0 +1,14 @@
+{
+  "name": "@studymate/protocol",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StudyMate message schemas (single source) and generated types",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "gen": "node scripts/gen.mjs"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^16.0.0"
+  }
+}

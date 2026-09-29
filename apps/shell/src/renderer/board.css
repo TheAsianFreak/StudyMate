@@ -1,0 +1,297 @@
+/*
+ * Hand-written board. Loaded after ui.css (overrides its board block).
+ * Math glyphs use the handwriting font (KaTeX's own fonts stay as fallback for symbols
+ * the handwriting font lacks) and a chalk texture filter; glyphs appear one by one.
+ */
+
+.board {
+  --chalk-white: #f6f3ea;
+  --chalk-yellow: #ffe08a;
+  --chalk-pink: #ffb3c8;
+  --chalk-mint: #a8f0d4;
+  --chalk-blue: #bfe1ff;
+  /* Darker glass than before so thin handwriting stays readable on any desktop; the
+     character behind the board still shows through. */
+  background: linear-gradient(160deg, rgba(30, 60, 46, 0.66), rgba(24, 48, 38, 0.6));
+}
+
+.board header {
+  cursor: grab;
+  user-select: none;
+}
+
+.board.dragging header {
+  cursor: grabbing;
+}
+
+.board .unit {
+  padding: 2px 8px;
+  border: 1.5px dashed rgba(246, 243, 234, 0.55);
+  border-radius: 999px;
+  color: var(--chalk-blue);
+  font: 12px var(--font-ui);
+  white-space: nowrap;
+}
+
+.board-ask {
+  width: 28px;
+  height: 28px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--chalk-white);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.board-ask:hover,
+.board-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.board-body {
+  position: relative;
+  padding: 10px 20px 18px;
+}
+
+.board-line {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; /* a note that does not fit goes under its line instead of clipping it */
+  align-items: center;
+  gap: 2px 10px;
+  padding: 4px 0;
+  font-size: 1.25em;
+}
+
+/* --- ink: handwriting glyphs with chalk texture --------------------------------------- */
+
+.board-ink {
+  display: inline-block;
+  /* takes the rest of the row and wraps inside it (board.ts breakableText); a line never
+     runs past the board's edge */
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--chalk-white);
+  filter: url(#chalk-filter) drop-shadow(0 0 1px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 1px 2px rgba(10, 20, 15, 0.8));
+  text-shadow: none;
+  transition: margin-left 300ms ease;
+}
+
+.board-ink .katex {
+  font-family: var(--font-board);
+  font-size: 1.35em;
+  line-height: 1.25;
+}
+
+.board-ink .katex .mathnormal,
+.board-ink .katex .mathit,
+.board-ink .katex .mathrm,
+.board-ink .katex .textrm,
+.board-ink .katex .mord,
+.board-ink .katex .mbin,
+.board-ink .katex .mrel,
+.board-ink .katex .mopen,
+.board-ink .katex .mclose,
+.board-ink .katex .mpunct,
+.board-ink .katex .mop,
+.board-ink .katex .text {
+  font-family: var(--font-board);
+  font-style: normal;
+}
+
+/* Handwriting letters are narrow; give operators a little air like on a real board. */
+.board-ink .katex .mbin,
+.board-ink .katex .mrel {
+  padding: 0 0.08em;
+}
+
+.board-ink .frac-line {
+  border-bottom-width: 0.08em !important;
+  border-radius: 2px;
+}
+
+.glyph-pending {
+  opacity: 0;
+}
+
+.glyph-written {
+  animation: chalk-in 140ms ease-out both;
+}
+
+@keyframes chalk-in {
+  0% {
+    opacity: 0;
+    filter: blur(1.2px);
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* --- margin notes ---------------------------------------------------------------------- */
+
+.board-note {
+  margin-left: auto;
+  padding-left: 12px;
+  color: var(--chalk-yellow);
+  font: 22px var(--font-hand);
+  /* a long note wraps in the margin instead of squeezing the line */
+  flex: 0 1 auto;
+  max-width: 34%;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  transform: translateX(-4px) rotate(-2deg);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.board-note::before {
+  content: '← ';
+  opacity: 0.7;
+}
+
+.board-note.shown {
+  opacity: 0.95;
+  transform: none;
+}
+
+/* --- roles ----------------------------------------------------------------------------- */
+
+.line-label {
+  flex: none;
+  box-sizing: border-box;
+  /* One width for every label so formulas start in one column; fits the longest label of
+     the UI language ("Problem", "まとめ"). */
+  width: 3.4em;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font: 17px var(--font-hand);
+  text-align: center;
+  white-space: nowrap;
+  color: #22342b;
+}
+
+:root:lang(ja) .line-label {
+  width: 4.2em;
+}
+
+:root:lang(en) .line-label {
+  width: 4.4em;
+}
+
+.line-label.blank {
+  visibility: hidden;
+}
+
+.role-intro .line-label {
+  background: var(--chalk-blue);
+}
+
+.role-concept {
+  margin: 4px 0 8px;
+  padding: 6px 10px;
+  border: 2px dashed rgba(255, 224, 138, 0.7);
+  border-radius: 10px;
+}
+
+.role-concept .line-label {
+  background: var(--chalk-yellow);
+}
+
+.role-concept .board-ink {
+  color: var(--chalk-yellow);
+}
+
+.role-check {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(246, 243, 234, 0.35);
+}
+
+.role-check .line-label {
+  background: var(--chalk-mint);
+}
+
+.role-check .board-ink {
+  color: var(--chalk-mint);
+}
+
+.role-check.done .board-ink::after {
+  content: ' ✓';
+  font: 26px var(--font-hand);
+}
+
+.role-summary {
+  margin-top: 8px;
+}
+
+.role-summary .line-label {
+  background: var(--chalk-pink);
+}
+
+.role-summary .board-ink {
+  color: var(--chalk-pink);
+  border-bottom: 2px solid rgba(255, 179, 200, 0.6);
+  border-radius: 0 0 40% 8% / 0 0 6px 4px;
+}
+
+/* Long lines scroll inside the board instead of spilling past its edge. */
+.board-body {
+  overflow-x: hidden;
+}
+
+.board-line .board-ink {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+/* --- follow-up topic bar (ask panel) ----------------------------------------------------- */
+
+.ask-topic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding: 6px 8px 6px 10px;
+  border: 2px dashed var(--lavender);
+  border-radius: 12px;
+  background: var(--lavender-soft);
+  color: var(--ink);
+  font: 14px var(--font-body);
+}
+
+.ask-topic .katex {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1em;
+}
+
+.ask-topic .btn {
+  flex: none;
+}
+
+/* --- follow-up section ------------------------------------------------------------------- */
+
+.board-divider {
+  margin: 12px 0 4px;
+  padding-top: 8px;
+  border-top: 2px dashed rgba(191, 225, 255, 0.45);
+  color: var(--chalk-blue);
+  font: 22px var(--font-hand);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

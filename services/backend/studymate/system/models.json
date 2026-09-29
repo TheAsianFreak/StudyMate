@@ -1,0 +1,558 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "id": "llama-runtime-vulkan",
+      "title": "llama.cpp 서버 (Vulkan)",
+      "category": "runtime",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "required": true,
+      "license": "MIT",
+      "license_url": "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
+      "files": [
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11177/llama-b11177-bin-win-vulkan-x64.zip",
+          "path": "runtime/llama.cpp/vulkan/llama-b11177-bin-win-vulkan-x64.zip",
+          "size": 32456717,
+          "sha256": "6e4e7a8cea0d2dbd0a745b55f6b42d46d8130f8df4791938802f8269dfc205d5",
+          "extract": true
+        }
+      ]
+    },
+    {
+      "id": "llama-runtime-cpu",
+      "title": "llama.cpp 서버 (CPU)",
+      "category": "runtime",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "required": true,
+      "license": "MIT",
+      "license_url": "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
+      "files": [
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11177/llama-b11177-bin-win-cpu-x64.zip",
+          "path": "runtime/llama.cpp/cpu/llama-b11177-bin-win-cpu-x64.zip",
+          "size": 18568210,
+          "sha256": "7f11f910c9ef590782a0a0edbaa99aac1665823ab7bbd63830eca97c39e8defc",
+          "extract": true
+        }
+      ]
+    },
+    {
+      "id": "qwen3-4b",
+      "title": "Qwen3 4B (Q4_K_M)",
+      "category": "llm",
+      "tiers": [
+        "lite"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+      "files": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf",
+          "path": "llm/Qwen3-4B-Q4_K_M.gguf",
+          "size": 2497280256,
+          "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
+        }
+      ]
+    },
+    {
+      "id": "qwen3-8b",
+      "title": "Qwen3 8B (Q4_K_M)",
+      "category": "llm",
+      "tiers": [
+        "standard",
+        "pro"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF",
+      "files": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+          "path": "llm/Qwen3-8B-Q4_K_M.gguf",
+          "size": 5027783488,
+          "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785"
+        }
+      ]
+    },
+    {
+      "id": "qwen3-14b",
+      "title": "Qwen3 14B (Q4_K_M)",
+      "category": "llm",
+      "tiers": [
+        "max"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3-14B-GGUF",
+      "files": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3-14B-GGUF/resolve/530227a7d994db8eca5ab5ced2fb692b614357fd/Qwen3-14B-Q4_K_M.gguf",
+          "path": "llm/Qwen3-14B-Q4_K_M.gguf",
+          "size": 9001752960,
+          "sha256": "500a8806e85ee9c83f3ae08420295592451379b4f8cf2d0f41c15dffeb6b81f0"
+        }
+      ]
+    },
+    {
+      "id": "qwen2.5-vl-7b",
+      "title": "Qwen2.5-VL 7B (Q4_K_M + mmproj)",
+      "category": "vision",
+      "tiers": [
+        "standard",
+        "pro",
+        "max"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/ggml-org/Qwen2.5-VL-7B-Instruct-GGUF",
+      "files": [
+        {
+          "url": "https://huggingface.co/ggml-org/Qwen2.5-VL-7B-Instruct-GGUF/resolve/508edd0afaa66bb9e9f40587acc2184f02daf1f6/Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf",
+          "path": "vision/Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf",
+          "size": 4683072032,
+          "sha256": "9258bf05b12686d097ff3b6b18d968ab393649780aa2b3cd67fec43d50554392"
+        },
+        {
+          "url": "https://huggingface.co/ggml-org/Qwen2.5-VL-7B-Instruct-GGUF/resolve/508edd0afaa66bb9e9f40587acc2184f02daf1f6/mmproj-Qwen2.5-VL-7B-Instruct-Q8_0.gguf",
+          "path": "vision/mmproj-Qwen2.5-VL-7B-Instruct-Q8_0.gguf",
+          "size": 853119712,
+          "sha256": "2ddb555391bae966e412deab9e07b58afa18bcc06930ba0f1c78a3695ab9e506"
+        }
+      ]
+    },
+    {
+      "id": "bge-m3",
+      "title": "bge-m3 임베딩 (Q8_0)",
+      "category": "embed",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "required": false,
+      "license": "MIT",
+      "license_url": "https://huggingface.co/BAAI/bge-m3",
+      "files": [
+        {
+          "url": "https://huggingface.co/ggml-org/bge-m3-Q8_0-GGUF/resolve/9eba04c5d75ba5a1595e45de734d36bef4e5cb98/bge-m3-q8_0.gguf",
+          "path": "embed/bge-m3-q8_0.gguf",
+          "size": 634553760,
+          "sha256": "aa473d51f451a22f0fcf39ba3330c14bed38a385712b1113440f69df4047a173"
+        }
+      ]
+    },
+    {
+      "id": "whisper-small",
+      "title": "Whisper small (faster-whisper)",
+      "category": "stt",
+      "tiers": [
+        "lite"
+      ],
+      "required": false,
+      "license": "MIT",
+      "license_url": "https://huggingface.co/Systran/faster-whisper-small",
+      "files": [
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/config.json",
+          "path": "stt/faster-whisper-small/config.json",
+          "size": 2370
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/model.bin",
+          "path": "stt/faster-whisper-small/model.bin",
+          "size": 483546902,
+          "sha256": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/tokenizer.json",
+          "path": "stt/faster-whisper-small/tokenizer.json",
+          "size": 2203239
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/vocabulary.txt",
+          "path": "stt/faster-whisper-small/vocabulary.txt",
+          "size": 459861
+        }
+      ]
+    },
+    {
+      "id": "whisper-medium",
+      "title": "Whisper medium (faster-whisper)",
+      "category": "stt",
+      "tiers": [
+        "standard"
+      ],
+      "required": false,
+      "license": "MIT",
+      "license_url": "https://huggingface.co/Systran/faster-whisper-medium",
+      "files": [
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-medium/resolve/08e178d48790749d25932bbc082711ddcfdfbc4f/config.json",
+          "path": "stt/faster-whisper-medium/config.json",
+          "size": 2257
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-medium/resolve/08e178d48790749d25932bbc082711ddcfdfbc4f/model.bin",
+          "path": "stt/faster-whisper-medium/model.bin",
+          "size": 1527906378,
+          "sha256": "9b45e1009dcc4ab601eff815b61d80e60ce3fd8c74c1a14f4a282258286b51ae"
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-medium/resolve/08e178d48790749d25932bbc082711ddcfdfbc4f/tokenizer.json",
+          "path": "stt/faster-whisper-medium/tokenizer.json",
+          "size": 2203239
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-medium/resolve/08e178d48790749d25932bbc082711ddcfdfbc4f/vocabulary.txt",
+          "path": "stt/faster-whisper-medium/vocabulary.txt",
+          "size": 459861
+        }
+      ]
+    },
+    {
+      "id": "whisper-large-v3",
+      "title": "Whisper large-v3 (faster-whisper)",
+      "category": "stt",
+      "tiers": [
+        "pro",
+        "max"
+      ],
+      "required": false,
+      "license": "MIT",
+      "license_url": "https://huggingface.co/Systran/faster-whisper-large-v3",
+      "files": [
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/config.json",
+          "path": "stt/faster-whisper-large-v3/config.json",
+          "size": 2394
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/model.bin",
+          "path": "stt/faster-whisper-large-v3/model.bin",
+          "size": 3087284237,
+          "sha256": "69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1"
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/tokenizer.json",
+          "path": "stt/faster-whisper-large-v3/tokenizer.json",
+          "size": 2480617
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/vocabulary.json",
+          "path": "stt/faster-whisper-large-v3/vocabulary.json",
+          "size": 1068114
+        },
+        {
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/preprocessor_config.json",
+          "path": "stt/faster-whisper-large-v3/preprocessor_config.json",
+          "size": 340
+        }
+      ]
+    },
+    {
+      "id": "melo-korean",
+      "title": "MeloTTS 한국어",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "ko"
+      ],
+      "required": true,
+      "license": "MIT",
+      "license_url": "https://huggingface.co/myshell-ai/MeloTTS-Korean",
+      "files": [
+        {
+          "url": "https://huggingface.co/myshell-ai/MeloTTS-Korean/resolve/0207e5adfc90129a51b6b03d89be6d84360ed323/checkpoint.pth",
+          "path": "tts/melo-korean/checkpoint.pth",
+          "size": 207860748,
+          "sha256": "48e3ff3fd0b5348e095f0468e60ae727507564100f58142ef3a922ead6e0a4d0"
+        },
+        {
+          "url": "https://huggingface.co/myshell-ai/MeloTTS-Korean/resolve/0207e5adfc90129a51b6b03d89be6d84360ed323/config.json",
+          "path": "tts/melo-korean/config.json",
+          "size": 3405,
+          "sha256": "74543376976dfadde45ba34336fa79c7e95509f43a7c2e701b22c0f71fd7695c"
+        }
+      ]
+    },
+    {
+      "id": "g2p-cmudict",
+      "title": "영어 발음 사전 (CMUdict)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "ko",
+        "en"
+      ],
+      "required": false,
+      "license": "BSD-2-Clause",
+      "license_url": "https://github.com/cmusphinx/cmudict/blob/master/LICENSE",
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/corpora/cmudict.zip",
+          "path": "nltk_data/corpora/cmudict.zip",
+          "size": 896069,
+          "sha256": "d07cca47fd72ad32ea9d8ad1219f85301eeaf4568f8b6b73747506a71fb5afd6",
+          "extract": true
+        }
+      ]
+    },
+    {
+      "id": "kokoro-82m",
+      "title": "Kokoro-82M 음성 합성 (일본어·영어)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "ja",
+        "en"
+      ],
+      "required": true,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "files": [
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/kokoro-v1_0.pth",
+          "path": "tts/kokoro-82m/kokoro-v1_0.pth",
+          "size": 327212226,
+          "sha256": "496dba118d1a58f5f3db2efc88dbdc216e0483fc89fe6e47ee1f2c53f18ad1e4"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json",
+          "path": "tts/kokoro-82m/config.json",
+          "size": 2351,
+          "sha256": "5abb01e2403b072bf03d04fde160443e209d7a0dad49a423be15196b9b43c17f"
+        }
+      ]
+    },
+    {
+      "id": "kokoro-voices-ja",
+      "title": "Kokoro 일본어 목소리 (여성 4종)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "ja"
+      ],
+      "required": true,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md",
+      "files": [
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/jf_alpha.pt",
+          "path": "tts/kokoro-82m/voices/jf_alpha.pt",
+          "size": 523425,
+          "sha256": "1bf4c9dc69e45ee46183b071f4db766349aac5592acbcfeaf051018048a5d787"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/jf_gongitsune.pt",
+          "path": "tts/kokoro-82m/voices/jf_gongitsune.pt",
+          "size": 523351,
+          "sha256": "1b171917f18f351e65f2bf9657700cd6bfec4e65589c297525b9cf3c20105770"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/jf_nezumi.pt",
+          "path": "tts/kokoro-82m/voices/jf_nezumi.pt",
+          "size": 523420,
+          "sha256": "d83f007a7f01783b77014561a7d493d327a0210e143440e91c9b697590d27661"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/jf_tebukuro.pt",
+          "path": "tts/kokoro-82m/voices/jf_tebukuro.pt",
+          "size": 523435,
+          "sha256": "0d6917904438aec85f73a6fa1f7ac2be6481aae47c697834936930a91796c576"
+        }
+      ]
+    },
+    {
+      "id": "kokoro-voices-en",
+      "title": "Kokoro 영어 목소리 (여성 4종)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "en"
+      ],
+      "required": true,
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md",
+      "files": [
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/af_heart.pt",
+          "path": "tts/kokoro-82m/voices/af_heart.pt",
+          "size": 523425,
+          "sha256": "0ab5709b8ffab19bfd849cd11d98f75b60af7733253ad0d67b12382a102cb4ff"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/af_bella.pt",
+          "path": "tts/kokoro-82m/voices/af_bella.pt",
+          "size": 523425,
+          "sha256": "8cb64e02fcc8de0327a8e13817e49c76c945ecf0052ceac97d3081480e8e48d6"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/bf_emma.pt",
+          "path": "tts/kokoro-82m/voices/bf_emma.pt",
+          "size": 523420,
+          "sha256": "d0a423deabf4a52b4f49318c51742c54e21bb89bbbe9a12141e7758ddb5da701"
+        },
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/af_sarah.pt",
+          "path": "tts/kokoro-82m/voices/af_sarah.pt",
+          "size": 523425,
+          "sha256": "49bd364ea3be9eb3e9685e8f9a15448c4883112a7c0ff7ab139fa4088b08cef9"
+        }
+      ]
+    },
+    {
+      "id": "g2p-en-oov",
+      "title": "영어 미등록어 발음 추정 (g2p_en)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "en"
+      ],
+      "required": true,
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/Kyubyong/g2p/blob/master/LICENSE.txt",
+      "files": [
+        {
+          "url": "https://files.pythonhosted.org/packages/d7/d9/b77dc634a7a0c0c97716ba97dd0a28cbfa6267c96f359c4f27ed71cbd284/g2p_en-2.1.0-py3-none-any.whl",
+          "path": "tts/g2p-en/g2p_en-2.1.0-py3-none-any.whl",
+          "size": 3117464,
+          "sha256": "2a7aabf1fc7f270fcc3349881407988c9245173c2413debbe5432f4a4f31319f",
+          "extract": true
+        }
+      ]
+    },
+    {
+      "id": "spacy-en-core-web-sm",
+      "title": "영어 품사 분석 (spaCy en_core_web_sm)",
+      "category": "tts",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "langs": [
+        "en"
+      ],
+      "required": true,
+      "license": "MIT",
+      "license_url": "https://github.com/explosion/spacy-models/releases/tag/en_core_web_sm-3.8.0",
+      "files": [
+        {
+          "url": "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+          "path": "tts/spacy/en_core_web_sm-3.8.0-py3-none-any.whl",
+          "size": 12806118,
+          "sha256": "1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85",
+          "extract": true
+        }
+      ]
+    },
+    {
+      "id": "face-landmarker",
+      "title": "MediaPipe Face Landmarker",
+      "category": "face",
+      "tiers": [
+        "lite",
+        "standard",
+        "pro",
+        "max"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker",
+      "files": [
+        {
+          "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+          "path": "face/face_landmarker.task"
+        }
+      ]
+    },
+    {
+      "id": "ocr-korean-rec",
+      "title": "PaddleOCR 한국어 인식 (PP-OCRv5 mobile, ONNX)",
+      "category": "ocr",
+      "tiers": [
+        "lite"
+      ],
+      "required": false,
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/PaddlePaddle/PaddleOCR/blob/main/LICENSE",
+      "files": [
+        {
+          "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv5/rec/korean_PP-OCRv5_rec_mobile.onnx",
+          "path": "ocr/korean_PP-OCRv5_rec_mobile.onnx",
+          "size": 13488748,
+          "sha256": "cd6e2ea50f6943ca7271eb8c56a877a5a90720b7047fe9c41a2e541a25773c9b"
+        }
+      ]
+    },
+    {
+      "id": "ocr-pix2tex",
+      "title": "pix2tex 수식 인식 (v0.0.1)",
+      "category": "ocr",
+      "tiers": [
+        "lite"
+      ],
+      "required": false,
+      "license": "MIT",
+      "license_url": "https://github.com/lukas-blecher/LaTeX-OCR/blob/main/LICENSE",
+      "files": [
+        {
+          "url": "https://github.com/lukas-blecher/LaTeX-OCR/releases/download/v0.0.1/weights.pth",
+          "path": "ocr/pix2tex/weights.pth",
+          "size": 102113875,
+          "sha256": "a63d9141c53d266cb682fb5a8bd83bd5cbe283145e0e78ebdc0f895195a1dfaa"
+        },
+        {
+          "url": "https://github.com/lukas-blecher/LaTeX-OCR/releases/download/v0.0.1/image_resizer.pth",
+          "path": "ocr/pix2tex/image_resizer.pth",
+          "size": 19441973,
+          "sha256": "1c3820659985ad142b526490bb25c23d977176ac2073591b3bddada692718458"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,564 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://studymate.local/protocol/godot.schema.json",
+  "title": "Director <-> Godot messages",
+  "description": "Transport: JavaScriptBridge. Coordinates are window CSS pixels, origin top-left.",
+  "$defs": {
+    "Vec": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ]
+    },
+    "Weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "MoveTo": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "move_to"
+        },
+        "t": {
+          "type": "number"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "speed": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "CSS px/s (default 85, about 2.4 steps/s; the walk reads best at <= ~120)"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "SetPos": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "set_pos"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "Grab": {
+      "type": "object",
+      "description": "The user drags the character: pointer position (window CSS px), sent on drag start and on every pointer move. The first grab picks her up by the back of the collar at the pointer; she dangles below it and swings like a damped pendulum, flailing. A move_to in progress is cancelled; one that arrives while held starts after landing.",
+      "properties": {
+        "type": {
+          "const": "grab"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "Release": {
+      "type": "object",
+      "description": "Drag ended: she drops a short way (about 30 CSS px, never below the window's bottom edge), lands on her feet and then sends arrived with the feet position.",
+      "properties": {
+        "type": {
+          "const": "release"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "Gesture": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "gesture"
+        },
+        "t": {
+          "type": "number"
+        },
+        "name": {
+          "enum": [
+            "write",
+            "point",
+            "nod",
+            "tap_desk",
+            "throw",
+            "idle"
+          ]
+        },
+        "duration_ms": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "duration_ms"
+      ]
+    },
+    "Emotion": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "emotion"
+        },
+        "t": {
+          "type": "number"
+        },
+        "name": {
+          "enum": [
+            "happy",
+            "surprised",
+            "sleepy",
+            "angry",
+            "neutral"
+          ]
+        },
+        "weight": {
+          "$ref": "#/$defs/Weight"
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "weight"
+      ]
+    },
+    "LookAt": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "look_at"
+        },
+        "t": {
+          "type": "number"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "target": {
+          "const": "user"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        }
+      ],
+      "description": "Gaze target. 'user' is soft: mostly the eyes with a partial head turn, with short glances away; without any look_at she looks around."
+    },
+    "IkTarget": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "ik_target"
+        },
+        "t": {
+          "type": "number"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "Viseme": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "viseme"
+        },
+        "t": {
+          "type": "number"
+        },
+        "aa": {
+          "$ref": "#/$defs/Weight"
+        },
+        "ih": {
+          "$ref": "#/$defs/Weight"
+        },
+        "ou": {
+          "$ref": "#/$defs/Weight"
+        },
+        "ee": {
+          "$ref": "#/$defs/Weight"
+        },
+        "oh": {
+          "$ref": "#/$defs/Weight"
+        }
+      },
+      "required": [
+        "type",
+        "aa",
+        "ih",
+        "ou",
+        "ee",
+        "oh"
+      ]
+    },
+    "ThrowChalk": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "throw_chalk"
+        },
+        "t": {
+          "type": "number"
+        },
+        "strength": {
+          "enum": [
+            "soft",
+            "normal",
+            "hard"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "strength"
+      ]
+    },
+    "Ready": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "ready"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "Arrived": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "arrived"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ],
+      "description": "A move_to finished, or the character landed after a release. x, y = feet position (window CSS px)."
+    },
+    "GestureDone": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "gesture_done"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "name"
+      ]
+    },
+    "HandPos": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "hand_pos"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "HitRect": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "hit_rect"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "w": {
+          "type": "number",
+          "minimum": 0
+        },
+        "h": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y",
+        "w",
+        "h"
+      ]
+    },
+    "ChalkImpact": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "chalk_impact"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y"
+      ]
+    },
+    "LoadAvatar": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "load_avatar"
+        },
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string",
+          "description": "Godot virtual FS path written via Engine.copyToFS, or res://. Omit with id 'default' to restore the built-in character."
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "AvatarMeta": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "license_name": {
+          "type": "string"
+        },
+        "license_url": {
+          "type": "string"
+        },
+        "commercial_usage": {
+          "type": "string"
+        },
+        "allow_redistribution": {
+          "type": "string"
+        },
+        "modification": {
+          "type": "string"
+        },
+        "credit_notation": {
+          "type": "string"
+        },
+        "spec_version": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "authors",
+        "version",
+        "license_name",
+        "license_url",
+        "commercial_usage",
+        "allow_redistribution",
+        "modification",
+        "credit_notation",
+        "spec_version"
+      ]
+    },
+    "AvatarLoaded": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "avatar_loaded"
+        },
+        "id": {
+          "type": "string"
+        },
+        "meta": {
+          "$ref": "#/$defs/AvatarMeta"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "meta"
+      ]
+    },
+    "AvatarError": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "avatar_error"
+        },
+        "id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "message"
+      ]
+    },
+    "GodotCommand": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/MoveTo"
+        },
+        {
+          "$ref": "#/$defs/SetPos"
+        },
+        {
+          "$ref": "#/$defs/Grab"
+        },
+        {
+          "$ref": "#/$defs/Release"
+        },
+        {
+          "$ref": "#/$defs/Gesture"
+        },
+        {
+          "$ref": "#/$defs/Emotion"
+        },
+        {
+          "$ref": "#/$defs/LookAt"
+        },
+        {
+          "$ref": "#/$defs/IkTarget"
+        },
+        {
+          "$ref": "#/$defs/Viseme"
+        },
+        {
+          "$ref": "#/$defs/ThrowChalk"
+        },
+        {
+          "$ref": "#/$defs/LoadAvatar"
+        }
+      ]
+    },
+    "GodotEvent": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Ready"
+        },
+        {
+          "$ref": "#/$defs/Arrived"
+        },
+        {
+          "$ref": "#/$defs/GestureDone"
+        },
+        {
+          "$ref": "#/$defs/HandPos"
+        },
+        {
+          "$ref": "#/$defs/HitRect"
+        },
+        {
+          "$ref": "#/$defs/ChalkImpact"
+        },
+        {
+          "$ref": "#/$defs/AvatarLoaded"
+        },
+        {
+          "$ref": "#/$defs/AvatarError"
+        }
+      ]
+    }
+  }
+}

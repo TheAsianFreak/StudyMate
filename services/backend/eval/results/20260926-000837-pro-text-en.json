@@ -1,0 +1,4312 @@
+{
+  "info": {
+    "tier": "pro",
+    "mode": "text",
+    "chat_model": "qwen3-8b",
+    "vision_model": "qwen2.5-vl-7b",
+    "started": "2026-09-26T00:04:15",
+    "lang": "en"
+  },
+  "summary": {
+    "total": 50,
+    "correct": 50,
+    "accuracy": 1.0,
+    "first_attempt_correct": 50,
+    "verified_high": 50,
+    "confidence": {
+      "high": 50,
+      "medium": 0,
+      "low": 0
+    },
+    "errors": 0,
+    "avg_seconds": 5.22,
+    "avg_seconds_after_warmup": 5.13,
+    "median_seconds": 5.03,
+    "by_category": {
+      "linear": "10/10",
+      "parentheses": "8/8",
+      "fractions": "9/9",
+      "decimals": "7/7",
+      "system": "8/8",
+      "quadratic": "8/8"
+    }
+  },
+  "results": [
+    {
+      "id": "L01",
+      "category": "linear",
+      "problem": "Solve the equation.\n$2x + 3 = 7$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "2x + 3 = 7",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract 3 from both sides to undo the plus 3.",
+          "write": "2x = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Divide both sides by the coefficient 2, so x is 2.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Put 2 back in: 2 times 2 plus 3 is 7. It works!",
+          "write": "2 \\times 2 + 3 = 7",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.64
+        }
+      ],
+      "seconds": 9.63
+    },
+    {
+      "id": "L02",
+      "category": "linear",
+      "problem": "Solve the linear equation.\n$5x - 4 = 3x + 8$",
+      "ground_truth": "x = 6",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with variables on both sides. Let's find x.",
+          "write": "5x - 4 = 3x + 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to collect like terms on each side. Do the same to both sides to keep the equation balanced.",
+          "write": "\\text{Collect like terms on each side}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Let's subtract 3x from both sides to get all x terms on one side.",
+          "write": "2x - 4 = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3x both sides"
+        },
+        {
+          "say": "Now add 4 to both sides to undo the minus 4.",
+          "write": "2x = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+4 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 2 to solve for x.",
+          "write": "x = 6",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 6 into the original equation.",
+          "write": "5(6) - 4 = 3(6) + 8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Move all x terms to one side and constants to the other. Great job!",
+          "write": "\\text{Move x terms to one side, constants to the other}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5x - 4 = 3x + 8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.16
+        }
+      ],
+      "seconds": 4.73
+    },
+    {
+      "id": "L03",
+      "category": "linear",
+      "problem": "Solve the equation.\n$7 - 2x = x + 1$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "7 - 2x = x + 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Let's get all the x terms on one side. Subtract x from both sides to undo the plus x.",
+          "write": "7 - 3x = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-x both sides"
+        },
+        {
+          "say": "Now, let's get rid of the 7 on the left by subtracting 7 from both sides.",
+          "write": "-3x = -6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-7 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by -3 to solve for x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷-3 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 2 into the original equation.",
+          "write": "7 - 2(2) = 2 + 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "7 - 2x = x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.79
+        }
+      ],
+      "seconds": 4.36
+    },
+    {
+      "id": "L04",
+      "category": "linear",
+      "problem": "The equation $4x + 9 = -3$ Find the solution.",
+      "ground_truth": "x = -3",
+      "final_answer": "x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "4x + 9 = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract 9 from both sides to undo the plus 9.",
+          "write": "4x = -12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-9 both sides"
+        },
+        {
+          "say": "Divide both sides by the coefficient 4, so x is -3.",
+          "write": "x = -3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷4 both sides"
+        },
+        {
+          "say": "Put -3 back in: 4 times -3 plus 9 is -12 plus 9, which is -3. It works!",
+          "write": "4 \\times -3 + 9 = -3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 9 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.55
+        }
+      ],
+      "seconds": 3.96
+    },
+    {
+      "id": "L05",
+      "category": "linear",
+      "problem": "Solve the linear equation.\n$-3x + 5 = 2x - 10$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with variables on both sides. Let's find x.",
+          "write": "-3x + 5 = 2x - 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to get all x terms on one side and constants on the other.",
+          "write": "\\text{Move variables to one side, constants to the other}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Let's subtract 2x from both sides to move the x terms to the left.",
+          "write": "-5x + 5 = -10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Now subtract 5 from both sides to move the constant to the right.",
+          "write": "-5x = -15",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-5 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by -5 to solve for x.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷-5 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 3 into the original equation.",
+          "write": "-3(3) + 5 = 2(3) - 10",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Move variables to one side, then solve. Great job!",
+          "write": "\\text{Move variables first, then solve}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "-3x + 5 = 2x - 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.08
+        }
+      ],
+      "seconds": 4.58
+    },
+    {
+      "id": "L06",
+      "category": "linear",
+      "problem": "Solve the equation.\n$x - 7 = -3$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "x - 7 = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Add 7 to both sides to undo the minus 7.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+7 both sides"
+        },
+        {
+          "say": "We're done! x equals 4.",
+          "write": "x = 4",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve"
+        },
+        {
+          "say": "Put 4 back in: 4 minus 7 is -3. It works!",
+          "write": "4 - 7 = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo subtraction first, then find the solution. Great job!",
+          "write": "\\text{Undo - first, then solve}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x - 7 = -3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.11
+        }
+      ],
+      "seconds": 3.68
+    },
+    {
+      "id": "L07",
+      "category": "linear",
+      "problem": "The equation $6x = 2x + 20$ Find the value of x that satisfies it.",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "6x = 2x + 20",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract 2x from both sides to get all x terms on one side.",
+          "write": "4x = 20",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Divide both sides by 4 to solve for x.",
+          "write": "x = 5",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷4 both sides"
+        },
+        {
+          "say": "Put 5 back in: 6 times 5 equals 2 times 5 plus 20. Both sides are 30. It works!",
+          "write": "6 \\times 5 = 2 \\times 5 + 20",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "6x = 2x + 20",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.46
+        }
+      ],
+      "seconds": 3.88
+    },
+    {
+      "id": "L08",
+      "category": "linear",
+      "problem": "Solve the equation.\n$3x - 2 = 4x + 5$",
+      "ground_truth": "x = -7",
+      "final_answer": "x = -7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with variables on both sides. Let's find x.",
+          "write": "3x - 2 = 4x + 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to get all the x terms on one side and constants on the other. Do the same to both sides.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Let's subtract 4x from both sides to get the x terms on one side.",
+          "write": "-x - 2 = 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-4x both sides"
+        },
+        {
+          "say": "Now add 2 to both sides to undo the minus 2.",
+          "write": "-x = 7",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+2 both sides"
+        },
+        {
+          "say": "Finally, multiply both sides by -1 to solve for x.",
+          "write": "x = -7",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = -7 into the original equation.",
+          "write": "3(-7) - 2 = 4(-7) + 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Move all x terms to one side and constants to the other. Then solve for x. Great job!",
+          "write": "\\text{Move x terms to one side, then solve}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x - 2 = 4x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.93
+        }
+      ],
+      "seconds": 4.51
+    },
+    {
+      "id": "L09",
+      "category": "linear",
+      "problem": "Solve the linear equation.\n$10 - 3x = -5$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "10 - 3x = -5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract 10 from both sides to undo the plus 10.",
+          "write": "-3x = -15",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-10 both sides"
+        },
+        {
+          "say": "Divide both sides by -3 to undo the times -3.",
+          "write": "x = 5",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷-3 both sides"
+        },
+        {
+          "say": "Put 5 back in: 10 minus 3 times 5 is -5. It works!",
+          "write": "10 - 3 \\times 5 = -5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "10 - 3x = -5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.24
+        }
+      ],
+      "seconds": 3.74
+    },
+    {
+      "id": "L10",
+      "category": "linear",
+      "problem": "Solve the equation.\n$2x + 1 = x - 4$",
+      "ground_truth": "x = -5",
+      "final_answer": "x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "2x + 1 = x - 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract x from both sides to get all x terms on one side.",
+          "write": "x + 1 = -4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "−x both sides"
+        },
+        {
+          "say": "Subtract 1 from both sides to undo the plus 1.",
+          "write": "x = -5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "−1 both sides"
+        },
+        {
+          "say": "Put -5 back in: 2 times -5 plus 1 is -10 plus 1, which is -9. On the other side, -5 minus 4 is -9. It works!",
+          "write": "2 \\times (-5) + 1 = -9,\\text{ }-5 - 4 = -9",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Move all x terms to one side first, then solve. Great job!",
+          "write": "\\text{Move x terms first, then solve}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + 1 = x - 4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.16
+        }
+      ],
+      "seconds": 4.7
+    },
+    {
+      "id": "P01",
+      "category": "parentheses",
+      "problem": "The equation $3(x - 2) = 2x + 5$ Find the solution.",
+      "ground_truth": "x = 11",
+      "final_answer": "x = 11",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "3(x - 2) = 2x + 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to simplify both sides first before solving.",
+          "write": "\\text{Distribute and simplify both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute the 3 on the left side.",
+          "write": "3x - 6 = 2x + 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute 3"
+        },
+        {
+          "say": "Now, subtract 2x from both sides to get all x terms on one side.",
+          "write": "x - 6 = 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Next, add 6 to both sides to isolate x.",
+          "write": "x = 11",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "+6 both sides"
+        },
+        {
+          "say": "We have our solution: x equals 11.",
+          "write": "x = 11",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "solve"
+        },
+        {
+          "say": "Let's check by substituting x = 11 into the original equation.",
+          "write": "3(11 - 2) = 2(11) + 5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Distribute first, then collect like terms. Great job!",
+          "write": "\\text{Distribute first, then collect like terms}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3(x - 2) = 2x + 5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 11",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.23
+        }
+      ],
+      "seconds": 4.62
+    },
+    {
+      "id": "P02",
+      "category": "parentheses",
+      "problem": "Solve the equation.\n$2(x + 3) - 5 = 3x$",
+      "ground_truth": "x = 1",
+      "final_answer": "x = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "2(x + 3) - 5 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use the distributive property and do the same to both sides.",
+          "write": "\\text{Distribute and do the same to both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "First, distribute the 2 to both x and 3.",
+          "write": "2x + 6 - 5 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute 2"
+        },
+        {
+          "say": "Now combine like terms on the left side: 6 - 5 is 1.",
+          "write": "2x + 1 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Next, subtract 2x from both sides to get all x terms on one side.",
+          "write": "1 = x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Let's check by plugging x = 1 back into the original equation.",
+          "write": "2(1 + 3) - 5 = 3(1)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Distribute first, then move all x terms to one side. Great job!",
+          "write": "\\text{Distribute, then move x terms}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2(x + 3) - 5 = 3x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.78
+        }
+      ],
+      "seconds": 4.23
+    },
+    {
+      "id": "P03",
+      "category": "parentheses",
+      "problem": "Solve the equation.\n$5(x - 1) = 3(x + 1)$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "5(x - 1) = 3(x + 1)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to simplify both sides first using the distributive property.",
+          "write": "\\text{Distribute on both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute 5 on the left and 3 on the right.",
+          "write": "5x - 5 = 3x + 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Now, subtract 3x from both sides to get all x terms on one side.",
+          "write": "2x - 5 = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3x both sides"
+        },
+        {
+          "say": "Next, add 5 to both sides to undo the minus 5.",
+          "write": "2x = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+5 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 2 to solve for x.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 4 into the original equation.",
+          "write": "5(4 - 1) = 3(4 + 1)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use the distributive property first, then collect like terms. Great job!",
+          "write": "\\text{Distribute first, then collect like terms}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "5(x - 1) = 3(x + 1)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.1
+        }
+      ],
+      "seconds": 5.63
+    },
+    {
+      "id": "P04",
+      "category": "parentheses",
+      "problem": "Solve the linear equation.\n$4(2x - 1) = 3(x + 2)$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x by solving step by step.",
+          "write": "4(2x - 1) = 3(x + 2)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to simplify both sides first before solving for x.",
+          "write": "\\text{Distribute and simplify both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute the 4 on the left and the 3 on the right.",
+          "write": "8x - 4 = 3x + 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Now, subtract 3x from both sides to get all x terms on one side.",
+          "write": "5x - 4 = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3x both sides"
+        },
+        {
+          "say": "Next, add 4 to both sides to isolate the term with x.",
+          "write": "5x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+4 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 5 to solve for x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 2 into the original equation.",
+          "write": "4(2(2) - 1) = 3(2 + 2)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use the distributive property first, then collect like terms. Great job!",
+          "write": "\\text{Distribute first, then solve}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4(2x - 1) = 3(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.52
+        }
+      ],
+      "seconds": 5.17
+    },
+    {
+      "id": "P05",
+      "category": "parentheses",
+      "problem": "Solve the equation.\n$-2(x - 4) = x - 1$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "-2(x - 4) = x - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to remove parentheses and collect like terms.",
+          "write": "\\text{Distribute and collect like terms}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute the -2 to both x and -4.",
+          "write": "-2x + 8 = x - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×-2 both sides"
+        },
+        {
+          "say": "Now, let's get all x terms on one side and constants on the other. Add 2x to both sides.",
+          "write": "8 = 3x - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+2x both sides"
+        },
+        {
+          "say": "Next, add 1 to both sides to undo the -1.",
+          "write": "9 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+1 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 3 to solve for x.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 3 into the original equation.",
+          "write": "-2(3 - 4) = 3 - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use the distributive property first, then collect like terms. Great job!",
+          "write": "\\text{Distribute first, then collect like terms}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "-2(x - 4) = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.56
+        }
+      ],
+      "seconds": 5.05
+    },
+    {
+      "id": "P06",
+      "category": "parentheses",
+      "problem": "Solve the equation.\n$3(2x + 1) - 2(x - 3) = 17$",
+      "ground_truth": "x = 2",
+      "final_answer": "x = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "3(2x + 1) - 2(x - 3) = 17",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use the distributive property and do the same to both sides.",
+          "write": "\\text{Distribute and do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "First, distribute the 3 and the -2 to each term inside the parentheses.",
+          "write": "6x + 3 - 2x + 6 = 17",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Now combine like terms: 6x and -2x, and 3 and 6.",
+          "write": "4x + 9 = 17",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Next, subtract 9 from both sides to undo the plus 9.",
+          "write": "4x = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-9 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 4 to solve for x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷4 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 2 into the original equation.",
+          "write": "3(2(2) + 1) - 2(2 - 3) = 17",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use the distributive property first, then combine like terms. Great job!",
+          "write": "\\text{Distribute first, then combine like terms}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3(2x + 1) - 2(x - 3) = 17",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.77
+        }
+      ],
+      "seconds": 5.29
+    },
+    {
+      "id": "P07",
+      "category": "parentheses",
+      "problem": "Solve the linear equation.\n$7 - (x + 2) = 2(x - 5)$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's find x.",
+          "write": "7 - (x + 2) = 2(x - 5)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We need to simplify both sides first using the distributive property.",
+          "write": "\\text{Distribute on both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute the negative sign and the 2 on both sides.",
+          "write": "7 - x - 2 = 2x - 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Now combine like terms on the left side.",
+          "write": "5 - x = 2x - 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Next, move all x terms to one side and constants to the other. Add x to both sides.",
+          "write": "5 = 3x - 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+x both sides"
+        },
+        {
+          "say": "Now add 10 to both sides to isolate the term with x.",
+          "write": "15 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+10 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 3 to solve for x.",
+          "write": "x = 5",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 5 into the original equation.",
+          "write": "7 - (5 + 2) = 2(5 - 5)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use the distributive property first, then collect like terms. Great job!",
+          "write": "\\text{Distribute first, then collect like terms}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "7 - (x + 2) = 2(x - 5)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.87
+        }
+      ],
+      "seconds": 5.41
+    },
+    {
+      "id": "P08",
+      "category": "parentheses",
+      "problem": "Solve the equation.\n$2(3x - 1) = 4(x + 2)$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with parentheses. Let's solve for x.",
+          "write": "2(3x - 1) = 4(x + 2)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We use the distributive property to remove parentheses and then solve step by step.",
+          "write": "\\text{Distribute and simplify both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "distributive property"
+        },
+        {
+          "say": "First, distribute the 2 on the left and the 4 on the right.",
+          "write": "6x - 2 = 4x + 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Next, subtract 4x from both sides to get all x terms on one side.",
+          "write": "2x - 2 = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-4x both sides"
+        },
+        {
+          "say": "Now, add 2 to both sides to isolate the term with x.",
+          "write": "2x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+2 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 2 to solve for x.",
+          "write": "x = 5",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 5 into the original equation.",
+          "write": "2(3(5) - 1) = 4(5 + 2)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Distribute first, then collect like terms. Great job!",
+          "write": "\\text{Distribute, collect, solve}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2(3x - 1) = 4(x + 2)",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.37
+        }
+      ],
+      "seconds": 5.94
+    },
+    {
+      "id": "F01",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{x}{2} + 3 = 7$",
+      "ground_truth": "x = 8",
+      "final_answer": "x = 8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{x}{2} + 3 = 7",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve an equation, do the same to both sides to keep it balanced.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "First, subtract 3 from both sides to undo the plus 3.",
+          "write": "\\frac{x}{2} = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Next, multiply both sides by 2 to undo the division by 2.",
+          "write": "x = 8",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 8 into the original equation.",
+          "write": "\\frac{8}{2} + 3 = 7",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition/subtraction first, then multiplication/division. Great job!",
+          "write": "Undo +/- first, then \\times/\\textdiv",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + 3 = 7",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.44
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "id": "F02",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{x-1}{2} = \\frac{x+2}{3}$",
+      "ground_truth": "x = 7",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To clear fractions, multiply both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 6}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD of 2 and 3 is 6"
+        },
+        {
+          "say": "Multiply both sides by 6 to eliminate the denominators. This gives us 3(x - 1) = 2(x + 2).",
+          "write": "3(x - 1) = 2(x + 2)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×6 both sides"
+        },
+        {
+          "say": "Now distribute the 3 and the 2 to both terms inside the parentheses.",
+          "write": "3x - 3 = 2x + 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Next, collect the variable terms on one side and the constants on the other. Subtract 2x from both sides to get the x terms together.",
+          "write": "x - 3 = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Now add 3 to both sides to isolate x.",
+          "write": "x = 7",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 7 back into the original equation.",
+          "write": "\\frac{7-1}{2} = \\frac{7+2}{3}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Keep going, you're doing great!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x-1}{2} = \\frac{x+2}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.79
+        }
+      ],
+      "seconds": 5.39
+    },
+    {
+      "id": "F03",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{x}{3} - \\frac{x}{4} = 2$",
+      "ground_truth": "x = 24",
+      "final_answer": "x = 24",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{x}{3} - \\frac{x}{4} = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To clear fractions, multiply both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 12}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD of 3 and 4 is 12"
+        },
+        {
+          "say": "Multiply both sides by 12 to eliminate the fractions.",
+          "write": "4x - 3x = 24",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×12 both sides"
+        },
+        {
+          "say": "Combine like terms on the left side.",
+          "write": "x = 24",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Substitute x = 24 into the original equation to check.",
+          "write": "\\frac{24}{3} - \\frac{24}{4} = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Great job!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{3} - \\frac{x}{4} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 24",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.53
+        }
+      ],
+      "seconds": 4.07
+    },
+    {
+      "id": "F04",
+      "category": "fractions",
+      "problem": "Solve the linear equation.\n$\\frac{2x+1}{3} = x - 1$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{2x+1}{3} = x - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To clear fractions, multiply both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD = 3"
+        },
+        {
+          "say": "Multiply both sides by 3 to eliminate the denominator.",
+          "write": "2x + 1 = 3x - 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×3 both sides"
+        },
+        {
+          "say": "Now, subtract 2x from both sides to get all x terms on one side.",
+          "write": "1 = x - 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Add 3 to both sides to isolate x.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "We've solved for x. Let's check our answer.",
+          "gesture": "nod",
+          "emotion": "neutral",
+          "role": "solve"
+        },
+        {
+          "say": "Substitute x = 4 into the original equation to check.",
+          "write": "\\frac{2(4)+1}{3} = 4 - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Great job!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{2x+1}{3} = x - 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.37
+        }
+      ],
+      "seconds": 4.86
+    },
+    {
+      "id": "F05",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{x}{2} + \\frac{x}{3} = 10$",
+      "ground_truth": "x = 12",
+      "final_answer": "x = 12",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{x}{2} + \\frac{x}{3} = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To clear fractions, multiply both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 6}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD = 6"
+        },
+        {
+          "say": "Multiply both sides by 6 to eliminate the denominators.",
+          "write": "3x + 2x = 60",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×6 both sides"
+        },
+        {
+          "say": "Combine like terms on the left side.",
+          "write": "5x = 60",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Divide both sides by 5 to isolate x.",
+          "write": "x = 12",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Substitute x = 12 into the original equation to check.",
+          "write": "\\frac{12}{2} + \\frac{12}{3} = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Keep going!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + \\frac{x}{3} = 10",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 12",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.57
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "id": "F06",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{x+3}{4} = \\frac{2x-1}{3}$",
+      "ground_truth": "x = 13/5",
+      "final_answer": "x = \\frac{13}{5}",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x by clearing the denominators.",
+          "write": "\\frac{x+3}{4} = \\frac{2x-1}{3}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with fractions, we clear denominators by multiplying both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 12}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCM of 4 and 3 is 12"
+        },
+        {
+          "say": "Multiply both sides by 12 to eliminate the denominators.",
+          "write": "3(x + 3) = 4(2x - 1)",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×12 both sides"
+        },
+        {
+          "say": "Use the distributive property to remove parentheses.",
+          "write": "3x + 9 = 8x - 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Collect variable terms on one side and constants on the other.",
+          "write": "9 + 4 = 8x - 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+4 and -9 both sides"
+        },
+        {
+          "say": "Simplify both sides to get the equation in the form ax = b.",
+          "write": "13 = 5x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Divide both sides by the coefficient of x to solve for x.",
+          "write": "x = \\frac{13}{5}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Check by substituting x = 13/5 into the original equation.",
+          "write": "\\frac{\\frac{13}{5} + 3}{4} = \\frac{2\\cdot\\frac{13}{5} - 1}{3}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear denominators first, then solve step by step. Keep it balanced!",
+          "write": "\\text{Clear denominators first, then solve step by step. Keep it balanced!}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x+3}{4} = \\frac{2x-1}{3}",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = \\frac{13}{5}",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.16
+        }
+      ],
+      "seconds": 5.75
+    },
+    {
+      "id": "F07",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with fractions, we clear them by multiplying both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 6 to clear fractions}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD = 6"
+        },
+        {
+          "say": "Multiply both sides by 6 to eliminate the fractions. This means multiplying every term by 6.",
+          "write": "3x - 2 = x + 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×6 both sides"
+        },
+        {
+          "say": "Now we need to collect the variable terms on one side. Subtract x from both sides to move it to the left.",
+          "write": "2x - 2 = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-x both sides"
+        },
+        {
+          "say": "Next, we move the constant term to the right by adding 2 to both sides.",
+          "write": "2x = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+2 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by the coefficient of x, which is 2, to solve for x.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 4 into the original equation.",
+          "write": "\\frac{1}{2}(4) - \\frac{1}{3} = \\frac{1}{6}(4) + 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then collect like terms and solve. Great job!",
+          "write": "\\text{Clear fractions, collect like terms, solve}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{1}{2}x - \\frac{1}{3} = \\frac{1}{6}x + 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.75
+        }
+      ],
+      "seconds": 5.21
+    },
+    {
+      "id": "F08",
+      "category": "fractions",
+      "problem": "Solve the linear equation.\n$\\frac{3x-2}{5} = 2$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with a fraction. Let's find x.",
+          "write": "\\frac{3x-2}{5} = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To clear fractions, multiply both sides by the denominator.",
+          "write": "\\text{Multiply both sides by 5}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear fractions"
+        },
+        {
+          "say": "Multiply both sides by 5 to eliminate the denominator.",
+          "write": "3x - 2 = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×5 both sides"
+        },
+        {
+          "say": "Add 2 to both sides to undo the minus 2.",
+          "write": "3x = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+2 both sides"
+        },
+        {
+          "say": "Divide both sides by 3 to solve for x.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Check by substituting x = 4 into the original equation.",
+          "write": "\\frac{3(4)-2}{5} = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Great job!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{3x-2}{5} = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.49
+        }
+      ],
+      "seconds": 4.07
+    },
+    {
+      "id": "F09",
+      "category": "fractions",
+      "problem": "Solve the equation.\n$x - \\frac{x-1}{3} = 3$",
+      "ground_truth": "x = 4",
+      "final_answer": "x = 4",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with fractions. Let's find x.",
+          "write": "x - \\frac{x-1}{3} = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with fractions, we clear them by multiplying both sides by the least common denominator.",
+          "write": "\\text{Multiply both sides by 3}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "LCD"
+        },
+        {
+          "say": "Multiply both sides by 3 to eliminate the fraction.",
+          "write": "3x - (x - 1) = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×3 both sides"
+        },
+        {
+          "say": "Distribute the negative sign to both terms inside the parentheses.",
+          "write": "3x - x + 1 = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Combine like terms on the left side.",
+          "write": "2x + 1 = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Subtract 1 from both sides to isolate the variable term.",
+          "write": "2x = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-1 both sides"
+        },
+        {
+          "say": "Divide both sides by 2 to solve for x.",
+          "write": "x = 4",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Check by substituting x = 4 into the original equation.",
+          "write": "4 - \\frac{4-1}{3} = 3",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear fractions first, then solve step by step. Great job!",
+          "write": "\\text{Clear fractions first, then solve step by step}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x - \\frac{x-1}{3} = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.71
+        }
+      ],
+      "seconds": 5.25
+    },
+    {
+      "id": "D01",
+      "category": "decimals",
+      "problem": "Solve the equation.\n$0.3x - 1.2 = 0.5x + 0.4$",
+      "ground_truth": "x = -8",
+      "final_answer": "x = -8",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "0.3x - 1.2 = 0.5x + 0.4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with decimals, we first clear the decimals by multiplying both sides by a power of 10.",
+          "write": "\\text{Multiply both sides by 10 to clear decimals}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear decimals"
+        },
+        {
+          "say": "Multiply both sides by 10 to eliminate decimals. This gives us 3x - 12 = 5x + 4.",
+          "write": "3x - 12 = 5x + 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×10 both sides"
+        },
+        {
+          "say": "Now, let's collect the variable terms on one side. Subtract 5x from both sides to get -2x - 12 = 4.",
+          "write": "-2x - 12 = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-5x both sides"
+        },
+        {
+          "say": "Next, add 12 to both sides to isolate the term with x. This gives -2x = 16.",
+          "write": "-2x = 16",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+12 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by -2 to solve for x. So x = -8.",
+          "write": "x = -8",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷-2 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = -8 into the original equation. Left side: 0.3(-8) - 1.2 = -2.4 - 1.2 = -3.6. Right side: 0.5(-8) + 0.4 = -4 + 0.4 =",
+          "write": "0.3(-8) - 1.2 = -3.6,\n0.5(-8) + 0.4 = -3.6",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "To solve equations with decimals, clear them first, then collect like terms and isolate the variable. Great job!",
+          "write": "\\text{Clear decimals, collect like terms, isolate x}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.3x - 1.2 = 0.5x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -8",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.81
+        }
+      ],
+      "seconds": 6.27
+    },
+    {
+      "id": "D02",
+      "category": "decimals",
+      "problem": "Solve the equation.\n$0.2x + 1.5 = 0.5x$",
+      "ground_truth": "x = 5",
+      "final_answer": "x = 5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "0.2x + 1.5 = 0.5x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "To clear decimals, multiply both sides by 10 to make it easier to work with.",
+          "write": "2x + 15 = 5x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×10 both sides"
+        },
+        {
+          "say": "Now, let's get all the x terms on one side. Subtract 2x from both sides to move it to the right.",
+          "write": "15 = 3x",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Now, divide both sides by 3 to solve for x.",
+          "write": "x = 5",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 5 into the original equation.",
+          "write": "0.2(5) + 1.5 = 0.5(5)",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo decimals first, then isolate the variable. Great job!",
+          "write": "\\text{Undo decimals first, then isolate x}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.2x + 1.5 = 0.5x",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.21
+        }
+      ],
+      "seconds": 4.74
+    },
+    {
+      "id": "D03",
+      "category": "decimals",
+      "problem": "Solve the linear equation.\n$1.2x - 0.4 = 0.8x + 2$",
+      "ground_truth": "x = 6",
+      "final_answer": "x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "1.2x - 0.4 = 0.8x + 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with decimals, we clear them by multiplying both sides by the same power of 10.",
+          "write": "\\text{Multiply both sides by 10 to clear decimals}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear decimals"
+        },
+        {
+          "say": "Multiply both sides by 10 to eliminate decimals. This gives us 12x - 4 = 8x + 20.",
+          "write": "12x - 4 = 8x + 20",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×10 both sides"
+        },
+        {
+          "say": "Now, subtract 8x from both sides to get all x terms on one side. This gives us 4x - 4 = 20.",
+          "write": "4x - 4 = 20",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-8x both sides"
+        },
+        {
+          "say": "Next, add 4 to both sides to isolate the term with x. This gives us 4x = 24.",
+          "write": "4x = 24",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+4 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 4 to solve for x. This gives us x = 6.",
+          "write": "x = 6",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷4 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 6 into the original equation. Left side: 1.2×6 - 0.4 = 7.2 - 0.4 = 6.8. Right side: 0.8×6 + 2 = 4.8 + 2 = 6.8. Both sides are 6.",
+          "write": "1.2 \\times 6 - 0.4 = 0.8 \\times 6 + 2",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear decimals first, then collect like terms. Great job!",
+          "write": "\\text{Clear decimals, then collect like terms}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "1.2x - 0.4 = 0.8x + 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.6
+        }
+      ],
+      "seconds": 6.15
+    },
+    {
+      "id": "D04",
+      "category": "decimals",
+      "problem": "Solve the equation.\n$0.5(x - 2) = 0.3x + 0.4$",
+      "ground_truth": "x = 7",
+      "final_answer": "x = 7",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "0.5(x - 2) = 0.3x + 0.4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with decimals, we clear them by multiplying both sides by a power of 10.",
+          "write": "\\text{Multiply both sides by 10 to clear decimals}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear decimals"
+        },
+        {
+          "say": "Multiply both sides by 10 to eliminate decimals. This gives us 5(x - 2) = 3x + 4.",
+          "write": "5(x - 2) = 3x + 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×10 both sides"
+        },
+        {
+          "say": "Now distribute the 5 on the left side. This gives us 5x - 10 = 3x + 4.",
+          "write": "5x - 10 = 3x + 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Next, subtract 3x from both sides to get the variable terms on one side. This gives us 2x - 10 = 4.",
+          "write": "2x - 10 = 4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3x both sides"
+        },
+        {
+          "say": "Now add 10 to both sides to isolate the variable term. This gives us 2x = 14.",
+          "write": "2x = 14",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+10 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 2 to solve for x. This gives us x = 7.",
+          "write": "x = 7",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check by substituting x = 7 into the original equation. Left side: 0.5(7 - 2) = 0.5(5) = 2.5. Right side: 0.3(7) + 0.4 = 2.1 + 0.4 = 2.5. Both sides are 2",
+          "write": "0.5(7 - 2) = 0.3(7) + 0.4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear decimals first, then solve step by step. Great job!",
+          "write": "\\text{Clear decimals first, then solve step by step}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.5(x - 2) = 0.3x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 7",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.19
+        }
+      ],
+      "seconds": 6.59
+    },
+    {
+      "id": "D05",
+      "category": "decimals",
+      "problem": "Solve the equation.\n$0.05x + 0.1 = 0.02x + 0.4$",
+      "ground_truth": "x = 10",
+      "final_answer": "x = 10",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "0.05x + 0.1 = 0.02x + 0.4",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with decimals, we clear them by multiplying both sides by the same power of 10.",
+          "write": "\\text{Multiply both sides by 100 to clear decimals}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear decimals"
+        },
+        {
+          "say": "Multiply both sides by 100 to eliminate decimals. This gives us 5x + 10 = 2x + 40.",
+          "write": "5x + 10 = 2x + 40",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×100 both sides"
+        },
+        {
+          "say": "Now subtract 2x from both sides to get all x terms on one side. This gives us 3x + 10 = 40.",
+          "write": "3x + 10 = 40",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2x both sides"
+        },
+        {
+          "say": "Next, subtract 10 from both sides to isolate the x term. This gives us 3x = 30.",
+          "write": "3x = 30",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-10 both sides"
+        },
+        {
+          "say": "Finally, divide both sides by 3 to solve for x. This gives us x = 10.",
+          "write": "x = 10",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 10 into the original equation. Left side: 0.05(10) + 0.1 = 0.5 + 0.1 = 0.6. Right side: 0.02(10) + 0.4 = 0.2 + 0.4.",
+          "write": "0.05(10) + 0.1 = 0.02(10) + 0.4",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "To solve equations with decimals, clear them first, then isolate the variable. Great job!",
+          "write": "\\text{Clear decimals first, then isolate x}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.05x + 0.1 = 0.02x + 0.4",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 10",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.87
+        }
+      ],
+      "seconds": 6.32
+    },
+    {
+      "id": "D06",
+      "category": "decimals",
+      "problem": "Solve the linear equation.\n$2.5x - 3 = x + 1.5$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation. Let's find x.",
+          "write": "2.5x - 3 = x + 1.5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "An equation stays balanced if we do the same thing to both sides, so we undo each operation step by step.",
+          "write": "\\text{Do the same to both sides}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "inverse operations"
+        },
+        {
+          "say": "Subtract x from both sides to get all x terms on one side.",
+          "write": "1.5x - 3 = 1.5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-x both sides"
+        },
+        {
+          "say": "Add 3 to both sides to undo the minus 3.",
+          "write": "1.5x = 4.5",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "Divide both sides by 1.5 to solve for x.",
+          "write": "x = 3",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷1.5 both sides"
+        },
+        {
+          "say": "Put 3 back in: 2.5 times 3 minus 3 equals 7.5 minus 3, which is 4.5. And 3 plus 1.5 is also 4.5. It works!",
+          "write": "2.5 \\times 3 - 3 = 4.5",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Undo addition and subtraction first, then multiplication and division. Great job!",
+          "write": "Undo +/- first, then \\times/\\div",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2.5x - 3 = x + 1.5",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.35
+        }
+      ],
+      "seconds": 4.91
+    },
+    {
+      "id": "D07",
+      "category": "decimals",
+      "problem": "Solve the equation.\n$0.4x + 0.6 = 1.8$",
+      "ground_truth": "x = 3",
+      "final_answer": "x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a linear equation with decimals. Let's find x.",
+          "write": "0.4x + 0.6 = 1.8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "To solve equations with decimals, we clear them by multiplying both sides by a power of 10.",
+          "write": "\\text{Multiply both sides by 10}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "clear decimals"
+        },
+        {
+          "say": "Multiply both sides by 10 to eliminate decimals.",
+          "write": "4x + 6 = 18",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×10 both sides"
+        },
+        {
+          "say": "Subtract 6 from both sides to undo the plus 6.",
+          "write": "4x = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-6 both sides"
+        },
+        {
+          "say": "Divide both sides by 4 to isolate x.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "÷4 both sides"
+        },
+        {
+          "say": "Check by substituting x = 3 into the original equation.",
+          "write": "0.4 \\times 3 + 0.6 = 1.8",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Clear decimals first, then solve step by step. Great job!",
+          "write": "\\text{Clear decimals first, then solve step by step}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "0.4x + 0.6 = 1.8",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.98
+        }
+      ],
+      "seconds": 4.54
+    },
+    {
+      "id": "S01",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$x + y = 5$\n$x - y = 1$",
+      "ground_truth": "x = 3, y = 2",
+      "final_answer": "x = 3, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} x + y = 5 \\\\ x - y = 1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination. If we add the two equations, the y terms will cancel out.",
+          "write": "\\text{Add equations to eliminate y}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Add the two equations to eliminate y.",
+          "write": "2x = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now solve for x by dividing both sides by 2.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Substitute x = 3 into one of the original equations to find y.",
+          "write": "3 + y = 5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When the coefficients of a variable are opposites, add the equations to eliminate that variable. Great job!",
+          "write": "\\text{Add equations to eliminate y}",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + y = 5, x - y = 1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.75
+        }
+      ],
+      "seconds": 4.2
+    },
+    {
+      "id": "S02",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$2x + y = 7$\n$x - y = 2$",
+      "ground_truth": "x = 3, y = 1",
+      "final_answer": "x = 3, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination. If the coefficients of one variable line up easily, we can eliminate that variable by adding or subtracting the two",
+          "write": "\\text{Add equations to eliminate a variable}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's add the two equations to eliminate y. The coefficients of y are +1 and -1, which are opposites. Adding them will cancel y.",
+          "write": "3x = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now we solve for x by dividing both sides by 3.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷3 both sides"
+        },
+        {
+          "say": "Now we substitute x = 3 back into one of the original equations to find y. Let's use the second equation: x - y = 2.",
+          "write": "3 - y = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=3"
+        },
+        {
+          "say": "Now we solve for y by subtracting 3 from both sides.",
+          "write": "-y = -1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Finally, we multiply both sides by -1 to solve for y.",
+          "write": "y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 3 and y = 1 into both original equations.",
+          "write": "2(3) + 1 = 7,\\text{ }3 - 1 = 2",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When solving a system by elimination, we add or subtract equations to eliminate a variable. Then we solve for the remaining variable and substitute back. Great",
+          "write": "\\text{Eliminate a variable, solve, then substitute back}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x + y = 7, x - y = 2",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.71
+        }
+      ],
+      "seconds": 6.11
+    },
+    {
+      "id": "S03",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$x + 2y = 8$\n$3x - y = 3$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} x + 2y = 8 \\\\ 3x - y = 3 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination. If the coefficients of one variable line up easily, we can eliminate that variable by adding or subtracting the two",
+          "write": "\\text{Eliminate one variable by adding or subtracting equations}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "elimination"
+        },
+        {
+          "say": "Let's eliminate y. To do this, we can multiply the second equation by 2 so that the coefficients of y become opposites.",
+          "write": "6x - 2y = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×2 both sides"
+        },
+        {
+          "say": "Now we add the two equations together to eliminate y.",
+          "write": "7x = 14",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "① + ②"
+        },
+        {
+          "say": "Now we solve for x by dividing both sides by 7.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷7 both sides"
+        },
+        {
+          "say": "Now we substitute x = 2 into one of the original equations to find y. Let's use the first equation.",
+          "write": "2 + 2y = 8",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x=2"
+        },
+        {
+          "say": "Now we solve for y by subtracting 2 from both sides.",
+          "write": "2y = 6",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Finally, we divide both sides by 2 to find y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷2 both sides"
+        },
+        {
+          "say": "Let's check our solution by substituting x = 2 and y = 3 into both original equations.",
+          "write": "2 + 2(3) = 8,\\text{ } 3(2) - 3 = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "To solve a system of equations, eliminate one variable by adding or subtracting equations. Then solve for the remaining variable and substitute back to find the",
+          "write": "\\text{Eliminate one variable, solve for the other, then substitute back}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x + 2y = 8, 3x - y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.03
+        }
+      ],
+      "seconds": 6.55
+    },
+    {
+      "id": "S04",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$3x + 2y = 12$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 3x + 2y = 12 \\\\ x - y = -1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination or substitution. Since one equation is already simple, we'll use substitution.",
+          "write": "\\text{Substitute one equation into the other}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "Let's solve the second equation for x. Add y to both sides.",
+          "write": "x = y - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+y both sides"
+        },
+        {
+          "say": "Now substitute x = y - 1 into the first equation.",
+          "write": "3(y - 1) + 2y = 12",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "Use the distributive property to expand the equation.",
+          "write": "3y - 3 + 2y = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Combine like terms: 3y + 2y is 5y.",
+          "write": "5y - 3 = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "like terms"
+        },
+        {
+          "say": "Add 3 to both sides to undo the minus 3.",
+          "write": "5y = 15",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "Divide both sides by 5 to solve for y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Now substitute y = 3 back into x = y - 1 to find x.",
+          "write": "x = 3 - 1",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "Simplify to find x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "simplify"
+        },
+        {
+          "say": "Let's check our solution in both original equations.",
+          "write": "3(2) + 2(3) = 12,\\text{ } 2 - 3 = -1",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use substitution when one equation is simple. Great job solving the system!",
+          "write": "\\text{Substitute one equation into the other}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "3x + 2y = 12, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.19
+        }
+      ],
+      "seconds": 6.57
+    },
+    {
+      "id": "S05",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$y = 2x - 1$\n$3x + y = 9$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once. Here are the equations:",
+          "write": "\\begin{cases} y = 2x - 1 \\\\ 3x + y = 9 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can use substitution since one equation is already solved for y. Substitute the expression for y into the other equation.",
+          "write": "\\text{Substitute } y = 2x - 1\\text{ into } 3x + y = 9",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "Now substitute y = 2x - 1 into the second equation. This gives us 3x + (2x - 1) = 9. Let's simplify this equation.",
+          "write": "3x + 2x - 1 = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute y"
+        },
+        {
+          "say": "Combine like terms. 3x and 2x are like terms, so we add them to get 5x - 1 = 9.",
+          "write": "5x - 1 = 9",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Now we need to solve for x. Add 1 to both sides to undo the minus 1.",
+          "write": "5x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+1 both sides"
+        },
+        {
+          "say": "Divide both sides by 5 to undo the multiplication by 5. This gives us x = 2.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Now substitute x = 2 back into the first equation to find y. Let's check if this works.",
+          "write": "y = 2(2) - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "We used substitution to solve the system. Great job finding the solution!",
+          "write": "\\text{Substitute and solve step by step}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "y = 2x - 1, 3x + y = 9",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.13
+        }
+      ],
+      "seconds": 5.56
+    },
+    {
+      "id": "S06",
+      "category": "system",
+      "problem": "The system $2x - 3y = 1$, $x + y = 3$ Find the solution.",
+      "ground_truth": "x = 2, y = 1",
+      "final_answer": "x = 2, y = 1",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 2x - 3y = 1 \\\\ x + y = 3 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination or substitution. Since one equation is already simple, we'll use substitution.",
+          "write": "\\text{Substitute one equation into the other}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "Let's solve the second equation for x. Subtract y from both sides.",
+          "write": "x = 3 - y",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-y both sides"
+        },
+        {
+          "say": "Now substitute x = 3 - y into the first equation.",
+          "write": "2(3 - y) - 3y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "Use the distributive property to expand the equation.",
+          "write": "6 - 2y - 3y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Combine like terms on the left side.",
+          "write": "6 - 5y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Subtract 6 from both sides to isolate the term with y.",
+          "write": "-5y = -5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-6 both sides"
+        },
+        {
+          "say": "Divide both sides by -5 to solve for y.",
+          "write": "y = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷-5 both sides"
+        },
+        {
+          "say": "Now substitute y = 1 back into x = 3 - y to find x.",
+          "write": "x = 3 - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "Simplify to find x.",
+          "write": "x = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "simplify"
+        },
+        {
+          "say": "Let's check our solution in both original equations.",
+          "write": "2(2) - 3(1) = 1,\\text{ } 2 + 1 = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "We used substitution to solve the system. Great job!",
+          "write": "\\text{Substitute one equation into the other}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "substitution"
+        }
+      ],
+      "problem_latex": "2x - 3y = 1, x + y = 3",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 1",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.7
+        }
+      ],
+      "seconds": 6.16
+    },
+    {
+      "id": "S07",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$4x + 3y = 10$\n$2x - y = 0$",
+      "ground_truth": "x = 1, y = 2",
+      "final_answer": "x = 1, y = 2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} 4x + 3y = 10 \\\\ 2x - y = 0 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination or substitution. Since one equation is already solved for y, substitution is a good choice.",
+          "write": "\\text{Substitute y from one equation into the other}",
+          "gesture": "point",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "From the second equation, y = 2x. Now substitute this into the first equation.",
+          "write": "4x + 3(2x) = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute y = 2x"
+        },
+        {
+          "say": "Multiply out the 3(2x) to get 6x.",
+          "write": "4x + 6x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Combine like terms: 4x + 6x is 10x.",
+          "write": "10x = 10",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Divide both sides by 10 to solve for x.",
+          "write": "x = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷10 both sides"
+        },
+        {
+          "say": "Now substitute x = 1 back into the second equation to find y.",
+          "write": "2(1) - y = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute x = 1"
+        },
+        {
+          "say": "Multiply out the 2(1) to get 2.",
+          "write": "2 - y = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distributive property"
+        },
+        {
+          "say": "Subtract 2 from both sides to isolate y.",
+          "write": "-y = -2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Multiply both sides by -1 to solve for y.",
+          "write": "y = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×-1 both sides"
+        },
+        {
+          "say": "Let's check our solution in both original equations.",
+          "write": "4(1) + 3(2) = 10, 2(1) - 2 = 0",
+          "gesture": "point",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use substitution when one equation is solved for a variable. Great job!",
+          "write": "\\text{Substitute and solve step by step}",
+          "gesture": "nod",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "4x + 3y = 10, 2x - y = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1, y = 2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.32
+        }
+      ],
+      "seconds": 6.69
+    },
+    {
+      "id": "S08",
+      "category": "system",
+      "problem": "Solve the system of equations.\n$\\frac{x}{2} + \\frac{y}{3} = 2$\n$x - y = -1$",
+      "ground_truth": "x = 2, y = 3",
+      "final_answer": "x = 2, y = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a system of linear equations. Let's find the x and y that satisfy both equations at once.",
+          "write": "\\begin{cases} \\frac{x}{2} + \\frac{y}{3} = 2 \\\\ x - y = -1 \\end{cases}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this system using elimination or substitution. Since one equation is already simple, we'll use substitution.",
+          "write": "\\text{Substitute one equation into the other}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "substitution"
+        },
+        {
+          "say": "Let's solve the second equation for x. Add y to both sides.",
+          "write": "x = y - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+y both sides"
+        },
+        {
+          "say": "Now substitute x = y - 1 into the first equation.",
+          "write": "\\frac{y - 1}{2} + \\frac{y}{3} = 2",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "To eliminate denominators, multiply every term by 6 (the least common denominator).",
+          "write": "3(y - 1) + 2y = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "×6 both sides"
+        },
+        {
+          "say": "Now distribute and combine like terms.",
+          "write": "3y - 3 + 2y = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "distribute"
+        },
+        {
+          "say": "Combine like terms on the left side.",
+          "write": "5y - 3 = 12",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "combine like terms"
+        },
+        {
+          "say": "Add 3 to both sides to isolate the term with y.",
+          "write": "5y = 15",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "Divide both sides by 5 to solve for y.",
+          "write": "y = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "÷5 both sides"
+        },
+        {
+          "say": "Now substitute y = 3 back into x = y - 1 to find x.",
+          "write": "x = 3 - 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "substitute"
+        },
+        {
+          "say": "Let's check both equations with x = 2 and y = 3.",
+          "write": "\\frac{2}{2} + \\frac{3}{3} = 1 + 1 = 2,\\text{ and } 2 - 3 = -1",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Use substitution when one equation is simple. Always check your solution in both equations. Great job!",
+          "write": "\\text{Substitute and check both equations}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "\\frac{x}{2} + \\frac{y}{3} = 2, x - y = -1",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2, y = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 6.6
+        }
+      ],
+      "seconds": 7.0
+    },
+    {
+      "id": "Q01",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} - 5x + 6 = 0$",
+      "ground_truth": "x = 2 또는 x = 3",
+      "final_answer": "x = 2 or x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make this equation true.",
+          "write": "x^{2} - 5x + 6 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this equation by factoring and using the zero product property.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0.",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "Let's factor the quadratic expression.",
+          "write": "(x - 2)(x - 3) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor"
+        },
+        {
+          "say": "Now we apply the zero product property.",
+          "write": "x - 2 = 0\\text{ or } x - 3 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solve each equation separately.",
+          "write": "x = 2\\text{ or } x = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "solve each equation"
+        },
+        {
+          "say": "Let's check both solutions in the original equation.",
+          "write": "2^{2} - 5 \\times 2 + 6 = 0, \\; 3^{2} - 5 \\times 3 + 6 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "Factoring and using the zero product property gives us the solutions.",
+          "write": "\\text{Factor and use zero product property}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 5x + 6 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 or x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.22
+        }
+      ],
+      "seconds": 4.76
+    },
+    {
+      "id": "Q02",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} - 9 = 0$",
+      "ground_truth": "x = -3 또는 x = 3",
+      "final_answer": "x = 3 or x = -3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make the equation true.",
+          "write": "x^{2} - 9 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this equation by using the zero product property. If a product is zero, then at least one of the factors must be zero.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "We can rewrite the equation as a product of two factors. This is a difference of squares, so we factor it as (x - 3)(x + 3) = 0.",
+          "write": "(x - 3)(x + 3) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor difference of two"
+        },
+        {
+          "say": "Now we apply the zero product property. If the product is zero, then either x - 3 = 0 or x + 3 = 0.",
+          "write": "x - 3 = 0\\text{ or } x + 3 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solve each equation separately. For x - 3 = 0, add 3 to both sides to get x = 3.",
+          "write": "x = 3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "+3 both sides"
+        },
+        {
+          "say": "For x + 3 = 0, subtract 3 from both sides to get x = -3.",
+          "write": "x = -3",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "-3 both sides"
+        },
+        {
+          "say": "Let's check both solutions in the original equation. For x = 3: 3^2 - 9 = 9 - 9 = 0. For x = -3: (-3)^2 - 9 = 9 - 9 = 0. Both work!",
+          "write": "3^{2} - 9 = 0,\\text{ } (-3)^{2} - 9 = 0",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When we have a difference of squares, we factor it and use the zero product property to find the solutions. Great job!",
+          "write": "\\text{Factor and use zero product property}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 9 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 3 or x = -3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.45
+        }
+      ],
+      "seconds": 5.92
+    },
+    {
+      "id": "Q03",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} + 4x + 4 = 0$",
+      "ground_truth": "x = -2",
+      "final_answer": "x = -2 (double root)",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make this equation true.",
+          "write": "x^{2} + 4x + 4 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "If a product of two factors is zero, then at least one of the factors must be zero. This is called the zero product property.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "The equation is already in standard form. Let's factor the quadratic expression.",
+          "write": "(x + 2)^{2} = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor"
+        },
+        {
+          "say": "Since the equation is a perfect square, it has a repeated root. We set the factor equal to zero.",
+          "write": "x + 2 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "set factor = 0"
+        },
+        {
+          "say": "Now solve for x by subtracting 2 from both sides.",
+          "write": "x = -2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "-2 both sides"
+        },
+        {
+          "say": "Let's check the solution by substituting x = -2 into the original equation.",
+          "write": "(-2)^{2} + 4(-2) + 4 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When a quadratic is a perfect square, it has a double root. Great job!",
+          "write": "\\text{Double root at } x = -2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary",
+          "note": "double root"
+        }
+      ],
+      "problem_latex": "x^{2} + 4x + 4 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -2 (double root)",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.12
+        }
+      ],
+      "seconds": 4.64
+    },
+    {
+      "id": "Q04",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} - 2x - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 4",
+      "final_answer": "x = 4 or x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make this equation true.",
+          "write": "x^{2} - 2x - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this equation by factoring or using the quadratic formula. Let's try factoring first.",
+          "write": "\\text{Factor the quadratic expression}",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "factoring"
+        },
+        {
+          "say": "Let's factor the quadratic expression. We need two numbers that multiply to -8 and add to -2.",
+          "write": "x^{2} - 2x - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "original equation"
+        },
+        {
+          "say": "The numbers -4 and 2 work because (-4) × 2 = -8 and (-4) + 2 = -2.",
+          "write": "(x - 4)(x + 2) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor"
+        },
+        {
+          "say": "Now we use the zero product property. If the product of two factors is zero, then at least one of the factors must be zero.",
+          "write": "x - 4 = 0 or x + 2 = 0",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Let's check both solutions by substituting them back into the original equation.",
+          "write": "x^{2} - 2x - 8 = 0, x = 4: 4^{2} - 2(4) - 8 = 0, x = -2: (-2)^{2} - 2(-2) - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "We solved the quadratic equation by factoring and used the zero product property. Great job!",
+          "write": "\\text{Factor and use zero product property}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 2x - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 4 or x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.5
+        }
+      ],
+      "seconds": 5.0
+    },
+    {
+      "id": "Q05",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$2x^{2} - 8 = 0$",
+      "ground_truth": "x = -2 또는 x = 2",
+      "final_answer": "x = 2 or x = -2",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make the equation true.",
+          "write": "2x^{2} - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can solve this equation by using the zero product property. If a product is zero, then at least one of the factors must be zero.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "First, we need to rewrite the equation in standard form. It's already in standard form, so we can move on to factoring.",
+          "write": "2x^{2} - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "standard form"
+        },
+        {
+          "say": "Next, we factor out the greatest common factor, which is 2.",
+          "write": "2(x^{2} - 4) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor out 2"
+        },
+        {
+          "say": "Now, we can factor the difference of squares inside the parentheses. Remember, $x^{2} - 4 = (x - 2)(x + 2)$.",
+          "write": "2(x - 2)(x + 2) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "difference of squares"
+        },
+        {
+          "say": "Now we apply the zero product property. Since the product is zero, either $x - 2 = 0$ or $x + 2 = 0$.",
+          "write": "x - 2 = 0 or x + 2 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solving each equation separately, we get $x = 2$ or $x = -2$.",
+          "write": "x = 2 or x = -2",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "solve each equation"
+        },
+        {
+          "say": "Let's check both solutions in the original equation to make sure they work.",
+          "write": "2(2)^{2} - 8 = 0,\\text{ } 2(-2)^{2} - 8 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When solving a quadratic equation that factors nicely, we use the zero product property to find the solutions. Great job!",
+          "write": "\\text{Use zero product property for factored equations}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "2x^{2} - 8 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 2 or x = -2",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 5.55
+        }
+      ],
+      "seconds": 6.07
+    },
+    {
+      "id": "Q06",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} + x - 12 = 0$",
+      "ground_truth": "x = -4 또는 x = 3",
+      "final_answer": "x = -4 or x = 3",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make the equation true.",
+          "write": "x^{2} + x - 12 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "If a product of two factors is zero, then at least one of the factors must be zero. This is called the zero product property.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "The equation is already in standard form, so we can try to factor it.",
+          "write": "x^{2} + x - 12 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "standard form"
+        },
+        {
+          "say": "We need to find two numbers that multiply to -12 and add to 1. These numbers are 4 and -3.",
+          "write": "(x + 4)(x - 3) = 0",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "factor"
+        },
+        {
+          "say": "Now we use the zero product property. Set each factor equal to zero.",
+          "write": "x + 4 = 0\\text{ or } x - 3 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solve each equation separately.",
+          "write": "x = -4\\text{ or } x = 3",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "solve each equation"
+        },
+        {
+          "say": "Let's check both solutions in the original equation.",
+          "write": "(-4)^{2} + (-4) - 12 = 0, \\; (3)^{2} + 3 - 12 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "If a quadratic equation factors, we can use the zero product property to find the solutions. Great job!",
+          "write": "\\text{Factor and use zero product property}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} + x - 12 = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = -4 or x = 3",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.76
+        }
+      ],
+      "seconds": 5.27
+    },
+    {
+      "id": "Q07",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$x^{2} - 6x = 0$",
+      "ground_truth": "x = 0 또는 x = 6",
+      "final_answer": "x = 0 or x = 6",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make the equation true.",
+          "write": "x^{2} - 6x = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "We can use the zero product property to solve this equation.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "We can factor out an x from both terms.",
+          "write": "x(x - 6) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "factor out x"
+        },
+        {
+          "say": "Now we apply the zero product property.",
+          "write": "x = 0\\text{ or } x - 6 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solve each equation separately.",
+          "write": "x = 0\\text{ or } x = 6",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "solve",
+          "note": "solve each equation"
+        },
+        {
+          "say": "Let's check both solutions in the original equation.",
+          "write": "0^{2} - 6 \\times 0 = 0, \\quad 6^{2} - 6 \\times 6 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When a quadratic equation can be factored, we use the zero product property to find the solutions. Great job!",
+          "write": "\\text{Factor and use zero product property}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "x^{2} - 6x = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 0 or x = 6",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 3.92
+        }
+      ],
+      "seconds": 4.44
+    },
+    {
+      "id": "Q08",
+      "category": "quadratic",
+      "problem": "Solve the quadratic equation.\n$(x - 1)(x + 5) = 0$",
+      "ground_truth": "x = -5 또는 x = 1",
+      "final_answer": "x = 1 or x = -5",
+      "correct": true,
+      "first_attempt_correct": true,
+      "verified": true,
+      "confidence": "high",
+      "attempts": 1,
+      "steps": [
+        {
+          "say": "This is a quadratic equation. Let's find the values of x that make the equation true.",
+          "write": "(x - 1)(x + 5) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "intro"
+        },
+        {
+          "say": "If a product of two factors is zero, then at least one of the factors must be zero. This is called the zero product property.",
+          "write": "\\text{If } AB = 0,\\text{ then } A = 0\\text{ or } B = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "concept",
+          "note": "zero product property"
+        },
+        {
+          "say": "Since the equation is already in factored form, we can apply the zero product property directly.",
+          "write": "x - 1 = 0\\text{ or } x + 5 = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "zero product property"
+        },
+        {
+          "say": "Solve the first equation: x - 1 = 0.",
+          "write": "x = 1",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "add 1 both sides"
+        },
+        {
+          "say": "Solve the second equation: x + 5 = 0.",
+          "write": "x = -5",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "solve",
+          "note": "subtract 5 both sides"
+        },
+        {
+          "say": "Check both solutions in the original equation.",
+          "write": "(1 - 1)(1 + 5) = 0, \\; (-5 - 1)(-5 + 5) = 0",
+          "gesture": "write",
+          "emotion": "neutral",
+          "role": "check",
+          "note": "check"
+        },
+        {
+          "say": "When a quadratic equation is factored, set each factor equal to zero and solve. Great job!",
+          "write": "\\text{Set each factor equal to zero and solve.}",
+          "gesture": "write",
+          "emotion": "happy",
+          "role": "summary"
+        }
+      ],
+      "problem_latex": "(x - 1)(x + 5) = 0",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "final_answer": "x = 1 or x = -5",
+          "verified": true,
+          "detail": "SymPy 검산 통과",
+          "seconds": 4.16
+        }
+      ],
+      "seconds": 4.63
+    }
+  ]
+}
