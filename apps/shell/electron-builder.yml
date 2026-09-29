@@ -24,6 +24,11 @@ extraResources:
     filter: ['**/*', '!requirements.txt']
   - from: ../../THIRD_PARTY_NOTICES.md
     to: THIRD_PARTY_NOTICES.md
+  # GPL-3.0 text and the section 7 additional terms travel with every build
+  - from: ../../LICENSE
+    to: LICENSE
+  - from: ../../NOTICE
+    to: NOTICE
   # End user license agreement per language (first-launch consent screen, credits screen)
   - from: build/eula
     to: eula

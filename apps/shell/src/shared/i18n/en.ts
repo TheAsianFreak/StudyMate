@@ -237,6 +237,8 @@ export const en = {
   // --- credits panel ------------------------------------------------------------------------
   'credits.title': 'About & open-source notices',
   'credits.tagline': 'A local AI study companion. All AI processing happens right here on this PC.',
+  'credits.gpl':
+    'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3. It comes with ABSOLUTELY NO WARRANTY. Full license: https://www.gnu.org/licenses/gpl-3.0.html',
   'credits.character': 'Character',
   'credits.usesCharacter':
     'This software uses the free-material character "Tsukuyomi-chan" (© Rei Yumesaki).',

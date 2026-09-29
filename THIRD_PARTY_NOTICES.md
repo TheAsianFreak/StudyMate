@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-StudyMate에 포함되거나 실행 중 사용하는 서드파티 소프트웨어·모델·에셋 목록이다.
+Your StudyMate 자체는 GNU GPL v3 (제7조 추가 조건 포함, `LICENSE`·`NOTICE`)으로 배포한다. 아래는 StudyMate에 포함되거나 실행 중 사용하는 서드파티 소프트웨어·모델·에셋 목록이며, 각자의 라이선스를 따른다.
 새 의존성을 추가할 때마다 이 파일에 기록하고 라이선스 검사를 통과시킨다.
 
 - npm: `node scripts/check-licenses.mjs <package-dir>` (배포되는 의존성은 허용 목록 엄격 적용, 빌드 도구는 카피레프트만 차단)

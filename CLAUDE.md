@@ -60,6 +60,8 @@ studymate/
 
 ## 라이선스 규칙 (의존성 추가 전 필수 확인)
 
+**프로젝트 자체는 GPL-3.0** (`LICENSE`) + 제7조 추가 조건 (`NOTICE`: 크레딧 "Your StudyMate by TheAsianFreak (NBBANGSOFT)" 유지, 수정본 표시, 이름·로고 사용 불가). 크레딧 화면의 저작권·무보증·라이선스 고지는 지우지 않는다. Steam 배포본은 저작권자가 EULA로 별도 배포(이중 라이선스)할 수 있게, 의존성은 아래 허용 목록만 쓴다 (GPL 의존성 금지 유지).
+
 허용: MIT, Apache-2.0, BSD, ISC, Zlib, SIL OFL(폰트), CC0(에셋), CC BY(에셋·학습 데이터 — 크레디트를 `THIRD_PARTY_NOTICES.md`와 앱 크레딧 화면에 표기할 때만, 2026-09-26 승인). 코드와 **모델 가중치 라이선스를 각각** 확인한다.
 
 **사용 금지:**

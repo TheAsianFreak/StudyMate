@@ -242,6 +242,8 @@ export const ja = {
   // --- credits panel ------------------------------------------------------------------------
   'credits.title': '情報・オープンソースライセンス',
   'credits.tagline': 'ローカル AI 学習コンパニオン。AI の処理はすべてこのPCの中で行います。',
+  'credits.gpl':
+    'このプログラムはフリーソフトウェアです。GNU 一般公衆利用許諾書（GPL）第3版に従って再配布・改変できます。いかなる保証もありません。ライセンス全文: https://www.gnu.org/licenses/gpl-3.0.html',
   'credits.character': 'キャラクター',
   'credits.usesCharacter':
     '本ソフトウェアでは、フリー素材キャラクター「つくよみちゃん」（© Rei Yumesaki）を使用しています。',

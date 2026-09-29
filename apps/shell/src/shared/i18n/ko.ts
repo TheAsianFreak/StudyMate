@@ -234,6 +234,8 @@ export const ko = {
   // --- credits panel ------------------------------------------------------------------------
   'credits.title': '정보 · 오픈소스 고지',
   'credits.tagline': '로컬 AI 학습 컴패니언. 모든 AI 처리는 이 PC 안에서 이루어져요.',
+  'credits.gpl':
+    '이 프로그램은 자유 소프트웨어예요. GNU 일반 공중 사용 허가서(GPL) 3판에 따라 재배포하거나 수정할 수 있으며, 어떠한 보증도 제공하지 않아요. 라이선스 전문: https://www.gnu.org/licenses/gpl-3.0.html',
   'credits.character': '캐릭터',
   'credits.usesCharacter':
     '본 소프트웨어에서는 프리 소재 캐릭터 「츠쿠요미짱」(© Rei Yumesaki)을 사용하고 있습니다.',

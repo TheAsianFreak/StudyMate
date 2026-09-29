@@ -13,6 +13,8 @@ export const LANGS: readonly Lang[] = ['ko', 'ja', 'en'];
 /** Each language's own name, shown untranslated in language pickers. */
 export const LANG_NAMES: Record<Lang, string> = { ko: '한국어', ja: '日本語', en: 'English' };
 export const PRODUCT_NAME = 'Your StudyMate';
+/** GPL-3.0 section 7(b) attribution (NOTICE): kept on the credits screen of any derived work. */
+export const AUTHOR = 'TheAsianFreak (NBBANGSOFT)';
 
 const TABLES: Record<Lang, Messages> = { ko, ja, en };
 /** BCP 47 tags for Intl formatting. */

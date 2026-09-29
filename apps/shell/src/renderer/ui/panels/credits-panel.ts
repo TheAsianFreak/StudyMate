@@ -1,5 +1,5 @@
 import notices from '../../../../../../THIRD_PARTY_NOTICES.md?raw';
-import { getLang, onLangChange, PRODUCT_NAME, t } from '../../../shared/i18n';
+import { AUTHOR, getLang, onLangChange, PRODUCT_NAME, t } from '../../../shared/i18n';
 import type { AppContext } from '../../app-context';
 import { h, nodes } from '../dom';
 import { Panel } from '../panel';
@@ -33,6 +33,10 @@ export class CreditsPanel {
       ...nodes(
         h('h3', {}, PRODUCT_NAME),
         h('p', {}, t('credits.tagline')),
+        // Appropriate Legal Notices (GPL-3.0 section 0/5d) with the section 7(b) attribution
+        h('p', { class: 'author' }, `${PRODUCT_NAME} by ${AUTHOR}`),
+        h('p', {}, `Copyright (C) 2026 ${AUTHOR}`),
+        h('p', { class: 'hint' }, t('credits.gpl')),
         h('div', { class: 'row' }, eula),
         h(
           'section',
